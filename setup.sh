@@ -82,11 +82,6 @@ for file in $CFG_FILES; do
     ln -sf $DOTFILES_DIR/$file ~/.config/$file
 done
 }
-function zsh() {
-# change shell to zsh (requires a restart to take effect)
-which zsh
-chsh -s `which zsh`
-}
 
 while true; do
     read -p "Do you want to update and install packages? " yn
