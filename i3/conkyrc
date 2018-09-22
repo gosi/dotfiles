@@ -1,0 +1,76 @@
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+
+conky.config = {
+	update_interval = 2,
+	own_window = true,
+	own_window_transparent = true,
+	own_window_type = 'override',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	double_buffer = true,
+-- fonts
+	use_xft = true,
+	text_buffer_size = 2048,
+	xftalpha = 0.7,
+	font = 'arial black:size=12',
+	uppercase = false,
+	use_spacer = 'none',
+
+-- apperances
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	stippled_borders = 0,
+	border_width = 0,
+	default_color = 'grey',
+	own_window_colour = 'white',
+
+	no_buffers = true,
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
+	override_utf8_locale = true,
+
+-- position
+	alignment = 'top_left',
+	gap_x = 15,
+	gap_y = 40,
+	top_name_width = 12
+}
+
+conky.text = [[
+${font arial black:size=14}${color magneta}SYSTEM${color}${font arial black:size=8}information${color magneta} ${hr 2}$color$font
+$nodename $kernel
+UP: $font$uptime ${voffset -5}
+${voffset 10}${font arial black:size=28}${time %e}$font ${voffset -17}${time %A, }${time %B} ${time %G}
+${voffset -2}${goto 65}${font arial black:size=10} ${time %I:%M:%S %p} ${font arial black:size=14}
+${color magneta}CPU${color}${font arial black:size=8}information${color magneta} ${hr 2}$color$font
+USAGE: $font${cpu cpu0}%
+${cpugraph cpu0 C0C0C0 C0C0C0}
+Name${goto 120} PID${goto 180} CPU${goto 220} MEM
+${color #ddaa00}${top name 1}${goto 120}${top pid 1}${goto 175}${top cpu 1}${goto 215}${top mem 1}
+${color lightgrey}${top name 2}${goto 120}${top pid 2}${goto 175}${top cpu 2}${goto 215}${top mem 2}
+${color lightgrey}${top name 3}${goto 120}${top pid 3}${goto 175}${top cpu 3}${goto 215}${top mem 3}
+${color lightgrey}${top name 4}${goto 120}${top pid 4}${goto 175}${top cpu 4}${goto 215}${top mem 4}$color$font
+${font arial black:size=14}${color magneta}Storage${color}${font arial black:size=8}information${color magneta} ${hr 2}$color$font
+RAM: $font$memperc% ${alignr}$mem/$memmax
+${membar}
+ROOT:$font${fs_used_perc /}% ${alignr}${fs_used /}/${fs_size /}
+${fs_bar /}$color
+HOME:$font${fs_used_perc /home}% ${alignr}${fs_used /home}/${fs_size /home}
+${fs_bar /home/}$color
+Root R: ${diskio_read /dev/nvme0n1p7}${alignr}W: ${diskio_write /dev/nvme0n1p7}
+${diskiograph_read /dev/nvme0n1p7 20,132} ${diskiograph_write /dev/nvme0n1p7 20,132}
+Home R: ${diskio_read /dev/nvme0n1p8}${alignr}W: ${diskio_write /dev/nvme0n1p8}
+${diskiograph_read /dev/nvme0n1p8 20,132} ${diskiograph_write /dev/nvme0n1p8 20,132}
+${font arial black:size=14}${color magneta}NETWORK${color}${font arial black:size=8}information${color magneta} ${hr 2}$color$font
+DOWN: $font$color${downspeed wlp2s0}/${totaldown wlp2s0}
+UP: $font${upspeed wlp2s0}/${totalup wlp2s0}
+${downspeedgraph wlp2s0 20,132 C0C0C0 C0C0C0} ${upspeedgraph wlp2s0 20,132 C0C0C0 C0C0C0}$color
+Port In: $font${tcp_portmon 1 32767 count} Out: $font${tcp_portmon 32768 61000 count}${alignr}TOTAL: $font${tcp_portmon 1 65535 count}
+LOCAL:$font ${addr wlp2s0}${color}
+${font arial black:size=14}${color magneta}BATTERY${color}${font arial black:size=8}information${color magneta} ${hr 2}$color$font
+${battery_bar}
+STATE: $font$color${battery} $alignr ${battery_time}
+TEMPERATURE:$font ${acpitemp}°C${color}
+${voffset 15}
+]]
+--FAN: $font$color${ibm_fan}rpm${alignr}

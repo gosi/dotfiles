@@ -1,0 +1,43 @@
+# make a directory and cd
+function mkd() {
+    mkdir -p "$@" && cd "$_";
+}
+
+# lazy commit for irrelevant repos
+function cz {
+    git add .
+    git --no-pager diff --patience HEAD
+    read "REPLY?commit message(default "z"): "
+    if [ "$REPLY" = ""  ]; then
+         REPLY="z"
+    fi
+    git commit -m $REPLY
+    git push
+}
+
+# random password generator with given length
+pwgen () {
+	cat /dev/urandom| tr -dc 'a-zA-Z0-9' | fold -w $1 | head -n 1
+}
+
+# simplified file extraction
+function ex () {
+  if [ -f $1 ] ; then
+      case $1 in
+          *.tar.bz2)   tar xvjf $1    ;;
+          *.tar.gz)    tar xvzf $1    ;;
+          *.bz2)       bunzip2 $1     ;;
+          *.rar)       rar x $1       ;;
+          *.gz)        gunzip $1      ;;
+          *.tar)       tar xvf $1     ;;
+          *.tbz2)      tar xvjf $1    ;;
+          *.tgz)       tar xvzf $1    ;;
+          *.zip)       unzip $1       ;;
+          *.Z)         uncompress $1  ;;
+          *.7z)        7z x $1        ;;
+          *)           echo "Sorry, don't know how to extract '$1'..." ;;
+      esac
+  else
+      echo "'$1' is not a valid file!"
+  fi
+}

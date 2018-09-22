@@ -1,0 +1,67 @@
+# Directory Shortcuts
+alias ~="cd ~"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+alias ws="cd ~/workstation"
+alias d="cd ~/dev"
+alias dot="cd ~/dev/dotfiles"
+alias cfg="cd ~/configs"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Documents"
+alias data="cd /media/gosi/DATA"
+
+# Command Shortcuts
+alias a="discord & disown ; google-chrome & disown ; vlc & disown"
+alias s="xset m 0 0 && htop"
+alias t="tmux attach -t 0 || tmux"
+alias c="g++ -Wall -g -D_GLIBCXX_DEBUG -std=c++11 -ftrapv -Wconversion -ftrapv -Wfatal-errors -fsanitize=address,undefined"
+alias v="vim"
+alias V="vim"
+alias q="exit"
+alias :q="exit"
+
+alias fetch_upstream="git checkout master && git pull --rebase && git checkout - && git remote prune origin"
+alias pyhttp="python -m SimpleHTTPServer"
+alias calc="python3 -ic 'from math import *'"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias open="xdg-open"
+alias tclear="rm ~/Downloads/*.torrent"
+alias clean="rm -rf ~/.local/share/Trash/*"
+
+# Quick Edits
+alias vv="vim ~/.vimrc"
+alias vb="vim ~/.bashrc"
+alias ve="vim ~/.emacs"
+alias vz="vim ~/.zshrc"
+alias va="vim ~/dev/dotfiles/.aliases"
+alias vf="vim ~/dev/dotfiles/.functions"
+
+# System
+alias ff="find . -type f -iname"
+alias grep="grep --color"
+alias rm="rm -i"
+alias rmall="rm -r * .*"
+alias rmdir="rm -rf"
+alias cp="cp -i"
+alias mv="mv -i"
+alias ls="ls --color=auto"
+alias la="ls -a"
+alias ll="ls -lh"
+alias l="ls -s"
+alias lh="ls -lisAd .[^.]*"
+alias du="du -h"
+alias df="df -h"
+
+# Package Managers
+alias apt="sudo apt-get"
+alias api="sudo apt-get install"
+alias apu="sudo apt-get update"
+alias apr="sudo apt-get remove"
+alias app="sudo apt-get purge"
+
+alias pac="pacman -S"
+alias pacu="pacman -Syu"
+alias pacr="pacman -Rs"
+alias pacs="pacman -Ss"

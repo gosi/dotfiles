@@ -1,0 +1,55 @@
+set nocompatible
+filetype plugin indent on
+syntax on
+
+set nobackup
+set nowritebackup
+set noswapfile
+
+set autoindent
+set showmatch
+set incsearch
+set mouse=a
+set number
+set hlsearch
+
+set foldenable
+set foldlevelstart=9
+set foldnestmax=9
+set foldmethod=indent
+
+set notimeout
+set ttimeout
+set timeoutlen=100
+
+set backspace=indent,eol,start
+set laststatus=2
+set expandtab smarttab shiftround nojoinspaces
+
+set ignorecase
+set showmatch
+set smartcase
+set tabstop=4 shiftwidth=4 softtabstop=4
+
+imap <C-b> <Left>
+imap <C-f> <Right>
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-e> <End>
+imap <C-a> <Home>
+
+"Keymappings
+let mapleader="\<Space>"
+
+nnoremap <Leader>\ :nohlsearch<Bar>:echo<CR>
+nmap <Leader>s :w<CR>
+nmap tn :tabnew<CR>
+
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap j gj
+nnoremap k gk
+
+set scrolloff=3"
+
