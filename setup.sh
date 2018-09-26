@@ -84,7 +84,7 @@ done
 }
 
 while true; do
-    read -p "Do you want to update and install packages? " yn
+    read -p "Do you want to update and install packages? [Y/N] " yn
     case $yn in
         [Yy]* ) update_and_install; break;;
         [Nn]* ) break;;
@@ -93,7 +93,7 @@ while true; do
 done
 
 while true; do
-    read -p "Do you want to create symlinks? " yn
+    read -p "Do you want to create symlinks? [Y/N] " yn
     case $yn in
         [Yy]* ) create_symlinks; break;;
         [Nn]* ) break;;
