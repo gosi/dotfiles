@@ -40,6 +40,8 @@ alias vf="vim ~/dev/dotfiles/.functions"
 
 # System
 alias ff="find . -type f -iname"
+alias listen="lsof -i -n -P | grep LISTEN"
+alias pag="ps aux | grep"
 alias grep="grep --color"
 alias rm="rm -i"
 alias rmall="rm -r * .*"
