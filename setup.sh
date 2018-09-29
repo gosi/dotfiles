@@ -25,7 +25,7 @@ wget
 "
 
 BACKUP_DIR=$HOME/dotfiles_old
-DOTFILES_DIR=$HOME/dev/dotfiles
+DOTFILES_DIR=$HOME/workspace/dotfiles
 FILES=".vimrc .bashrc .zshrc .tmux.conf .emacs .ideavimrc"
 CFG_FILES="i3"
 
@@ -84,7 +84,7 @@ done
 }
 
 while true; do
-    read -p "Do you want to update and install packages? [Y/N] " yn
+    read -p "Do you want to update and install packages? (Y/N) " yn
     case $yn in
         [Yy]* ) update_and_install; break;;
         [Nn]* ) break;;
@@ -93,7 +93,7 @@ while true; do
 done
 
 while true; do
-    read -p "Do you want to create symlinks? [Y/N] " yn
+    read -p "Do you want to create symlinks? (Y/N) " yn
     case $yn in
         [Yy]* ) create_symlinks; break;;
         [Nn]* ) break;;

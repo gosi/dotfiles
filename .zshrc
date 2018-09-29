@@ -1,4 +1,4 @@
-DOTFILES=$HOME/dev/dotfiles
+DOTFILES=$HOME/workspace/dotfiles
 source $DOTFILES/.aliases
 source $DOTFILES/.functions
 
