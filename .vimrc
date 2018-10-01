@@ -16,6 +16,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'tpope/vim-commentary'
+Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --racer-completer --tern-completer' }
 
 call vundle#end()

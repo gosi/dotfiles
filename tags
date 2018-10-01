@@ -1,0 +1,545 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACLOCAL	.config/i3/arc-theme/Makefile	/^ACLOCAL = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing aclocal-1.15$/;"	m
+ACLOCAL	.config/i3/arc-theme/common/Makefile	/^ACLOCAL = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing aclocal-1.15$/;"	m
+ACLOCAL	.config/i3/arc-theme/extra/Makefile	/^ACLOCAL = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing aclocal-1.15$/;"	m
+ACLOCAL_AMFLAGS	.config/i3/arc-theme/Makefile	/^ACLOCAL_AMFLAGS = -I m4$/;"	m
+ACLOCAL_M4	.config/i3/arc-theme/Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
+ACLOCAL_M4	.config/i3/arc-theme/common/Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
+ACLOCAL_M4	.config/i3/arc-theme/extra/Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
+ACTIVE_LINK_HIGHLIGHT	.tmux/tmux-url-select	/^use constant ACTIVE_LINK_HIGHLIGHT => "\\033[44;4m";$/;"	c
+AMTAR	.config/i3/arc-theme/Makefile	/^AMTAR = $${TAR-tar}$/;"	m
+AMTAR	.config/i3/arc-theme/common/Makefile	/^AMTAR = $${TAR-tar}$/;"	m
+AMTAR	.config/i3/arc-theme/extra/Makefile	/^AMTAR = $${TAR-tar}$/;"	m
+AM_DEFAULT_VERBOSITY	.config/i3/arc-theme/Makefile	/^AM_DEFAULT_VERBOSITY = 1$/;"	m
+AM_DEFAULT_VERBOSITY	.config/i3/arc-theme/common/Makefile	/^AM_DEFAULT_VERBOSITY = 1$/;"	m
+AM_DEFAULT_VERBOSITY	.config/i3/arc-theme/extra/Makefile	/^AM_DEFAULT_VERBOSITY = 1$/;"	m
+AM_RECURSIVE_TARGETS	.config/i3/arc-theme/Makefile	/^AM_RECURSIVE_TARGETS = $(am__recursive_targets:-recursive=) TAGS CTAGS \\$/;"	m
+AM_V_GEN	.config/i3/arc-theme/Makefile	/^AM_V_GEN = $(am__v_GEN_$(V))$/;"	m
+AM_V_GEN	.config/i3/arc-theme/common/Makefile	/^AM_V_GEN = $(am__v_GEN_$(V))$/;"	m
+AM_V_GEN	.config/i3/arc-theme/extra/Makefile	/^AM_V_GEN = $(am__v_GEN_$(V))$/;"	m
+AM_V_P	.config/i3/arc-theme/Makefile	/^AM_V_P = $(am__v_P_$(V))$/;"	m
+AM_V_P	.config/i3/arc-theme/common/Makefile	/^AM_V_P = $(am__v_P_$(V))$/;"	m
+AM_V_P	.config/i3/arc-theme/extra/Makefile	/^AM_V_P = $(am__v_P_$(V))$/;"	m
+AM_V_at	.config/i3/arc-theme/Makefile	/^AM_V_at = $(am__v_at_$(V))$/;"	m
+AM_V_at	.config/i3/arc-theme/common/Makefile	/^AM_V_at = $(am__v_at_$(V))$/;"	m
+AM_V_at	.config/i3/arc-theme/extra/Makefile	/^AM_V_at = $(am__v_at_$(V))$/;"	m
+AUTOCONF	.config/i3/arc-theme/Makefile	/^AUTOCONF = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing autoconf$/;"	m
+AUTOCONF	.config/i3/arc-theme/common/Makefile	/^AUTOCONF = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing autoconf$/;"	m
+AUTOCONF	.config/i3/arc-theme/extra/Makefile	/^AUTOCONF = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing autoconf$/;"	m
+AUTOHEADER	.config/i3/arc-theme/Makefile	/^AUTOHEADER = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing autoheader$/;"	m
+AUTOHEADER	.config/i3/arc-theme/common/Makefile	/^AUTOHEADER = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing autoheader$/;"	m
+AUTOHEADER	.config/i3/arc-theme/extra/Makefile	/^AUTOHEADER = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing autoheader$/;"	m
+AUTOMAKE	.config/i3/arc-theme/Makefile	/^AUTOMAKE = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing automake-1.15$/;"	m
+AUTOMAKE	.config/i3/arc-theme/common/Makefile	/^AUTOMAKE = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing automake-1.15$/;"	m
+AUTOMAKE	.config/i3/arc-theme/extra/Makefile	/^AUTOMAKE = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing automake-1.15$/;"	m
+AWK	.config/i3/arc-theme/Makefile	/^AWK = gawk$/;"	m
+AWK	.config/i3/arc-theme/common/Makefile	/^AWK = gawk$/;"	m
+AWK	.config/i3/arc-theme/extra/Makefile	/^AWK = gawk$/;"	m
+COMMAND	.tmux/tmux-url-select	/^use constant COMMAND => 'chromium %s';$/;"	c
+CONFIG_CLEAN_FILES	.config/i3/arc-theme/Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
+CONFIG_CLEAN_FILES	.config/i3/arc-theme/common/Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
+CONFIG_CLEAN_FILES	.config/i3/arc-theme/extra/Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
+CONFIG_CLEAN_VPATH_FILES	.config/i3/arc-theme/Makefile	/^CONFIG_CLEAN_VPATH_FILES =$/;"	m
+CONFIG_CLEAN_VPATH_FILES	.config/i3/arc-theme/common/Makefile	/^CONFIG_CLEAN_VPATH_FILES =$/;"	m
+CONFIG_CLEAN_VPATH_FILES	.config/i3/arc-theme/extra/Makefile	/^CONFIG_CLEAN_VPATH_FILES =$/;"	m
+CSCOPE	.config/i3/arc-theme/Makefile	/^CSCOPE = cscope$/;"	m
+CTAGS	.config/i3/arc-theme/Makefile	/^CTAGS = ctags$/;"	m
+CYGPATH_W	.config/i3/arc-theme/Makefile	/^CYGPATH_W = echo$/;"	m
+CYGPATH_W	.config/i3/arc-theme/common/Makefile	/^CYGPATH_W = echo$/;"	m
+CYGPATH_W	.config/i3/arc-theme/extra/Makefile	/^CYGPATH_W = echo$/;"	m
+DEFS	.config/i3/arc-theme/Makefile	/^DEFS = -DPACKAGE_NAME=\\"arc-theme\\" -DPACKAGE_TARNAME=\\"arc-theme\\" -DPACKAGE_VERSION=\\"20161119\\" -DPACKAGE_STRING=\\"arc-theme\\ 20161119\\" -DPACKAGE_BUGREPORT=\\"https:\/\/github.com\/horst3180\/Arc-theme\/issues\\" -DPACKAGE_URL=\\"https:\/\/github.com\/horst3180\/Arc-theme\\" -DPACKAGE=\\"arc-theme\\" -DVERSION=\\"20161119\\"$/;"	m
+DEFS	.config/i3/arc-theme/common/Makefile	/^DEFS = -DPACKAGE_NAME=\\"arc-theme\\" -DPACKAGE_TARNAME=\\"arc-theme\\" -DPACKAGE_VERSION=\\"20161119\\" -DPACKAGE_STRING=\\"arc-theme\\ 20161119\\" -DPACKAGE_BUGREPORT=\\"https:\/\/github.com\/horst3180\/Arc-theme\/issues\\" -DPACKAGE_URL=\\"https:\/\/github.com\/horst3180\/Arc-theme\\" -DPACKAGE=\\"arc-theme\\" -DVERSION=\\"20161119\\"$/;"	m
+DEFS	.config/i3/arc-theme/extra/Makefile	/^DEFS = -DPACKAGE_NAME=\\"arc-theme\\" -DPACKAGE_TARNAME=\\"arc-theme\\" -DPACKAGE_VERSION=\\"20161119\\" -DPACKAGE_STRING=\\"arc-theme\\ 20161119\\" -DPACKAGE_BUGREPORT=\\"https:\/\/github.com\/horst3180\/Arc-theme\/issues\\" -DPACKAGE_URL=\\"https:\/\/github.com\/horst3180\/Arc-theme\\" -DPACKAGE=\\"arc-theme\\" -DVERSION=\\"20161119\\"$/;"	m
+DISTFILES	.config/i3/arc-theme/Makefile	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DISTFILES	.config/i3/arc-theme/common/Makefile	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DISTFILES	.config/i3/arc-theme/extra/Makefile	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DIST_ARCHIVES	.config/i3/arc-theme/Makefile	/^DIST_ARCHIVES = $(distdir).tar.xz$/;"	m
+DIST_COMMON	.config/i3/arc-theme/Makefile	/^DIST_COMMON = $(srcdir)\/Makefile.am $(top_srcdir)\/configure \\$/;"	m
+DIST_COMMON	.config/i3/arc-theme/common/Makefile	/^DIST_COMMON = $(srcdir)\/Makefile.am $(am__DIST_COMMON)$/;"	m
+DIST_COMMON	.config/i3/arc-theme/extra/Makefile	/^DIST_COMMON = $(srcdir)\/Makefile.am $(am__DIST_COMMON)$/;"	m
+DIST_SOURCES	.config/i3/arc-theme/Makefile	/^DIST_SOURCES =$/;"	m
+DIST_SOURCES	.config/i3/arc-theme/common/Makefile	/^DIST_SOURCES =$/;"	m
+DIST_SOURCES	.config/i3/arc-theme/extra/Makefile	/^DIST_SOURCES =$/;"	m
+DIST_SUBDIRS	.config/i3/arc-theme/Makefile	/^DIST_SUBDIRS = $(SUBDIRS)$/;"	m
+DIST_TARGETS	.config/i3/arc-theme/Makefile	/^DIST_TARGETS = dist-xz$/;"	m
+DirectoryOfThisScript	.ycm_extra_conf.py	/^def DirectoryOfThisScript():$/;"	f
+ECHO_C	.config/i3/arc-theme/Makefile	/^ECHO_C = $/;"	m
+ECHO_C	.config/i3/arc-theme/common/Makefile	/^ECHO_C = $/;"	m
+ECHO_C	.config/i3/arc-theme/extra/Makefile	/^ECHO_C = $/;"	m
+ECHO_N	.config/i3/arc-theme/Makefile	/^ECHO_N = -n$/;"	m
+ECHO_N	.config/i3/arc-theme/common/Makefile	/^ECHO_N = -n$/;"	m
+ECHO_N	.config/i3/arc-theme/extra/Makefile	/^ECHO_N = -n$/;"	m
+ECHO_T	.config/i3/arc-theme/Makefile	/^ECHO_T = $/;"	m
+ECHO_T	.config/i3/arc-theme/common/Makefile	/^ECHO_T = $/;"	m
+ECHO_T	.config/i3/arc-theme/extra/Makefile	/^ECHO_T = $/;"	m
+ENABLE_CINNAMON	.config/i3/arc-theme/Makefile	/^ENABLE_CINNAMON = yes$/;"	m
+ENABLE_CINNAMON	.config/i3/arc-theme/common/Makefile	/^ENABLE_CINNAMON = yes$/;"	m
+ENABLE_CINNAMON	.config/i3/arc-theme/extra/Makefile	/^ENABLE_CINNAMON = yes$/;"	m
+ENABLE_DARK	.config/i3/arc-theme/Makefile	/^ENABLE_DARK = yes$/;"	m
+ENABLE_DARK	.config/i3/arc-theme/common/Makefile	/^ENABLE_DARK = yes$/;"	m
+ENABLE_DARK	.config/i3/arc-theme/extra/Makefile	/^ENABLE_DARK = yes$/;"	m
+ENABLE_DARKER	.config/i3/arc-theme/Makefile	/^ENABLE_DARKER = yes$/;"	m
+ENABLE_DARKER	.config/i3/arc-theme/common/Makefile	/^ENABLE_DARKER = yes$/;"	m
+ENABLE_DARKER	.config/i3/arc-theme/extra/Makefile	/^ENABLE_DARKER = yes$/;"	m
+ENABLE_GNOME_SHELL	.config/i3/arc-theme/Makefile	/^ENABLE_GNOME_SHELL = yes$/;"	m
+ENABLE_GNOME_SHELL	.config/i3/arc-theme/common/Makefile	/^ENABLE_GNOME_SHELL = yes$/;"	m
+ENABLE_GNOME_SHELL	.config/i3/arc-theme/extra/Makefile	/^ENABLE_GNOME_SHELL = yes$/;"	m
+ENABLE_GTK2	.config/i3/arc-theme/Makefile	/^ENABLE_GTK2 = yes$/;"	m
+ENABLE_GTK2	.config/i3/arc-theme/common/Makefile	/^ENABLE_GTK2 = yes$/;"	m
+ENABLE_GTK2	.config/i3/arc-theme/extra/Makefile	/^ENABLE_GTK2 = yes$/;"	m
+ENABLE_GTK3	.config/i3/arc-theme/Makefile	/^ENABLE_GTK3 = yes$/;"	m
+ENABLE_GTK3	.config/i3/arc-theme/common/Makefile	/^ENABLE_GTK3 = yes$/;"	m
+ENABLE_GTK3	.config/i3/arc-theme/extra/Makefile	/^ENABLE_GTK3 = yes$/;"	m
+ENABLE_LIGHT	.config/i3/arc-theme/Makefile	/^ENABLE_LIGHT = yes$/;"	m
+ENABLE_LIGHT	.config/i3/arc-theme/common/Makefile	/^ENABLE_LIGHT = yes$/;"	m
+ENABLE_LIGHT	.config/i3/arc-theme/extra/Makefile	/^ENABLE_LIGHT = yes$/;"	m
+ENABLE_METACITY	.config/i3/arc-theme/Makefile	/^ENABLE_METACITY = yes$/;"	m
+ENABLE_METACITY	.config/i3/arc-theme/common/Makefile	/^ENABLE_METACITY = yes$/;"	m
+ENABLE_METACITY	.config/i3/arc-theme/extra/Makefile	/^ENABLE_METACITY = yes$/;"	m
+ENABLE_TRANSPARENCY	.config/i3/arc-theme/Makefile	/^ENABLE_TRANSPARENCY = yes$/;"	m
+ENABLE_TRANSPARENCY	.config/i3/arc-theme/common/Makefile	/^ENABLE_TRANSPARENCY = yes$/;"	m
+ENABLE_TRANSPARENCY	.config/i3/arc-theme/extra/Makefile	/^ENABLE_TRANSPARENCY = yes$/;"	m
+ENABLE_UNITY	.config/i3/arc-theme/Makefile	/^ENABLE_UNITY = yes$/;"	m
+ENABLE_UNITY	.config/i3/arc-theme/common/Makefile	/^ENABLE_UNITY = yes$/;"	m
+ENABLE_UNITY	.config/i3/arc-theme/extra/Makefile	/^ENABLE_UNITY = yes$/;"	m
+ENABLE_XFWM	.config/i3/arc-theme/Makefile	/^ENABLE_XFWM = yes$/;"	m
+ENABLE_XFWM	.config/i3/arc-theme/common/Makefile	/^ENABLE_XFWM = yes$/;"	m
+ENABLE_XFWM	.config/i3/arc-theme/extra/Makefile	/^ENABLE_XFWM = yes$/;"	m
+ETAGS	.config/i3/arc-theme/Makefile	/^ETAGS = etags$/;"	m
+EXTRA_DIST	.config/i3/arc-theme/Makefile	/^EXTRA_DIST = \\$/;"	m
+EXTRA_DIST	.config/i3/arc-theme/common/Makefile	/^EXTRA_DIST = $(srcdir)\/cinnamon \\$/;"	m
+EXTRA_DIST	.config/i3/arc-theme/extra/Makefile	/^EXTRA_DIST = $(srcdir)\/Chrome \\$/;"	m
+FlagsForFile	.ycm_extra_conf.py	/^def FlagsForFile( filename, **kwargs ):$/;"	f
+GNOME_VERSION	.config/i3/arc-theme/Makefile	/^GNOME_VERSION = 3.18$/;"	m
+GNOME_VERSION	.config/i3/arc-theme/common/Makefile	/^GNOME_VERSION = 3.18$/;"	m
+GNOME_VERSION	.config/i3/arc-theme/extra/Makefile	/^GNOME_VERSION = 3.18$/;"	m
+GZIP_ENV	.config/i3/arc-theme/Makefile	/^GZIP_ENV = --best$/;"	m
+GetCompilationInfoForFile	.ycm_extra_conf.py	/^def GetCompilationInfoForFile( filename ):$/;"	f
+HIDE_WINDOW	.tmux/tmux-url-select	/^use constant HIDE_WINDOW => 1;$/;"	c
+INSTALL	.config/i3/arc-theme/Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL	.config/i3/arc-theme/common/Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL	.config/i3/arc-theme/extra/Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL_DATA	.config/i3/arc-theme/Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_DATA	.config/i3/arc-theme/common/Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_DATA	.config/i3/arc-theme/extra/Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_HEADER	.config/i3/arc-theme/Makefile	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_HEADER	.config/i3/arc-theme/common/Makefile	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_HEADER	.config/i3/arc-theme/extra/Makefile	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_PROGRAM	.config/i3/arc-theme/Makefile	/^INSTALL_PROGRAM = ${INSTALL}$/;"	m
+INSTALL_PROGRAM	.config/i3/arc-theme/common/Makefile	/^INSTALL_PROGRAM = ${INSTALL}$/;"	m
+INSTALL_PROGRAM	.config/i3/arc-theme/extra/Makefile	/^INSTALL_PROGRAM = ${INSTALL}$/;"	m
+INSTALL_SCRIPT	.config/i3/arc-theme/Makefile	/^INSTALL_SCRIPT = ${INSTALL}$/;"	m
+INSTALL_SCRIPT	.config/i3/arc-theme/common/Makefile	/^INSTALL_SCRIPT = ${INSTALL}$/;"	m
+INSTALL_SCRIPT	.config/i3/arc-theme/extra/Makefile	/^INSTALL_SCRIPT = ${INSTALL}$/;"	m
+INSTALL_STRIP_PROGRAM	.config/i3/arc-theme/Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
+INSTALL_STRIP_PROGRAM	.config/i3/arc-theme/common/Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
+INSTALL_STRIP_PROGRAM	.config/i3/arc-theme/extra/Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
+IsHeaderFile	.ycm_extra_conf.py	/^def IsHeaderFile( filename ):$/;"	f
+LIBOBJS	.config/i3/arc-theme/Makefile	/^LIBOBJS = $/;"	m
+LIBOBJS	.config/i3/arc-theme/common/Makefile	/^LIBOBJS = $/;"	m
+LIBOBJS	.config/i3/arc-theme/extra/Makefile	/^LIBOBJS = $/;"	m
+LIBS	.config/i3/arc-theme/Makefile	/^LIBS = $/;"	m
+LIBS	.config/i3/arc-theme/common/Makefile	/^LIBS = $/;"	m
+LIBS	.config/i3/arc-theme/extra/Makefile	/^LIBS = $/;"	m
+LTLIBOBJS	.config/i3/arc-theme/Makefile	/^LTLIBOBJS = $/;"	m
+LTLIBOBJS	.config/i3/arc-theme/common/Makefile	/^LTLIBOBJS = $/;"	m
+LTLIBOBJS	.config/i3/arc-theme/extra/Makefile	/^LTLIBOBJS = $/;"	m
+MAKEINFO	.config/i3/arc-theme/Makefile	/^MAKEINFO = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing makeinfo$/;"	m
+MAKEINFO	.config/i3/arc-theme/common/Makefile	/^MAKEINFO = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing makeinfo$/;"	m
+MAKEINFO	.config/i3/arc-theme/extra/Makefile	/^MAKEINFO = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing makeinfo$/;"	m
+MKDIR_P	.config/i3/arc-theme/Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
+MKDIR_P	.config/i3/arc-theme/common/Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
+MKDIR_P	.config/i3/arc-theme/extra/Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
+MakeRelativePathsInFlagsAbsolute	.ycm_extra_conf.py	/^def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):$/;"	f
+NORMAL_INSTALL	.config/i3/arc-theme/Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_INSTALL	.config/i3/arc-theme/common/Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_INSTALL	.config/i3/arc-theme/extra/Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_LINK_HIGHLIGHT	.tmux/tmux-url-select	/^use constant NORMAL_LINK_HIGHLIGHT => "\\033[94;1;4m";$/;"	c
+NORMAL_UNINSTALL	.config/i3/arc-theme/Makefile	/^NORMAL_UNINSTALL = :$/;"	m
+NORMAL_UNINSTALL	.config/i3/arc-theme/common/Makefile	/^NORMAL_UNINSTALL = :$/;"	m
+NORMAL_UNINSTALL	.config/i3/arc-theme/extra/Makefile	/^NORMAL_UNINSTALL = :$/;"	m
+PACKAGE	.config/i3/arc-theme/Makefile	/^PACKAGE = arc-theme$/;"	m
+PACKAGE	.config/i3/arc-theme/common/Makefile	/^PACKAGE = arc-theme$/;"	m
+PACKAGE	.config/i3/arc-theme/extra/Makefile	/^PACKAGE = arc-theme$/;"	m
+PACKAGE_BUGREPORT	.config/i3/arc-theme/Makefile	/^PACKAGE_BUGREPORT = https:\/\/github.com\/horst3180\/Arc-theme\/issues$/;"	m
+PACKAGE_BUGREPORT	.config/i3/arc-theme/common/Makefile	/^PACKAGE_BUGREPORT = https:\/\/github.com\/horst3180\/Arc-theme\/issues$/;"	m
+PACKAGE_BUGREPORT	.config/i3/arc-theme/extra/Makefile	/^PACKAGE_BUGREPORT = https:\/\/github.com\/horst3180\/Arc-theme\/issues$/;"	m
+PACKAGE_NAME	.config/i3/arc-theme/Makefile	/^PACKAGE_NAME = arc-theme$/;"	m
+PACKAGE_NAME	.config/i3/arc-theme/common/Makefile	/^PACKAGE_NAME = arc-theme$/;"	m
+PACKAGE_NAME	.config/i3/arc-theme/extra/Makefile	/^PACKAGE_NAME = arc-theme$/;"	m
+PACKAGE_STRING	.config/i3/arc-theme/Makefile	/^PACKAGE_STRING = arc-theme 20161119$/;"	m
+PACKAGE_STRING	.config/i3/arc-theme/common/Makefile	/^PACKAGE_STRING = arc-theme 20161119$/;"	m
+PACKAGE_STRING	.config/i3/arc-theme/extra/Makefile	/^PACKAGE_STRING = arc-theme 20161119$/;"	m
+PACKAGE_TARNAME	.config/i3/arc-theme/Makefile	/^PACKAGE_TARNAME = arc-theme$/;"	m
+PACKAGE_TARNAME	.config/i3/arc-theme/common/Makefile	/^PACKAGE_TARNAME = arc-theme$/;"	m
+PACKAGE_TARNAME	.config/i3/arc-theme/extra/Makefile	/^PACKAGE_TARNAME = arc-theme$/;"	m
+PACKAGE_URL	.config/i3/arc-theme/Makefile	/^PACKAGE_URL = https:\/\/github.com\/horst3180\/Arc-theme$/;"	m
+PACKAGE_URL	.config/i3/arc-theme/common/Makefile	/^PACKAGE_URL = https:\/\/github.com\/horst3180\/Arc-theme$/;"	m
+PACKAGE_URL	.config/i3/arc-theme/extra/Makefile	/^PACKAGE_URL = https:\/\/github.com\/horst3180\/Arc-theme$/;"	m
+PACKAGE_VERSION	.config/i3/arc-theme/Makefile	/^PACKAGE_VERSION = 20161119$/;"	m
+PACKAGE_VERSION	.config/i3/arc-theme/common/Makefile	/^PACKAGE_VERSION = 20161119$/;"	m
+PACKAGE_VERSION	.config/i3/arc-theme/extra/Makefile	/^PACKAGE_VERSION = 20161119$/;"	m
+PATH_SEPARATOR	.config/i3/arc-theme/Makefile	/^PATH_SEPARATOR = :$/;"	m
+PATH_SEPARATOR	.config/i3/arc-theme/common/Makefile	/^PATH_SEPARATOR = :$/;"	m
+PATH_SEPARATOR	.config/i3/arc-theme/extra/Makefile	/^PATH_SEPARATOR = :$/;"	m
+PKG_CONFIG	.config/i3/arc-theme/Makefile	/^PKG_CONFIG = \/usr\/bin\/pkg-config$/;"	m
+PKG_CONFIG	.config/i3/arc-theme/common/Makefile	/^PKG_CONFIG = \/usr\/bin\/pkg-config$/;"	m
+PKG_CONFIG	.config/i3/arc-theme/extra/Makefile	/^PKG_CONFIG = \/usr\/bin\/pkg-config$/;"	m
+PKG_CONFIG_LIBDIR	.config/i3/arc-theme/Makefile	/^PKG_CONFIG_LIBDIR = $/;"	m
+PKG_CONFIG_LIBDIR	.config/i3/arc-theme/common/Makefile	/^PKG_CONFIG_LIBDIR = $/;"	m
+PKG_CONFIG_LIBDIR	.config/i3/arc-theme/extra/Makefile	/^PKG_CONFIG_LIBDIR = $/;"	m
+PKG_CONFIG_PATH	.config/i3/arc-theme/Makefile	/^PKG_CONFIG_PATH = $/;"	m
+PKG_CONFIG_PATH	.config/i3/arc-theme/common/Makefile	/^PKG_CONFIG_PATH = $/;"	m
+PKG_CONFIG_PATH	.config/i3/arc-theme/extra/Makefile	/^PKG_CONFIG_PATH = $/;"	m
+POST_INSTALL	.config/i3/arc-theme/Makefile	/^POST_INSTALL = :$/;"	m
+POST_INSTALL	.config/i3/arc-theme/common/Makefile	/^POST_INSTALL = :$/;"	m
+POST_INSTALL	.config/i3/arc-theme/extra/Makefile	/^POST_INSTALL = :$/;"	m
+POST_UNINSTALL	.config/i3/arc-theme/Makefile	/^POST_UNINSTALL = :$/;"	m
+POST_UNINSTALL	.config/i3/arc-theme/common/Makefile	/^POST_UNINSTALL = :$/;"	m
+POST_UNINSTALL	.config/i3/arc-theme/extra/Makefile	/^POST_UNINSTALL = :$/;"	m
+PRE_INSTALL	.config/i3/arc-theme/Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_INSTALL	.config/i3/arc-theme/common/Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_INSTALL	.config/i3/arc-theme/extra/Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_UNINSTALL	.config/i3/arc-theme/Makefile	/^PRE_UNINSTALL = :$/;"	m
+PRE_UNINSTALL	.config/i3/arc-theme/common/Makefile	/^PRE_UNINSTALL = :$/;"	m
+PRE_UNINSTALL	.config/i3/arc-theme/extra/Makefile	/^PRE_UNINSTALL = :$/;"	m
+PROMPT_COLOR	.tmux/tmux-url-select	/^use constant PROMPT_COLOR => "\\033[42;30m";$/;"	c
+RECURSIVE_CLEAN_TARGETS	.config/i3/arc-theme/Makefile	/^RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\\$/;"	m
+RECURSIVE_TARGETS	.config/i3/arc-theme/Makefile	/^RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \\$/;"	m
+SET_MAKE	.config/i3/arc-theme/Makefile	/^SET_MAKE = $/;"	m
+SET_MAKE	.config/i3/arc-theme/common/Makefile	/^SET_MAKE = $/;"	m
+SET_MAKE	.config/i3/arc-theme/extra/Makefile	/^SET_MAKE = $/;"	m
+SHELL	.config/i3/arc-theme/Makefile	/^SHELL = \/bin\/bash$/;"	m
+SHELL	.config/i3/arc-theme/common/Makefile	/^SHELL = \/bin\/bash$/;"	m
+SHELL	.config/i3/arc-theme/extra/Makefile	/^SHELL = \/bin\/bash$/;"	m
+SHOW_STATUS_BAR	.tmux/tmux-url-select	/^use constant SHOW_STATUS_BAR => 1;$/;"	c
+SOURCES	.config/i3/arc-theme/Makefile	/^SOURCES =$/;"	m
+SOURCES	.config/i3/arc-theme/common/Makefile	/^SOURCES =$/;"	m
+SOURCES	.config/i3/arc-theme/extra/Makefile	/^SOURCES =$/;"	m
+SOURCE_EXTENSIONS	.ycm_extra_conf.py	/^SOURCE_EXTENSIONS = [ '.cpp', '.cxx', '.cc', '.c', '.m', '.mm' ]$/;"	v
+STRIP	.config/i3/arc-theme/Makefile	/^STRIP = $/;"	m
+STRIP	.config/i3/arc-theme/common/Makefile	/^STRIP = $/;"	m
+STRIP	.config/i3/arc-theme/extra/Makefile	/^STRIP = $/;"	m
+SUBDIRS	.config/i3/arc-theme/Makefile	/^SUBDIRS = common extra$/;"	m
+TMUX_WINDOW_ID	.tmux/tmux-url-select	/^use constant TMUX_WINDOW_ID => 9999;$/;"	c
+TMUX_WINDOW_TITLE	.tmux/tmux-url-select	/^use constant TMUX_WINDOW_TITLE => 'Select URL';$/;"	c
+VERBOSE_MESSAGES	.tmux/tmux-url-select	/^use constant VERBOSE_MESSAGES => 0;$/;"	c
+VERSION	.config/i3/arc-theme/Makefile	/^VERSION = 20161119$/;"	m
+VERSION	.config/i3/arc-theme/common/Makefile	/^VERSION = 20161119$/;"	m
+VERSION	.config/i3/arc-theme/extra/Makefile	/^VERSION = 20161119$/;"	m
+YANK_COMMAND	.tmux/tmux-url-select	/^use constant YANK_COMMAND => 'echo %s | xclip -i';$/;"	c
+abs_builddir	.config/i3/arc-theme/Makefile	/^abs_builddir = \/home\/gosi\/.config\/i3\/arc-theme$/;"	m
+abs_builddir	.config/i3/arc-theme/common/Makefile	/^abs_builddir = \/home\/gosi\/.config\/i3\/arc-theme\/common$/;"	m
+abs_builddir	.config/i3/arc-theme/extra/Makefile	/^abs_builddir = \/home\/gosi\/.config\/i3\/arc-theme\/extra$/;"	m
+abs_srcdir	.config/i3/arc-theme/Makefile	/^abs_srcdir = \/home\/gosi\/.config\/i3\/arc-theme$/;"	m
+abs_srcdir	.config/i3/arc-theme/common/Makefile	/^abs_srcdir = \/home\/gosi\/.config\/i3\/arc-theme\/common$/;"	m
+abs_srcdir	.config/i3/arc-theme/extra/Makefile	/^abs_srcdir = \/home\/gosi\/.config\/i3\/arc-theme\/extra$/;"	m
+abs_top_builddir	.config/i3/arc-theme/Makefile	/^abs_top_builddir = \/home\/gosi\/.config\/i3\/arc-theme$/;"	m
+abs_top_builddir	.config/i3/arc-theme/common/Makefile	/^abs_top_builddir = \/home\/gosi\/.config\/i3\/arc-theme$/;"	m
+abs_top_builddir	.config/i3/arc-theme/extra/Makefile	/^abs_top_builddir = \/home\/gosi\/.config\/i3\/arc-theme$/;"	m
+abs_top_srcdir	.config/i3/arc-theme/Makefile	/^abs_top_srcdir = \/home\/gosi\/.config\/i3\/arc-theme$/;"	m
+abs_top_srcdir	.config/i3/arc-theme/common/Makefile	/^abs_top_srcdir = \/home\/gosi\/.config\/i3\/arc-theme$/;"	m
+abs_top_srcdir	.config/i3/arc-theme/extra/Makefile	/^abs_top_srcdir = \/home\/gosi\/.config\/i3\/arc-theme$/;"	m
+am__CONFIG_DISTCLEAN_FILES	.config/i3/arc-theme/Makefile	/^am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \\$/;"	m
+am__DIST_COMMON	.config/i3/arc-theme/Makefile	/^am__DIST_COMMON = $(srcdir)\/Makefile.in \\$/;"	m
+am__DIST_COMMON	.config/i3/arc-theme/common/Makefile	/^am__DIST_COMMON = $(srcdir)\/Makefile.in$/;"	m
+am__DIST_COMMON	.config/i3/arc-theme/extra/Makefile	/^am__DIST_COMMON = $(srcdir)\/Makefile.in$/;"	m
+am__aclocal_m4_deps	.config/i3/arc-theme/Makefile	/^am__aclocal_m4_deps = $(top_srcdir)\/m4\/arc-enable.m4 \\$/;"	m
+am__aclocal_m4_deps	.config/i3/arc-theme/common/Makefile	/^am__aclocal_m4_deps = $(top_srcdir)\/m4\/arc-enable.m4 \\$/;"	m
+am__aclocal_m4_deps	.config/i3/arc-theme/extra/Makefile	/^am__aclocal_m4_deps = $(top_srcdir)\/m4\/arc-enable.m4 \\$/;"	m
+am__can_run_installinfo	.config/i3/arc-theme/Makefile	/^am__can_run_installinfo = \\$/;"	m
+am__can_run_installinfo	.config/i3/arc-theme/common/Makefile	/^am__can_run_installinfo = \\$/;"	m
+am__can_run_installinfo	.config/i3/arc-theme/extra/Makefile	/^am__can_run_installinfo = \\$/;"	m
+am__cd	.config/i3/arc-theme/Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__cd	.config/i3/arc-theme/common/Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__cd	.config/i3/arc-theme/extra/Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__configure_deps	.config/i3/arc-theme/Makefile	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
+am__configure_deps	.config/i3/arc-theme/common/Makefile	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
+am__configure_deps	.config/i3/arc-theme/extra/Makefile	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
+am__define_uniq_tagged_files	.config/i3/arc-theme/Makefile	/^am__define_uniq_tagged_files = \\$/;"	m
+am__distuninstallcheck_listfiles	.config/i3/arc-theme/Makefile	/^am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \\$/;"	m
+am__is_gnu_make	.config/i3/arc-theme/Makefile	/^am__is_gnu_make = { \\$/;"	m
+am__is_gnu_make	.config/i3/arc-theme/common/Makefile	/^am__is_gnu_make = { \\$/;"	m
+am__is_gnu_make	.config/i3/arc-theme/extra/Makefile	/^am__is_gnu_make = { \\$/;"	m
+am__leading_dot	.config/i3/arc-theme/Makefile	/^am__leading_dot = .$/;"	m
+am__leading_dot	.config/i3/arc-theme/common/Makefile	/^am__leading_dot = .$/;"	m
+am__leading_dot	.config/i3/arc-theme/extra/Makefile	/^am__leading_dot = .$/;"	m
+am__make_dryrun	.config/i3/arc-theme/Makefile	/^am__make_dryrun = (target_option=n; $(am__make_running_with_option))$/;"	m
+am__make_dryrun	.config/i3/arc-theme/common/Makefile	/^am__make_dryrun = (target_option=n; $(am__make_running_with_option))$/;"	m
+am__make_dryrun	.config/i3/arc-theme/extra/Makefile	/^am__make_dryrun = (target_option=n; $(am__make_running_with_option))$/;"	m
+am__make_keepgoing	.config/i3/arc-theme/Makefile	/^am__make_keepgoing = (target_option=k; $(am__make_running_with_option))$/;"	m
+am__make_keepgoing	.config/i3/arc-theme/common/Makefile	/^am__make_keepgoing = (target_option=k; $(am__make_running_with_option))$/;"	m
+am__make_keepgoing	.config/i3/arc-theme/extra/Makefile	/^am__make_keepgoing = (target_option=k; $(am__make_running_with_option))$/;"	m
+am__make_running_with_option	.config/i3/arc-theme/Makefile	/^am__make_running_with_option = \\$/;"	m
+am__make_running_with_option	.config/i3/arc-theme/common/Makefile	/^am__make_running_with_option = \\$/;"	m
+am__make_running_with_option	.config/i3/arc-theme/extra/Makefile	/^am__make_running_with_option = \\$/;"	m
+am__post_remove_distdir	.config/i3/arc-theme/Makefile	/^am__post_remove_distdir = $(am__remove_distdir)$/;"	m
+am__recursive_targets	.config/i3/arc-theme/Makefile	/^am__recursive_targets = \\$/;"	m
+am__relativize	.config/i3/arc-theme/Makefile	/^am__relativize = \\$/;"	m
+am__remove_distdir	.config/i3/arc-theme/Makefile	/^am__remove_distdir = \\$/;"	m
+am__tagged_files	.config/i3/arc-theme/Makefile	/^am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)$/;"	m
+am__tagged_files	.config/i3/arc-theme/common/Makefile	/^am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)$/;"	m
+am__tagged_files	.config/i3/arc-theme/extra/Makefile	/^am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)$/;"	m
+am__tar	.config/i3/arc-theme/Makefile	/^am__tar = $${TAR-tar} chof - "$$tardir"$/;"	m
+am__tar	.config/i3/arc-theme/common/Makefile	/^am__tar = $${TAR-tar} chof - "$$tardir"$/;"	m
+am__tar	.config/i3/arc-theme/extra/Makefile	/^am__tar = $${TAR-tar} chof - "$$tardir"$/;"	m
+am__uniquify_input	.config/i3/arc-theme/Makefile	/^am__uniquify_input = $(AWK) '\\$/;"	m
+am__untar	.config/i3/arc-theme/Makefile	/^am__untar = $${TAR-tar} xf -$/;"	m
+am__untar	.config/i3/arc-theme/common/Makefile	/^am__untar = $${TAR-tar} xf -$/;"	m
+am__untar	.config/i3/arc-theme/extra/Makefile	/^am__untar = $${TAR-tar} xf -$/;"	m
+am__v_GEN_	.config/i3/arc-theme/Makefile	/^am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_GEN_	.config/i3/arc-theme/common/Makefile	/^am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_GEN_	.config/i3/arc-theme/extra/Makefile	/^am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_GEN_0	.config/i3/arc-theme/Makefile	/^am__v_GEN_0 = @echo "  GEN     " $@;$/;"	m
+am__v_GEN_0	.config/i3/arc-theme/common/Makefile	/^am__v_GEN_0 = @echo "  GEN     " $@;$/;"	m
+am__v_GEN_0	.config/i3/arc-theme/extra/Makefile	/^am__v_GEN_0 = @echo "  GEN     " $@;$/;"	m
+am__v_GEN_1	.config/i3/arc-theme/Makefile	/^am__v_GEN_1 = $/;"	m
+am__v_GEN_1	.config/i3/arc-theme/common/Makefile	/^am__v_GEN_1 = $/;"	m
+am__v_GEN_1	.config/i3/arc-theme/extra/Makefile	/^am__v_GEN_1 = $/;"	m
+am__v_P_	.config/i3/arc-theme/Makefile	/^am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_P_	.config/i3/arc-theme/common/Makefile	/^am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_P_	.config/i3/arc-theme/extra/Makefile	/^am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_P_0	.config/i3/arc-theme/Makefile	/^am__v_P_0 = false$/;"	m
+am__v_P_0	.config/i3/arc-theme/common/Makefile	/^am__v_P_0 = false$/;"	m
+am__v_P_0	.config/i3/arc-theme/extra/Makefile	/^am__v_P_0 = false$/;"	m
+am__v_P_1	.config/i3/arc-theme/Makefile	/^am__v_P_1 = :$/;"	m
+am__v_P_1	.config/i3/arc-theme/common/Makefile	/^am__v_P_1 = :$/;"	m
+am__v_P_1	.config/i3/arc-theme/extra/Makefile	/^am__v_P_1 = :$/;"	m
+am__v_at_	.config/i3/arc-theme/Makefile	/^am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_at_	.config/i3/arc-theme/common/Makefile	/^am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_at_	.config/i3/arc-theme/extra/Makefile	/^am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_at_0	.config/i3/arc-theme/Makefile	/^am__v_at_0 = @$/;"	m
+am__v_at_0	.config/i3/arc-theme/common/Makefile	/^am__v_at_0 = @$/;"	m
+am__v_at_0	.config/i3/arc-theme/extra/Makefile	/^am__v_at_0 = @$/;"	m
+am__v_at_1	.config/i3/arc-theme/Makefile	/^am__v_at_1 = $/;"	m
+am__v_at_1	.config/i3/arc-theme/common/Makefile	/^am__v_at_1 = $/;"	m
+am__v_at_1	.config/i3/arc-theme/extra/Makefile	/^am__v_at_1 = $/;"	m
+as_fn_append	.config/i3/arc-theme/config.status	/^  as_fn_append ()$/;"	f
+as_fn_append	.config/i3/arc-theme/configure	/^  as_fn_append ()$/;"	f
+as_fn_arith	.config/i3/arc-theme/config.status	/^  as_fn_arith ()$/;"	f
+as_fn_arith	.config/i3/arc-theme/configure	/^  as_fn_arith ()$/;"	f
+as_fn_error	.config/i3/arc-theme/config.status	/^as_fn_error ()$/;"	f
+as_fn_error	.config/i3/arc-theme/configure	/^as_fn_error ()$/;"	f
+as_fn_executable_p	.config/i3/arc-theme/config.status	/^as_fn_executable_p ()$/;"	f
+as_fn_executable_p	.config/i3/arc-theme/configure	/^as_fn_executable_p ()$/;"	f
+as_fn_exit	.config/i3/arc-theme/config.status	/^as_fn_exit ()$/;"	f
+as_fn_exit	.config/i3/arc-theme/configure	/^as_fn_exit ()$/;"	f
+as_fn_failure	.config/i3/arc-theme/configure	/^as_fn_failure () { as_fn_return 1; }$/;"	f
+as_fn_mkdir_p	.config/i3/arc-theme/config.status	/^as_fn_mkdir_p ()$/;"	f
+as_fn_mkdir_p	.config/i3/arc-theme/configure	/^as_fn_mkdir_p ()$/;"	f
+as_fn_ret_failure	.config/i3/arc-theme/configure	/^as_fn_ret_failure () { return 1; }$/;"	f
+as_fn_ret_success	.config/i3/arc-theme/configure	/^as_fn_ret_success () { return 0; }$/;"	f
+as_fn_set_status	.config/i3/arc-theme/config.status	/^as_fn_set_status ()$/;"	f
+as_fn_set_status	.config/i3/arc-theme/configure	/^as_fn_set_status ()$/;"	f
+as_fn_success	.config/i3/arc-theme/configure	/^as_fn_success () { as_fn_return 0; }$/;"	f
+as_fn_unset	.config/i3/arc-theme/config.status	/^as_fn_unset ()$/;"	f
+as_fn_unset	.config/i3/arc-theme/configure	/^as_fn_unset ()$/;"	f
+bindir	.config/i3/arc-theme/Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
+bindir	.config/i3/arc-theme/common/Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
+bindir	.config/i3/arc-theme/extra/Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
+build_alias	.config/i3/arc-theme/Makefile	/^build_alias = $/;"	m
+build_alias	.config/i3/arc-theme/common/Makefile	/^build_alias = $/;"	m
+build_alias	.config/i3/arc-theme/extra/Makefile	/^build_alias = $/;"	m
+build_prompt	bullet-train.zsh	/^build_prompt() {$/;"	f
+builddir	.config/i3/arc-theme/Makefile	/^builddir = .$/;"	m
+builddir	.config/i3/arc-theme/common/Makefile	/^builddir = .$/;"	m
+builddir	.config/i3/arc-theme/extra/Makefile	/^builddir = .$/;"	m
+check_command	.config/i3/arc-theme/arc-theme-upgrade	/^check_command() {$/;"	f
+check_directories	.config/i3/arc-theme/arc-theme-upgrade	/^check_directories() {$/;"	f
+check_root	.config/i3/arc-theme/arc-theme-upgrade	/^check_root() {$/;"	f
+clear	.tmux/tmux-url-select	/^sub clear {$/;"	s
+colorhook	.config/python/usercustomize.py	/^colorhook = ultratb.FormattedTB(mode='Plain',$/;"	v
+compilation_database_folder	.ycm_extra_conf.py	/^compilation_database_folder = ''$/;"	v
+context	bullet-train.zsh	/^context() {$/;"	f
+create_symlinks	setup.sh	/^function create_symlinks() {$/;"	f
+current_gemset	bullet-train.zsh	/^    current_gemset() {$/;"	f
+database	.ycm_extra_conf.py	/^  database = None$/;"	v
+database	.ycm_extra_conf.py	/^  database = ycm_core.CompilationDatabase( compilation_database_folder )$/;"	v
+datadir	.config/i3/arc-theme/Makefile	/^datadir = ${datarootdir}$/;"	m
+datadir	.config/i3/arc-theme/common/Makefile	/^datadir = ${datarootdir}$/;"	m
+datadir	.config/i3/arc-theme/extra/Makefile	/^datadir = ${datarootdir}$/;"	m
+datarootdir	.config/i3/arc-theme/Makefile	/^datarootdir = ${prefix}\/share$/;"	m
+datarootdir	.config/i3/arc-theme/common/Makefile	/^datarootdir = ${prefix}\/share$/;"	m
+datarootdir	.config/i3/arc-theme/extra/Makefile	/^datarootdir = ${prefix}\/share$/;"	m
+debughook	.config/python/usercustomize.py	/^def debughook(type, value, tb):$/;"	f
+display_highlighted_buffer	.tmux/tmux-url-select	/^sub display_highlighted_buffer {$/;"	s
+display_status_bar	.tmux/tmux-url-select	/^sub display_status_bar {$/;"	s
+display_stuff	.tmux/tmux-url-select	/^sub display_stuff {$/;"	s
+displaytime	bullet-train.zsh	/^function displaytime {$/;"	f
+distcleancheck_listfiles	.config/i3/arc-theme/Makefile	/^distcleancheck_listfiles = find . -type f -print$/;"	m
+distdir	.config/i3/arc-theme/Makefile	/^distdir = $(PACKAGE)-$(VERSION)$/;"	m
+distuninstallcheck_listfiles	.config/i3/arc-theme/Makefile	/^distuninstallcheck_listfiles = find . -type f -print$/;"	m
+docdir	.config/i3/arc-theme/Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
+docdir	.config/i3/arc-theme/common/Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
+docdir	.config/i3/arc-theme/extra/Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
+dvidir	.config/i3/arc-theme/Makefile	/^dvidir = ${docdir}$/;"	m
+dvidir	.config/i3/arc-theme/common/Makefile	/^dvidir = ${docdir}$/;"	m
+dvidir	.config/i3/arc-theme/extra/Makefile	/^dvidir = ${docdir}$/;"	m
+enable_canonical_mode	.tmux/tmux-url-select	/^sub enable_canonical_mode {$/;"	s
+exec_prefix	.config/i3/arc-theme/Makefile	/^exec_prefix = ${prefix}$/;"	m
+exec_prefix	.config/i3/arc-theme/common/Makefile	/^exec_prefix = ${prefix}$/;"	m
+exec_prefix	.config/i3/arc-theme/extra/Makefile	/^exec_prefix = ${prefix}$/;"	m
+fix_url	.tmux/tmux-url-select	/^sub fix_url {$/;"	s
+flags	.ycm_extra_conf.py	/^flags = [$/;"	v
+give_advice	.config/i3/arc-theme/build-aux/missing	/^give_advice ()$/;"	f
+gulp	.config/i3/arc-theme/gulpfile.js	/^var gulp        = require("gulp");$/;"	v
+host_alias	.config/i3/arc-theme/Makefile	/^host_alias = $/;"	m
+host_alias	.config/i3/arc-theme/common/Makefile	/^host_alias = $/;"	m
+host_alias	.config/i3/arc-theme/extra/Makefile	/^host_alias = $/;"	m
+htmldir	.config/i3/arc-theme/Makefile	/^htmldir = ${docdir}$/;"	m
+htmldir	.config/i3/arc-theme/common/Makefile	/^htmldir = ${docdir}$/;"	m
+htmldir	.config/i3/arc-theme/extra/Makefile	/^htmldir = ${docdir}$/;"	m
+includedir	.config/i3/arc-theme/Makefile	/^includedir = ${prefix}\/include$/;"	m
+includedir	.config/i3/arc-theme/common/Makefile	/^includedir = ${prefix}\/include$/;"	m
+includedir	.config/i3/arc-theme/extra/Makefile	/^includedir = ${prefix}\/include$/;"	m
+infodir	.config/i3/arc-theme/Makefile	/^infodir = ${datarootdir}\/info$/;"	m
+infodir	.config/i3/arc-theme/common/Makefile	/^infodir = ${datarootdir}\/info$/;"	m
+infodir	.config/i3/arc-theme/extra/Makefile	/^infodir = ${datarootdir}\/info$/;"	m
+install_sh	.config/i3/arc-theme/Makefile	/^install_sh = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/install-sh$/;"	m
+install_sh	.config/i3/arc-theme/common/Makefile	/^install_sh = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/install-sh$/;"	m
+install_sh	.config/i3/arc-theme/extra/Makefile	/^install_sh = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/install-sh$/;"	m
+install_sh_DATA	.config/i3/arc-theme/Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_DATA	.config/i3/arc-theme/common/Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_DATA	.config/i3/arc-theme/extra/Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_PROGRAM	.config/i3/arc-theme/Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_PROGRAM	.config/i3/arc-theme/common/Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_PROGRAM	.config/i3/arc-theme/extra/Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	.config/i3/arc-theme/Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	.config/i3/arc-theme/common/Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	.config/i3/arc-theme/extra/Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
+install_theme	.config/i3/arc-theme/arc-theme-upgrade	/^install_theme() {$/;"	f
+ithemedarkdir	.config/i3/arc-theme/common/Makefile	/^ithemedarkdir = $(DESTDIR)$(themedarkdir)$/;"	m
+ithemedarkerdir	.config/i3/arc-theme/common/Makefile	/^ithemedarkerdir = $(DESTDIR)$(themedarkerdir)$/;"	m
+ithemedir	.config/i3/arc-theme/common/Makefile	/^ithemedir = $(DESTDIR)$(themedir)$/;"	m
+launch_url	.tmux/tmux-url-select	/^sub launch_url {$/;"	s
+libdir	.config/i3/arc-theme/Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libdir	.config/i3/arc-theme/common/Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libdir	.config/i3/arc-theme/extra/Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libexecdir	.config/i3/arc-theme/Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
+libexecdir	.config/i3/arc-theme/common/Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
+libexecdir	.config/i3/arc-theme/extra/Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
+localedir	.config/i3/arc-theme/Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
+localedir	.config/i3/arc-theme/common/Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
+localedir	.config/i3/arc-theme/extra/Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
+localstatedir	.config/i3/arc-theme/Makefile	/^localstatedir = ${prefix}\/var$/;"	m
+localstatedir	.config/i3/arc-theme/common/Makefile	/^localstatedir = ${prefix}\/var$/;"	m
+localstatedir	.config/i3/arc-theme/extra/Makefile	/^localstatedir = ${prefix}\/var$/;"	m
+main	.tmux/tmux-url-select	/^sub main {$/;"	s
+main_inner	.tmux/tmux-url-select	/^sub main_inner {$/;"	s
+mandir	.config/i3/arc-theme/Makefile	/^mandir = ${datarootdir}\/man$/;"	m
+mandir	.config/i3/arc-theme/common/Makefile	/^mandir = ${datarootdir}\/man$/;"	m
+mandir	.config/i3/arc-theme/extra/Makefile	/^mandir = ${datarootdir}\/man$/;"	m
+mkdir_p	.config/i3/arc-theme/Makefile	/^mkdir_p = $(MKDIR_P)$/;"	m
+mkdir_p	.config/i3/arc-theme/common/Makefile	/^mkdir_p = $(MKDIR_P)$/;"	m
+mkdir_p	.config/i3/arc-theme/extra/Makefile	/^mkdir_p = $(MKDIR_P)$/;"	m
+mkinstalldirs	.config/i3/arc-theme/Makefile	/^mkinstalldirs = $(install_sh) -d$/;"	m
+mkinstalldirs	.config/i3/arc-theme/common/Makefile	/^mkinstalldirs = $(install_sh) -d$/;"	m
+mkinstalldirs	.config/i3/arc-theme/extra/Makefile	/^mkinstalldirs = $(install_sh) -d$/;"	m
+oldincludedir	.config/i3/arc-theme/Makefile	/^oldincludedir = \/usr\/include$/;"	m
+oldincludedir	.config/i3/arc-theme/common/Makefile	/^oldincludedir = \/usr\/include$/;"	m
+oldincludedir	.config/i3/arc-theme/extra/Makefile	/^oldincludedir = \/usr\/include$/;"	m
+pdfdir	.config/i3/arc-theme/Makefile	/^pdfdir = ${docdir}$/;"	m
+pdfdir	.config/i3/arc-theme/common/Makefile	/^pdfdir = ${docdir}$/;"	m
+pdfdir	.config/i3/arc-theme/extra/Makefile	/^pdfdir = ${docdir}$/;"	m
+pkgdatadir	.config/i3/arc-theme/Makefile	/^pkgdatadir = $(datadir)\/arc-theme$/;"	m
+pkgdatadir	.config/i3/arc-theme/common/Makefile	/^pkgdatadir = $(datadir)\/arc-theme$/;"	m
+pkgdatadir	.config/i3/arc-theme/extra/Makefile	/^pkgdatadir = $(datadir)\/arc-theme$/;"	m
+pkgincludedir	.config/i3/arc-theme/Makefile	/^pkgincludedir = $(includedir)\/arc-theme$/;"	m
+pkgincludedir	.config/i3/arc-theme/common/Makefile	/^pkgincludedir = $(includedir)\/arc-theme$/;"	m
+pkgincludedir	.config/i3/arc-theme/extra/Makefile	/^pkgincludedir = $(includedir)\/arc-theme$/;"	m
+pkglibdir	.config/i3/arc-theme/Makefile	/^pkglibdir = $(libdir)\/arc-theme$/;"	m
+pkglibdir	.config/i3/arc-theme/common/Makefile	/^pkglibdir = $(libdir)\/arc-theme$/;"	m
+pkglibdir	.config/i3/arc-theme/extra/Makefile	/^pkglibdir = $(libdir)\/arc-theme$/;"	m
+pkglibexecdir	.config/i3/arc-theme/Makefile	/^pkglibexecdir = $(libexecdir)\/arc-theme$/;"	m
+pkglibexecdir	.config/i3/arc-theme/common/Makefile	/^pkglibexecdir = $(libexecdir)\/arc-theme$/;"	m
+pkglibexecdir	.config/i3/arc-theme/extra/Makefile	/^pkglibexecdir = $(libexecdir)\/arc-theme$/;"	m
+prefix	.config/i3/arc-theme/Makefile	/^prefix = \/usr$/;"	m
+prefix	.config/i3/arc-theme/common/Makefile	/^prefix = \/usr$/;"	m
+prefix	.config/i3/arc-theme/extra/Makefile	/^prefix = \/usr$/;"	m
+program_details	.config/i3/arc-theme/build-aux/missing	/^program_details ()$/;"	f
+program_transform_name	.config/i3/arc-theme/Makefile	/^program_transform_name = s,x,x,$/;"	m
+program_transform_name	.config/i3/arc-theme/common/Makefile	/^program_transform_name = s,x,x,$/;"	m
+program_transform_name	.config/i3/arc-theme/extra/Makefile	/^program_transform_name = s,x,x,$/;"	m
+prompt_aws	bullet-train.zsh	/^prompt_aws() {$/;"	f
+prompt_chars	bullet-train.zsh	/^prompt_chars() {$/;"	f
+prompt_context	bullet-train.zsh	/^prompt_context() {$/;"	f
+prompt_custom	bullet-train.zsh	/^prompt_custom() {$/;"	f
+prompt_dir	bullet-train.zsh	/^prompt_dir() {$/;"	f
+prompt_elixir	bullet-train.zsh	/^prompt_elixir() {$/;"	f
+prompt_end	bullet-train.zsh	/^prompt_end() {$/;"	f
+prompt_git	bullet-train.zsh	/^prompt_git() {$/;"	f
+prompt_go	bullet-train.zsh	/^prompt_go() {$/;"	f
+prompt_hg	bullet-train.zsh	/^prompt_hg() {$/;"	f
+prompt_line_sep	bullet-train.zsh	/^prompt_line_sep() {$/;"	f
+prompt_nvm	bullet-train.zsh	/^prompt_nvm() {$/;"	f
+prompt_perl	bullet-train.zsh	/^prompt_perl() {$/;"	f
+prompt_ruby	bullet-train.zsh	/^prompt_ruby() {$/;"	f
+prompt_segment	bullet-train.zsh	/^prompt_segment() {$/;"	f
+prompt_status	bullet-train.zsh	/^prompt_status() {$/;"	f
+prompt_time	bullet-train.zsh	/^prompt_time() {$/;"	f
+prompt_virtualenv	bullet-train.zsh	/^prompt_virtualenv() {$/;"	f
+psdir	.config/i3/arc-theme/Makefile	/^psdir = ${docdir}$/;"	m
+psdir	.config/i3/arc-theme/common/Makefile	/^psdir = ${docdir}$/;"	m
+psdir	.config/i3/arc-theme/extra/Makefile	/^psdir = ${docdir}$/;"	m
+rename	.config/i3/arc-theme/gulpfile.js	/^var rename      = require('gulp-rename');$/;"	v
+runstatedir	.config/i3/arc-theme/Makefile	/^runstatedir = ${localstatedir}\/run$/;"	m
+runstatedir	.config/i3/arc-theme/common/Makefile	/^runstatedir = ${localstatedir}\/run$/;"	m
+runstatedir	.config/i3/arc-theme/extra/Makefile	/^runstatedir = ${localstatedir}\/run$/;"	m
+sass	.config/i3/arc-theme/gulpfile.js	/^var sass        = require("gulp-sass");$/;"	v
+sbindir	.config/i3/arc-theme/Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
+sbindir	.config/i3/arc-theme/common/Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
+sbindir	.config/i3/arc-theme/extra/Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
+sharedstatedir	.config/i3/arc-theme/Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
+sharedstatedir	.config/i3/arc-theme/common/Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
+sharedstatedir	.config/i3/arc-theme/extra/Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
+show_error	.config/i3/arc-theme/arc-theme-upgrade	/^show_error() {$/;"	f
+show_img_sync	.config/python/startup.py	/^    def show_img_sync(img):$/;"	f
+single_quote_escape	.tmux/tmux-url-select	/^sub single_quote_escape {$/;"	s
+srcdir	.config/i3/arc-theme/Makefile	/^srcdir = .$/;"	m
+srcdir	.config/i3/arc-theme/common/Makefile	/^srcdir = .$/;"	m
+srcdir	.config/i3/arc-theme/extra/Makefile	/^srcdir = .$/;"	m
+subdir	.config/i3/arc-theme/Makefile	/^subdir = .$/;"	m
+subdir	.config/i3/arc-theme/common/Makefile	/^subdir = common$/;"	m
+subdir	.config/i3/arc-theme/extra/Makefile	/^subdir = extra$/;"	m
+sysconfdir	.config/i3/arc-theme/Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
+sysconfdir	.config/i3/arc-theme/common/Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
+sysconfdir	.config/i3/arc-theme/extra/Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
+tardir	.config/i3/arc-theme/Makefile	/^	tardir=$(distdir) && $(am__tar) | BZIP2=$${BZIP2--9} bzip2 -c >$(distdir).tar.bz2$/;"	m
+tardir	.config/i3/arc-theme/Makefile	/^	tardir=$(distdir) && $(am__tar) | GZIP=$(GZIP_ENV) gzip -c >$(distdir).tar.gz$/;"	m
+tardir	.config/i3/arc-theme/Makefile	/^	tardir=$(distdir) && $(am__tar) | XZ_OPT=$${XZ_OPT--e} xz -c >$(distdir).tar.xz$/;"	m
+tardir	.config/i3/arc-theme/Makefile	/^	tardir=$(distdir) && $(am__tar) | compress -c >$(distdir).tar.Z$/;"	m
+tardir	.config/i3/arc-theme/Makefile	/^	tardir=$(distdir) && $(am__tar) | lzip -c $${LZIP_OPT--9} >$(distdir).tar.lz$/;"	m
+target_alias	.config/i3/arc-theme/Makefile	/^target_alias = $/;"	m
+target_alias	.config/i3/arc-theme/common/Makefile	/^target_alias = $/;"	m
+target_alias	.config/i3/arc-theme/extra/Makefile	/^target_alias = $/;"	m
+themedarkdir	.config/i3/arc-theme/common/Makefile	/^themedarkdir = $(datadir)\/themes\/Arc-Dark$/;"	m
+themedarkerdir	.config/i3/arc-theme/common/Makefile	/^themedarkerdir = $(datadir)\/themes\/Arc-Darker$/;"	m
+themedir	.config/i3/arc-theme/common/Makefile	/^themedir = $(datadir)\/themes\/Arc$/;"	m
+tmux_capture_pane	.tmux/tmux-url-select	/^sub tmux_capture_pane {$/;"	s
+tmux_display_message	.tmux/tmux-url-select	/^sub tmux_display_message {$/;"	s
+tmux_get_buffer	.tmux/tmux-url-select	/^sub tmux_get_buffer {$/;"	s
+tmux_open_inner_window	.tmux/tmux-url-select	/^sub tmux_open_inner_window {$/;"	s
+tmux_select_my_window	.tmux/tmux-url-select	/^sub tmux_select_my_window {$/;"	s
+tmux_switch_to_last	.tmux/tmux-url-select	/^sub tmux_switch_to_last {$/;"	s
+top_build_prefix	.config/i3/arc-theme/Makefile	/^top_build_prefix = $/;"	m
+top_build_prefix	.config/i3/arc-theme/common/Makefile	/^top_build_prefix = ..\/$/;"	m
+top_build_prefix	.config/i3/arc-theme/extra/Makefile	/^top_build_prefix = ..\/$/;"	m
+top_builddir	.config/i3/arc-theme/Makefile	/^top_builddir = .$/;"	m
+top_builddir	.config/i3/arc-theme/common/Makefile	/^top_builddir = ..$/;"	m
+top_builddir	.config/i3/arc-theme/extra/Makefile	/^top_builddir = ..$/;"	m
+top_distdir	.config/i3/arc-theme/Makefile	/^top_distdir = $(distdir)$/;"	m
+top_srcdir	.config/i3/arc-theme/Makefile	/^top_srcdir = .$/;"	m
+top_srcdir	.config/i3/arc-theme/common/Makefile	/^top_srcdir = ..$/;"	m
+top_srcdir	.config/i3/arc-theme/extra/Makefile	/^top_srcdir = ..$/;"	m
+transform	.config/i3/arc-theme/Makefile	/^transform = $(program_transform_name)$/;"	m
+transform	.config/i3/arc-theme/common/Makefile	/^transform = $(program_transform_name)$/;"	m
+transform	.config/i3/arc-theme/extra/Makefile	/^transform = $(program_transform_name)$/;"	m
+update_and_install	setup.sh	/^function update_and_install() {$/;"	f
+write_global_setting	config-gnome-terminal.sh	/^write_global_setting() {$/;"	f
+write_profile_setting	config-gnome-terminal.sh	/^write_profile_setting() {$/;"	f
+yank_url	.tmux/tmux-url-select	/^sub yank_url {$/;"	s

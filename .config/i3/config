@@ -36,11 +36,11 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "Steam"
 
 # Assign Windows:
-assign [class="discord"] $ws1
-#assign [class="URxvt"] $ws2
+#assign [class="URxvt"] $ws1
+assign [class="discord"] $ws2
 assign [class="google-chrome-stable"] $ws3
 assign [class="Thunar"] $ws4
 assign [class="vlc"] $ws5
@@ -81,23 +81,28 @@ bindsym Print exec gnome-screenshot -i
 exec --no-startup-id feh --bg-scale ~/.config/i3/images/wallpaper.jpg
 
 # Remap Caps Lock as Escape
-exec --no-startup-id setxkbmap -layout us -option caps:escape
-exec --no-startup-id setxkbmap -layout se -option caps:escape
+#exec --no-startup-id setxkbmap -layout us -option caps:escape
+#exec --no-startup-id setxkbmap -layout se -option caps:escape
+exec_always --no-startup-id xmodmap -e "clear lock"
+exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
 # Change keyboard layout
 exec --no-startup-id setxkbmap -layout 'us,se' -option 'grp:alt_shift_toggle'
 
 # Keyboard repeat delay
-exec --no-startup-id xset r rate 150 70
+exec --no-startup-id xset r rate 150 80
+exec --no-startup-id xset m 0 0
+
+# Disable sleep
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s noblank
 
 # Keybase
 exec --no-startup-id run_keybase
 
 # Turn off bell
 exec xset b off
-
-# Turn off mouse acc
-exec --no-startup-id xset m 0 0
 
 # turn on mouse following
 focus_follows_mouse no
@@ -267,7 +272,7 @@ set $darkblue	#0A1833
 
 bar {
     status_command i3status --config ~/.config/i3/i3status.conf
-	font pango:Terminus 12
+	font pango:Terminus 10
     tray_output primary
 	position bottom
 	workspace_buttons yes
@@ -301,4 +306,4 @@ bindsym $mod+Shift+i exec --no-startup-id urxvt -e scrot
 exec thunar --daemon
 exec --no-startup-id pulseaudio
 exec --no-startup-id gnome-settings-daemon
-
+exec compton
