@@ -41,6 +41,7 @@ alias ve="vim ~/.emacs"
 alias vz="vim ~/.zshrc"
 alias va="vim ~/workspace/dotfiles/.aliases"
 alias vf="vim ~/workspace/dotfiles/.functions"
+alias vi3="vim ~/.config/i3/config"
 
 # System Info
 alias ff="find . -type f -iname"

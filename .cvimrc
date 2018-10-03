@@ -48,7 +48,7 @@ site '*://www.youtube.com/*' {
 	map <C-v> toggleVisualMode
 }
 
-let configpath = '/home/gosi/.cvimrc'
+let configpath = '~/.cvimrc'
 set localconfig
 
 " gy copy URL from link to clipboard
