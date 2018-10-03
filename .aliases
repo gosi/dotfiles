@@ -60,6 +60,7 @@ alias l="ls -lh"
 alias l.="ls -A | egrep '^\.'"
 alias du="du -h"
 alias df="df -h"
+alias lsb="lsblk -fpo +size"
 
 # Package Managers
 alias apt="sudo apt-get"

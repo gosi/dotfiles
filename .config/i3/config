@@ -72,7 +72,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+F12 mode "$mode_system"
+bindsym $mod+q mode "$mode_system"
 
 # Screenshot
 bindsym Print exec gnome-screenshot -i
