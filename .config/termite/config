@@ -1,0 +1,29 @@
+[options]
+#font = Terminus 12
+#font = DejaVu Sans Mono 12
+font = Monospace 12
+
+mouse_autohide = true
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+visible_bell = true
+clickable_url = true
+hyperlinks = true
+browser = xdg-open
+cursor_shape = block
+
+
+[colors]
+background = rgba(10, 0, 10, 0.90)
+cursor = #113FFF
+#cursor = #be5160
+color1 = #ff2200
+color7 = #eeeeee
+color15 = #eeeeee
+color4 = #2277dd
+color12 = #2277dd
+
+[hints]
+roundness = 3
+padding = 2
