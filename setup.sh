@@ -21,6 +21,7 @@ automake
 make
 rxvt-unicode
 libgtk-3-dev
+scrot
 ranger
 build-essential
 exuberant-ctags
