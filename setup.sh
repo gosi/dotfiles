@@ -15,6 +15,7 @@ i3lock
 compton
 confy
 feh
+fonts-font-awesome
 mpv
 vlc
 automake
@@ -23,11 +24,13 @@ rxvt-unicode
 libgtk-3-dev
 scrot
 ranger
+nemo
 build-essential
 exuberant-ctags
 g++
 python3
 python-pip
+python3-udiskie
 google-chrome-stable
 okular
 gedit
