@@ -42,7 +42,7 @@ alias vz="vim ~/.zshrc"
 alias va="vim ~/workspace/dotfiles/.aliases"
 alias vf="vim ~/workspace/dotfiles/.functions"
 alias vi3="vim ~/.config/i3/config"
-alias vtt="vim ~/.config/termite/config"
+alias vt="vim ~/.config/termite/config"
 
 # System Info
 alias ff="find . -type f -iname"
