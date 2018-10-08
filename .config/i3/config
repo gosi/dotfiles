@@ -103,7 +103,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+q mode "$mode_system"
+bindsym $mod+Shift+q mode "$mode_system"
 
 # Screenshot
 bindsym Print exec gnome-screenshot -i
@@ -149,7 +149,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+c kill
 
 # start rofi (a program launcher)
 #bindsym $mod+d exec rofi -show run
@@ -164,7 +164,7 @@ bindsym $mod+d exec j4-dmenu-desktop
 exec --no-startup-id nm-applet
 
 # jump to urgent window
-bindsym $mod+g [urgent=latest] focus
+bindsym $mod+q [urgent=latest] focus
 
 # change focus
 bindsym $mod+h focus left
@@ -236,7 +236,7 @@ for_window [title="Onboard"] border normal
 for_window [class="Osdlyrics"] floating enable
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+#bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
