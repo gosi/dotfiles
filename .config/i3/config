@@ -27,7 +27,7 @@ font pango:monospace 11
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Startups:
-exec --no-startup-id redshift
+#exec --no-startup-id redshift
 exec --no-startup-id pulseaudio
 exec --no-startup-id gnome-settings-daemon
 #exec $HOME/.bin/scripts/lock.sh
@@ -94,7 +94,7 @@ set $mode_system SYSTEM: [l]LOCK | [e]LOGOUT | [h]HIBERNATE | [r]REBOOT | [p]POW
 mode "$mode_system" {
     bindsym l exec --no-startup-id $HOME/.bin/scripts/lock.sh, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym h exec --no-startup-id systemctl hibernate mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym p exec --no-startup-id systemctl poweroff -i, mode "default"
 
@@ -149,7 +149,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+Shift+c kill
+bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
 #bindsym $mod+d exec rofi -show run
@@ -158,13 +158,13 @@ bindsym $mod+Shift+c kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec i3-dmenu-desktop
+bindsym $mod+d exec j4-dmenu-desktop
 
 # Network managment
 exec --no-startup-id nm-applet
 
 # jump to urgent window
-bindsym $mod+Shift+q [urgent=latest] focus
+bindsym $mod+g [urgent=latest] focus
 
 # change focus
 bindsym $mod+h focus left
@@ -236,7 +236,7 @@ for_window [title="Onboard"] border normal
 for_window [class="Osdlyrics"] floating enable
 
 # reload the configuration file
-bindsym $mod+Shift+p reload
+bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)

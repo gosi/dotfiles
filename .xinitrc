@@ -13,8 +13,8 @@ xrdb ~/.Xresources
 xmodmap ~/.Xmodmap
 xbindkeys
 xset -b
-xset m 0 0 &
-xset r rate 150 70 & 
+xset m 0 0
+xset r rate 190 100
 # keyboard layout customization
 setxkbmap -layout us -option caps:escape
 setxkbmap -layout se -option caps:escape
@@ -34,5 +34,5 @@ udiskie &
 >> /dev/null which blueman-applet && blueman-applet &
 
 # wm
-i3-regenerate
-exec i3
+exec dwm
+#exec i3

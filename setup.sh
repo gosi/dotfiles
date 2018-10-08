@@ -25,6 +25,7 @@ libgtk-3-dev
 scrot
 ranger
 nemo
+j4-dmenu-desktop
 build-essential
 exuberant-ctags
 g++
@@ -44,10 +45,12 @@ wget
 BACKUP_DIR=$HOME/dotfiles_old
 DOTFILES_DIR=$HOME/workspace/dotfiles
 FILES=".config .vimrc .bashrc .zshrc .tmux.conf .emacs .ideavimrc .xsession .xinitrc .Xmodmap .Xresources
-.nvidia-settings-rc .htoprc .gtkrc-2.0 .gtkrc-2.0-mine .conkyrc .cvimrc .compton.conf .urxvt .tmux"
-CFG_FILES="i3 gtk-2.0 gtk-3.0 htop python redshift"
+.nvidia-settings-rc .htoprc .gtkrc-2.0 .gtkrc-2.0-mine .conkyrc .cvimrc .compton.conf .urxvt .tmux
+.xprofile"
+CFG_FILES="i3 dwm gtk-2.0 gtk-3.0 htop python redshift"
 
 function update_and_install() {
+
 echo "Updating packages..."
 sudo apt-get update
 
@@ -79,9 +82,11 @@ sudo update-alternatives --config x-terminal-emulator
 # change shell to zsh (requires a restart to take effect)
 which zsh
 chsh -s `which zsh`
+
 }
 
 function create_symlinks() {
+
 # create dotfiles_old in $HOME
 echo -n "Creating $BACKUP_DIR for backup of any existing dotfiles in $HOME... "
 mkdir -p $BACKUP_DIR
@@ -107,6 +112,7 @@ for file in $CFG_FILES; do
     echo "Creating symlink to $file in $HOME/.config directory..."
     ln -sf $DOTFILES_DIR/.config/$file ~/.config/$file
 done
+
 }
 
 while true; do
