@@ -37,6 +37,7 @@ okular
 gedit
 gnome-tweak-tool
 virtualbox
+unclutter
 redshift
 curl
 wget

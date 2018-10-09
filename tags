@@ -40,13 +40,13 @@ AUTOMAKE	.config/i3/arc-theme/extra/Makefile	/^AUTOMAKE = ${SHELL} \/home\/gosi\
 AWK	.config/i3/arc-theme/Makefile	/^AWK = gawk$/;"	m
 AWK	.config/i3/arc-theme/common/Makefile	/^AWK = gawk$/;"	m
 AWK	.config/i3/arc-theme/extra/Makefile	/^AWK = gawk$/;"	m
-Arg	dwm/dwm.c	/^} Arg;$/;"	t	typeref:union:__anon6	file:
-BETWEEN	dwm/util.h	5;"	d
-BUTTONMASK	dwm/dwm.c	48;"	d	file:
-Button	dwm/dwm.c	/^} Button;$/;"	t	typeref:struct:__anon7	file:
-CC	dwm/config.mk	/^CC = cc$/;"	m
-CFLAGS	dwm/config.mk	/^CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os ${INCS} ${CPPFLAGS}$/;"	m
-CLEANMASK	dwm/dwm.c	49;"	d	file:
+Arg	.config/dwm/dwm.c	/^} Arg;$/;"	t	typeref:union:__anon6	file:
+BETWEEN	.config/dwm/util.h	5;"	d
+BUTTONMASK	.config/dwm/dwm.c	48;"	d	file:
+Button	.config/dwm/dwm.c	/^} Button;$/;"	t	typeref:struct:__anon7	file:
+CC	.config/dwm/config.mk	/^CC = cc$/;"	m
+CFLAGS	.config/dwm/config.mk	/^CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os ${INCS} ${CPPFLAGS}$/;"	m
+CLEANMASK	.config/dwm/dwm.c	49;"	d	file:
 COMMAND	.tmux/tmux-url-select	/^use constant COMMAND => 'chromium %s';$/;"	c
 CONFIG_CLEAN_FILES	.config/i3/arc-theme/Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
 CONFIG_CLEAN_FILES	.config/i3/arc-theme/common/Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
@@ -54,30 +54,30 @@ CONFIG_CLEAN_FILES	.config/i3/arc-theme/extra/Makefile	/^CONFIG_CLEAN_FILES =$/;
 CONFIG_CLEAN_VPATH_FILES	.config/i3/arc-theme/Makefile	/^CONFIG_CLEAN_VPATH_FILES =$/;"	m
 CONFIG_CLEAN_VPATH_FILES	.config/i3/arc-theme/common/Makefile	/^CONFIG_CLEAN_VPATH_FILES =$/;"	m
 CONFIG_CLEAN_VPATH_FILES	.config/i3/arc-theme/extra/Makefile	/^CONFIG_CLEAN_VPATH_FILES =$/;"	m
-CPPFLAGS	dwm/config.mk	/^CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION=\\"${VERSION}\\" ${XINERAMAFLAGS}$/;"	m
+CPPFLAGS	.config/dwm/config.mk	/^CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION=\\"${VERSION}\\" ${XINERAMAFLAGS}$/;"	m
 CSCOPE	.config/i3/arc-theme/Makefile	/^CSCOPE = cscope$/;"	m
 CTAGS	.config/i3/arc-theme/Makefile	/^CTAGS = ctags$/;"	m
 CYGPATH_W	.config/i3/arc-theme/Makefile	/^CYGPATH_W = echo$/;"	m
 CYGPATH_W	.config/i3/arc-theme/common/Makefile	/^CYGPATH_W = echo$/;"	m
 CYGPATH_W	.config/i3/arc-theme/extra/Makefile	/^CYGPATH_W = echo$/;"	m
-Client	dwm/dwm.c	/^struct Client {$/;"	s	file:
-Client	dwm/dwm.c	/^typedef struct Client Client;$/;"	t	typeref:struct:Client	file:
-ClkClientWin	dwm/dwm.c	/^       ClkClientWin, ClkRootWin, ClkLast }; \/* clicks *\/$/;"	e	enum:__anon5	file:
-ClkLast	dwm/dwm.c	/^       ClkClientWin, ClkRootWin, ClkLast }; \/* clicks *\/$/;"	e	enum:__anon5	file:
-ClkLtSymbol	dwm/dwm.c	/^enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,$/;"	e	enum:__anon5	file:
-ClkRootWin	dwm/dwm.c	/^       ClkClientWin, ClkRootWin, ClkLast }; \/* clicks *\/$/;"	e	enum:__anon5	file:
-ClkStatusText	dwm/dwm.c	/^enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,$/;"	e	enum:__anon5	file:
-ClkTagBar	dwm/dwm.c	/^enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,$/;"	e	enum:__anon5	file:
-ClkWinTitle	dwm/dwm.c	/^enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,$/;"	e	enum:__anon5	file:
-Clr	dwm/drw.h	/^typedef XftColor Clr;$/;"	t
-ColBg	dwm/drw.h	/^enum { ColFg, ColBg, ColBorder }; \/* Clr scheme index *\/$/;"	e	enum:__anon12
-ColBorder	dwm/drw.h	/^enum { ColFg, ColBg, ColBorder }; \/* Clr scheme index *\/$/;"	e	enum:__anon12
-ColFg	dwm/drw.h	/^enum { ColFg, ColBg, ColBorder }; \/* Clr scheme index *\/$/;"	e	enum:__anon12
-Cur	dwm/drw.h	/^} Cur;$/;"	t	typeref:struct:__anon11
-CurLast	dwm/dwm.c	/^enum { CurNormal, CurResize, CurMove, CurLast }; \/* cursor *\/$/;"	e	enum:__anon1	file:
-CurMove	dwm/dwm.c	/^enum { CurNormal, CurResize, CurMove, CurLast }; \/* cursor *\/$/;"	e	enum:__anon1	file:
-CurNormal	dwm/dwm.c	/^enum { CurNormal, CurResize, CurMove, CurLast }; \/* cursor *\/$/;"	e	enum:__anon1	file:
-CurResize	dwm/dwm.c	/^enum { CurNormal, CurResize, CurMove, CurLast }; \/* cursor *\/$/;"	e	enum:__anon1	file:
+Client	.config/dwm/dwm.c	/^struct Client {$/;"	s	file:
+Client	.config/dwm/dwm.c	/^typedef struct Client Client;$/;"	t	typeref:struct:Client	file:
+ClkClientWin	.config/dwm/dwm.c	/^       ClkClientWin, ClkRootWin, ClkLast }; \/* clicks *\/$/;"	e	enum:__anon5	file:
+ClkLast	.config/dwm/dwm.c	/^       ClkClientWin, ClkRootWin, ClkLast }; \/* clicks *\/$/;"	e	enum:__anon5	file:
+ClkLtSymbol	.config/dwm/dwm.c	/^enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,$/;"	e	enum:__anon5	file:
+ClkRootWin	.config/dwm/dwm.c	/^       ClkClientWin, ClkRootWin, ClkLast }; \/* clicks *\/$/;"	e	enum:__anon5	file:
+ClkStatusText	.config/dwm/dwm.c	/^enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,$/;"	e	enum:__anon5	file:
+ClkTagBar	.config/dwm/dwm.c	/^enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,$/;"	e	enum:__anon5	file:
+ClkWinTitle	.config/dwm/dwm.c	/^enum { ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle,$/;"	e	enum:__anon5	file:
+Clr	.config/dwm/drw.h	/^typedef XftColor Clr;$/;"	t
+ColBg	.config/dwm/drw.h	/^enum { ColFg, ColBg, ColBorder }; \/* Clr scheme index *\/$/;"	e	enum:__anon12
+ColBorder	.config/dwm/drw.h	/^enum { ColFg, ColBg, ColBorder }; \/* Clr scheme index *\/$/;"	e	enum:__anon12
+ColFg	.config/dwm/drw.h	/^enum { ColFg, ColBg, ColBorder }; \/* Clr scheme index *\/$/;"	e	enum:__anon12
+Cur	.config/dwm/drw.h	/^} Cur;$/;"	t	typeref:struct:__anon11
+CurLast	.config/dwm/dwm.c	/^enum { CurNormal, CurResize, CurMove, CurLast }; \/* cursor *\/$/;"	e	enum:__anon1	file:
+CurMove	.config/dwm/dwm.c	/^enum { CurNormal, CurResize, CurMove, CurLast }; \/* cursor *\/$/;"	e	enum:__anon1	file:
+CurNormal	.config/dwm/dwm.c	/^enum { CurNormal, CurResize, CurMove, CurLast }; \/* cursor *\/$/;"	e	enum:__anon1	file:
+CurResize	.config/dwm/dwm.c	/^enum { CurNormal, CurResize, CurMove, CurLast }; \/* cursor *\/$/;"	e	enum:__anon1	file:
 DEFS	.config/i3/arc-theme/Makefile	/^DEFS = -DPACKAGE_NAME=\\"arc-theme\\" -DPACKAGE_TARNAME=\\"arc-theme\\" -DPACKAGE_VERSION=\\"20161119\\" -DPACKAGE_STRING=\\"arc-theme\\ 20161119\\" -DPACKAGE_BUGREPORT=\\"https:\/\/github.com\/horst3180\/Arc-theme\/issues\\" -DPACKAGE_URL=\\"https:\/\/github.com\/horst3180\/Arc-theme\\" -DPACKAGE=\\"arc-theme\\" -DVERSION=\\"20161119\\"$/;"	m
 DEFS	.config/i3/arc-theme/common/Makefile	/^DEFS = -DPACKAGE_NAME=\\"arc-theme\\" -DPACKAGE_TARNAME=\\"arc-theme\\" -DPACKAGE_VERSION=\\"20161119\\" -DPACKAGE_STRING=\\"arc-theme\\ 20161119\\" -DPACKAGE_BUGREPORT=\\"https:\/\/github.com\/horst3180\/Arc-theme\/issues\\" -DPACKAGE_URL=\\"https:\/\/github.com\/horst3180\/Arc-theme\\" -DPACKAGE=\\"arc-theme\\" -DVERSION=\\"20161119\\"$/;"	m
 DEFS	.config/i3/arc-theme/extra/Makefile	/^DEFS = -DPACKAGE_NAME=\\"arc-theme\\" -DPACKAGE_TARNAME=\\"arc-theme\\" -DPACKAGE_VERSION=\\"20161119\\" -DPACKAGE_STRING=\\"arc-theme\\ 20161119\\" -DPACKAGE_BUGREPORT=\\"https:\/\/github.com\/horst3180\/Arc-theme\/issues\\" -DPACKAGE_URL=\\"https:\/\/github.com\/horst3180\/Arc-theme\\" -DPACKAGE=\\"arc-theme\\" -DVERSION=\\"20161119\\"$/;"	m
@@ -94,7 +94,7 @@ DIST_SOURCES	.config/i3/arc-theme/extra/Makefile	/^DIST_SOURCES =$/;"	m
 DIST_SUBDIRS	.config/i3/arc-theme/Makefile	/^DIST_SUBDIRS = $(SUBDIRS)$/;"	m
 DIST_TARGETS	.config/i3/arc-theme/Makefile	/^DIST_TARGETS = dist-xz$/;"	m
 DirectoryOfThisScript	.ycm_extra_conf.py	/^def DirectoryOfThisScript():$/;"	f
-Drw	dwm/drw.h	/^} Drw;$/;"	t	typeref:struct:__anon13
+Drw	.config/dwm/drw.h	/^} Drw;$/;"	t	typeref:struct:__anon13
 ECHO_C	.config/i3/arc-theme/Makefile	/^ECHO_C = $/;"	m
 ECHO_C	.config/i3/arc-theme/common/Makefile	/^ECHO_C = $/;"	m
 ECHO_C	.config/i3/arc-theme/extra/Makefile	/^ECHO_C = $/;"	m
@@ -141,19 +141,19 @@ ETAGS	.config/i3/arc-theme/Makefile	/^ETAGS = etags$/;"	m
 EXTRA_DIST	.config/i3/arc-theme/Makefile	/^EXTRA_DIST = \\$/;"	m
 EXTRA_DIST	.config/i3/arc-theme/common/Makefile	/^EXTRA_DIST = $(srcdir)\/cinnamon \\$/;"	m
 EXTRA_DIST	.config/i3/arc-theme/extra/Makefile	/^EXTRA_DIST = $(srcdir)\/Chrome \\$/;"	m
-FREETYPEINC	dwm/config.mk	/^FREETYPEINC = \/usr\/include\/freetype2$/;"	m
-FREETYPELIBS	dwm/config.mk	/^FREETYPELIBS = -lfontconfig -lXft$/;"	m
+FREETYPEINC	.config/dwm/config.mk	/^FREETYPEINC = \/usr\/include\/freetype2$/;"	m
+FREETYPELIBS	.config/dwm/config.mk	/^FREETYPELIBS = -lfontconfig -lXft$/;"	m
 FlagsForFile	.ycm_extra_conf.py	/^def FlagsForFile( filename, **kwargs ):$/;"	f
-Fnt	dwm/drw.h	/^typedef struct Fnt {$/;"	s
-Fnt	dwm/drw.h	/^} Fnt;$/;"	t	typeref:struct:Fnt
+Fnt	.config/dwm/drw.h	/^typedef struct Fnt {$/;"	s
+Fnt	.config/dwm/drw.h	/^} Fnt;$/;"	t	typeref:struct:Fnt
 GNOME_VERSION	.config/i3/arc-theme/Makefile	/^GNOME_VERSION = 3.18$/;"	m
 GNOME_VERSION	.config/i3/arc-theme/common/Makefile	/^GNOME_VERSION = 3.18$/;"	m
 GNOME_VERSION	.config/i3/arc-theme/extra/Makefile	/^GNOME_VERSION = 3.18$/;"	m
 GZIP_ENV	.config/i3/arc-theme/Makefile	/^GZIP_ENV = --best$/;"	m
 GetCompilationInfoForFile	.ycm_extra_conf.py	/^def GetCompilationInfoForFile( filename ):$/;"	f
-HEIGHT	dwm/dwm.c	56;"	d	file:
+HEIGHT	.config/dwm/dwm.c	56;"	d	file:
 HIDE_WINDOW	.tmux/tmux-url-select	/^use constant HIDE_WINDOW => 1;$/;"	c
-INCS	dwm/config.mk	/^INCS = -I${X11INC} -I${FREETYPEINC}$/;"	m
+INCS	.config/dwm/config.mk	/^INCS = -I${X11INC} -I${FREETYPEINC}$/;"	m
 INSTALL	.config/i3/arc-theme/Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
 INSTALL	.config/i3/arc-theme/common/Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
 INSTALL	.config/i3/arc-theme/extra/Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
@@ -172,38 +172,38 @@ INSTALL_SCRIPT	.config/i3/arc-theme/extra/Makefile	/^INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM	.config/i3/arc-theme/Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
 INSTALL_STRIP_PROGRAM	.config/i3/arc-theme/common/Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
 INSTALL_STRIP_PROGRAM	.config/i3/arc-theme/extra/Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
-INTERSECT	dwm/dwm.c	50;"	d	file:
-ISVISIBLE	dwm/dwm.c	52;"	d	file:
+INTERSECT	.config/dwm/dwm.c	50;"	d	file:
+ISVISIBLE	.config/dwm/dwm.c	52;"	d	file:
 IsHeaderFile	.ycm_extra_conf.py	/^def IsHeaderFile( filename ):$/;"	f
-Key	dwm/dwm.c	/^} Key;$/;"	t	typeref:struct:__anon8	file:
-LDFLAGS	dwm/config.mk	/^LDFLAGS  = ${LIBS}$/;"	m
-LENGTH	dwm/dwm.c	53;"	d	file:
+Key	.config/dwm/dwm.c	/^} Key;$/;"	t	typeref:struct:__anon8	file:
+LDFLAGS	.config/dwm/config.mk	/^LDFLAGS  = ${LIBS}$/;"	m
+LENGTH	.config/dwm/dwm.c	53;"	d	file:
 LIBOBJS	.config/i3/arc-theme/Makefile	/^LIBOBJS = $/;"	m
 LIBOBJS	.config/i3/arc-theme/common/Makefile	/^LIBOBJS = $/;"	m
 LIBOBJS	.config/i3/arc-theme/extra/Makefile	/^LIBOBJS = $/;"	m
+LIBS	.config/dwm/config.mk	/^LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}$/;"	m
 LIBS	.config/i3/arc-theme/Makefile	/^LIBS = $/;"	m
 LIBS	.config/i3/arc-theme/common/Makefile	/^LIBS = $/;"	m
 LIBS	.config/i3/arc-theme/extra/Makefile	/^LIBS = $/;"	m
-LIBS	dwm/config.mk	/^LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}$/;"	m
 LTLIBOBJS	.config/i3/arc-theme/Makefile	/^LTLIBOBJS = $/;"	m
 LTLIBOBJS	.config/i3/arc-theme/common/Makefile	/^LTLIBOBJS = $/;"	m
 LTLIBOBJS	.config/i3/arc-theme/extra/Makefile	/^LTLIBOBJS = $/;"	m
-Layout	dwm/dwm.c	/^} Layout;$/;"	t	typeref:struct:__anon9	file:
+Layout	.config/dwm/dwm.c	/^} Layout;$/;"	t	typeref:struct:__anon9	file:
 MAKEINFO	.config/i3/arc-theme/Makefile	/^MAKEINFO = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing makeinfo$/;"	m
 MAKEINFO	.config/i3/arc-theme/common/Makefile	/^MAKEINFO = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing makeinfo$/;"	m
 MAKEINFO	.config/i3/arc-theme/extra/Makefile	/^MAKEINFO = ${SHELL} \/home\/gosi\/.config\/i3\/arc-theme\/build-aux\/missing makeinfo$/;"	m
-MANPREFIX	dwm/config.mk	/^MANPREFIX = ${PREFIX}\/share\/man$/;"	m
-MAX	dwm/util.h	3;"	d
-MIN	dwm/util.h	4;"	d
+MANPREFIX	.config/dwm/config.mk	/^MANPREFIX = ${PREFIX}\/share\/man$/;"	m
+MAX	.config/dwm/util.h	3;"	d
+MIN	.config/dwm/util.h	4;"	d
 MKDIR_P	.config/i3/arc-theme/Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
 MKDIR_P	.config/i3/arc-theme/common/Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
 MKDIR_P	.config/i3/arc-theme/extra/Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
-MODKEY	dwm/config.def.h	47;"	d
-MODKEY	dwm/config.h	47;"	d
-MOUSEMASK	dwm/dwm.c	54;"	d	file:
+MODKEY	.config/dwm/config.def.h	47;"	d
+MODKEY	.config/dwm/config.h	47;"	d
+MOUSEMASK	.config/dwm/dwm.c	54;"	d	file:
 MakeRelativePathsInFlagsAbsolute	.ycm_extra_conf.py	/^def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):$/;"	f
-Monitor	dwm/dwm.c	/^struct Monitor {$/;"	s	file:
-Monitor	dwm/dwm.c	/^typedef struct Monitor Monitor;$/;"	t	typeref:struct:Monitor	file:
+Monitor	.config/dwm/dwm.c	/^struct Monitor {$/;"	s	file:
+Monitor	.config/dwm/dwm.c	/^typedef struct Monitor Monitor;$/;"	t	typeref:struct:Monitor	file:
 NORMAL_INSTALL	.config/i3/arc-theme/Makefile	/^NORMAL_INSTALL = :$/;"	m
 NORMAL_INSTALL	.config/i3/arc-theme/common/Makefile	/^NORMAL_INSTALL = :$/;"	m
 NORMAL_INSTALL	.config/i3/arc-theme/extra/Makefile	/^NORMAL_INSTALL = :$/;"	m
@@ -211,18 +211,18 @@ NORMAL_LINK_HIGHLIGHT	.tmux/tmux-url-select	/^use constant NORMAL_LINK_HIGHLIGHT
 NORMAL_UNINSTALL	.config/i3/arc-theme/Makefile	/^NORMAL_UNINSTALL = :$/;"	m
 NORMAL_UNINSTALL	.config/i3/arc-theme/common/Makefile	/^NORMAL_UNINSTALL = :$/;"	m
 NORMAL_UNINSTALL	.config/i3/arc-theme/extra/Makefile	/^NORMAL_UNINSTALL = :$/;"	m
-NetActiveWindow	dwm/dwm.c	/^       NetWMFullscreen, NetActiveWindow, NetWMWindowType,$/;"	e	enum:__anon3	file:
-NetClientList	dwm/dwm.c	/^       NetWMWindowTypeDialog, NetClientList, NetLast }; \/* EWMH atoms *\/$/;"	e	enum:__anon3	file:
-NetLast	dwm/dwm.c	/^       NetWMWindowTypeDialog, NetClientList, NetLast }; \/* EWMH atoms *\/$/;"	e	enum:__anon3	file:
-NetSupported	dwm/dwm.c	/^enum { NetSupported, NetWMName, NetWMState, NetWMCheck,$/;"	e	enum:__anon3	file:
-NetWMCheck	dwm/dwm.c	/^enum { NetSupported, NetWMName, NetWMState, NetWMCheck,$/;"	e	enum:__anon3	file:
-NetWMFullscreen	dwm/dwm.c	/^       NetWMFullscreen, NetActiveWindow, NetWMWindowType,$/;"	e	enum:__anon3	file:
-NetWMName	dwm/dwm.c	/^enum { NetSupported, NetWMName, NetWMState, NetWMCheck,$/;"	e	enum:__anon3	file:
-NetWMState	dwm/dwm.c	/^enum { NetSupported, NetWMName, NetWMState, NetWMCheck,$/;"	e	enum:__anon3	file:
-NetWMWindowType	dwm/dwm.c	/^       NetWMFullscreen, NetActiveWindow, NetWMWindowType,$/;"	e	enum:__anon3	file:
-NetWMWindowTypeDialog	dwm/dwm.c	/^       NetWMWindowTypeDialog, NetClientList, NetLast }; \/* EWMH atoms *\/$/;"	e	enum:__anon3	file:
-NumTags	dwm/dwm.c	/^struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };$/;"	s	file:
-OBJ	dwm/Makefile	/^OBJ = ${SRC:.c=.o}$/;"	m
+NetActiveWindow	.config/dwm/dwm.c	/^       NetWMFullscreen, NetActiveWindow, NetWMWindowType,$/;"	e	enum:__anon3	file:
+NetClientList	.config/dwm/dwm.c	/^       NetWMWindowTypeDialog, NetClientList, NetLast }; \/* EWMH atoms *\/$/;"	e	enum:__anon3	file:
+NetLast	.config/dwm/dwm.c	/^       NetWMWindowTypeDialog, NetClientList, NetLast }; \/* EWMH atoms *\/$/;"	e	enum:__anon3	file:
+NetSupported	.config/dwm/dwm.c	/^enum { NetSupported, NetWMName, NetWMState, NetWMCheck,$/;"	e	enum:__anon3	file:
+NetWMCheck	.config/dwm/dwm.c	/^enum { NetSupported, NetWMName, NetWMState, NetWMCheck,$/;"	e	enum:__anon3	file:
+NetWMFullscreen	.config/dwm/dwm.c	/^       NetWMFullscreen, NetActiveWindow, NetWMWindowType,$/;"	e	enum:__anon3	file:
+NetWMName	.config/dwm/dwm.c	/^enum { NetSupported, NetWMName, NetWMState, NetWMCheck,$/;"	e	enum:__anon3	file:
+NetWMState	.config/dwm/dwm.c	/^enum { NetSupported, NetWMName, NetWMState, NetWMCheck,$/;"	e	enum:__anon3	file:
+NetWMWindowType	.config/dwm/dwm.c	/^       NetWMFullscreen, NetActiveWindow, NetWMWindowType,$/;"	e	enum:__anon3	file:
+NetWMWindowTypeDialog	.config/dwm/dwm.c	/^       NetWMWindowTypeDialog, NetClientList, NetLast }; \/* EWMH atoms *\/$/;"	e	enum:__anon3	file:
+NumTags	.config/dwm/dwm.c	/^struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };$/;"	s	file:
+OBJ	.config/dwm/Makefile	/^OBJ = ${SRC:.c=.o}$/;"	m
 PACKAGE	.config/i3/arc-theme/Makefile	/^PACKAGE = arc-theme$/;"	m
 PACKAGE	.config/i3/arc-theme/common/Makefile	/^PACKAGE = arc-theme$/;"	m
 PACKAGE	.config/i3/arc-theme/extra/Makefile	/^PACKAGE = arc-theme$/;"	m
@@ -262,7 +262,7 @@ POST_INSTALL	.config/i3/arc-theme/extra/Makefile	/^POST_INSTALL = :$/;"	m
 POST_UNINSTALL	.config/i3/arc-theme/Makefile	/^POST_UNINSTALL = :$/;"	m
 POST_UNINSTALL	.config/i3/arc-theme/common/Makefile	/^POST_UNINSTALL = :$/;"	m
 POST_UNINSTALL	.config/i3/arc-theme/extra/Makefile	/^POST_UNINSTALL = :$/;"	m
-PREFIX	dwm/config.mk	/^PREFIX = \/usr\/local$/;"	m
+PREFIX	.config/dwm/config.mk	/^PREFIX = \/usr\/local$/;"	m
 PRE_INSTALL	.config/i3/arc-theme/Makefile	/^PRE_INSTALL = :$/;"	m
 PRE_INSTALL	.config/i3/arc-theme/common/Makefile	/^PRE_INSTALL = :$/;"	m
 PRE_INSTALL	.config/i3/arc-theme/extra/Makefile	/^PRE_INSTALL = :$/;"	m
@@ -272,12 +272,12 @@ PRE_UNINSTALL	.config/i3/arc-theme/extra/Makefile	/^PRE_UNINSTALL = :$/;"	m
 PROMPT_COLOR	.tmux/tmux-url-select	/^use constant PROMPT_COLOR => "\\033[42;30m";$/;"	c
 RECURSIVE_CLEAN_TARGETS	.config/i3/arc-theme/Makefile	/^RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\\$/;"	m
 RECURSIVE_TARGETS	.config/i3/arc-theme/Makefile	/^RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \\$/;"	m
-Rule	dwm/dwm.c	/^} Rule;$/;"	t	typeref:struct:__anon10	file:
+Rule	.config/dwm/dwm.c	/^} Rule;$/;"	t	typeref:struct:__anon10	file:
 SET_MAKE	.config/i3/arc-theme/Makefile	/^SET_MAKE = $/;"	m
 SET_MAKE	.config/i3/arc-theme/common/Makefile	/^SET_MAKE = $/;"	m
 SET_MAKE	.config/i3/arc-theme/extra/Makefile	/^SET_MAKE = $/;"	m
-SHCMD	dwm/config.def.h	55;"	d
-SHCMD	dwm/config.h	55;"	d
+SHCMD	.config/dwm/config.def.h	55;"	d
+SHCMD	.config/dwm/config.h	55;"	d
 SHELL	.config/i3/arc-theme/Makefile	/^SHELL = \/bin\/bash$/;"	m
 SHELL	.config/i3/arc-theme/common/Makefile	/^SHELL = \/bin\/bash$/;"	m
 SHELL	.config/i3/arc-theme/extra/Makefile	/^SHELL = \/bin\/bash$/;"	m
@@ -286,36 +286,36 @@ SOURCES	.config/i3/arc-theme/Makefile	/^SOURCES =$/;"	m
 SOURCES	.config/i3/arc-theme/common/Makefile	/^SOURCES =$/;"	m
 SOURCES	.config/i3/arc-theme/extra/Makefile	/^SOURCES =$/;"	m
 SOURCE_EXTENSIONS	.ycm_extra_conf.py	/^SOURCE_EXTENSIONS = [ '.cpp', '.cxx', '.cc', '.c', '.m', '.mm' ]$/;"	v
-SRC	dwm/Makefile	/^SRC = drw.c dwm.c util.c$/;"	m
+SRC	.config/dwm/Makefile	/^SRC = drw.c dwm.c util.c$/;"	m
 STRIP	.config/i3/arc-theme/Makefile	/^STRIP = $/;"	m
 STRIP	.config/i3/arc-theme/common/Makefile	/^STRIP = $/;"	m
 STRIP	.config/i3/arc-theme/extra/Makefile	/^STRIP = $/;"	m
 SUBDIRS	.config/i3/arc-theme/Makefile	/^SUBDIRS = common extra$/;"	m
-SchemeNorm	dwm/dwm.c	/^enum { SchemeNorm, SchemeSel }; \/* color schemes *\/$/;"	e	enum:__anon2	file:
-SchemeSel	dwm/dwm.c	/^enum { SchemeNorm, SchemeSel }; \/* color schemes *\/$/;"	e	enum:__anon2	file:
-TAGKEYS	dwm/config.def.h	48;"	d
-TAGKEYS	dwm/config.h	48;"	d
-TAGMASK	dwm/dwm.c	57;"	d	file:
-TEXTW	dwm/dwm.c	58;"	d	file:
+SchemeNorm	.config/dwm/dwm.c	/^enum { SchemeNorm, SchemeSel }; \/* color schemes *\/$/;"	e	enum:__anon2	file:
+SchemeSel	.config/dwm/dwm.c	/^enum { SchemeNorm, SchemeSel }; \/* color schemes *\/$/;"	e	enum:__anon2	file:
+TAGKEYS	.config/dwm/config.def.h	48;"	d
+TAGKEYS	.config/dwm/config.h	48;"	d
+TAGMASK	.config/dwm/dwm.c	57;"	d	file:
+TEXTW	.config/dwm/dwm.c	58;"	d	file:
 TMUX_WINDOW_ID	.tmux/tmux-url-select	/^use constant TMUX_WINDOW_ID => 9999;$/;"	c
 TMUX_WINDOW_TITLE	.tmux/tmux-url-select	/^use constant TMUX_WINDOW_TITLE => 'Select URL';$/;"	c
-UTF_INVALID	dwm/drw.c	11;"	d	file:
-UTF_SIZ	dwm/drw.c	12;"	d	file:
+UTF_INVALID	.config/dwm/drw.c	11;"	d	file:
+UTF_SIZ	.config/dwm/drw.c	12;"	d	file:
 VERBOSE_MESSAGES	.tmux/tmux-url-select	/^use constant VERBOSE_MESSAGES => 0;$/;"	c
+VERSION	.config/dwm/config.mk	/^VERSION = 6.1$/;"	m
 VERSION	.config/i3/arc-theme/Makefile	/^VERSION = 20161119$/;"	m
 VERSION	.config/i3/arc-theme/common/Makefile	/^VERSION = 20161119$/;"	m
 VERSION	.config/i3/arc-theme/extra/Makefile	/^VERSION = 20161119$/;"	m
-VERSION	dwm/config.mk	/^VERSION = 6.1$/;"	m
-WIDTH	dwm/dwm.c	55;"	d	file:
-WMDelete	dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	e	enum:__anon4	file:
-WMLast	dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	e	enum:__anon4	file:
-WMProtocols	dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	e	enum:__anon4	file:
-WMState	dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	e	enum:__anon4	file:
-WMTakeFocus	dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	e	enum:__anon4	file:
-X11INC	dwm/config.mk	/^X11INC = \/usr\/X11R6\/include$/;"	m
-X11LIB	dwm/config.mk	/^X11LIB = \/usr\/X11R6\/lib$/;"	m
-XINERAMAFLAGS	dwm/config.mk	/^XINERAMAFLAGS = -DXINERAMA$/;"	m
-XINERAMALIBS	dwm/config.mk	/^XINERAMALIBS  = -lXinerama$/;"	m
+WIDTH	.config/dwm/dwm.c	55;"	d	file:
+WMDelete	.config/dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	e	enum:__anon4	file:
+WMLast	.config/dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	e	enum:__anon4	file:
+WMProtocols	.config/dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	e	enum:__anon4	file:
+WMState	.config/dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	e	enum:__anon4	file:
+WMTakeFocus	.config/dwm/dwm.c	/^enum { WMProtocols, WMDelete, WMState, WMTakeFocus, WMLast }; \/* default atoms *\/$/;"	e	enum:__anon4	file:
+X11INC	.config/dwm/config.mk	/^X11INC = \/usr\/X11R6\/include$/;"	m
+X11LIB	.config/dwm/config.mk	/^X11LIB = \/usr\/X11R6\/lib$/;"	m
+XINERAMAFLAGS	.config/dwm/config.mk	/^XINERAMAFLAGS = -DXINERAMA$/;"	m
+XINERAMALIBS	.config/dwm/config.mk	/^XINERAMALIBS  = -lXinerama$/;"	m
 YANK_COMMAND	.tmux/tmux-url-select	/^use constant YANK_COMMAND => 'echo %s | xclip -i';$/;"	c
 abs_builddir	.config/i3/arc-theme/Makefile	/^abs_builddir = \/home\/gosi\/.config\/i3\/arc-theme$/;"	m
 abs_builddir	.config/i3/arc-theme/common/Makefile	/^abs_builddir = \/home\/gosi\/.config\/i3\/arc-theme\/common$/;"	m
@@ -403,13 +403,13 @@ am__v_at_0	.config/i3/arc-theme/extra/Makefile	/^am__v_at_0 = @$/;"	m
 am__v_at_1	.config/i3/arc-theme/Makefile	/^am__v_at_1 = $/;"	m
 am__v_at_1	.config/i3/arc-theme/common/Makefile	/^am__v_at_1 = $/;"	m
 am__v_at_1	.config/i3/arc-theme/extra/Makefile	/^am__v_at_1 = $/;"	m
-applyrules	dwm/dwm.c	/^applyrules(Client *c)$/;"	f
-applysizehints	dwm/dwm.c	/^applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact)$/;"	f
-arg	dwm/dwm.c	/^	const Arg arg;$/;"	m	struct:__anon7	file:
-arg	dwm/dwm.c	/^	const Arg arg;$/;"	m	struct:__anon8	file:
-arrange	dwm/dwm.c	/^	void (*arrange)(Monitor *);$/;"	m	struct:__anon9	file:
-arrange	dwm/dwm.c	/^arrange(Monitor *m)$/;"	f
-arrangemon	dwm/dwm.c	/^arrangemon(Monitor *m)$/;"	f
+applyrules	.config/dwm/dwm.c	/^applyrules(Client *c)$/;"	f
+applysizehints	.config/dwm/dwm.c	/^applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact)$/;"	f
+arg	.config/dwm/dwm.c	/^	const Arg arg;$/;"	m	struct:__anon7	file:
+arg	.config/dwm/dwm.c	/^	const Arg arg;$/;"	m	struct:__anon8	file:
+arrange	.config/dwm/dwm.c	/^	void (*arrange)(Monitor *);$/;"	m	struct:__anon9	file:
+arrange	.config/dwm/dwm.c	/^arrange(Monitor *m)$/;"	f
+arrangemon	.config/dwm/dwm.c	/^arrangemon(Monitor *m)$/;"	f
 as_fn_append	.config/i3/arc-theme/config.status	/^  as_fn_append ()$/;"	f
 as_fn_append	.config/i3/arc-theme/configure	/^  as_fn_append ()$/;"	f
 as_fn_arith	.config/i3/arc-theme/config.status	/^  as_fn_arith ()$/;"	f
@@ -430,19 +430,19 @@ as_fn_set_status	.config/i3/arc-theme/configure	/^as_fn_set_status ()$/;"	f
 as_fn_success	.config/i3/arc-theme/configure	/^as_fn_success () { as_fn_return 0; }$/;"	f
 as_fn_unset	.config/i3/arc-theme/config.status	/^as_fn_unset ()$/;"	f
 as_fn_unset	.config/i3/arc-theme/configure	/^as_fn_unset ()$/;"	f
-attach	dwm/dwm.c	/^attach(Client *c)$/;"	f
-attachstack	dwm/dwm.c	/^attachstack(Client *c)$/;"	f
-barwin	dwm/dwm.c	/^	Window barwin;$/;"	m	struct:Monitor	file:
-baseh	dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
-basew	dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
-bh	dwm/dwm.c	/^static int bh, blw = 0;      \/* bar geometry *\/$/;"	v	file:
+attach	.config/dwm/dwm.c	/^attach(Client *c)$/;"	f
+attachstack	.config/dwm/dwm.c	/^attachstack(Client *c)$/;"	f
+barwin	.config/dwm/dwm.c	/^	Window barwin;$/;"	m	struct:Monitor	file:
+baseh	.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
+basew	.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
+bh	.config/dwm/dwm.c	/^static int bh, blw = 0;      \/* bar geometry *\/$/;"	v	file:
 bindir	.config/i3/arc-theme/Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
 bindir	.config/i3/arc-theme/common/Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
 bindir	.config/i3/arc-theme/extra/Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
-blw	dwm/dwm.c	/^static int bh, blw = 0;      \/* bar geometry *\/$/;"	v	file:
-borderpx	dwm/config.def.h	/^static const unsigned int borderpx  = 1;        \/* border pixel of windows *\/$/;"	v
-borderpx	dwm/config.h	/^static const unsigned int borderpx  = 2;        \/* border pixel of windows *\/$/;"	v
-broken	dwm/dwm.c	/^static const char broken[] = "broken";$/;"	v	file:
+blw	.config/dwm/dwm.c	/^static int bh, blw = 0;      \/* bar geometry *\/$/;"	v	file:
+borderpx	.config/dwm/config.def.h	/^static const unsigned int borderpx  = 1;        \/* border pixel of windows *\/$/;"	v
+borderpx	.config/dwm/config.h	/^static const unsigned int borderpx  = 2;        \/* border pixel of windows *\/$/;"	v
+broken	.config/dwm/dwm.c	/^static const char broken[] = "broken";$/;"	v	file:
 build_alias	.config/i3/arc-theme/Makefile	/^build_alias = $/;"	m
 build_alias	.config/i3/arc-theme/common/Makefile	/^build_alias = $/;"	m
 build_alias	.config/i3/arc-theme/extra/Makefile	/^build_alias = $/;"	m
@@ -450,46 +450,46 @@ build_prompt	bullet-train.zsh	/^build_prompt() {$/;"	f
 builddir	.config/i3/arc-theme/Makefile	/^builddir = .$/;"	m
 builddir	.config/i3/arc-theme/common/Makefile	/^builddir = .$/;"	m
 builddir	.config/i3/arc-theme/extra/Makefile	/^builddir = .$/;"	m
-button	dwm/dwm.c	/^	unsigned int button;$/;"	m	struct:__anon7	file:
-buttonpress	dwm/dwm.c	/^buttonpress(XEvent *e)$/;"	f
-buttons	dwm/config.def.h	/^static Button buttons[] = {$/;"	v
-buttons	dwm/config.h	/^static Button buttons[] = {$/;"	v
-bw	dwm/dwm.c	/^	int bw, oldbw;$/;"	m	struct:Client	file:
-by	dwm/dwm.c	/^	int by;               \/* bar geometry *\/$/;"	m	struct:Monitor	file:
+button	.config/dwm/dwm.c	/^	unsigned int button;$/;"	m	struct:__anon7	file:
+buttonpress	.config/dwm/dwm.c	/^buttonpress(XEvent *e)$/;"	f
+buttons	.config/dwm/config.def.h	/^static Button buttons[] = {$/;"	v
+buttons	.config/dwm/config.h	/^static Button buttons[] = {$/;"	v
+bw	.config/dwm/dwm.c	/^	int bw, oldbw;$/;"	m	struct:Client	file:
+by	.config/dwm/dwm.c	/^	int by;               \/* bar geometry *\/$/;"	m	struct:Monitor	file:
 check_command	.config/i3/arc-theme/arc-theme-upgrade	/^check_command() {$/;"	f
 check_directories	.config/i3/arc-theme/arc-theme-upgrade	/^check_directories() {$/;"	f
 check_root	.config/i3/arc-theme/arc-theme-upgrade	/^check_root() {$/;"	f
-checkotherwm	dwm/dwm.c	/^checkotherwm(void)$/;"	f
-class	dwm/dwm.c	/^	const char *class;$/;"	m	struct:__anon10	file:
-cleanup	dwm/dwm.c	/^cleanup(void)$/;"	f
-cleanupmon	dwm/dwm.c	/^cleanupmon(Monitor *mon)$/;"	f
+checkotherwm	.config/dwm/dwm.c	/^checkotherwm(void)$/;"	f
+class	.config/dwm/dwm.c	/^	const char *class;$/;"	m	struct:__anon10	file:
+cleanup	.config/dwm/dwm.c	/^cleanup(void)$/;"	f
+cleanupmon	.config/dwm/dwm.c	/^cleanupmon(Monitor *mon)$/;"	f
 clear	.tmux/tmux-url-select	/^sub clear {$/;"	s
-click	dwm/dwm.c	/^	unsigned int click;$/;"	m	struct:__anon7	file:
-clientmessage	dwm/dwm.c	/^clientmessage(XEvent *e)$/;"	f
-clients	dwm/dwm.c	/^	Client *clients;$/;"	m	struct:Monitor	file:
-col_cyan	dwm/config.def.h	/^static const char col_cyan[]        = "#005577";$/;"	v
-col_cyan	dwm/config.h	/^static const char col_cyan[]        = "#005577";$/;"	v
-col_gray1	dwm/config.def.h	/^static const char col_gray1[]       = "#222222";$/;"	v
-col_gray1	dwm/config.h	/^static const char col_gray1[]       = "#222222";$/;"	v
-col_gray2	dwm/config.def.h	/^static const char col_gray2[]       = "#444444";$/;"	v
-col_gray2	dwm/config.h	/^static const char col_gray2[]       = "#444444";$/;"	v
-col_gray3	dwm/config.def.h	/^static const char col_gray3[]       = "#bbbbbb";$/;"	v
-col_gray3	dwm/config.h	/^static const char col_gray3[]       = "#bbbbbb";$/;"	v
-col_gray4	dwm/config.def.h	/^static const char col_gray4[]       = "#eeeeee";$/;"	v
-col_gray4	dwm/config.h	/^static const char col_gray4[]       = "#eeeeee";$/;"	v
+click	.config/dwm/dwm.c	/^	unsigned int click;$/;"	m	struct:__anon7	file:
+clientmessage	.config/dwm/dwm.c	/^clientmessage(XEvent *e)$/;"	f
+clients	.config/dwm/dwm.c	/^	Client *clients;$/;"	m	struct:Monitor	file:
+col_cyan	.config/dwm/config.def.h	/^static const char col_cyan[]        = "#005577";$/;"	v
+col_cyan	.config/dwm/config.h	/^static const char col_cyan[]        = "#005577";$/;"	v
+col_gray1	.config/dwm/config.def.h	/^static const char col_gray1[]       = "#222222";$/;"	v
+col_gray1	.config/dwm/config.h	/^static const char col_gray1[]       = "#222222";$/;"	v
+col_gray2	.config/dwm/config.def.h	/^static const char col_gray2[]       = "#444444";$/;"	v
+col_gray2	.config/dwm/config.h	/^static const char col_gray2[]       = "#444444";$/;"	v
+col_gray3	.config/dwm/config.def.h	/^static const char col_gray3[]       = "#bbbbbb";$/;"	v
+col_gray3	.config/dwm/config.h	/^static const char col_gray3[]       = "#bbbbbb";$/;"	v
+col_gray4	.config/dwm/config.def.h	/^static const char col_gray4[]       = "#eeeeee";$/;"	v
+col_gray4	.config/dwm/config.h	/^static const char col_gray4[]       = "#eeeeee";$/;"	v
 colorhook	.config/python/usercustomize.py	/^colorhook = ultratb.FormattedTB(mode='Plain',$/;"	v
-colors	dwm/config.def.h	/^static const char *colors[][3]      = {$/;"	v
-colors	dwm/config.h	/^static const char *colors[][3]      = {$/;"	v
+colors	.config/dwm/config.def.h	/^static const char *colors[][3]      = {$/;"	v
+colors	.config/dwm/config.h	/^static const char *colors[][3]      = {$/;"	v
 compilation_database_folder	.ycm_extra_conf.py	/^compilation_database_folder = ''$/;"	v
-configure	dwm/dwm.c	/^configure(Client *c)$/;"	f
-configurenotify	dwm/dwm.c	/^configurenotify(XEvent *e)$/;"	f
-configurerequest	dwm/dwm.c	/^configurerequest(XEvent *e)$/;"	f
+configure	.config/dwm/dwm.c	/^configure(Client *c)$/;"	f
+configurenotify	.config/dwm/dwm.c	/^configurenotify(XEvent *e)$/;"	f
+configurerequest	.config/dwm/dwm.c	/^configurerequest(XEvent *e)$/;"	f
 context	bullet-train.zsh	/^context() {$/;"	f
 create_symlinks	setup.sh	/^function create_symlinks() {$/;"	f
-createmon	dwm/dwm.c	/^createmon(void)$/;"	f
+createmon	.config/dwm/dwm.c	/^createmon(void)$/;"	f
 current_gemset	bullet-train.zsh	/^    current_gemset() {$/;"	f
-cursor	dwm/drw.h	/^	Cursor cursor;$/;"	m	struct:__anon11
-cursor	dwm/dwm.c	/^static Cur *cursor[CurLast];$/;"	v	file:
+cursor	.config/dwm/drw.h	/^	Cursor cursor;$/;"	m	struct:__anon11
+cursor	.config/dwm/dwm.c	/^static Cur *cursor[CurLast];$/;"	v	file:
 database	.ycm_extra_conf.py	/^  database = None$/;"	v
 database	.ycm_extra_conf.py	/^  database = ycm_core.CompilationDatabase( compilation_database_folder )$/;"	v
 datadir	.config/i3/arc-theme/Makefile	/^datadir = ${datarootdir}$/;"	m
@@ -499,11 +499,11 @@ datarootdir	.config/i3/arc-theme/Makefile	/^datarootdir = ${prefix}\/share$/;"	m
 datarootdir	.config/i3/arc-theme/common/Makefile	/^datarootdir = ${prefix}\/share$/;"	m
 datarootdir	.config/i3/arc-theme/extra/Makefile	/^datarootdir = ${prefix}\/share$/;"	m
 debughook	.config/python/usercustomize.py	/^def debughook(type, value, tb):$/;"	f
-destroynotify	dwm/dwm.c	/^destroynotify(XEvent *e)$/;"	f
-detach	dwm/dwm.c	/^detach(Client *c)$/;"	f
-detachstack	dwm/dwm.c	/^detachstack(Client *c)$/;"	f
-die	dwm/util.c	/^die(const char *fmt, ...) {$/;"	f
-dirtomon	dwm/dwm.c	/^dirtomon(int dir)$/;"	f
+destroynotify	.config/dwm/dwm.c	/^destroynotify(XEvent *e)$/;"	f
+detach	.config/dwm/dwm.c	/^detach(Client *c)$/;"	f
+detachstack	.config/dwm/dwm.c	/^detachstack(Client *c)$/;"	f
+die	.config/dwm/util.c	/^die(const char *fmt, ...) {$/;"	f
+dirtomon	.config/dwm/dwm.c	/^dirtomon(int dir)$/;"	f
 display_highlighted_buffer	.tmux/tmux-url-select	/^sub display_highlighted_buffer {$/;"	s
 display_status_bar	.tmux/tmux-url-select	/^sub display_status_bar {$/;"	s
 display_stuff	.tmux/tmux-url-select	/^sub display_stuff {$/;"	s
@@ -511,86 +511,86 @@ displaytime	bullet-train.zsh	/^function displaytime {$/;"	f
 distcleancheck_listfiles	.config/i3/arc-theme/Makefile	/^distcleancheck_listfiles = find . -type f -print$/;"	m
 distdir	.config/i3/arc-theme/Makefile	/^distdir = $(PACKAGE)-$(VERSION)$/;"	m
 distuninstallcheck_listfiles	.config/i3/arc-theme/Makefile	/^distuninstallcheck_listfiles = find . -type f -print$/;"	m
-dmenucmd	dwm/config.def.h	/^static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };$/;"	v
-dmenucmd	dwm/config.h	/^static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };$/;"	v
-dmenufont	dwm/config.def.h	/^static const char dmenufont[]       = "monospace:size=10";$/;"	v
-dmenufont	dwm/config.h	/^static const char dmenufont[]       = "monospace:size=11";$/;"	v
-dmenumon	dwm/config.def.h	/^static char dmenumon[2] = "0"; \/* component of dmenucmd, manipulated in spawn() *\/$/;"	v
-dmenumon	dwm/config.h	/^static char dmenumon[2] = "0"; \/* component of dmenucmd, manipulated in spawn() *\/$/;"	v
+dmenucmd	.config/dwm/config.def.h	/^static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };$/;"	v
+dmenucmd	.config/dwm/config.h	/^static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };$/;"	v
+dmenufont	.config/dwm/config.def.h	/^static const char dmenufont[]       = "monospace:size=10";$/;"	v
+dmenufont	.config/dwm/config.h	/^static const char dmenufont[]       = "monospace:size=11";$/;"	v
+dmenumon	.config/dwm/config.def.h	/^static char dmenumon[2] = "0"; \/* component of dmenucmd, manipulated in spawn() *\/$/;"	v
+dmenumon	.config/dwm/config.h	/^static char dmenumon[2] = "0"; \/* component of dmenucmd, manipulated in spawn() *\/$/;"	v
 docdir	.config/i3/arc-theme/Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
 docdir	.config/i3/arc-theme/common/Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
 docdir	.config/i3/arc-theme/extra/Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
-dpy	dwm/drw.h	/^	Display *dpy;$/;"	m	struct:Fnt
-dpy	dwm/drw.h	/^	Display *dpy;$/;"	m	struct:__anon13
-dpy	dwm/dwm.c	/^static Display *dpy;$/;"	v	file:
-drawable	dwm/drw.h	/^	Drawable drawable;$/;"	m	struct:__anon13
-drawbar	dwm/dwm.c	/^drawbar(Monitor *m)$/;"	f
-drawbars	dwm/dwm.c	/^drawbars(void)$/;"	f
-drw	dwm/dwm.c	/^static Drw *drw;$/;"	v	file:
-drw_clr_create	dwm/drw.c	/^drw_clr_create(Drw *drw, Clr *dest, const char *clrname)$/;"	f
-drw_create	dwm/drw.c	/^drw_create(Display *dpy, int screen, Window root, unsigned int w, unsigned int h)$/;"	f
-drw_cur_create	dwm/drw.c	/^drw_cur_create(Drw *drw, int shape)$/;"	f
-drw_cur_free	dwm/drw.c	/^drw_cur_free(Drw *drw, Cur *cursor)$/;"	f
-drw_font_getexts	dwm/drw.c	/^drw_font_getexts(Fnt *font, const char *text, unsigned int len, unsigned int *w, unsigned int *h)$/;"	f
-drw_fontset_create	dwm/drw.c	/^drw_fontset_create(Drw* drw, const char *fonts[], size_t fontcount)$/;"	f
-drw_fontset_free	dwm/drw.c	/^drw_fontset_free(Fnt *font)$/;"	f
-drw_fontset_getwidth	dwm/drw.c	/^drw_fontset_getwidth(Drw *drw, const char *text)$/;"	f
-drw_free	dwm/drw.c	/^drw_free(Drw *drw)$/;"	f
-drw_map	dwm/drw.c	/^drw_map(Drw *drw, Window win, int x, int y, unsigned int w, unsigned int h)$/;"	f
-drw_rect	dwm/drw.c	/^drw_rect(Drw *drw, int x, int y, unsigned int w, unsigned int h, int filled, int invert)$/;"	f
-drw_resize	dwm/drw.c	/^drw_resize(Drw *drw, unsigned int w, unsigned int h)$/;"	f
-drw_scm_create	dwm/drw.c	/^drw_scm_create(Drw *drw, const char *clrnames[], size_t clrcount)$/;"	f
-drw_setfontset	dwm/drw.c	/^drw_setfontset(Drw *drw, Fnt *set)$/;"	f
-drw_setscheme	dwm/drw.c	/^drw_setscheme(Drw *drw, Clr *scm)$/;"	f
-drw_text	dwm/drw.c	/^drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lpad, const char *text, int invert)$/;"	f
+dpy	.config/dwm/drw.h	/^	Display *dpy;$/;"	m	struct:Fnt
+dpy	.config/dwm/drw.h	/^	Display *dpy;$/;"	m	struct:__anon13
+dpy	.config/dwm/dwm.c	/^static Display *dpy;$/;"	v	file:
+drawable	.config/dwm/drw.h	/^	Drawable drawable;$/;"	m	struct:__anon13
+drawbar	.config/dwm/dwm.c	/^drawbar(Monitor *m)$/;"	f
+drawbars	.config/dwm/dwm.c	/^drawbars(void)$/;"	f
+drw	.config/dwm/dwm.c	/^static Drw *drw;$/;"	v	file:
+drw_clr_create	.config/dwm/drw.c	/^drw_clr_create(Drw *drw, Clr *dest, const char *clrname)$/;"	f
+drw_create	.config/dwm/drw.c	/^drw_create(Display *dpy, int screen, Window root, unsigned int w, unsigned int h)$/;"	f
+drw_cur_create	.config/dwm/drw.c	/^drw_cur_create(Drw *drw, int shape)$/;"	f
+drw_cur_free	.config/dwm/drw.c	/^drw_cur_free(Drw *drw, Cur *cursor)$/;"	f
+drw_font_getexts	.config/dwm/drw.c	/^drw_font_getexts(Fnt *font, const char *text, unsigned int len, unsigned int *w, unsigned int *h)$/;"	f
+drw_fontset_create	.config/dwm/drw.c	/^drw_fontset_create(Drw* drw, const char *fonts[], size_t fontcount)$/;"	f
+drw_fontset_free	.config/dwm/drw.c	/^drw_fontset_free(Fnt *font)$/;"	f
+drw_fontset_getwidth	.config/dwm/drw.c	/^drw_fontset_getwidth(Drw *drw, const char *text)$/;"	f
+drw_free	.config/dwm/drw.c	/^drw_free(Drw *drw)$/;"	f
+drw_map	.config/dwm/drw.c	/^drw_map(Drw *drw, Window win, int x, int y, unsigned int w, unsigned int h)$/;"	f
+drw_rect	.config/dwm/drw.c	/^drw_rect(Drw *drw, int x, int y, unsigned int w, unsigned int h, int filled, int invert)$/;"	f
+drw_resize	.config/dwm/drw.c	/^drw_resize(Drw *drw, unsigned int w, unsigned int h)$/;"	f
+drw_scm_create	.config/dwm/drw.c	/^drw_scm_create(Drw *drw, const char *clrnames[], size_t clrcount)$/;"	f
+drw_setfontset	.config/dwm/drw.c	/^drw_setfontset(Drw *drw, Fnt *set)$/;"	f
+drw_setscheme	.config/dwm/drw.c	/^drw_setscheme(Drw *drw, Clr *scm)$/;"	f
+drw_text	.config/dwm/drw.c	/^drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lpad, const char *text, int invert)$/;"	f
 dvidir	.config/i3/arc-theme/Makefile	/^dvidir = ${docdir}$/;"	m
 dvidir	.config/i3/arc-theme/common/Makefile	/^dvidir = ${docdir}$/;"	m
 dvidir	.config/i3/arc-theme/extra/Makefile	/^dvidir = ${docdir}$/;"	m
-ecalloc	dwm/util.c	/^ecalloc(size_t nmemb, size_t size)$/;"	f
+ecalloc	.config/dwm/util.c	/^ecalloc(size_t nmemb, size_t size)$/;"	f
 enable_canonical_mode	.tmux/tmux-url-select	/^sub enable_canonical_mode {$/;"	s
-enternotify	dwm/dwm.c	/^enternotify(XEvent *e)$/;"	f
+enternotify	.config/dwm/dwm.c	/^enternotify(XEvent *e)$/;"	f
 exec_prefix	.config/i3/arc-theme/Makefile	/^exec_prefix = ${prefix}$/;"	m
 exec_prefix	.config/i3/arc-theme/common/Makefile	/^exec_prefix = ${prefix}$/;"	m
 exec_prefix	.config/i3/arc-theme/extra/Makefile	/^exec_prefix = ${prefix}$/;"	m
-expose	dwm/dwm.c	/^expose(XEvent *e)$/;"	f
-f	dwm/dwm.c	/^	float f;$/;"	m	union:__anon6	file:
+expose	.config/dwm/dwm.c	/^expose(XEvent *e)$/;"	f
+f	.config/dwm/dwm.c	/^	float f;$/;"	m	union:__anon6	file:
 fix_url	.tmux/tmux-url-select	/^sub fix_url {$/;"	s
 flags	.ycm_extra_conf.py	/^flags = [$/;"	v
-focus	dwm/dwm.c	/^focus(Client *c)$/;"	f
-focusin	dwm/dwm.c	/^focusin(XEvent *e)$/;"	f
-focusmon	dwm/dwm.c	/^focusmon(const Arg *arg)$/;"	f
-focusstack	dwm/dwm.c	/^focusstack(const Arg *arg)$/;"	f
-fonts	dwm/config.def.h	/^static const char *fonts[]          = { "monospace:size=10" };$/;"	v
-fonts	dwm/config.h	/^static const char *fonts[]          = { "monospace:size=11" };$/;"	v
-fonts	dwm/drw.h	/^	Fnt *fonts;$/;"	m	struct:__anon13
-func	dwm/dwm.c	/^	void (*func)(const Arg *);$/;"	m	struct:__anon8	file:
-func	dwm/dwm.c	/^	void (*func)(const Arg *arg);$/;"	m	struct:__anon7	file:
-gc	dwm/drw.h	/^	GC gc;$/;"	m	struct:__anon13
-getatomprop	dwm/dwm.c	/^getatomprop(Client *c, Atom prop)$/;"	f
-getrootptr	dwm/dwm.c	/^getrootptr(int *x, int *y)$/;"	f
-getstate	dwm/dwm.c	/^getstate(Window w)$/;"	f
-gettextprop	dwm/dwm.c	/^gettextprop(Window w, Atom atom, char *text, unsigned int size)$/;"	f
+focus	.config/dwm/dwm.c	/^focus(Client *c)$/;"	f
+focusin	.config/dwm/dwm.c	/^focusin(XEvent *e)$/;"	f
+focusmon	.config/dwm/dwm.c	/^focusmon(const Arg *arg)$/;"	f
+focusstack	.config/dwm/dwm.c	/^focusstack(const Arg *arg)$/;"	f
+fonts	.config/dwm/config.def.h	/^static const char *fonts[]          = { "monospace:size=10" };$/;"	v
+fonts	.config/dwm/config.h	/^static const char *fonts[]          = { "monospace:size=11" };$/;"	v
+fonts	.config/dwm/drw.h	/^	Fnt *fonts;$/;"	m	struct:__anon13
+func	.config/dwm/dwm.c	/^	void (*func)(const Arg *);$/;"	m	struct:__anon8	file:
+func	.config/dwm/dwm.c	/^	void (*func)(const Arg *arg);$/;"	m	struct:__anon7	file:
+gc	.config/dwm/drw.h	/^	GC gc;$/;"	m	struct:__anon13
+getatomprop	.config/dwm/dwm.c	/^getatomprop(Client *c, Atom prop)$/;"	f
+getrootptr	.config/dwm/dwm.c	/^getrootptr(int *x, int *y)$/;"	f
+getstate	.config/dwm/dwm.c	/^getstate(Window w)$/;"	f
+gettextprop	.config/dwm/dwm.c	/^gettextprop(Window w, Atom atom, char *text, unsigned int size)$/;"	f
 give_advice	.config/i3/arc-theme/build-aux/missing	/^give_advice ()$/;"	f
-grabbuttons	dwm/dwm.c	/^grabbuttons(Client *c, int focused)$/;"	f
-grabkeys	dwm/dwm.c	/^grabkeys(void)$/;"	f
+grabbuttons	.config/dwm/dwm.c	/^grabbuttons(Client *c, int focused)$/;"	f
+grabkeys	.config/dwm/dwm.c	/^grabkeys(void)$/;"	f
 gulp	.config/i3/arc-theme/gulpfile.js	/^var gulp        = require("gulp");$/;"	v
-h	dwm/drw.h	/^	unsigned int h;$/;"	m	struct:Fnt
-h	dwm/drw.h	/^	unsigned int w, h;$/;"	m	struct:__anon13
-h	dwm/dwm.c	/^	int x, y, w, h;$/;"	m	struct:Client	file:
-handler	dwm/dwm.c	/^static void (*handler[LASTEvent]) (XEvent *) = {$/;"	v	file:
+h	.config/dwm/drw.h	/^	unsigned int h;$/;"	m	struct:Fnt
+h	.config/dwm/drw.h	/^	unsigned int w, h;$/;"	m	struct:__anon13
+h	.config/dwm/dwm.c	/^	int x, y, w, h;$/;"	m	struct:Client	file:
+handler	.config/dwm/dwm.c	/^static void (*handler[LASTEvent]) (XEvent *) = {$/;"	v	file:
 host_alias	.config/i3/arc-theme/Makefile	/^host_alias = $/;"	m
 host_alias	.config/i3/arc-theme/common/Makefile	/^host_alias = $/;"	m
 host_alias	.config/i3/arc-theme/extra/Makefile	/^host_alias = $/;"	m
 htmldir	.config/i3/arc-theme/Makefile	/^htmldir = ${docdir}$/;"	m
 htmldir	.config/i3/arc-theme/common/Makefile	/^htmldir = ${docdir}$/;"	m
 htmldir	.config/i3/arc-theme/extra/Makefile	/^htmldir = ${docdir}$/;"	m
-i	dwm/dwm.c	/^	int i;$/;"	m	union:__anon6	file:
-inch	dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
+i	.config/dwm/dwm.c	/^	int i;$/;"	m	union:__anon6	file:
+inch	.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
 includedir	.config/i3/arc-theme/Makefile	/^includedir = ${prefix}\/include$/;"	m
 includedir	.config/i3/arc-theme/common/Makefile	/^includedir = ${prefix}\/include$/;"	m
 includedir	.config/i3/arc-theme/extra/Makefile	/^includedir = ${prefix}\/include$/;"	m
-incnmaster	dwm/dwm.c	/^incnmaster(const Arg *arg)$/;"	f
-incw	dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
+incnmaster	.config/dwm/dwm.c	/^incnmaster(const Arg *arg)$/;"	f
+incw	.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
 infodir	.config/i3/arc-theme/Makefile	/^infodir = ${datarootdir}\/info$/;"	m
 infodir	.config/i3/arc-theme/common/Makefile	/^infodir = ${datarootdir}\/info$/;"	m
 infodir	.config/i3/arc-theme/extra/Makefile	/^infodir = ${datarootdir}\/info$/;"	m
@@ -607,99 +607,99 @@ install_sh_SCRIPT	.config/i3/arc-theme/Makefile	/^install_sh_SCRIPT = $(install_
 install_sh_SCRIPT	.config/i3/arc-theme/common/Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
 install_sh_SCRIPT	.config/i3/arc-theme/extra/Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
 install_theme	.config/i3/arc-theme/arc-theme-upgrade	/^install_theme() {$/;"	f
-instance	dwm/dwm.c	/^	const char *instance;$/;"	m	struct:__anon10	file:
-isfixed	dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	struct:Client	file:
-isfloating	dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	struct:Client	file:
-isfloating	dwm/dwm.c	/^	int isfloating;$/;"	m	struct:__anon10	file:
-isfullscreen	dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	struct:Client	file:
-isuniquegeom	dwm/dwm.c	/^isuniquegeom(XineramaScreenInfo *unique, size_t n, XineramaScreenInfo *info)$/;"	f	file:
-isurgent	dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	struct:Client	file:
+instance	.config/dwm/dwm.c	/^	const char *instance;$/;"	m	struct:__anon10	file:
+isfixed	.config/dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	struct:Client	file:
+isfloating	.config/dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	struct:Client	file:
+isfloating	.config/dwm/dwm.c	/^	int isfloating;$/;"	m	struct:__anon10	file:
+isfullscreen	.config/dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	struct:Client	file:
+isuniquegeom	.config/dwm/dwm.c	/^isuniquegeom(XineramaScreenInfo *unique, size_t n, XineramaScreenInfo *info)$/;"	f	file:
+isurgent	.config/dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	struct:Client	file:
 ithemedarkdir	.config/i3/arc-theme/common/Makefile	/^ithemedarkdir = $(DESTDIR)$(themedarkdir)$/;"	m
 ithemedarkerdir	.config/i3/arc-theme/common/Makefile	/^ithemedarkerdir = $(DESTDIR)$(themedarkerdir)$/;"	m
 ithemedir	.config/i3/arc-theme/common/Makefile	/^ithemedir = $(DESTDIR)$(themedir)$/;"	m
-keypress	dwm/dwm.c	/^keypress(XEvent *e)$/;"	f
-keys	dwm/config.def.h	/^static Key keys[] = {$/;"	v
-keys	dwm/config.h	/^static Key keys[] = {$/;"	v
-keysym	dwm/dwm.c	/^	KeySym keysym;$/;"	m	struct:__anon8	file:
-killclient	dwm/dwm.c	/^killclient(const Arg *arg)$/;"	f
+keypress	.config/dwm/dwm.c	/^keypress(XEvent *e)$/;"	f
+keys	.config/dwm/config.def.h	/^static Key keys[] = {$/;"	v
+keys	.config/dwm/config.h	/^static Key keys[] = {$/;"	v
+keysym	.config/dwm/dwm.c	/^	KeySym keysym;$/;"	m	struct:__anon8	file:
+killclient	.config/dwm/dwm.c	/^killclient(const Arg *arg)$/;"	f
 launch_url	.tmux/tmux-url-select	/^sub launch_url {$/;"	s
-layouts	dwm/config.def.h	/^static const Layout layouts[] = {$/;"	v
-layouts	dwm/config.h	/^static const Layout layouts[] = {$/;"	v
+layouts	.config/dwm/config.def.h	/^static const Layout layouts[] = {$/;"	v
+layouts	.config/dwm/config.h	/^static const Layout layouts[] = {$/;"	v
 libdir	.config/i3/arc-theme/Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
 libdir	.config/i3/arc-theme/common/Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
 libdir	.config/i3/arc-theme/extra/Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
 libexecdir	.config/i3/arc-theme/Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
 libexecdir	.config/i3/arc-theme/common/Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
 libexecdir	.config/i3/arc-theme/extra/Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
-limitexceeded	dwm/dwm.c	/^struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };$/;"	m	struct:NumTags	file:
+limitexceeded	.config/dwm/dwm.c	/^struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };$/;"	m	struct:NumTags	file:
 localedir	.config/i3/arc-theme/Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
 localedir	.config/i3/arc-theme/common/Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
 localedir	.config/i3/arc-theme/extra/Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
 localstatedir	.config/i3/arc-theme/Makefile	/^localstatedir = ${prefix}\/var$/;"	m
 localstatedir	.config/i3/arc-theme/common/Makefile	/^localstatedir = ${prefix}\/var$/;"	m
 localstatedir	.config/i3/arc-theme/extra/Makefile	/^localstatedir = ${prefix}\/var$/;"	m
-lrpad	dwm/dwm.c	/^static int lrpad;            \/* sum of left and right padding for text *\/$/;"	v	file:
-lt	dwm/dwm.c	/^	const Layout *lt[2];$/;"	m	struct:Monitor	file:
-ltsymbol	dwm/dwm.c	/^	char ltsymbol[16];$/;"	m	struct:Monitor	file:
+lrpad	.config/dwm/dwm.c	/^static int lrpad;            \/* sum of left and right padding for text *\/$/;"	v	file:
+lt	.config/dwm/dwm.c	/^	const Layout *lt[2];$/;"	m	struct:Monitor	file:
+ltsymbol	.config/dwm/dwm.c	/^	char ltsymbol[16];$/;"	m	struct:Monitor	file:
+main	.config/dwm/dwm.c	/^main(int argc, char *argv[])$/;"	f
+main	.config/dwm/transient.c	/^int main(void) {$/;"	f
 main	.tmux/tmux-url-select	/^sub main {$/;"	s
-main	dwm/dwm.c	/^main(int argc, char *argv[])$/;"	f
-main	dwm/transient.c	/^int main(void) {$/;"	f
 main_inner	.tmux/tmux-url-select	/^sub main_inner {$/;"	s
-manage	dwm/dwm.c	/^manage(Window w, XWindowAttributes *wa)$/;"	f
+manage	.config/dwm/dwm.c	/^manage(Window w, XWindowAttributes *wa)$/;"	f
 mandir	.config/i3/arc-theme/Makefile	/^mandir = ${datarootdir}\/man$/;"	m
 mandir	.config/i3/arc-theme/common/Makefile	/^mandir = ${datarootdir}\/man$/;"	m
 mandir	.config/i3/arc-theme/extra/Makefile	/^mandir = ${datarootdir}\/man$/;"	m
-mappingnotify	dwm/dwm.c	/^mappingnotify(XEvent *e)$/;"	f
-maprequest	dwm/dwm.c	/^maprequest(XEvent *e)$/;"	f
-mask	dwm/dwm.c	/^	unsigned int mask;$/;"	m	struct:__anon7	file:
-maxa	dwm/dwm.c	/^	float mina, maxa;$/;"	m	struct:Client	file:
-maxh	dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
-maxw	dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
-mfact	dwm/config.def.h	/^static const float mfact     = 0.55; \/* factor of master area size [0.05..0.95] *\/$/;"	v
-mfact	dwm/config.h	/^static const float mfact     = 0.55; \/* factor of master area size [0.05..0.95] *\/$/;"	v
-mfact	dwm/dwm.c	/^	float mfact;$/;"	m	struct:Monitor	file:
-mh	dwm/dwm.c	/^	int mx, my, mw, mh;   \/* screen size *\/$/;"	m	struct:Monitor	file:
-mina	dwm/dwm.c	/^	float mina, maxa;$/;"	m	struct:Client	file:
-minh	dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
-minw	dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
+mappingnotify	.config/dwm/dwm.c	/^mappingnotify(XEvent *e)$/;"	f
+maprequest	.config/dwm/dwm.c	/^maprequest(XEvent *e)$/;"	f
+mask	.config/dwm/dwm.c	/^	unsigned int mask;$/;"	m	struct:__anon7	file:
+maxa	.config/dwm/dwm.c	/^	float mina, maxa;$/;"	m	struct:Client	file:
+maxh	.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
+maxw	.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
+mfact	.config/dwm/config.def.h	/^static const float mfact     = 0.55; \/* factor of master area size [0.05..0.95] *\/$/;"	v
+mfact	.config/dwm/config.h	/^static const float mfact     = 0.55; \/* factor of master area size [0.05..0.95] *\/$/;"	v
+mfact	.config/dwm/dwm.c	/^	float mfact;$/;"	m	struct:Monitor	file:
+mh	.config/dwm/dwm.c	/^	int mx, my, mw, mh;   \/* screen size *\/$/;"	m	struct:Monitor	file:
+mina	.config/dwm/dwm.c	/^	float mina, maxa;$/;"	m	struct:Client	file:
+minh	.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
+minw	.config/dwm/dwm.c	/^	int basew, baseh, incw, inch, maxw, maxh, minw, minh;$/;"	m	struct:Client	file:
 mkdir_p	.config/i3/arc-theme/Makefile	/^mkdir_p = $(MKDIR_P)$/;"	m
 mkdir_p	.config/i3/arc-theme/common/Makefile	/^mkdir_p = $(MKDIR_P)$/;"	m
 mkdir_p	.config/i3/arc-theme/extra/Makefile	/^mkdir_p = $(MKDIR_P)$/;"	m
 mkinstalldirs	.config/i3/arc-theme/Makefile	/^mkinstalldirs = $(install_sh) -d$/;"	m
 mkinstalldirs	.config/i3/arc-theme/common/Makefile	/^mkinstalldirs = $(install_sh) -d$/;"	m
 mkinstalldirs	.config/i3/arc-theme/extra/Makefile	/^mkinstalldirs = $(install_sh) -d$/;"	m
-mod	dwm/dwm.c	/^	unsigned int mod;$/;"	m	struct:__anon8	file:
-mon	dwm/dwm.c	/^	Monitor *mon;$/;"	m	struct:Client	file:
-monitor	dwm/dwm.c	/^	int monitor;$/;"	m	struct:__anon10	file:
-monocle	dwm/dwm.c	/^monocle(Monitor *m)$/;"	f
-mons	dwm/dwm.c	/^static Monitor *mons, *selmon;$/;"	v	file:
-motionnotify	dwm/dwm.c	/^motionnotify(XEvent *e)$/;"	f
-movemouse	dwm/dwm.c	/^movemouse(const Arg *arg)$/;"	f
-mw	dwm/dwm.c	/^	int mx, my, mw, mh;   \/* screen size *\/$/;"	m	struct:Monitor	file:
-mx	dwm/dwm.c	/^	int mx, my, mw, mh;   \/* screen size *\/$/;"	m	struct:Monitor	file:
-my	dwm/dwm.c	/^	int mx, my, mw, mh;   \/* screen size *\/$/;"	m	struct:Monitor	file:
-name	dwm/dwm.c	/^	char name[256];$/;"	m	struct:Client	file:
-netatom	dwm/dwm.c	/^static Atom wmatom[WMLast], netatom[NetLast];$/;"	v	file:
-neverfocus	dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	struct:Client	file:
-next	dwm/drw.h	/^	struct Fnt *next;$/;"	m	struct:Fnt	typeref:struct:Fnt::Fnt
-next	dwm/dwm.c	/^	Client *next;$/;"	m	struct:Client	file:
-next	dwm/dwm.c	/^	Monitor *next;$/;"	m	struct:Monitor	file:
-nexttiled	dwm/dwm.c	/^nexttiled(Client *c)$/;"	f
-nmaster	dwm/config.def.h	/^static const int nmaster     = 1;    \/* number of clients in master area *\/$/;"	v
-nmaster	dwm/config.h	/^static const int nmaster     = 1;    \/* number of clients in master area *\/$/;"	v
-nmaster	dwm/dwm.c	/^	int nmaster;$/;"	m	struct:Monitor	file:
-num	dwm/dwm.c	/^	int num;$/;"	m	struct:Monitor	file:
-numlockmask	dwm/dwm.c	/^static unsigned int numlockmask = 0;$/;"	v	file:
-oldbw	dwm/dwm.c	/^	int bw, oldbw;$/;"	m	struct:Client	file:
-oldh	dwm/dwm.c	/^	int oldx, oldy, oldw, oldh;$/;"	m	struct:Client	file:
+mod	.config/dwm/dwm.c	/^	unsigned int mod;$/;"	m	struct:__anon8	file:
+mon	.config/dwm/dwm.c	/^	Monitor *mon;$/;"	m	struct:Client	file:
+monitor	.config/dwm/dwm.c	/^	int monitor;$/;"	m	struct:__anon10	file:
+monocle	.config/dwm/dwm.c	/^monocle(Monitor *m)$/;"	f
+mons	.config/dwm/dwm.c	/^static Monitor *mons, *selmon;$/;"	v	file:
+motionnotify	.config/dwm/dwm.c	/^motionnotify(XEvent *e)$/;"	f
+movemouse	.config/dwm/dwm.c	/^movemouse(const Arg *arg)$/;"	f
+mw	.config/dwm/dwm.c	/^	int mx, my, mw, mh;   \/* screen size *\/$/;"	m	struct:Monitor	file:
+mx	.config/dwm/dwm.c	/^	int mx, my, mw, mh;   \/* screen size *\/$/;"	m	struct:Monitor	file:
+my	.config/dwm/dwm.c	/^	int mx, my, mw, mh;   \/* screen size *\/$/;"	m	struct:Monitor	file:
+name	.config/dwm/dwm.c	/^	char name[256];$/;"	m	struct:Client	file:
+netatom	.config/dwm/dwm.c	/^static Atom wmatom[WMLast], netatom[NetLast];$/;"	v	file:
+neverfocus	.config/dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	struct:Client	file:
+next	.config/dwm/drw.h	/^	struct Fnt *next;$/;"	m	struct:Fnt	typeref:struct:Fnt::Fnt
+next	.config/dwm/dwm.c	/^	Client *next;$/;"	m	struct:Client	file:
+next	.config/dwm/dwm.c	/^	Monitor *next;$/;"	m	struct:Monitor	file:
+nexttiled	.config/dwm/dwm.c	/^nexttiled(Client *c)$/;"	f
+nmaster	.config/dwm/config.def.h	/^static const int nmaster     = 1;    \/* number of clients in master area *\/$/;"	v
+nmaster	.config/dwm/config.h	/^static const int nmaster     = 1;    \/* number of clients in master area *\/$/;"	v
+nmaster	.config/dwm/dwm.c	/^	int nmaster;$/;"	m	struct:Monitor	file:
+num	.config/dwm/dwm.c	/^	int num;$/;"	m	struct:Monitor	file:
+numlockmask	.config/dwm/dwm.c	/^static unsigned int numlockmask = 0;$/;"	v	file:
+oldbw	.config/dwm/dwm.c	/^	int bw, oldbw;$/;"	m	struct:Client	file:
+oldh	.config/dwm/dwm.c	/^	int oldx, oldy, oldw, oldh;$/;"	m	struct:Client	file:
 oldincludedir	.config/i3/arc-theme/Makefile	/^oldincludedir = \/usr\/include$/;"	m
 oldincludedir	.config/i3/arc-theme/common/Makefile	/^oldincludedir = \/usr\/include$/;"	m
 oldincludedir	.config/i3/arc-theme/extra/Makefile	/^oldincludedir = \/usr\/include$/;"	m
-oldstate	dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	struct:Client	file:
-oldw	dwm/dwm.c	/^	int oldx, oldy, oldw, oldh;$/;"	m	struct:Client	file:
-oldx	dwm/dwm.c	/^	int oldx, oldy, oldw, oldh;$/;"	m	struct:Client	file:
-oldy	dwm/dwm.c	/^	int oldx, oldy, oldw, oldh;$/;"	m	struct:Client	file:
-pattern	dwm/drw.h	/^	FcPattern *pattern;$/;"	m	struct:Fnt
+oldstate	.config/dwm/dwm.c	/^	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;$/;"	m	struct:Client	file:
+oldw	.config/dwm/dwm.c	/^	int oldx, oldy, oldw, oldh;$/;"	m	struct:Client	file:
+oldx	.config/dwm/dwm.c	/^	int oldx, oldy, oldw, oldh;$/;"	m	struct:Client	file:
+oldy	.config/dwm/dwm.c	/^	int oldx, oldy, oldw, oldh;$/;"	m	struct:Client	file:
+pattern	.config/dwm/drw.h	/^	FcPattern *pattern;$/;"	m	struct:Fnt
 pdfdir	.config/i3/arc-theme/Makefile	/^pdfdir = ${docdir}$/;"	m
 pdfdir	.config/i3/arc-theme/common/Makefile	/^pdfdir = ${docdir}$/;"	m
 pdfdir	.config/i3/arc-theme/extra/Makefile	/^pdfdir = ${docdir}$/;"	m
@@ -715,7 +715,7 @@ pkglibdir	.config/i3/arc-theme/extra/Makefile	/^pkglibdir = $(libdir)\/arc-theme
 pkglibexecdir	.config/i3/arc-theme/Makefile	/^pkglibexecdir = $(libexecdir)\/arc-theme$/;"	m
 pkglibexecdir	.config/i3/arc-theme/common/Makefile	/^pkglibexecdir = $(libexecdir)\/arc-theme$/;"	m
 pkglibexecdir	.config/i3/arc-theme/extra/Makefile	/^pkglibexecdir = $(libexecdir)\/arc-theme$/;"	m
-pop	dwm/dwm.c	/^pop(Client *c)$/;"	f
+pop	.config/dwm/dwm.c	/^pop(Client *c)$/;"	f
 prefix	.config/i3/arc-theme/Makefile	/^prefix = \/usr$/;"	m
 prefix	.config/i3/arc-theme/common/Makefile	/^prefix = \/usr$/;"	m
 prefix	.config/i3/arc-theme/extra/Makefile	/^prefix = \/usr$/;"	m
@@ -741,25 +741,25 @@ prompt_segment	bullet-train.zsh	/^prompt_segment() {$/;"	f
 prompt_status	bullet-train.zsh	/^prompt_status() {$/;"	f
 prompt_time	bullet-train.zsh	/^prompt_time() {$/;"	f
 prompt_virtualenv	bullet-train.zsh	/^prompt_virtualenv() {$/;"	f
-propertynotify	dwm/dwm.c	/^propertynotify(XEvent *e)$/;"	f
+propertynotify	.config/dwm/dwm.c	/^propertynotify(XEvent *e)$/;"	f
 psdir	.config/i3/arc-theme/Makefile	/^psdir = ${docdir}$/;"	m
 psdir	.config/i3/arc-theme/common/Makefile	/^psdir = ${docdir}$/;"	m
 psdir	.config/i3/arc-theme/extra/Makefile	/^psdir = ${docdir}$/;"	m
-quit	dwm/dwm.c	/^quit(const Arg *arg)$/;"	f
-recttomon	dwm/dwm.c	/^recttomon(int x, int y, int w, int h)$/;"	f
+quit	.config/dwm/dwm.c	/^quit(const Arg *arg)$/;"	f
+recttomon	.config/dwm/dwm.c	/^recttomon(int x, int y, int w, int h)$/;"	f
 rename	.config/i3/arc-theme/gulpfile.js	/^var rename      = require('gulp-rename');$/;"	v
-resize	dwm/dwm.c	/^resize(Client *c, int x, int y, int w, int h, int interact)$/;"	f
-resizeclient	dwm/dwm.c	/^resizeclient(Client *c, int x, int y, int w, int h)$/;"	f
-resizehints	dwm/config.def.h	/^static const int resizehints = 1;    \/* 1 means respect size hints in tiled resizals *\/$/;"	v
-resizehints	dwm/config.h	/^static const int resizehints = 1;    \/* 1 means respect size hints in tiled resizals *\/$/;"	v
-resizemouse	dwm/dwm.c	/^resizemouse(const Arg *arg)$/;"	f
-restack	dwm/dwm.c	/^restack(Monitor *m)$/;"	f
-root	dwm/drw.h	/^	Window root;$/;"	m	struct:__anon13
-root	dwm/dwm.c	/^static Window root, wmcheckwin;$/;"	v	file:
-rules	dwm/config.def.h	/^static const Rule rules[] = {$/;"	v
-rules	dwm/config.h	/^static const Rule rules[] = {$/;"	v
-run	dwm/dwm.c	/^run(void)$/;"	f
-running	dwm/dwm.c	/^static int running = 1;$/;"	v	file:
+resize	.config/dwm/dwm.c	/^resize(Client *c, int x, int y, int w, int h, int interact)$/;"	f
+resizeclient	.config/dwm/dwm.c	/^resizeclient(Client *c, int x, int y, int w, int h)$/;"	f
+resizehints	.config/dwm/config.def.h	/^static const int resizehints = 1;    \/* 1 means respect size hints in tiled resizals *\/$/;"	v
+resizehints	.config/dwm/config.h	/^static const int resizehints = 1;    \/* 1 means respect size hints in tiled resizals *\/$/;"	v
+resizemouse	.config/dwm/dwm.c	/^resizemouse(const Arg *arg)$/;"	f
+restack	.config/dwm/dwm.c	/^restack(Monitor *m)$/;"	f
+root	.config/dwm/drw.h	/^	Window root;$/;"	m	struct:__anon13
+root	.config/dwm/dwm.c	/^static Window root, wmcheckwin;$/;"	v	file:
+rules	.config/dwm/config.def.h	/^static const Rule rules[] = {$/;"	v
+rules	.config/dwm/config.h	/^static const Rule rules[] = {$/;"	v
+run	.config/dwm/dwm.c	/^run(void)$/;"	f
+running	.config/dwm/dwm.c	/^static int running = 1;$/;"	v	file:
 runstatedir	.config/i3/arc-theme/Makefile	/^runstatedir = ${localstatedir}\/run$/;"	m
 runstatedir	.config/i3/arc-theme/common/Makefile	/^runstatedir = ${localstatedir}\/run$/;"	m
 runstatedir	.config/i3/arc-theme/extra/Makefile	/^runstatedir = ${localstatedir}\/run$/;"	m
@@ -767,60 +767,60 @@ sass	.config/i3/arc-theme/gulpfile.js	/^var sass        = require("gulp-sass");$
 sbindir	.config/i3/arc-theme/Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
 sbindir	.config/i3/arc-theme/common/Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
 sbindir	.config/i3/arc-theme/extra/Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
-scan	dwm/dwm.c	/^scan(void)$/;"	f
-scheme	dwm/drw.h	/^	Clr *scheme;$/;"	m	struct:__anon13
-scheme	dwm/dwm.c	/^static Clr **scheme;$/;"	v	file:
-screen	dwm/drw.h	/^	int screen;$/;"	m	struct:__anon13
-screen	dwm/dwm.c	/^static int screen;$/;"	v	file:
-sel	dwm/dwm.c	/^	Client *sel;$/;"	m	struct:Monitor	file:
-sellt	dwm/dwm.c	/^	unsigned int sellt;$/;"	m	struct:Monitor	file:
-selmon	dwm/dwm.c	/^static Monitor *mons, *selmon;$/;"	v	file:
-seltags	dwm/dwm.c	/^	unsigned int seltags;$/;"	m	struct:Monitor	file:
-sendevent	dwm/dwm.c	/^sendevent(Client *c, Atom proto)$/;"	f
-sendmon	dwm/dwm.c	/^sendmon(Client *c, Monitor *m)$/;"	f
-setclientstate	dwm/dwm.c	/^setclientstate(Client *c, long state)$/;"	f
-setfocus	dwm/dwm.c	/^setfocus(Client *c)$/;"	f
-setfullscreen	dwm/dwm.c	/^setfullscreen(Client *c, int fullscreen)$/;"	f
-setlayout	dwm/dwm.c	/^setlayout(const Arg *arg)$/;"	f
-setmfact	dwm/dwm.c	/^setmfact(const Arg *arg)$/;"	f
-setup	dwm/dwm.c	/^setup(void)$/;"	f
-seturgent	dwm/dwm.c	/^seturgent(Client *c, int urg)$/;"	f
-sh	dwm/dwm.c	/^static int sw, sh;           \/* X display screen geometry width, height *\/$/;"	v	file:
+scan	.config/dwm/dwm.c	/^scan(void)$/;"	f
+scheme	.config/dwm/drw.h	/^	Clr *scheme;$/;"	m	struct:__anon13
+scheme	.config/dwm/dwm.c	/^static Clr **scheme;$/;"	v	file:
+screen	.config/dwm/drw.h	/^	int screen;$/;"	m	struct:__anon13
+screen	.config/dwm/dwm.c	/^static int screen;$/;"	v	file:
+sel	.config/dwm/dwm.c	/^	Client *sel;$/;"	m	struct:Monitor	file:
+sellt	.config/dwm/dwm.c	/^	unsigned int sellt;$/;"	m	struct:Monitor	file:
+selmon	.config/dwm/dwm.c	/^static Monitor *mons, *selmon;$/;"	v	file:
+seltags	.config/dwm/dwm.c	/^	unsigned int seltags;$/;"	m	struct:Monitor	file:
+sendevent	.config/dwm/dwm.c	/^sendevent(Client *c, Atom proto)$/;"	f
+sendmon	.config/dwm/dwm.c	/^sendmon(Client *c, Monitor *m)$/;"	f
+setclientstate	.config/dwm/dwm.c	/^setclientstate(Client *c, long state)$/;"	f
+setfocus	.config/dwm/dwm.c	/^setfocus(Client *c)$/;"	f
+setfullscreen	.config/dwm/dwm.c	/^setfullscreen(Client *c, int fullscreen)$/;"	f
+setlayout	.config/dwm/dwm.c	/^setlayout(const Arg *arg)$/;"	f
+setmfact	.config/dwm/dwm.c	/^setmfact(const Arg *arg)$/;"	f
+setup	.config/dwm/dwm.c	/^setup(void)$/;"	f
+seturgent	.config/dwm/dwm.c	/^seturgent(Client *c, int urg)$/;"	f
+sh	.config/dwm/dwm.c	/^static int sw, sh;           \/* X display screen geometry width, height *\/$/;"	v	file:
 sharedstatedir	.config/i3/arc-theme/Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
 sharedstatedir	.config/i3/arc-theme/common/Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
 sharedstatedir	.config/i3/arc-theme/extra/Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
 show_error	.config/i3/arc-theme/arc-theme-upgrade	/^show_error() {$/;"	f
 show_img_sync	.config/python/startup.py	/^    def show_img_sync(img):$/;"	f
-showbar	dwm/config.def.h	/^static const int showbar            = 1;        \/* 0 means no bar *\/$/;"	v
-showbar	dwm/config.h	/^static const int showbar            = 1;        \/* 0 means no bar *\/$/;"	v
-showbar	dwm/dwm.c	/^	int showbar;$/;"	m	struct:Monitor	file:
-showhide	dwm/dwm.c	/^showhide(Client *c)$/;"	f
-sigchld	dwm/dwm.c	/^sigchld(int unused)$/;"	f
+showbar	.config/dwm/config.def.h	/^static const int showbar            = 1;        \/* 0 means no bar *\/$/;"	v
+showbar	.config/dwm/config.h	/^static const int showbar            = 1;        \/* 0 means no bar *\/$/;"	v
+showbar	.config/dwm/dwm.c	/^	int showbar;$/;"	m	struct:Monitor	file:
+showhide	.config/dwm/dwm.c	/^showhide(Client *c)$/;"	f
+sigchld	.config/dwm/dwm.c	/^sigchld(int unused)$/;"	f
 single_quote_escape	.tmux/tmux-url-select	/^sub single_quote_escape {$/;"	s
-snap	dwm/config.def.h	/^static const unsigned int snap      = 32;       \/* snap pixel *\/$/;"	v
-snap	dwm/config.h	/^static const unsigned int snap      = 32;       \/* snap pixel *\/$/;"	v
-snext	dwm/dwm.c	/^	Client *snext;$/;"	m	struct:Client	file:
-spawn	dwm/dwm.c	/^spawn(const Arg *arg)$/;"	f
+snap	.config/dwm/config.def.h	/^static const unsigned int snap      = 32;       \/* snap pixel *\/$/;"	v
+snap	.config/dwm/config.h	/^static const unsigned int snap      = 32;       \/* snap pixel *\/$/;"	v
+snext	.config/dwm/dwm.c	/^	Client *snext;$/;"	m	struct:Client	file:
+spawn	.config/dwm/dwm.c	/^spawn(const Arg *arg)$/;"	f
 srcdir	.config/i3/arc-theme/Makefile	/^srcdir = .$/;"	m
 srcdir	.config/i3/arc-theme/common/Makefile	/^srcdir = .$/;"	m
 srcdir	.config/i3/arc-theme/extra/Makefile	/^srcdir = .$/;"	m
-stack	dwm/dwm.c	/^	Client *stack;$/;"	m	struct:Monitor	file:
-stext	dwm/dwm.c	/^static char stext[256];$/;"	v	file:
+stack	.config/dwm/dwm.c	/^	Client *stack;$/;"	m	struct:Monitor	file:
+stext	.config/dwm/dwm.c	/^static char stext[256];$/;"	v	file:
 subdir	.config/i3/arc-theme/Makefile	/^subdir = .$/;"	m
 subdir	.config/i3/arc-theme/common/Makefile	/^subdir = common$/;"	m
 subdir	.config/i3/arc-theme/extra/Makefile	/^subdir = extra$/;"	m
-sw	dwm/dwm.c	/^static int sw, sh;           \/* X display screen geometry width, height *\/$/;"	v	file:
-symbol	dwm/dwm.c	/^	const char *symbol;$/;"	m	struct:__anon9	file:
+sw	.config/dwm/dwm.c	/^static int sw, sh;           \/* X display screen geometry width, height *\/$/;"	v	file:
+symbol	.config/dwm/dwm.c	/^	const char *symbol;$/;"	m	struct:__anon9	file:
 sysconfdir	.config/i3/arc-theme/Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
 sysconfdir	.config/i3/arc-theme/common/Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
 sysconfdir	.config/i3/arc-theme/extra/Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
-tag	dwm/dwm.c	/^tag(const Arg *arg)$/;"	f
-tagmon	dwm/dwm.c	/^tagmon(const Arg *arg)$/;"	f
-tags	dwm/config.def.h	/^static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };$/;"	v
-tags	dwm/config.h	/^static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };$/;"	v
-tags	dwm/dwm.c	/^	unsigned int tags;$/;"	m	struct:Client	file:
-tags	dwm/dwm.c	/^	unsigned int tags;$/;"	m	struct:__anon10	file:
-tagset	dwm/dwm.c	/^	unsigned int tagset[2];$/;"	m	struct:Monitor	file:
+tag	.config/dwm/dwm.c	/^tag(const Arg *arg)$/;"	f
+tagmon	.config/dwm/dwm.c	/^tagmon(const Arg *arg)$/;"	f
+tags	.config/dwm/config.def.h	/^static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };$/;"	v
+tags	.config/dwm/config.h	/^static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };$/;"	v
+tags	.config/dwm/dwm.c	/^	unsigned int tags;$/;"	m	struct:Client	file:
+tags	.config/dwm/dwm.c	/^	unsigned int tags;$/;"	m	struct:__anon10	file:
+tagset	.config/dwm/dwm.c	/^	unsigned int tagset[2];$/;"	m	struct:Monitor	file:
 tardir	.config/i3/arc-theme/Makefile	/^	tardir=$(distdir) && $(am__tar) | BZIP2=$${BZIP2--9} bzip2 -c >$(distdir).tar.bz2$/;"	m
 tardir	.config/i3/arc-theme/Makefile	/^	tardir=$(distdir) && $(am__tar) | GZIP=$(GZIP_ENV) gzip -c >$(distdir).tar.gz$/;"	m
 tardir	.config/i3/arc-theme/Makefile	/^	tardir=$(distdir) && $(am__tar) | XZ_OPT=$${XZ_OPT--e} xz -c >$(distdir).tar.xz$/;"	m
@@ -829,23 +829,23 @@ tardir	.config/i3/arc-theme/Makefile	/^	tardir=$(distdir) && $(am__tar) | lzip -
 target_alias	.config/i3/arc-theme/Makefile	/^target_alias = $/;"	m
 target_alias	.config/i3/arc-theme/common/Makefile	/^target_alias = $/;"	m
 target_alias	.config/i3/arc-theme/extra/Makefile	/^target_alias = $/;"	m
-termcmd	dwm/config.def.h	/^static const char *termcmd[]  = { "st", NULL };$/;"	v
-termcmd	dwm/config.h	/^static const char *termcmd[]  = { "termite", NULL };$/;"	v
+termcmd	.config/dwm/config.def.h	/^static const char *termcmd[]  = { "st", NULL };$/;"	v
+termcmd	.config/dwm/config.h	/^static const char *termcmd[]  = { "termite", NULL };$/;"	v
 themedarkdir	.config/i3/arc-theme/common/Makefile	/^themedarkdir = $(datadir)\/themes\/Arc-Dark$/;"	m
 themedarkerdir	.config/i3/arc-theme/common/Makefile	/^themedarkerdir = $(datadir)\/themes\/Arc-Darker$/;"	m
 themedir	.config/i3/arc-theme/common/Makefile	/^themedir = $(datadir)\/themes\/Arc$/;"	m
-tile	dwm/dwm.c	/^tile(Monitor *m)$/;"	f
-title	dwm/dwm.c	/^	const char *title;$/;"	m	struct:__anon10	file:
+tile	.config/dwm/dwm.c	/^tile(Monitor *m)$/;"	f
+title	.config/dwm/dwm.c	/^	const char *title;$/;"	m	struct:__anon10	file:
 tmux_capture_pane	.tmux/tmux-url-select	/^sub tmux_capture_pane {$/;"	s
 tmux_display_message	.tmux/tmux-url-select	/^sub tmux_display_message {$/;"	s
 tmux_get_buffer	.tmux/tmux-url-select	/^sub tmux_get_buffer {$/;"	s
 tmux_open_inner_window	.tmux/tmux-url-select	/^sub tmux_open_inner_window {$/;"	s
 tmux_select_my_window	.tmux/tmux-url-select	/^sub tmux_select_my_window {$/;"	s
 tmux_switch_to_last	.tmux/tmux-url-select	/^sub tmux_switch_to_last {$/;"	s
-togglebar	dwm/dwm.c	/^togglebar(const Arg *arg)$/;"	f
-togglefloating	dwm/dwm.c	/^togglefloating(const Arg *arg)$/;"	f
-toggletag	dwm/dwm.c	/^toggletag(const Arg *arg)$/;"	f
-toggleview	dwm/dwm.c	/^toggleview(const Arg *arg)$/;"	f
+togglebar	.config/dwm/dwm.c	/^togglebar(const Arg *arg)$/;"	f
+togglefloating	.config/dwm/dwm.c	/^togglefloating(const Arg *arg)$/;"	f
+toggletag	.config/dwm/dwm.c	/^toggletag(const Arg *arg)$/;"	f
+toggleview	.config/dwm/dwm.c	/^toggleview(const Arg *arg)$/;"	f
 top_build_prefix	.config/i3/arc-theme/Makefile	/^top_build_prefix = $/;"	m
 top_build_prefix	.config/i3/arc-theme/common/Makefile	/^top_build_prefix = ..\/$/;"	m
 top_build_prefix	.config/i3/arc-theme/extra/Makefile	/^top_build_prefix = ..\/$/;"	m
@@ -856,57 +856,57 @@ top_distdir	.config/i3/arc-theme/Makefile	/^top_distdir = $(distdir)$/;"	m
 top_srcdir	.config/i3/arc-theme/Makefile	/^top_srcdir = .$/;"	m
 top_srcdir	.config/i3/arc-theme/common/Makefile	/^top_srcdir = ..$/;"	m
 top_srcdir	.config/i3/arc-theme/extra/Makefile	/^top_srcdir = ..$/;"	m
-topbar	dwm/config.def.h	/^static const int topbar             = 1;        \/* 0 means bottom bar *\/$/;"	v
-topbar	dwm/config.h	/^static const int topbar             = 0;        \/* 0 means bottom bar *\/$/;"	v
-topbar	dwm/dwm.c	/^	int topbar;$/;"	m	struct:Monitor	file:
+topbar	.config/dwm/config.def.h	/^static const int topbar             = 1;        \/* 0 means bottom bar *\/$/;"	v
+topbar	.config/dwm/config.h	/^static const int topbar             = 0;        \/* 0 means bottom bar *\/$/;"	v
+topbar	.config/dwm/dwm.c	/^	int topbar;$/;"	m	struct:Monitor	file:
 transform	.config/i3/arc-theme/Makefile	/^transform = $(program_transform_name)$/;"	m
 transform	.config/i3/arc-theme/common/Makefile	/^transform = $(program_transform_name)$/;"	m
 transform	.config/i3/arc-theme/extra/Makefile	/^transform = $(program_transform_name)$/;"	m
-ui	dwm/dwm.c	/^	unsigned int ui;$/;"	m	union:__anon6	file:
-unfocus	dwm/dwm.c	/^unfocus(Client *c, int setfocus)$/;"	f
-unmanage	dwm/dwm.c	/^unmanage(Client *c, int destroyed)$/;"	f
-unmapnotify	dwm/dwm.c	/^unmapnotify(XEvent *e)$/;"	f
+ui	.config/dwm/dwm.c	/^	unsigned int ui;$/;"	m	union:__anon6	file:
+unfocus	.config/dwm/dwm.c	/^unfocus(Client *c, int setfocus)$/;"	f
+unmanage	.config/dwm/dwm.c	/^unmanage(Client *c, int destroyed)$/;"	f
+unmapnotify	.config/dwm/dwm.c	/^unmapnotify(XEvent *e)$/;"	f
 update_and_install	setup.sh	/^function update_and_install() {$/;"	f
-updatebarpos	dwm/dwm.c	/^updatebarpos(Monitor *m)$/;"	f
-updatebars	dwm/dwm.c	/^updatebars(void)$/;"	f
-updateclientlist	dwm/dwm.c	/^updateclientlist()$/;"	f
-updategeom	dwm/dwm.c	/^updategeom(void)$/;"	f
-updatenumlockmask	dwm/dwm.c	/^updatenumlockmask(void)$/;"	f
-updatesizehints	dwm/dwm.c	/^updatesizehints(Client *c)$/;"	f
-updatestatus	dwm/dwm.c	/^updatestatus(void)$/;"	f
-updatetitle	dwm/dwm.c	/^updatetitle(Client *c)$/;"	f
-updatewindowtype	dwm/dwm.c	/^updatewindowtype(Client *c)$/;"	f
-updatewmhints	dwm/dwm.c	/^updatewmhints(Client *c)$/;"	f
-utf8decode	dwm/drw.c	/^utf8decode(const char *c, long *u, size_t clen)$/;"	f	file:
-utf8decodebyte	dwm/drw.c	/^utf8decodebyte(const char c, size_t *i)$/;"	f	file:
-utf8validate	dwm/drw.c	/^utf8validate(long *u, size_t i)$/;"	f	file:
-utfbyte	dwm/drw.c	/^static const unsigned char utfbyte[UTF_SIZ + 1] = {0x80,    0, 0xC0, 0xE0, 0xF0};$/;"	v	file:
-utfmask	dwm/drw.c	/^static const unsigned char utfmask[UTF_SIZ + 1] = {0xC0, 0x80, 0xE0, 0xF0, 0xF8};$/;"	v	file:
-utfmax	dwm/drw.c	/^static const long utfmax[UTF_SIZ + 1] = {0x10FFFF, 0x7F, 0x7FF, 0xFFFF, 0x10FFFF};$/;"	v	file:
-utfmin	dwm/drw.c	/^static const long utfmin[UTF_SIZ + 1] = {       0,    0,  0x80,  0x800,  0x10000};$/;"	v	file:
-v	dwm/dwm.c	/^	const void *v;$/;"	m	union:__anon6	file:
-view	dwm/dwm.c	/^view(const Arg *arg)$/;"	f
-w	dwm/drw.h	/^	unsigned int w, h;$/;"	m	struct:__anon13
-w	dwm/dwm.c	/^	int x, y, w, h;$/;"	m	struct:Client	file:
-wh	dwm/dwm.c	/^	int wx, wy, ww, wh;   \/* window area  *\/$/;"	m	struct:Monitor	file:
-win	dwm/dwm.c	/^	Window win;$/;"	m	struct:Client	file:
-wintoclient	dwm/dwm.c	/^wintoclient(Window w)$/;"	f
-wintomon	dwm/dwm.c	/^wintomon(Window w)$/;"	f
-wmatom	dwm/dwm.c	/^static Atom wmatom[WMLast], netatom[NetLast];$/;"	v	file:
-wmcheckwin	dwm/dwm.c	/^static Window root, wmcheckwin;$/;"	v	file:
+updatebarpos	.config/dwm/dwm.c	/^updatebarpos(Monitor *m)$/;"	f
+updatebars	.config/dwm/dwm.c	/^updatebars(void)$/;"	f
+updateclientlist	.config/dwm/dwm.c	/^updateclientlist()$/;"	f
+updategeom	.config/dwm/dwm.c	/^updategeom(void)$/;"	f
+updatenumlockmask	.config/dwm/dwm.c	/^updatenumlockmask(void)$/;"	f
+updatesizehints	.config/dwm/dwm.c	/^updatesizehints(Client *c)$/;"	f
+updatestatus	.config/dwm/dwm.c	/^updatestatus(void)$/;"	f
+updatetitle	.config/dwm/dwm.c	/^updatetitle(Client *c)$/;"	f
+updatewindowtype	.config/dwm/dwm.c	/^updatewindowtype(Client *c)$/;"	f
+updatewmhints	.config/dwm/dwm.c	/^updatewmhints(Client *c)$/;"	f
+utf8decode	.config/dwm/drw.c	/^utf8decode(const char *c, long *u, size_t clen)$/;"	f	file:
+utf8decodebyte	.config/dwm/drw.c	/^utf8decodebyte(const char c, size_t *i)$/;"	f	file:
+utf8validate	.config/dwm/drw.c	/^utf8validate(long *u, size_t i)$/;"	f	file:
+utfbyte	.config/dwm/drw.c	/^static const unsigned char utfbyte[UTF_SIZ + 1] = {0x80,    0, 0xC0, 0xE0, 0xF0};$/;"	v	file:
+utfmask	.config/dwm/drw.c	/^static const unsigned char utfmask[UTF_SIZ + 1] = {0xC0, 0x80, 0xE0, 0xF0, 0xF8};$/;"	v	file:
+utfmax	.config/dwm/drw.c	/^static const long utfmax[UTF_SIZ + 1] = {0x10FFFF, 0x7F, 0x7FF, 0xFFFF, 0x10FFFF};$/;"	v	file:
+utfmin	.config/dwm/drw.c	/^static const long utfmin[UTF_SIZ + 1] = {       0,    0,  0x80,  0x800,  0x10000};$/;"	v	file:
+v	.config/dwm/dwm.c	/^	const void *v;$/;"	m	union:__anon6	file:
+view	.config/dwm/dwm.c	/^view(const Arg *arg)$/;"	f
+w	.config/dwm/drw.h	/^	unsigned int w, h;$/;"	m	struct:__anon13
+w	.config/dwm/dwm.c	/^	int x, y, w, h;$/;"	m	struct:Client	file:
+wh	.config/dwm/dwm.c	/^	int wx, wy, ww, wh;   \/* window area  *\/$/;"	m	struct:Monitor	file:
+win	.config/dwm/dwm.c	/^	Window win;$/;"	m	struct:Client	file:
+wintoclient	.config/dwm/dwm.c	/^wintoclient(Window w)$/;"	f
+wintomon	.config/dwm/dwm.c	/^wintomon(Window w)$/;"	f
+wmatom	.config/dwm/dwm.c	/^static Atom wmatom[WMLast], netatom[NetLast];$/;"	v	file:
+wmcheckwin	.config/dwm/dwm.c	/^static Window root, wmcheckwin;$/;"	v	file:
 write_global_setting	config-gnome-terminal.sh	/^write_global_setting() {$/;"	f
 write_profile_setting	config-gnome-terminal.sh	/^write_profile_setting() {$/;"	f
-ww	dwm/dwm.c	/^	int wx, wy, ww, wh;   \/* window area  *\/$/;"	m	struct:Monitor	file:
-wx	dwm/dwm.c	/^	int wx, wy, ww, wh;   \/* window area  *\/$/;"	m	struct:Monitor	file:
-wy	dwm/dwm.c	/^	int wx, wy, ww, wh;   \/* window area  *\/$/;"	m	struct:Monitor	file:
-x	dwm/dwm.c	/^	int x, y, w, h;$/;"	m	struct:Client	file:
-xerror	dwm/dwm.c	/^xerror(Display *dpy, XErrorEvent *ee)$/;"	f
-xerrordummy	dwm/dwm.c	/^xerrordummy(Display *dpy, XErrorEvent *ee)$/;"	f
-xerrorstart	dwm/dwm.c	/^xerrorstart(Display *dpy, XErrorEvent *ee)$/;"	f
-xerrorxlib	dwm/dwm.c	/^static int (*xerrorxlib)(Display *, XErrorEvent *);$/;"	v	file:
-xfont	dwm/drw.h	/^	XftFont *xfont;$/;"	m	struct:Fnt
-xfont_create	dwm/drw.c	/^xfont_create(Drw *drw, const char *fontname, FcPattern *fontpattern)$/;"	f	file:
-xfont_free	dwm/drw.c	/^xfont_free(Fnt *font)$/;"	f	file:
-y	dwm/dwm.c	/^	int x, y, w, h;$/;"	m	struct:Client	file:
+ww	.config/dwm/dwm.c	/^	int wx, wy, ww, wh;   \/* window area  *\/$/;"	m	struct:Monitor	file:
+wx	.config/dwm/dwm.c	/^	int wx, wy, ww, wh;   \/* window area  *\/$/;"	m	struct:Monitor	file:
+wy	.config/dwm/dwm.c	/^	int wx, wy, ww, wh;   \/* window area  *\/$/;"	m	struct:Monitor	file:
+x	.config/dwm/dwm.c	/^	int x, y, w, h;$/;"	m	struct:Client	file:
+xerror	.config/dwm/dwm.c	/^xerror(Display *dpy, XErrorEvent *ee)$/;"	f
+xerrordummy	.config/dwm/dwm.c	/^xerrordummy(Display *dpy, XErrorEvent *ee)$/;"	f
+xerrorstart	.config/dwm/dwm.c	/^xerrorstart(Display *dpy, XErrorEvent *ee)$/;"	f
+xerrorxlib	.config/dwm/dwm.c	/^static int (*xerrorxlib)(Display *, XErrorEvent *);$/;"	v	file:
+xfont	.config/dwm/drw.h	/^	XftFont *xfont;$/;"	m	struct:Fnt
+xfont_create	.config/dwm/drw.c	/^xfont_create(Drw *drw, const char *fontname, FcPattern *fontpattern)$/;"	f	file:
+xfont_free	.config/dwm/drw.c	/^xfont_free(Fnt *font)$/;"	f	file:
+y	.config/dwm/dwm.c	/^	int x, y, w, h;$/;"	m	struct:Client	file:
 yank_url	.tmux/tmux-url-select	/^sub yank_url {$/;"	s
-zoom	dwm/dwm.c	/^zoom(const Arg *arg)$/;"	f
+zoom	.config/dwm/dwm.c	/^zoom(const Arg *arg)$/;"	f
