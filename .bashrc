@@ -1,4 +1,6 @@
 DOTFILES=$HOME/workspace/dotfiles
+PATH=$PATH:/usr/local/bin
+export PATH
 source $DOTFILES/.aliases
 source $DOTFILES/.functions
 

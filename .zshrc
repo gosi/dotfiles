@@ -1,4 +1,6 @@
 DOTFILES=$HOME/workspace/dotfiles
+PATH=$PATH:/usr/local/bin
+export PATH
 source $DOTFILES/.aliases
 source $DOTFILES/.functions
 
@@ -31,7 +33,6 @@ export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
 export LESS='-R'
-export PATH=$PATH:$HOME/dev/bin:$HOME/.local/bin
 
 setopt auto_cd
 setopt auto_pushd

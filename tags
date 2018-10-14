@@ -554,6 +554,8 @@ exec_prefix	.config/i3/arc-theme/common/Makefile	/^exec_prefix = ${prefix}$/;"	m
 exec_prefix	.config/i3/arc-theme/extra/Makefile	/^exec_prefix = ${prefix}$/;"	m
 expose	.config/dwm/dwm.c	/^expose(XEvent *e)$/;"	f
 f	.config/dwm/dwm.c	/^	float f;$/;"	m	union:__anon6	file:
+find_parent	bin/i3_alternating_layouts.py	/^def find_parent(window_id):$/;"	f
+finder	bin/i3_alternating_layouts.py	/^    def finder(n, p=None):$/;"	f	function:find_parent
 fix_url	.tmux/tmux-url-select	/^sub fix_url {$/;"	s
 flags	.ycm_extra_conf.py	/^flags = [$/;"	v
 focus	.config/dwm/dwm.c	/^focus(Client *c)$/;"	f
@@ -644,6 +646,7 @@ ltsymbol	.config/dwm/dwm.c	/^	char ltsymbol[16];$/;"	m	struct:Monitor	file:
 main	.config/dwm/dwm.c	/^main(int argc, char *argv[])$/;"	f
 main	.config/dwm/transient.c	/^int main(void) {$/;"	f
 main	.tmux/tmux-url-select	/^sub main {$/;"	s
+main	bin/i3_alternating_layouts.py	/^def main():$/;"	f
 main_inner	.tmux/tmux-url-select	/^sub main_inner {$/;"	s
 manage	.config/dwm/dwm.c	/^manage(Window w, XWindowAttributes *wa)$/;"	f
 mandir	.config/i3/arc-theme/Makefile	/^mandir = ${datarootdir}\/man$/;"	m
@@ -719,6 +722,7 @@ pop	.config/dwm/dwm.c	/^pop(Client *c)$/;"	f
 prefix	.config/i3/arc-theme/Makefile	/^prefix = \/usr$/;"	m
 prefix	.config/i3/arc-theme/common/Makefile	/^prefix = \/usr$/;"	m
 prefix	.config/i3/arc-theme/extra/Makefile	/^prefix = \/usr$/;"	m
+print_help	bin/i3_alternating_layouts.py	/^def print_help():$/;"	f
 program_details	.config/i3/arc-theme/build-aux/missing	/^program_details ()$/;"	f
 program_transform_name	.config/i3/arc-theme/Makefile	/^program_transform_name = s,x,x,$/;"	m
 program_transform_name	.config/i3/arc-theme/common/Makefile	/^program_transform_name = s,x,x,$/;"	m
@@ -778,6 +782,7 @@ selmon	.config/dwm/dwm.c	/^static Monitor *mons, *selmon;$/;"	v	file:
 seltags	.config/dwm/dwm.c	/^	unsigned int seltags;$/;"	m	struct:Monitor	file:
 sendevent	.config/dwm/dwm.c	/^sendevent(Client *c, Atom proto)$/;"	f
 sendmon	.config/dwm/dwm.c	/^sendmon(Client *c, Monitor *m)$/;"	f
+set_layout	bin/i3_alternating_layouts.py	/^def set_layout():$/;"	f
 setclientstate	.config/dwm/dwm.c	/^setclientstate(Client *c, long state)$/;"	f
 setfocus	.config/dwm/dwm.c	/^setfocus(Client *c)$/;"	f
 setfullscreen	.config/dwm/dwm.c	/^setfullscreen(Client *c, int fullscreen)$/;"	f
