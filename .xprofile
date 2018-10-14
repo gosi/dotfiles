@@ -1,1 +1,34 @@
-.xprofile
+#!/bin/bash
+
+PATH=$PATH:/usr/local/bin
+export PATH
+export BROWSER=google-chrome &
+export EDITOR=vim &
+
+# keyboard rates
+xset r rate 190 100
+
+# no bell
+xset -b
+
+# no mouse acc
+xset m 0 0
+
+#no screensaver
+xset s off -dpms
+
+# hide mouse cursor with the package 'unclutter'
+#unlcutter -idle 5 -noevents &
+
+# keyboard layout customization
+setxkbmap -layout se -option caps:escape
+setxkbmap -layout us -option caps:escape
+setxkbmap -option grp:alt_shift_toggle us,se
+
+# disks automounting
+#udiskie &
+
+#force start a WM
+#exec i3
+#exec dwm
+
