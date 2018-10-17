@@ -118,7 +118,8 @@ bindsym Print exec gnome-screenshot -i
 bindsym $mod+Shift+i exec --no-startup-id urxvt -e scrot
 
 # Set wallpaper with feh
-exec --no-startup-id feh --bg-scale ~/.config/i3/wallpapers/wallhaven-700356.jpg
+#exec --no-startup-id feh --bg-scale ~/.config/i3/wallpapers/wallhaven-700356.jpg
+exec --no-startup-id feh --randomize --bg-scale ~/.config/i3/wallpapers/*
 
 # Remap Caps Lock as Escape
 #exec --no-startup-id setxkbmap -layout us -option caps:escape

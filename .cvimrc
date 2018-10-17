@@ -8,9 +8,8 @@ let activehighlight = '#0ff3db'
 let qmark g = ["http://google.com"]
 let blacklists = ["*://mail.google.com/*"]
 map gm :tabnew mail.google.com&<CR>
-let barposition = "bottom"
+let barposition = "top"
 let nextmatchpattern = "((?!first)(next|more|>|›|»|forward|+)"
-" map <Space> :buffer<Space>
 
 map K previousTab
 map J nextTab
@@ -51,12 +50,12 @@ site '*://www.youtube.com/*' {
 let configpath = '~/.cvimrc'
 set localconfig
 
-" gy copy URL from link to clipboard
+gy copy URL from link to clipboard
 " I	search through browser history
 " z<Enter>	toggle image zoom (same as clicking the image on image-only pages)
 " gu	go up one path in the URL
 " gU	go to to the base URL
 " gx0/$	 close all tabs to the left/right of the current tab
 " gxt/T
-" <	move current tab left
+<	move current tab left
 " ]]	click the "next" link on the page (see nextmatchpattern above)
