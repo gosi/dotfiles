@@ -25,14 +25,16 @@ alias V="vim"
 alias q="exit"
 alias :q="exit"
 
+alias fixsound="rm -r ~/.config/pulse"
 alias fetch_upstream="git checkout master && git pull --rebase && git checkout - && git remote prune origin"
 alias pyhttp="python -m SimpleHTTPServer"
+alias ipy="ipython3"
 alias calc="python3 -ic 'from math import *'"
 alias day="echo 'Current day of the year is $(date +%j)'"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias open="xdg-open"
-alias tclear="rm ~/Downloads/*.torrent"
-alias clean="rm -rf ~/.local/share/Trash/*"
+alias ttrash="rm ~/Downloads/*.torrent"
+alias empty-trash="rm -rf ~/.local/share/Trash/*"
 
 # Quick Edits
 alias vv="vim ~/.vimrc"
