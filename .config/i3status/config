@@ -3,14 +3,15 @@ general {
         interval = 5
 }
 
-order += "volume master"
 order += "cpu_usage"
 order += "disk /"
+order += "disk /home/gosi"
 order += "run_watch DHCP"
 order += "run_watch VPN"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery 0"
+order += "volume master"
 order += "tztime local"
 
 cpu_usage {
@@ -44,8 +45,13 @@ tztime local {
         format = "%Y-%m-%d %H:%M:%S"
 }
 
-disk "/" {
+disk "/home/gosi" {
         format = "HOME: %avail"
+}
+
+
+disk "/" {
+        format = "/: %avail"
 }
 
 volume master {
