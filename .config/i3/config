@@ -270,18 +270,26 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Colors
-set $black 	#212121
+set $black 	#181818
 set $pureblack	#000000
-set $midnightblue	#3933C9
-set $blue	#5FB9ED
+set $midnightblue #000033
+set $blue	#5151ef
 set $white	#FFFFFF
-set $darkred	#32140A
+set $red	#c90515
 set $darkgreen	#0A332D
 set $darkblue	#0A1833
+set $grey       #2d2d2d
+
+# Class			Border		Background	Text		Indicator
+client.focused		$darkred	$blue		$white		$blue
+client.unfocused	$black		$pureblack	$blue		$darkblue
+client.focused_inactive $black		$pureblack	$blue		$darkblue
+client.urgent		$blue		$blue		$white		$darkred
+client.background	$blue
 
 bar {
     status_command i3status
-	font pango:monospace 11
+	font pango:DejaVu Sans Mono Bold 11
 	position top
 	workspace_buttons yes
     strip_workspace_numbers yes
@@ -289,21 +297,13 @@ bar {
   #  modifier none
 	colors {
 		# Class			Border		Background	Text
-		focused_workspace	$darkred	$black		$white
-		active_workspace	$midnightblue		$pureblack		$white
-		inactive_workspace	$pureblack	$pureblack	$blue
-		urgent_workspace	$blue		$blue		$white
+		focused_workspace	$grey	$pureblack	$white
+		active_workspace	$grey   $grey	    $white
+		inactive_workspace	$grey	$grey   	$blue
+		urgent_workspace	$grey	$red	    $white
 
 		statusline		$white
-		background		$pureblack
+		background		$grey
 		separator		$blue
 	}
 }
-
-# Colors:
-# Class			Border		Background	Text		Indicator
-client.focused		$darkred	$midnightblue		$white		$blue
-client.unfocused	$black		$pureblack	$blue		$darkblue
-client.focused_inactive $black		$pureblack	$blue		$darkblue
-client.urgent		$blue		$blue		$white		$darkred
-client.background	$midnightblue
