@@ -39,6 +39,7 @@ gnome-tweak-tool
 virtualbox
 unclutter
 redshift-gtk
+alsa-utils
 anki
 curl
 wget

@@ -38,16 +38,23 @@ exec --no-startup-id i3_alternating_layouts.py
 
 # Programs:
 bindsym $mod+Shift+g exec --no-startup-id google-chrome
-bindsym $mod+Shift+f exec --no-startup-id nemo
+bindsym $mod+Shift+f exec --no-startup-id thunar
 bindsym $mod+Shift+v exec --no-startup-id vlc
 bindsym $mod+Shift+o exec --no-startup-id okular
+
+# Volume controls (alsa):
+bindsym $mod+F9 exec amixer -q -D pulse sset Master toggle
+bindsym $mod+F10 exec amixer -q -D pulse sset Master 2%-
+bindsym $mod+F11 exec amixer -q -D pulse sset Master 2%+
+bindsym $mod+F12 exec amixer -q -D pulse sset Capture toggle
+
 
 # Assign Windows:
 #assign [class="URxvt"] $ws1
 assign [class="discord"] $ws2
 assign [class="Google-chrome"] $ws3
 assign [class="Firefox"] $ws3
-assign [class="Nemo"] $ws4
+assign [class="Thunar"] $ws4
 assign [class="Transmission"] $ws4
 assign [class="vlc"] $ws5
 assign [class="mpv"] $ws5
@@ -77,7 +84,7 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
-bindsym $mod+F10 workspace
+bindsym $mod+w workspace work
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -90,8 +97,7 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
-bindsym $mod+Shift+F10 move container to workspace W
-
+bindsym $mod+Shift+w move container to workspace work
 
 # Lock the system
 #bindsym $mod+Shift+p exec $HOME/.bin/scripts/lock
@@ -120,7 +126,7 @@ bindsym Print exec gnome-screenshot -i
 bindsym $mod+Shift+i exec --no-startup-id urxvt -e scrot
 
 # Set wallpaper with feh
-exec --no-startup-id feh --bg-scale ~/.config/i3/wallpapers/wall.png
+exec --no-startup-id feh --bg-scale ~/.config/i3/wallpapers/knights.jpg
 #exec --no-startup-id feh --randomize --bg-scale ~/.config/i3/wallpapers/*
 
 # Remap Caps Lock as Escape
@@ -208,7 +214,7 @@ bindsym $mod+s split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+w layout stacking
+bindsym $mod+g layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 

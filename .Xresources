@@ -1,58 +1,14 @@
-URxvt.depth: 32
-!URxvt.background: rgba:0000/5000/5000/cccc
-URxvt.transparent: true
-URxvt.shading: 10
-
-URxvt.geometry: 80x30
-!URxvt.borderLess: true
-URxvt.scrollBar: false
-! Use shift to scroll
-URxvt.secondaryScroll: true
-
-URxvt.foreground: #FFFFFF
-URxvt.background: #000000
-URxvt.colorUL: #00ff5f
-URxvt.cursorColor: #4a54A3
-URxvt.cursorBlink: true
-URxvt.pointerBlank: true
+! General settings
+URxvt.saveLines: 2000
+URxvt.scrollBar: False
+URxvt.scrollstyle: rxvt
+URxvt.termName: xterm-256color
+URxvt.urgentOnBell: True
+URxvt.cursorBlink: False
 URxvt.visualBell: true
-URxvt.urgentOnBell: false
-URxvt.bell-command: notify-send "Meow~~"
 
-! Jump when receiving new line
-URxvt.scrollTtyOutput: false
-URxvt.scrollTtyKeyPress	: true
-URxvt.scrollWithBuffer: false
-URxvt.jumpScroll: true
-! refresh once in a while when receiving too many lines
-URxvt.skipScroll: true
-
-URxvt.termName: rxvt-256color
-! Disable Ctrl-Shift
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-URxvt.tripleclickwords: true
-URxvt.saveLines: 10000
-URxvt.insecure: true
-
-URxvt*font: xft:DejaVu Sans Mono-12x21:antialias=true,xft:Symbola:size=10
-URxvt.boldfont: xft:DejaVu Sans Mono-11:bold,xft:Symbola Bold:size=10
-URxvt.italicfont: xft:DejaVu Sans Mono-11:italic
-URxvt.buffered: true
-!URxvt.letterSpace: -1
-!URxvt.lineSpace: 0
-Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.dpi: 96
-Xft.rgba: rgb
-
-
-! With ibus: need ibus to start with `ibus-daemon --xim`
-!URxvt.inputMethod: ibus
-!Urxvt.preeditType: OverTheSpot
+URxvt.font: xft:Terminus-10
+!URxvt.font: xft:DejaVu Sans Mono-12
 
 ! Utils:
 #ifndef URXVT_PERL_LIB
@@ -70,16 +26,6 @@ URxvt.url-select.underline: true
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
 
-URxvt.tabbed.tabbar-fg: 5
-URxvt.tabbed.tabbar-bg: 0
-URxvt.tabbed.tab-bg: 0
-URxvt.tabbed.tab-fg: 3
-URxvt.tabbed.autohide: yes
-URxvt.tabbed.title: no
-!URxvt.keysym.C-t: perl:tabbed:new_tab
-!URxvt.keysym.M-l: perl:tabbedex:next_tab
-!URxvt.keysym.M-h: perl:tabbedex:prev_tab
-!URxvt.tabbed.no-tabbedex-keys: true
 
 ! USE selection & mouse-2!  will fill 'primary' clipboard buffer
 URxvt.keysym.C-S-C:   perl:clipboard:copy
@@ -90,8 +36,53 @@ URxvt.keysym.C-S-V:   perl:clipboard:paste
 !URxvt.clipboard.copycmd:  pbcopy
 !URxvt.clipboard.pastecmd: pbpaste
 
-! Fix Color
-! 0 - 7, 8 - 15: black, red, green, yellow, blue, magenta, cyan, white
-!blue, the dark(pure) blue is too dim
-*color4:  #2277cc
-*color12: #2277cc
+!TomorrowNightBright
+#define t_background        #000000
+#define t_current_line      #2a2a2a
+#define t_selection      	#424242
+#define t_foreground      	#eaeaea
+#define t_comment	     	#969896
+#define t_red		     	#d54e53
+#define t_orange	     	#e78c45
+#define t_yellow        	#e7c547
+#define t_green	        	#b9ca4a
+#define t_aqua	        	#70c0b1
+#define t_blue	        	#7aa6da
+#define t_purple        	#c397d8
+
+
+*.foreground:   t_foreground
+*.background:   t_background
+*.cursorColor:  #aeafad
+
+! Black / Grey
+*.color0:       #000000
+*.color8:       #666666
+
+! Red / Bright Red
+*.color1:       t_red
+*.color9:       #FF3334
+
+! Green + Bright Green
+*.color2:       t_green
+*.color10:      #9ec400
+
+! Yellow (Orange) + Bright Yellow (Yellow)
+*.color3:       t_orange
+*.color11:      t_yellow
+
+! Blue + Bright Blue
+*.color4:       t_blue
+*.color12:      t_blue
+
+! Magenta (Purple) + Bright Magenta
+*.color5:       t_purple
+*.color13:      #b777e0
+
+! Cyan (Aqua) + Bright Cyan
+*.color6:       t_aqua
+*.color14:      #54ced6
+
+! Light Grey (Selection) + White (Current Line)
+*.color7:       t_selection
+*.color15:      t_current_line

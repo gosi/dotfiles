@@ -17,6 +17,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'tpope/vim-commentary'
 Plugin 'ludovicchabant/vim-gutentags'
+"Plugin 'w0rp/ale'
 Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --racer-completer --tern-completer' }
 
 call vundle#end()
@@ -29,12 +30,18 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" Light N column ruler for non-intrusive visual guide for format
+if exists('+colorcolumn')
+   set colorcolumn=100
+endif
+
 filetype indent on
 syntax on
 set background=dark
 set t_Co=256
 colorscheme jellybeans
 
+set clipboard=unnamedplus
 set encoding=utf8
 set lazyredraw
 set ttyfast
@@ -48,7 +55,7 @@ set smartindent
 set showmatch
 set incsearch
 set mouse=a
-set number
+set nu
 set hlsearch
 
 set foldenable
@@ -62,9 +69,11 @@ set undolevels=10000
 set notimeout
 set ttimeout
 set timeoutlen=100
+set laststatus=2
+set statusline=
+set stl=%f\ Line:%l/%L\ (%p%%)\ Col:%v\ Buf:#%n\ 0x%B
 
 set backspace=indent,eol,start
-set statusline=
 set expandtab smarttab shiftround nojoinspaces
 set ruler
 set textwidth=120

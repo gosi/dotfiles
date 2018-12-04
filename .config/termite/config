@@ -1,7 +1,6 @@
 [options]
 font = Terminus 14
-#font = DejaVu Sans Mono 12
-#font = Monospace 14
+#font = monospace 12
 
 mouse_autohide = true
 allow_bold = true
