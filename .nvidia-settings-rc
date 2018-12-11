@@ -2,7 +2,7 @@
 # /home/gosi/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
-# Generated on Mon Dec  3 23:59:48 2018
+# Generated on Wed Dec  5 13:46:24 2018
 #
 
 # ConfigProperties:
@@ -13,9 +13,9 @@ SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = No
 ShowQuitDialog = Yes
 UpdateRulesOnProfileNameChange = Yes
-Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
 Timer = Memory_Used_(GPU_0),Yes,3000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 
 # Attributes:
 
@@ -29,6 +29,7 @@ Timer = Memory_Used_(GPU_0),Yes,3000
 0/LogAnisoAppControlled=1
 0/OpenGLImageSettings=1
 0/FSAAAppEnhanced=0
+0/ShowGraphicsVisualIndicator=0
 [DPY:DVI-I-0]/RedBrightness=0.000000
 [DPY:DVI-I-0]/GreenBrightness=0.000000
 [DPY:DVI-I-0]/BlueBrightness=0.000000

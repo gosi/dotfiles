@@ -299,3 +299,5 @@ function git_current_user_email() {
 }
 
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

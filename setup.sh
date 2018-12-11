@@ -43,12 +43,13 @@ alsa-utils
 anki
 curl
 wget
+wajig
 "
 
 BACKUP_DIR=$HOME/dotfiles_old
 DOTFILES_DIR=$HOME/workspace/dotfiles
 FILES="bin .config .vimrc .bashrc .zshrc .tmux.conf .emacs .ideavimrc .xsession .xinitrc .Xmodmap .Xresources
-.nvidia-settings-rc .htoprc .gtkrc-2.0 .gtkrc-2.0-mine .conkyrc .cvimrc .compton.conf .urxvt .tmux
+.nvidia-settings-rc .htoprc .gtkrc-2.0 .gtkrc-2.0-mine .conkyrc .cvimrc .compton.conf .urxvt .tmux .vim
 .xprofile"
 CFG_FILES="i3 dwm gtk-2.0 gtk-3.0 htop python redshift"
 

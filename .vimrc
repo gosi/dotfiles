@@ -1,185 +1,200 @@
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-"Core
-Plugin 'flazz/vim-colorschemes'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'sirver/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'tpope/vim-commentary'
-Plugin 'ludovicchabant/vim-gutentags'
-"Plugin 'w0rp/ale'
-Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --racer-completer --tern-completer' }
-
-call vundle#end()
+" filetype support and colours
 filetype plugin indent on
-
-"show unwanted whitespace, purge them with F8
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-
-" Light N column ruler for non-intrusive visual guide for format
-if exists('+colorcolumn')
-   set colorcolumn=100
-endif
-
-filetype indent on
 syntax on
-set background=dark
-set t_Co=256
-colorscheme jellybeans
+set background=light
+colorscheme default
 
-set clipboard=unnamedplus
-set encoding=utf8
-set lazyredraw
-set ttyfast
-set hidden
-set nobackup
-set nowritebackup
-set noswapfile
-set autoread
+" vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tommcdo/vim-lion'
+call plug#end()
+
+" various settings
+let mapleader = "\<Space>"
+let @/ = ""
 set autoindent
-set smartindent
-set showmatch
-set incsearch
-set mouse=a
-set nu
-set hlsearch
-
-set foldenable
-set foldlevelstart=9
-set foldnestmax=9
-set foldmethod=indent
-
-set tabpagemax=50
-set undolevels=10000
-
-set notimeout
-set ttimeout
-set timeoutlen=100
-set laststatus=2
-set statusline=
-set stl=%f\ Line:%l/%L\ (%p%%)\ Col:%v\ Buf:#%n\ 0x%B
-
 set backspace=indent,eol,start
-set expandtab smarttab shiftround nojoinspaces
-set ruler
-set textwidth=120
-set tw=100
+set complete+=d
+set diffopt+=vertical
+set expandtab
+set foldlevelstart=999
+set foldmethod=indent
+set grepprg=LC_ALL=C\ grep\ -nrsH
+set hidden
+set hlsearch
 set ignorecase
-set showmatch
-set smartcase
-set tabstop=4
+set incsearch
+set lazyredraw
+set mouse=a
+set noswapfile
+set number
+set path=.,**
+set ruler
+set shiftround
 set shiftwidth=4
+set smartcase
 set softtabstop=4
-set pastetoggle=<F2>
+set splitright
+set tabstop=8
+set tags=./tags;,tags;
+set textwidth=0
+set ttimeout ttimeoutlen=100
+set ttyfast
+set wildignorecase
+set wildmenu
+set wildmode=full
 
-"Keymappings
-let mapleader="\<Space>"
-nnoremap <Leader>/ :nohlsearch<Bar>:echo<CR>
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
-nnoremap <Leader>b :ls<CR>:b<Space>
-nnoremap <silent><Leader>j :set paste<CR>m`o<Esc>``:set nopaste<CR>
-nnoremap <silent><Leader>k :set paste<CR>m`O<Esc>``:set nopaste<CR>
-nnoremap <Leader>1 1gt
-nnoremap <Leader>2 2gt
-nnoremap <Leader>3 3gt
-nnoremap <Leader>4 4gt
-nnoremap <Leader>5 5gt
-nnoremap <Leader>6 6gt
-nnoremap <Leader>7 7gt
-nnoremap <Leader>8 8gt
-nnoremap <Leader>9 9gt
+" remove trailing whitespace on write
+autocmd BufWritePre * %s/\s\+$//e
 
-nmap <Leader>n :NERDTreeToggle<CR>
-nmap <Leader>t :TagbarToggle<CR>
-nmap <Leader>f :FZF <CR>
-nmap <silent><Leader>ev :e $MYVIMRC<CR>
-map <Leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-map <Leader>x :YcmCompleter FixIt<CR>
+" use :h<Space> to open vertical help splits
+cabbrev h vert h
 
-map <S-TAB> :bprev<CR>
-map tn :tabnew <CR>
-map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
-nnoremap <silent> <F8> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
-noremap ; :
+" copy to the system clipboard
+map <C-c> "+y
 
-imap <C-b> <Left>
-imap <C-f> <Right>
-imap <C-j> <Down>
-imap <C-k> <Up>
-imap <C-e> <End>
-imap <C-a> <Home>
-
-nnoremap <tab> %
-vnoremap <tab> %
-
+" keep selection when indenting text
 vnoremap < <gv
 vnoremap > >gv
 
+" play a macro recorded to register q
+nnoremap Q @q
+
+" quick blank line from normal mode
+nnoremap <Enter> o<Esc>
+
+" tap esc to remove search highlighting
+nnoremap <Esc><Esc> :silent! nohls<CR>
+
+" center screen on search result
+nnoremap n nzz
+nnoremap N Nzz
+
+" move by screen line instead of file line
 nnoremap j gj
 nnoremap k gk
 
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" tab for next matching item
+nnoremap <tab> %
+vnoremap <tab> %
 
-let g:syntastic_cpp_compiler = 'g++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
-let g:syntastic_python_python_exec = '/usr/local/bin/python3.6'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" vim-fugitive mappings
+nnoremap <Leader>gs :Gstatus<CR><c-w>L
 
-"YouCompleteMe
-autocmd CompleteDone * pclose
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_global_ycm_extra_conf = '~/workspace/dotfiles/.ycm_extra_conf.py'
-function! g:UltiSnips_Complete()
-  call UltiSnips#ExpandSnippet()
-  if g:ulti_expand_res == 0
-    if pumvisible()
-      return "\<C-n>"
-    else
-      call UltiSnips#JumpForwards()
-      if g:ulti_jump_forwards_res == 0
-        return "\<TAB>"
-      endif
-    endif
+" useful black hole delete
+nnoremap <silent> <Leader>d "_d
+vnoremap <silent> <Leader>d "_d
+
+" juggling with files
+nnoremap <Leader>e :e<Space>
+nnoremap <Leader>E :e <C-r>=expand('%:p:h').'/'<CR>
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>L :Lines<CR>
+nnoremap <Leader>F :find *
+nnoremap <Leader>s :sfind *
+nnoremap <Leader>t :tabfind *
+nnoremap <Leader>v :vert sfind *
+nnoremap <Leader>w :w<CR>:echo "Written"<CR>
+nnoremap <Leader>W :w !sudo tee % >/dev/null
+nnoremap ZZ        :wqa<CR>
+
+" juggling with buffers
+nnoremap <Leader>b  :buffer *
+nnoremap <Leader>ls :ls<CR>:b<Space>
+nnoremap <C-p>      :bprevious<CR>
+nnoremap <C-n>      :bnext<CR>
+nnoremap <BS>       :buffer#<CR>
+
+" juggling with tabs
+nnoremap <Leader>tn :tabnew<CR>
+nnoremap <Leader>te :tabedit **/*
+nnoremap <Leader>tf :tabfind *
+
+" juggling with definitions
+nnoremap <Leader>D :dlist /
+nnoremap [D [D:djump<Space><Space><Space><C-r><C-w><S-Left><Left>
+nnoremap ]D ]D:djump<Space><Space><Space><C-r><C-w><S-Left><Left>
+
+" juggling with matches
+nnoremap <Leader>i :ilist /
+nnoremap [I [I:ijump<Space><Space><Space><C-r><C-w><S-Left><Left><Left>
+nnoremap ]I ]I:ijump<Space><Space><Space><C-r><C-w><S-Left><Left><Left>
+
+" juggling with changes
+nnoremap <Leader>, *``cgn
+nnoremap <Leader>. #``cgN
+
+" juggling with quickfix entries
+nnoremap <End>  :cnext<CR>
+nnoremap <Home> :cprevious<CR>
+
+" super quick search and replace
+nnoremap <Space>s :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap <Space>%       :%s/\<<C-r>=expand("<cword>")<CR>\>/
+
+" emacs-like editing in insert mode
+inoremap <C-a> <Home>
+inoremap <C-b> <Left>
+inoremap <C-e> <End>
+inoremap <C-f> <Right>
+inoremap <C-k> <Esc>lDa
+
+" pair expansion on the cheap
+inoremap (<CR> (<CR>)<Esc>O
+inoremap (;    (<CR>);<Esc>O
+inoremap (,    (<CR>),<Esc>O
+inoremap {<CR> {<CR>b4
+inoremap {;    {<CR>};<Esc>O
+
+inoremap [<CR> [<CR>]<Esc>O
+inoremap [;    [<CR>];<Esc>O
+inoremap [,    [<CR>],<Esc>O
+
+" smooth grepping
+command! -nargs=+ -complete=file_in_path -bar Grep silent! grep! <q-args> | redraw!
+
+" smooth listing
+cnoremap <expr> <CR> <SID>CCR()
+function! s:CCR()
+	command! -bar Z silent set more|delcommand Z
+	if getcmdtype() == ":"
+		let cmdline = getcmdline()
+		    if cmdline =~ '\v\C^(dli|il)' | return "\<CR>:" . cmdline[0] . "jump   " . split(cmdline, " ")[1] . "\<S-Left>\<Left>\<Left>"
+		elseif cmdline =~ '\v\C^(cli|lli)' | return "\<CR>:silent " . repeat(cmdline[0], 2) . "\<Space>"
+		elseif cmdline =~ '\C^changes' | set nomore | return "\<CR>:Z|norm! g;\<S-Left>"
+		elseif cmdline =~ '\C^ju' | set nomore | return "\<CR>:Z|norm! \<C-o>\<S-Left>"
+		elseif cmdline =~ '\v\C(#|nu|num|numb|numbe|number)$' | return "\<CR>:"
+		elseif cmdline =~ '\C^ol' | set nomore | return "\<CR>:Z|e #<"
+		elseif cmdline =~ '\v\C^(ls|files|buffers)' | return "\<CR>:b"
+		elseif cmdline =~ '\C^marks' | return "\<CR>:norm! `"
+		elseif cmdline =~ '\C^undol' | return "\<CR>:u "
+		else | return "\<CR>" | endif
+	else | return "\<CR>" | endif
+endfunction
+
+" automagically set paste mode when pasting text
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
   endif
+
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
   return ""
 endfunction
 
-function! g:UltiSnips_Reverse()
-  call UltiSnips#JumpBackwards()
-  if g:ulti_jump_backwards_res == 0
-    return "\<C-P>"
-  endif
-
-  return ""
-endfunction
-
-if !exists("g:UltiSnipsJumpForwardTrigger")
-  let g:UltiSnipsJumpForwardTrigger = "<tab>"
-endif
-
-if !exists("g:UltiSnipsJumpBackwardTrigger")
-  let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-endif
-
-au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger     . " <C-R>=g:UltiSnips_Complete()<cr>"
-au InsertEnter * exec "inoremap <silent> " .     g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
