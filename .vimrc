@@ -1,7 +1,7 @@
 " filetype support and colours
 filetype plugin indent on
 syntax on
-set background=light
+set background=dark
 colorscheme default
 
 " vim-plug
@@ -48,6 +48,10 @@ set wildignorecase
 set wildmenu
 set wildmode=full
 
+" plugin settings
+nnoremap <Leader>gs :Gstatus<CR><c-w>L
+let b:lion_squeeze_spaces = 1
+
 " remove trailing whitespace on write
 autocmd BufWritePre * %s/\s\+$//e
 
@@ -67,7 +71,7 @@ nnoremap Q @q
 " quick blank line from normal mode
 nnoremap <Enter> o<Esc>
 
-" tap esc to remove search highlighting
+" double tap Escape to remove search highlighting
 nnoremap <Esc><Esc> :silent! nohls<CR>
 
 " center screen on search result
@@ -81,9 +85,6 @@ nnoremap k gk
 " tab for next matching item
 nnoremap <tab> %
 vnoremap <tab> %
-
-" vim-fugitive mappings
-nnoremap <Leader>gs :Gstatus<CR><c-w>L
 
 " useful black hole delete
 nnoremap <silent> <Leader>d "_d
@@ -116,8 +117,8 @@ nnoremap <Leader>tf :tabfind *
 
 " juggling with definitions
 nnoremap <Leader>D :dlist /
-nnoremap [D [D:djump<Space><Space><Space><C-r><C-w><S-Left><Left>
-nnoremap ]D ]D:djump<Space><Space><Space><C-r><C-w><S-Left><Left>
+nnoremap [D [D     :djump<Space><Space><Space><C-r><C-w><S-Left><Left>
+nnoremap ]D ]D     :djump<Space><Space><Space><C-r><C-w><S-Left><Left>
 
 " juggling with matches
 nnoremap <Leader>i :ilist /
@@ -134,7 +135,7 @@ nnoremap <Home> :cprevious<CR>
 
 " super quick search and replace
 nnoremap <Space>s :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
-nnoremap <Space>%       :%s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap <Space>% :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
 " emacs-like editing in insert mode
 inoremap <C-a> <Home>

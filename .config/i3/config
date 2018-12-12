@@ -277,7 +277,7 @@ bindsym $mod+r mode "resize"
 
 bar {
     status_command i3status
-	font pango:DejaVu Sans Mono Bold 11
+	font pango:Terminus 11
 	position top
 	workspace_buttons yes
         strip_workspace_numbers yes
