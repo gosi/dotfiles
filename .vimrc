@@ -61,6 +61,9 @@ cabbrev h vert h
 " copy to the system clipboard
 map <C-c> "+y
 
+" Y should yank to EOL
+map Y y$
+
 " keep selection when indenting text
 vnoremap < <gv
 vnoremap > >gv
@@ -199,3 +202,10 @@ function! XTermPasteBegin()
 endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+" open cppman in a vertical tmux split by pressing K on a function
+command! -nargs=+ Cppman silent! call system("tmux split-window -h cppman " . expand(<q-args>))
+autocmd FileType cpp nnoremap <silent><buffer> K <Esc>:Cppman <cword><CR>
+
+" C man pages with K
+runtime! ftplugin/man.vim

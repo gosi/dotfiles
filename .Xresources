@@ -2,15 +2,23 @@
 URxvt.saveLines: 2000
 URxvt.scrollBar: False
 URxvt.scrollstyle: rxvt
-URxvt.termName: xterm-256color
 URxvt.urgentOnBell: True
-URxvt.cursorBlink: False
+URxvt.cursorBlink: True
 URxvt.visualBell: true
 URxvt.iso14755: false
 URxvt.iso14755_52: false
-
 URxvt.font: xft:Terminus-10
 
+Xft.dpi: 144
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.rgba: rgb
+
+! Transparency
+!URxvt.transparent:true
+!URxvt.shading:10
+!
 ! Utils:
 #ifndef URXVT_PERL_LIB
 #define URXVT_PERL_LIB /home/gosi/.urxvt/
@@ -27,7 +35,6 @@ URxvt.url-select.underline: true
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
 
-
 ! USE selection & mouse-2!  will fill 'primary' clipboard buffer
 !URxvt.keysym.C-S-C:   perl:clipboard:copy
 !URxvt.keysym.C-S-V:   perl:clipboard:paste
@@ -39,13 +46,25 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 !URxvt.clipboard.copycmd:  pbcopy
 !URxvt.clipboard.pastecmd: pbpaste
 
-! Looks
-URxvt.foreground: grey
-URxvt.background: black
-URxvt.cursorColor:magenta
+URxvt*background: black
+URxvt*foreground: #CCCCCC
 
-Xft.dpi: 144
-Xft.antialias: 1
-Xft.hinting: 1
-Xft.hintstyle: hintslight
-Xft.rgba: rgb
+URxvt*termName: rxvt-unicode
+
+URxvt*color0: #2E3436
+URxvt*color1: #CC0000
+URxvt*color2: #4E9A06
+URxvt*color3: #C4A000
+URxvt*color4: #3465A4
+URxvt*color5: #75507B
+URxvt*color6: #06989A
+URxvt*color7: #D3D7CF
+URxvt*color8: #555753
+URxvt*color9: #EF2929
+URxvt*color10: #8AE234
+URxvt*color11: #FCE94F
+URxvt*color12: #729FCF
+URxvt*color13: #AD7FA8
+URxvt*color14: #34E2E2
+URxvt*color15: #EEEEEC
+

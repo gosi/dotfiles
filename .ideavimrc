@@ -2,54 +2,124 @@ set nocompatible
 filetype plugin indent on
 syntax on
 
-set nobackup
-set nowritebackup
-set noswapfile
-
+" various settings
+let mapleader = "\<Space>"
+let @/ = ""
 set autoindent
-set showmatch
-set incsearch
-set mouse=a
-set number
-set hlsearch
-
-set foldenable
-set foldlevelstart=9
-set foldnestmax=9
-set foldmethod=indent
-
-set notimeout
-set ttimeout
-set timeoutlen=100
-
 set backspace=indent,eol,start
-set laststatus=2
-set expandtab smarttab shiftround nojoinspaces
-
+set complete+=d
+set diffopt+=vertical
+set expandtab
+set foldlevelstart=999
+set foldmethod=indent
+set grepprg=LC_ALL=C\ grep\ -nrsH
+set hidden
+set hlsearch
 set ignorecase
-set showmatch
+set incsearch
+set lazyredraw
+set mouse=a
+set noswapfile
+set number
+set path=.,**
+set ruler
+set shiftround
+set shiftwidth=4
 set smartcase
-set tabstop=4 shiftwidth=4 softtabstop=4
+set softtabstop=4
+set splitright
+set tabstop=8
+set tags=./tags;,tags;
+set textwidth=0
+set ttimeout ttimeoutlen=100
+set ttyfast
+set wildignorecase
+set wildmenu
+set wildmode=full
 
-imap <C-b> <Left>
-imap <C-f> <Right>
-imap <C-j> <Down>
-imap <C-k> <Up>
-imap <C-e> <End>
-imap <C-a> <Home>
+" copy to the system clipboard
+map <C-c> "+y
 
-"Keymappings
-let mapleader="\<Space>"
+" Y should yank to EOL
+map Y y$
 
-nnoremap <Leader>\ :nohlsearch<Bar>:echo<CR>
-nmap <Leader>s :w<CR>
-nmap tn :tabnew<CR>
-
+" keep selection when indenting text
 vnoremap < <gv
 vnoremap > >gv
 
+" play a macro recorded to register q
+nnoremap Q @q
+
+" quick blank line from normal mode
+nnoremap <Enter> o<Esc>
+
+" double tap Escape to remove search highlighting
+nnoremap <Esc><Esc> :silent! nohls<CR>
+
+" center screen on search result
+nnoremap n nzz
+nnoremap N Nzz
+
+" move by screen line instead of file line
 nnoremap j gj
 nnoremap k gk
 
-set scrolloff=3"
+" tab for next matching item
+nnoremap <tab> %
+vnoremap <tab> %
 
+" useful black hole delete
+nnoremap <silent> <Leader>d "_d
+vnoremap <silent> <Leader>d "_d
+
+" juggling with files
+nnoremap <Leader>e :e<Space>
+nnoremap <Leader>E :e <C-r>=expand('%:p:h').'/'<CR>
+nnoremap <Leader>f :find *
+nnoremap <Leader>s :sfind *
+nnoremap <Leader>t :tabfind *
+nnoremap <Leader>v :vert sfind *
+nnoremap <Leader>w :w<CR>:echo "Written"<CR>
+nnoremap <Leader>W :w !sudo tee % >/dev/null
+nnoremap ZZ        :wqa<CR>
+
+" juggling with buffers
+nnoremap <Leader>b  :buffer *
+nnoremap <Leader>ls :ls<CR>:b<Space>
+nnoremap <C-p>      :bprevious<CR>
+nnoremap <C-n>      :bnext<CR>
+nnoremap <BS>       :buffer#<CR>
+
+" juggling with tabs
+nnoremap <Leader>tn :tabnew<CR>
+nnoremap <Leader>te :tabedit **/*
+nnoremap <Leader>tf :tabfind *
+
+" juggling with definitions
+nnoremap <Leader>D :dlist /
+nnoremap [D [D     :djump<Space><Space><Space><C-r><C-w><S-Left><Left>
+nnoremap ]D ]D     :djump<Space><Space><Space><C-r><C-w><S-Left><Left>
+
+" juggling with matches
+nnoremap <Leader>i :ilist /
+nnoremap [I [I:ijump<Space><Space><Space><C-r><C-w><S-Left><Left><Left>
+nnoremap ]I ]I:ijump<Space><Space><Space><C-r><C-w><S-Left><Left><Left>
+
+" juggling with changes
+nnoremap <Leader>, *``cgn
+nnoremap <Leader>. #``cgN
+
+" juggling with quickfix entries
+nnoremap <End>  :cnext<CR>
+nnoremap <Home> :cprevious<CR>
+
+" super quick search and replace
+nnoremap <Space>s :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap <Space>% :%s/\<<C-r>=expand("<cword>")<CR>\>/
+
+" emacs-like editing in insert mode
+inoremap <C-a> <Home>
+inoremap <C-b> <Left>
+inoremap <C-e> <End>
+inoremap <C-f> <Right>
+inoremap <C-k> <Esc>lDa
