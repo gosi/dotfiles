@@ -3,36 +3,26 @@ filetype plugin indent on
 syntax on
 
 " various settings
-let mapleader = "\<Space>"
+let mapleader = " "
 let @/ = ""
 set autoindent
 set backspace=indent,eol,start
-set complete+=d
-set diffopt+=vertical
 set expandtab
 set foldlevelstart=999
 set foldmethod=indent
-set grepprg=LC_ALL=C\ grep\ -nrsH
-set hidden
 set hlsearch
 set ignorecase
 set incsearch
-set lazyredraw
 set mouse=a
-set noswapfile
 set number
-set path=.,**
 set ruler
 set shiftround
 set shiftwidth=4
 set smartcase
 set softtabstop=4
-set splitright
 set tabstop=8
-set tags=./tags;,tags;
 set textwidth=0
 set ttimeout ttimeoutlen=100
-set ttyfast
 set wildignorecase
 set wildmenu
 set wildmode=full
@@ -53,8 +43,8 @@ nnoremap Q @q
 " quick blank line from normal mode
 nnoremap <Enter> o<Esc>
 
-" double tap Escape to remove search highlighting
-nnoremap <Esc><Esc> :silent! nohls<CR>
+" ctrl-l to remove search highlighting
+noremap <c-l> :nohlsearch<cr><c-l>
 
 " center screen on search result
 nnoremap n nzz
@@ -72,50 +62,18 @@ vnoremap <tab> %
 nnoremap <silent> <Leader>d "_d
 vnoremap <silent> <Leader>d "_d
 
-" juggling with files
-nnoremap <Leader>e :e<Space>
-nnoremap <Leader>E :e <C-r>=expand('%:p:h').'/'<CR>
-nnoremap <Leader>f :find *
-nnoremap <Leader>s :sfind *
-nnoremap <Leader>t :tabfind *
-nnoremap <Leader>v :vert sfind *
-nnoremap <Leader>w :w<CR>:echo "Written"<CR>
-nnoremap <Leader>W :w !sudo tee % >/dev/null
-nnoremap ZZ        :wqa<CR>
-
-" juggling with buffers
-nnoremap <Leader>b  :buffer *
-nnoremap <Leader>ls :ls<CR>:b<Space>
-nnoremap <C-p>      :bprevious<CR>
+noremap <C-p>      :bprevious<CR>
 nnoremap <C-n>      :bnext<CR>
 nnoremap <BS>       :buffer#<CR>
 
 " juggling with tabs
-nnoremap <Leader>tn :tabnew<CR>
-nnoremap <Leader>te :tabedit **/*
-nnoremap <Leader>tf :tabfind *
-
-" juggling with definitions
-nnoremap <Leader>D :dlist /
-nnoremap [D [D     :djump<Space><Space><Space><C-r><C-w><S-Left><Left>
-nnoremap ]D ]D     :djump<Space><Space><Space><C-r><C-w><S-Left><Left>
-
-" juggling with matches
-nnoremap <Leader>i :ilist /
-nnoremap [I [I:ijump<Space><Space><Space><C-r><C-w><S-Left><Left><Left>
-nnoremap ]I ]I:ijump<Space><Space><Space><C-r><C-w><S-Left><Left><Left>
+nnoremap tn :tabnew<CR>
+nnoremap te :tabedit **/*
+nnoremap tf :tabfind *
 
 " juggling with changes
 nnoremap <Leader>, *``cgn
 nnoremap <Leader>. #``cgN
-
-" juggling with quickfix entries
-nnoremap <End>  :cnext<CR>
-nnoremap <Home> :cprevious<CR>
-
-" super quick search and replace
-nnoremap <Space>s :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
-nnoremap <Space>% :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
 " emacs-like editing in insert mode
 inoremap <C-a> <Home>
@@ -123,3 +81,38 @@ inoremap <C-b> <Left>
 inoremap <C-e> <End>
 inoremap <C-f> <Right>
 inoremap <C-k> <Esc>lDa
+
+" ideavim stuff
+nmap <Space> m
+
+nnoremap ma :action GotoAction<CR>
+vnoremap ma :action GotoAction<CR>
+
+nnoremap me :action SearchEverywhere<CR>
+nnoremap ms :action FileStructurePopup<CR>
+nnoremap mg :action FindInPath<CR>
+
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gf :action GotoFile<CR>
+
+nnoremap gb :action JumpToLastChange<CR>
+
+nnoremap U :action FindUsages<CR>
+nnoremap R :action RenameElement<CR>
+
+nnoremap gh :action Back<CR>
+nnoremap gl :action Forward<CR>
+
+inoremap <C-n> <C-o>:action InsertLiveTemplate<CR>
+nnoremap <C-I> :action QuickJavaDoc<CR>
+
+nnoremap mp :action PasteMultiple<CR>
+nnoremap mP :action PasteMultiple<CR>
+
+nnoremap == :action ReformatCode<CR>
+vnoremap == :action ReformatCode<CR>
+
+nnoremap cc :action CommentByLineComment<CR>
+vnoremap cc :action CommentByLineComment<CR>
