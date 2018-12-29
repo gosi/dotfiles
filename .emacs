@@ -23,6 +23,7 @@
                                 font-lock-doc-string-face
                                 font-lock-string-face))
 
+
 ;; yasnippet
 (require 'yasnippet)
 (yas-global-mode 1)
@@ -104,6 +105,16 @@
       scroll-conservatively 9999
       scroll-step 1)
 
+(defun replace-in-buffer ()
+"Replace text in whole buffer. Change OLD string to NEW string"
+  (interactive)
+  (save-excursion
+    (replace-string (read-string "OLD string:")
+                    (read-string "NEW string:")
+                    nil
+                    (point-min)
+                    (point-max))))
+
 ;; +-----------------------------------------------------------------+
 ;; | Keyboard shortcuts and bindings                                 |
 ;; +-----------------------------------------------------------------+
@@ -116,6 +127,7 @@
 (global-set-key (kbd "C-q") 'er/expand-region)
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-x f") 'find-file)
+(global-set-key (kbd "C-c r") 'replace-in-buffer)
 
 ;; make line below or above current line without breaking
 (global-set-key (kbd "<C-return>") (lambda ()
