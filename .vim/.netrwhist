@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/home/gosi/workspace/dotfiles/.git'
 let g:netrw_dirhist_2='/home/gosi/.tmux'
+let g:netrw_dirhist_3='/home/gosi/.emacs.d'

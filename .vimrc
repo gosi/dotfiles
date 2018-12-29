@@ -10,6 +10,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tommcdo/vim-lion'
 call plug#end()
 
@@ -145,18 +146,8 @@ inoremap <C-a> <Home>
 inoremap <C-b> <Left>
 inoremap <C-e> <End>
 inoremap <C-f> <Right>
-inoremap <C-k> <Esc>lDa
-
-" pair expansion on the cheap
-inoremap (<CR> (<CR>)<Esc>O
-inoremap (;    (<CR>);<Esc>O
-inoremap (,    (<CR>),<Esc>O
-inoremap {<CR> {<CR>b4
-inoremap {;    {<CR>};<Esc>O
-
-inoremap [<CR> [<CR>]<Esc>O
-inoremap [;    [<CR>];<Esc>O
-inoremap [,    [<CR>],<Esc>O
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
 
 " smooth grepping
 command! -nargs=+ -complete=file_in_path -bar Grep silent! grep! <q-args> | redraw!
