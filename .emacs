@@ -4,24 +4,18 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (setq debug-on-error t)
 
-;; Setup package.el
-(require 'package)
-(setq package-enable-at-startup nil)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("org" . "http://orgmode.org/elpa/")
+                        ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")))
 (package-initialize)
-
-;; Bootstrap `use-package'
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(use-package paredit
-   :ensure t)
-(dolist (package '( expand-region company flycheck yasnippet)) ;; Add packages here
- (unless (package-installed-p package)
-   (package-install package))
-   (require package))
-
+(defun require-package (package)
+  (setq-default highlight-tabs t)
+  "Install given PACKAGE."
+  (unless (package-installed-p package)
+    (unless (assoc package package-archive-contents)
+      (package-refresh-contents))
+    (package-install package)))
 ;; inhibits highlighting in specific places, like in comments
 (setq ahs-inhibit-face-list '(font-lock-comment-delimiter-face
                                 font-lock-comment-face
@@ -30,13 +24,17 @@
                                 font-lock-string-face))
 
 ;; yasnippet
+(require 'yasnippet)
 (yas-global-mode 1)
 
 ;; auto close (), {}, [], ""
 (electric-pair-mode 1)
 
+;; company-mode
+(require 'company)
 (global-company-mode 1)
 (add-hook 'after-init-hook 'global-flycheck-mode)
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;; use system clipboard
 (setq x-select-enable-clipboard t)
@@ -90,19 +88,24 @@
 (set-cursor-color "Lime")
 (set-face-attribute 'default nil :height 120)
 
-(setq show-trailing-whitespace)
 (setq-default indicate-empty-lines t)
 (setq visible-bell t) ;;removes alarm sound and flashes screen instead
 (setq default-major-mode 'indented-text-mode)
 (setq text-mode-hook 'turn-on-auto-fill)
 (setq fill-column 100)
 
-(require 'whitespace)
-(setq whitespace-style '(face tabs lines-tail trailing))
-(global-whitespace-mode t)
+;; show matching pairs
+(require 'paren)
+(show-paren-mode)
+
+;; smooth scrolling
+(require-package 'smooth-scrolling)
+(setq scroll-margin 5
+      scroll-conservatively 9999
+      scroll-step 1)
 
 ;; +-----------------------------------------------------------------+
-;; | Keyboard shortcuts etc                                          |
+;; | Keyboard shortcuts and bindings                                 |
 ;; +-----------------------------------------------------------------+
 (global-set-key [f2] 'save-buffer)
 (global-set-key [f4] 'kill-this-buffer)
@@ -113,6 +116,19 @@
 (global-set-key (kbd "C-q") 'er/expand-region)
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-x f") 'find-file)
+
+;; make line below or above current line without breaking
+(global-set-key (kbd "<C-return>") (lambda ()
+                   (interactive)
+                   (end-of-line)
+                   (newline-and-indent)))
+
+(global-set-key (kbd "<C-S-return>") (lambda ()
+                       (interactive)
+                       (beginning-of-line)
+                       (newline-and-indent)
+                       (previous-line)))
+
 
 (defun dont-kill-emacs ()
   (interactive)
