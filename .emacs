@@ -4,6 +4,8 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (setq debug-on-error t)
 (setq package-check-signature nil)
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
 
 ;; setup package and use-package
 (package-initialize)
@@ -15,10 +17,6 @@
 (add-to-list 'package-archives
             '("melpa" . "https://melpa.org/packages/") t)
 
-;; Bootstrap `use-package'
-;; http://www.lunaryorn.com/2015/01/06/my-emacs-configuration-with-use-package.html
-;; use-package autoloads will make sure it get pulled in at the right time
-;; read "package autoloads":  http://www.lunaryorn.com/2014/07/02/autoloads-in-emacs-lisp.html
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -40,7 +38,12 @@
     :ensure t)
 (add-hook 'after-init-hook 'global-company-mode)
 
+;; flycheck
 (use-package flycheck
+    :ensure t)
+
+;; expand-region
+(use-package expand-region
     :ensure t)
 
 ;; use system clipboard
@@ -115,6 +118,7 @@
       scroll-conservatively 9999
       scroll-step 1)
 
+;; replace all from anywhere in the file with "C-c r"
 (defun replace-in-buffer ()
 "Replace text in whole buffer. Change OLD string to NEW string"
   (interactive)
@@ -153,6 +157,7 @@
                        (previous-line)))
 
 
+;; don't accidently kill emacs
 (defun dont-kill-emacs ()
   (interactive)
   (error (substitute-command-keys "To exit emacs: \\[kill-emacs]")))
