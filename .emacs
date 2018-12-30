@@ -38,8 +38,10 @@
 ;; company-mode
 (use-package company
     :ensure t)
-;(add-hook 'after-init-hook 'global-flycheck-mode)
-;(add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'after-init-hook 'global-company-mode)
+
+(use-package flycheck
+    :ensure t)
 
 ;; use system clipboard
 (setq x-select-enable-clipboard t)
