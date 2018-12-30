@@ -3,9 +3,11 @@
 ;; +-----------------------------------------------------------------+
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (setq debug-on-error t)
+(setq vc-follow-symlinks t)
 (setq package-check-signature nil)
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file)
+(setq custom-file "~/.emacs-custom")
+(if (file-exists-p custom-file)
+    (load custom-file))
 
 ;; setup package and use-package
 (package-initialize)
@@ -29,13 +31,17 @@
 ;; yasnippet
 (use-package yasnippet
     :ensure t)
+(add-hook 'after-init-hook 'yas-global-mode 1)
+(use-package yasnippet-snippets
+    :ensure t)
 
 ;; auto close (), {}, [], ""
 (electric-pair-mode 1)
 
 ;; company-mode
 (use-package company
-    :ensure t)
+  :ensure t)
+(setq yas-triggers-in-field t)
 (add-hook 'after-init-hook 'global-company-mode)
 
 ;; flycheck
