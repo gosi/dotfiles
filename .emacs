@@ -3,45 +3,49 @@
 ;; +-----------------------------------------------------------------+
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (setq debug-on-error t)
+(setq package-check-signature nil)
 
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("org" . "http://orgmode.org/elpa/")
-                        ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")))
+;; setup package and use-package
 (package-initialize)
-(defun require-package (package)
-  (setq-default highlight-tabs t)
-  "Install given PACKAGE."
-  (unless (package-installed-p package)
-    (unless (assoc package package-archive-contents)
-      (package-refresh-contents))
-    (package-install package)))
-;; inhibits highlighting in specific places, like in comments
-(setq ahs-inhibit-face-list '(font-lock-comment-delimiter-face
-                                font-lock-comment-face
-                                font-lock-doc-face
-                                font-lock-doc-string-face
-                                font-lock-string-face))
 
+;; override the default http with https
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")))
+
+;; add melpa to the front
+(add-to-list 'package-archives
+            '("melpa" . "https://melpa.org/packages/") t)
+
+;; Bootstrap `use-package'
+;; http://www.lunaryorn.com/2015/01/06/my-emacs-configuration-with-use-package.html
+;; use-package autoloads will make sure it get pulled in at the right time
+;; read "package autoloads":  http://www.lunaryorn.com/2014/07/02/autoloads-in-emacs-lisp.html
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; magit
+(use-package magit
+    :ensure t
+    :defer t)
 
 ;; yasnippet
-(require 'yasnippet)
-(yas-global-mode 1)
+(use-package yasnippet
+    :ensure t)
 
 ;; auto close (), {}, [], ""
 (electric-pair-mode 1)
 
 ;; company-mode
-(require 'company)
-(global-company-mode 1)
-(add-hook 'after-init-hook 'global-flycheck-mode)
-(add-hook 'after-init-hook 'global-company-mode)
+(use-package company
+    :ensure t)
+;(add-hook 'after-init-hook 'global-flycheck-mode)
+;(add-hook 'after-init-hook 'global-company-mode)
 
 ;; use system clipboard
 (setq x-select-enable-clipboard t)
 
 ;; delete until character
-(require 'misc)
+(use-package misc)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 
 ;; why isn't this default?
@@ -87,20 +91,24 @@
 ;;(set-foreground-color "#DAB98F")
 ;;(set-background-color "#161616")
 (set-cursor-color "Lime")
-(set-face-attribute 'default nil :height 120)
+(set-face-attribute 'default nil :height 110)
 
 (setq-default indicate-empty-lines t)
-(setq visible-bell t) ;;removes alarm sound and flashes screen instead
+(setq visible-bell t)
 (setq default-major-mode 'indented-text-mode)
 (setq text-mode-hook 'turn-on-auto-fill)
 (setq fill-column 100)
 
+;; clean trailing whitespace on save
+(add-hook 'write-file-hooks 'delete-trailing-whitespace)
+
 ;; show matching pairs
-(require 'paren)
+(use-package paren)
 (show-paren-mode)
 
 ;; smooth scrolling
-(require-package 'smooth-scrolling)
+(use-package smooth-scrolling
+    :ensure t)
 (setq scroll-margin 5
       scroll-conservatively 9999
       scroll-step 1)
@@ -127,6 +135,7 @@
 (global-set-key (kbd "C-q") 'er/expand-region)
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-x f") 'find-file)
+(global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-c r") 'replace-in-buffer)
 
 ;; make line below or above current line without breaking
