@@ -87,7 +87,7 @@
         (next-line)))
 
 ;; visuals
-(tool-bar-mode 1)
+(tool-bar-mode 0)
 (scroll-bar-mode 1)
 (menu-bar-mode t)
 (blink-cursor-mode 0)
