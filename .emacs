@@ -123,11 +123,16 @@
 (set-cursor-color "Lime")
 (set-face-attribute 'default nil :height 110)
 
-(setq-default indicate-empty-lines t)
 (setq visible-bell t)
 (setq default-major-mode 'indented-text-mode)
 (setq text-mode-hook 'turn-on-auto-fill)
 (setq fill-column 100)
+
+;; show vim-like empty lines
+(setq-default indicate-empty-lines t)
+(progn
+  (define-fringe-bitmap 'tilde [0 0 0 113 219 142 0 0] nil nil 'center)
+  (setcdr (assq 'empty-line fringe-indicator-alist) 'tilde))
 
 ;; clean trailing whitespace on save
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
