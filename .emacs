@@ -179,6 +179,10 @@
 (global-set-key (kbd "C-x f") 'find-file)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-c r") 'replace-in-buffer)
+(global-set-key (kbd "C-c ]") 'dumb-jump-go)
+(global-set-key (kbd "C-c t") 'dumb-jump-back)
+(global-set-key (kbd "C-c q") 'dumb-jump-quick-look)
+(global-set-key (kbd "C-c j") 'dumb-jump-other-window)
 ;; Ivy-based interface to standard commands
 (global-set-key (kbd "C-s") 'swiper)
 (global-set-key (kbd "M-x") 'counsel-M-x)
