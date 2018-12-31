@@ -148,7 +148,7 @@
       scroll-conservatively 9999
       scroll-step 1)
 
-;; replace all from anywhere in the file with "C-c r"
+;; replace a word from anywhere in the file with "C-c r"
 (defun replace-in-buffer ()
 "Replace text in whole buffer. Change OLD string to NEW string"
   (interactive)
@@ -163,6 +163,7 @@
 ;; | Keyboard shortcuts and bindings                                 |
 ;; +-----------------------------------------------------------------+
 (global-set-key [f4] 'kill-this-buffer)
+(global-set-key [f5] 'eval-buffer)
 (global-set-key [f8] 'delete-trailing-whitespace)
 (global-set-key [f9] 'compile)
 (global-set-key [f10] 'compile)
@@ -183,24 +184,12 @@
 (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
 ;; Ivy-based interface to shell and system tools
 (global-set-key (kbd "C-c g") 'counsel-git)
-(global-set-key (kbd "C-x p") 'counsel-git-grep)
+(global-set-key (kbd "C-c p") 'counsel-git-grep)
 (global-set-key (kbd "C-c k") 'counsel-ag)
 (global-set-key (kbd "C-x l") 'counsel-locate)
 (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
-
-;; make line below or above current line without breaking
-(global-set-key (kbd "<C-return>") (lambda ()
-                   (interactive)
-                   (end-of-line)
-                   (newline-and-indent)))
-
-(global-set-key (kbd "<C-S-return>") (lambda ()
-                       (interactive)
-                       (beginning-of-line)
-                       (newline-and-indent)
-                       (previous-line)))
-
+(global-set-key (kbd "<C-return>") 'ivy-immediate-done)
 
 ;; don't accidently kill emacs
 (defun dont-kill-emacs ()
