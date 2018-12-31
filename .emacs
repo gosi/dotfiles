@@ -41,6 +41,11 @@
 (setq ivy-use-virtual-buffers t)
 (setq ivy-count-format "(%d/%d) ")
 
+;; dumb-jump
+(use-package dumb-jump
+  :ensure t)
+;; (dumb-jump-mode)
+
 ;; magit
 (use-package magit
     :ensure t
@@ -112,17 +117,18 @@
         (next-line)))
 
 ;; visuals
+(blink-cursor-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 1)
 (menu-bar-mode t)
-(blink-cursor-mode 0)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)
 
-;;(set-foreground-color "#DAB98F")
-;;(set-background-color "#161616")
-(set-cursor-color "Lime")
+;; (set-foreground-color "white")
+;; (set-background-color "black")
+
 (set-face-attribute 'default nil :height 110)
-
 (setq visible-bell t)
 (setq default-major-mode 'indented-text-mode)
 (setq text-mode-hook 'turn-on-auto-fill)
