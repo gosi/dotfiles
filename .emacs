@@ -23,6 +23,17 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+;; use correct PATH
+(use-package exec-path-from-shell
+  :ensure t)
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
+;; ag
+(use-package ag
+  :ensure t)
+(setq ag-highlight-search t)
+
 ;; counsel (+ ivy swiper)
 (use-package counsel
   :ensure t)
@@ -34,6 +45,7 @@
 (use-package magit
     :ensure t
     :defer t)
+(setq magit-completing-read-function 'ivy-completing-read)
 
 ;; yasnippet
 (use-package yasnippet
@@ -166,10 +178,11 @@
 (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
 ;; Ivy-based interface to shell and system tools
 (global-set-key (kbd "C-c g") 'counsel-git)
-(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-x p") 'counsel-git-grep)
 (global-set-key (kbd "C-c k") 'counsel-ag)
 (global-set-key (kbd "C-x l") 'counsel-locate)
 (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
 
 ;; make line below or above current line without breaking
 (global-set-key (kbd "<C-return>") (lambda ()
