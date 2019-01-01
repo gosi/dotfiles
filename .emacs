@@ -29,6 +29,7 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
+
 ;; ag
 (use-package ag
   :ensure t)
@@ -44,7 +45,6 @@
 ;; dumb-jump
 (use-package dumb-jump
   :ensure t)
-;; (dumb-jump-mode)
 
 ;; magit
 (use-package magit
@@ -79,6 +79,12 @@
 ;; use system clipboard
 (setq x-select-enable-clipboard t)
 
+;; tabs
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq c-set-style "k&r")
+(setq c-basic-offset 4)
+
 ;; delete until character
 (use-package misc)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
@@ -86,8 +92,7 @@
 ;; why isn't this default?
 (progn
   (delete-selection-mode 1)
-  (transient-mark-mode 1)
-  )
+  (transient-mark-mode 1))
 (desktop-load-default)
 (desktop-read)
 (put 'downcase-region 'disabled nil)
@@ -124,9 +129,13 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
+(setq frame-title-format '(buffer-file-name "%f" ("%b")))
 
-;; (set-foreground-color "white")
-;; (set-background-color "black")
+;; (use-package distinguished-theme
+;;   :ensure t)
+
+(set-foreground-color "black")
+(set-background-color "white")
 
 (set-face-attribute 'default nil :height 110)
 (setq visible-bell t)
@@ -134,7 +143,7 @@
 (setq text-mode-hook 'turn-on-auto-fill)
 (setq fill-column 100)
 
-;; show vim-like empty lines
+;; show vim-like empty lines using "~"
 (setq-default indicate-empty-lines t)
 (progn
   (define-fringe-bitmap 'tilde [0 0 0 113 219 142 0 0] nil nil 'center)
