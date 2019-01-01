@@ -1,4 +1,4 @@
-# quick directory selection with fzf
+# quick change directory with fzf
 function qcd() {
     pushd $(echo -e "${HOME}\n/usr/local/bin\n/usr/bin" | fzf);
 }
