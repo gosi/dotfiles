@@ -24,15 +24,6 @@
   (package-install 'use-package))
 
 ;; evil mode yes pls!!!
-(use-package evil-leader
-  :commands (evil-leader-mode global-evil-leader-mode)
-  :ensure evil-leader
-  :demand evil-leader
-  :config
-  (progn
-    (evil-leader/set-leader "<SPC>")
-    (global-evil-leader-mode t)))
-
 (use-package evil
   :ensure t
   :init
@@ -61,7 +52,7 @@
     (global-set-key (kbd "<escape>") 'evil-escape))
   :diminish evil-escape-mode)
 
-;; use correct PATH
+; use correct PATH
 (use-package exec-path-from-shell
   :ensure t)
 (when (memq window-system '(mac ns x))
@@ -88,6 +79,13 @@
     :ensure t
     :defer t)
 (setq magit-completing-read-function 'ivy-completing-read)
+
+;; git gutter
+(use-package git-gutter
+    :ensure t
+    :config
+    (global-git-gutter-mode 't)
+    :diminish git-gutter-mode)
 
 ;; yasnippet
 (use-package yasnippet
@@ -127,6 +125,22 @@
 (use-package misc)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 
+;; auto-highlight-symbol
+(use-package auto-highlight-symbol
+  :ensure t)
+(global-auto-highlight-symbol-mode)
+(define-key auto-highlight-symbol-mode-map (kbd "M-p") 'ahs-backward)
+(define-key auto-highlight-symbol-mode-map (kbd "M-n") 'ahs-forward)
+(setq ahs-idle-interval 1.0) ;; if you want instant highlighting, set it to 0, but I find it annoying
+(setq ahs-default-range 'ahs-range-whole-buffer) ;; highlight every occurence in buffer
+
+;; inhibits highlighting in specific places, like in comments
+(setq ahs-inhibit-face-list '(font-lock-comment-delimiter-face
+                                font-lock-comment-face
+                                font-lock-doc-face
+                                font-lock-doc-string-face
+                                font-lock-string-face))
+
 ;; why isn't this default?
 (progn
   (delete-selection-mode 1)
@@ -138,9 +152,6 @@
 
 ;; quick confirmation with y/n
 (fset 'yes-or-no-p 'y-or-n-p)
-
-;; don't make a bunch of backup files
-(setq make-backup-files nil)
 
 ;; focuses on pop-up frame, tap q to close and return
 (add-to-list 'display-buffer-alist
@@ -235,8 +246,7 @@
 (global-set-key [f9] 'recompile)
 (global-set-key [f10] 'compile)
 (global-set-key [(meta g)] 'goto-line)
-(global-set-key (kbd "S-J") 'google-this-mode-submap)
-(global-set-key (kbd "C-q") 'er/expand-region)
+(global-set-key (kbd "S-J") 'google-this)
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-x f") 'find-file)
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -263,11 +273,17 @@
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "<C-return>") 'ivy-immediate-done)
 ;; Evil-based keys
-(evil-leader/set-key
-  "gs" 'magit-status
-  )
+(define-key evil-normal-state-map (kbd "C-SPC") 'er/expand-region)
 (define-key evil-normal-state-map (kbd "C-j") 'next-buffer)
 (define-key evil-normal-state-map (kbd "C-k") 'previous-buffer)
+
+;; quickly open this file
+(defun find-config ()
+    "Edit .emacs"
+    (interactive)
+    (find-file "~/.emacs"))
+
+  (global-set-key (kbd "C-c I") 'find-config)
 
 ;; don't accidently kill emacs
 (defun dont-kill-emacs ()
@@ -317,3 +333,12 @@
 
 (defun eshell/x ()
   (kill-buffer-and-window)) ; need to kill eshell before using the eshell-here function again, or shit gets fucked up
+
+;; this centralises the backup files instead of having them laying around being annoying
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
+    backup-by-copying t    ; Don't delink hardlinks
+    version-control t      ; Use version numbers on backups
+    delete-old-versions t  ; Automatically delete excess backups
+    kept-new-versions 6    ; how many of the newest versions to keep
+    kept-old-versions 2    ; and how many of the old
+    )
