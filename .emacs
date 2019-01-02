@@ -29,7 +29,6 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
-
 ;; ag
 (use-package ag
   :ensure t)
@@ -56,6 +55,7 @@
 (use-package yasnippet
     :ensure t)
 (add-hook 'after-init-hook 'yas-global-mode 1)
+
 (use-package yasnippet-snippets
     :ensure t)
 
@@ -180,7 +180,7 @@
 (global-set-key [f4] 'kill-this-buffer)
 (global-set-key [f5] 'eval-buffer)
 (global-set-key [f8] 'delete-trailing-whitespace)
-(global-set-key [f9] 'compile)
+(global-set-key [f9] 'recompile)
 (global-set-key [f10] 'compile)
 (global-set-key [(meta g)] 'goto-line)
 (global-set-key (kbd "C-q") 'er/expand-region)
@@ -188,10 +188,10 @@
 (global-set-key (kbd "C-x f") 'find-file)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-c r") 'replace-in-buffer)
-(global-set-key (kbd "C-c ]") 'dumb-jump-go)
+(global-set-key (kbd "C-c j") 'dumb-jump-go)
 (global-set-key (kbd "C-c t") 'dumb-jump-back)
 (global-set-key (kbd "C-c q") 'dumb-jump-quick-look)
-(global-set-key (kbd "C-c j") 'dumb-jump-other-window)
+(global-set-key (kbd "C-c o") 'dumb-jump-other-window)
 ;; Ivy-based interface to standard commands
 (global-set-key (kbd "C-s") 'swiper)
 (global-set-key (kbd "M-x") 'counsel-M-x)
@@ -227,3 +227,28 @@
                   0 0)
   (newline-and-indent)  (newline-and-indent))
 (add-hook 'after-init-hook 'emacs-reloaded)
+
+;; eshell hack
+ (defun eshell-here ()
+  "Opens up a new shell in the directory associated with the
+current buffer's file. The eshell is renamed to match that
+directory to make multiple eshell windows easier."
+  (interactive)
+  (let* ((parent (if (buffer-file-name)
+                     (file-name-directory (buffer-file-name))
+                   default-directory))
+         (height (/ (window-total-height) 3))
+         (name   (car (last (split-string parent "/" t)))))
+    (split-window-vertically (- height))
+    (other-window 1)
+    (eshell "new")
+    (rename-buffer (concat "*eshell: " name "*"))
+
+    (insert (concat "ls"))
+    (eshell-send-input)))
+
+(global-set-key (kbd "C-c e") 'eshell-here)
+(global-set-key (kbd "C-c x") 'kill-buffer-and-window)
+
+(defun eshell/x ()
+  (kill-buffer-and-window)) ; need to kill eshell before using the eshell function again
