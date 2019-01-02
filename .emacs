@@ -1,6 +1,6 @@
-;; +-----------------------------------------------------------------+
-;; | Packages and general stuff                                      |
-;; +-----------------------------------------------------------------+
+;;; package --- Summary
+;;; Commentary:
+;;; Code:
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (setq debug-on-error t)
 (setq vc-follow-symlinks t)
@@ -37,7 +37,7 @@
   :config
   (evil-mode 1))
   (global-undo-tree-mode -1)
-
+  ;; (turn-on-undo-tree-mode)
 (use-package evil-collection
   :after evil
   :ensure t
@@ -106,14 +106,18 @@
 
 ;; flycheck
 (use-package flycheck
-    :ensure t)
+    :ensure t
+    :config
+    (add-hook 'after-init-hook 'global-flycheck-mode)
+    (add-to-list 'flycheck-checkers 'proselint)
+    (setq-default flycheck-highlighting-mode 'lines))
 
 ;; expand-region
 (use-package expand-region
     :ensure t)
 
 ;; use system clipboard
-(setq x-select-enable-clipboard t)
+(setq select-enable-clipboard t)
 
 ;; tabs
 (setq-default indent-tabs-mode nil)
@@ -145,7 +149,7 @@
 (progn
   (delete-selection-mode 1)
   (transient-mark-mode 1))
-(desktop-load-default)
+(desktop-save-mode)
 (desktop-read)
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
@@ -168,7 +172,7 @@
             (setq beg (region-beginning) end (region-end))
             (setq beg (line-beginning-position) end (line-end-position)))
         (comment-or-uncomment-region beg end)
-        (next-line)))
+        (forward-line)))
 
 ;; visuals
 (blink-cursor-mode 1)
@@ -197,7 +201,7 @@
 
 (set-face-attribute 'default nil :height 110)
 (setq visible-bell t)
-(setq default-major-mode 'indented-text-mode)
+(setq major-mode 'indented-text-mode)
 (setq text-mode-hook 'turn-on-auto-fill)
 (setq fill-column 100)
 
@@ -228,10 +232,10 @@
 
 ;; replace a word from anywhere in the file with "C-c r"
 (defun replace-in-buffer ()
-"Replace text in whole buffer. Change OLD string to NEW string"
+"Replace text in whole buffer.  Change OLD string to NEW string."
   (interactive)
   (save-excursion
-    (replace-string (read-string "OLD string:")
+    (replace-match (read-string "OLD string:")
                     (read-string "NEW string:")
                     nil
                     (point-min)
@@ -274,12 +278,12 @@
 (global-set-key (kbd "<C-return>") 'ivy-immediate-done)
 ;; Evil-based keys
 (define-key evil-normal-state-map (kbd "C-SPC") 'er/expand-region)
-(define-key evil-normal-state-map (kbd "C-j") 'next-buffer)
-(define-key evil-normal-state-map (kbd "C-k") 'previous-buffer)
+(define-key evil-normal-state-map (kbd "<backspace>") 'next-buffer)
+(define-key evil-normal-state-map (kbd "<C-backspace>") 'previous-buffer)
 
 ;; quickly open this file
 (defun find-config ()
-    "Edit .emacs"
+    "Edit the .emacs file."
     (interactive)
     (find-file "~/.emacs"))
 
@@ -326,13 +330,13 @@
 (global-set-key (kbd "<C-M-backspace>") 'kill-buffer-and-window)
 
 (defun eshell/clear ()
-  "You can type 'clear' to remove clutter
-  like you would expect"
+  "You can type 'clear' to remove clutter like you would expect."
   (interactive)
   (let ((eshell-buffer-maximum-lines 0)) (eshell-truncate-buffer)))
 
 (defun eshell/x ()
-  (kill-buffer-and-window)) ; need to kill eshell before using the eshell-here function again, or shit gets fucked up
+  "Need to kill eshell before using the eshell-here function again, or shit gets fucked up."
+  (kill-buffer-and-window))
 
 ;; this centralises the backup files instead of having them laying around being annoying
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
