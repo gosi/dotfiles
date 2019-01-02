@@ -122,7 +122,7 @@
         (next-line)))
 
 ;; visuals
-(blink-cursor-mode 0)
+(blink-cursor-mode 1)
 (tool-bar-mode 0)
 (scroll-bar-mode 1)
 (menu-bar-mode t)
@@ -131,11 +131,20 @@
 (setq initial-scratch-message nil)
 (setq frame-title-format '(buffer-file-name "%f" ("%b")))
 
-;; (use-package distinguished-theme
-;;   :ensure t)
+;; monokai theme
+(use-package monokai-theme
+  :ensure t)
+(load-theme 'monokai t)
 
-(set-foreground-color "black")
-(set-background-color "white")
+;; rainbow parens
+(use-package rainbow-delimiters
+  :ensure t)
+(add-hook 'foo-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+(set-cursor-color "lime")
+;; (set-foreground-color "black")
+;; (set-background-color "white")
 
 (set-face-attribute 'default nil :height 110)
 (setq visible-bell t)
