@@ -257,4 +257,4 @@
   (let ((eshell-buffer-maximum-lines 0)) (eshell-truncate-buffer)))
 
 (defun eshell/x ()
-  (kill-buffer-and-window)) ; need to kill eshell before using the eshell function again
+  (kill-buffer-and-window)) ; need to kill eshell before using the eshell-here function again, or shit gets fucked up
