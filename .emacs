@@ -23,6 +23,22 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+;; evil mode yes pls!!!
+(use-package evil
+  :ensure t
+  :init
+  (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+  (setq evil-want-keybinding nil)
+  :config
+  (evil-mode 1))
+  (global-undo-tree-mode -1)
+
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))
+
 ;; use correct PATH
 (use-package exec-path-from-shell
   :ensure t)
