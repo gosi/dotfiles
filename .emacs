@@ -24,10 +24,20 @@
   (package-install 'use-package))
 
 ;; evil mode yes pls!!!
+(use-package evil-leader
+  :commands (evil-leader-mode global-evil-leader-mode)
+  :ensure evil-leader
+  :demand evil-leader
+  :config
+  (progn
+    (evil-leader/set-leader "<SPC>")
+    (global-evil-leader-mode t)))
+
 (use-package evil
   :ensure t
   :init
-  (setq evil-want-keybinding nil
+  (setq evil-want-C-u-scroll t
+        evil-want-keybinding nil
         evil-auto-indent t
         evil-normal-state-cursor 'box
         evil-operator-state-cursor 'box
@@ -193,6 +203,11 @@
 ;; (use-package paren)
 ;; (show-paren-mode)
 
+;; google-this
+(use-package google-this
+  :ensure t)
+(google-this-mode 1)
+
 ;; smooth scrolling
 (use-package smooth-scrolling
     :ensure t)
@@ -220,6 +235,7 @@
 (global-set-key [f9] 'recompile)
 (global-set-key [f10] 'compile)
 (global-set-key [(meta g)] 'goto-line)
+(global-set-key (kbd "S-J") 'google-this-mode-submap)
 (global-set-key (kbd "C-q") 'er/expand-region)
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-x f") 'find-file)
@@ -246,6 +262,12 @@
 (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "<C-return>") 'ivy-immediate-done)
+;; Evil-based keys
+(evil-leader/set-key
+  "gs" 'magit-status
+  )
+(define-key evil-normal-state-map (kbd "C-j") 'next-buffer)
+(define-key evil-normal-state-map (kbd "C-k") 'previous-buffer)
 
 ;; don't accidently kill emacs
 (defun dont-kill-emacs ()
