@@ -228,11 +228,11 @@
   (newline-and-indent)  (newline-and-indent))
 (add-hook 'after-init-hook 'emacs-reloaded)
 
-;; eshell hack
+;; eshell hacks
  (defun eshell-here ()
   "Opens up a new shell in the directory associated with the
-current buffer's file. The eshell is renamed to match that
-directory to make multiple eshell windows easier."
+  current buffer's file. The eshell is renamed to match that
+  directory to make multiple eshell windows easier."
   (interactive)
   (let* ((parent (if (buffer-file-name)
                      (file-name-directory (buffer-file-name))
@@ -249,6 +249,12 @@ directory to make multiple eshell windows easier."
 
 (global-set-key (kbd "C-c e") 'eshell-here)
 (global-set-key (kbd "C-c x") 'kill-buffer-and-window)
+
+(defun eshell/clear ()
+  "You can type 'clear' to remove clutter
+  like you would expect"
+  (interactive)
+  (let ((eshell-buffer-maximum-lines 0)) (eshell-truncate-buffer)))
 
 (defun eshell/x ()
   (kill-buffer-and-window)) ; need to kill eshell before using the eshell function again
