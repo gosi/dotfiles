@@ -25,6 +25,14 @@ pwgen () {
 	cat /dev/urandom| tr -dc 'a-zA-Z0-9' | fold -w $1 | head -n 1
 }
 
+# turn epub files into txt to read in emacs
+epub2txt () {
+    folder=$(echo ${1/.epub/})
+    pandoc -t plain --toc --extract-media=$folder --normalize --wrap=none -o $folder/$folder.txt $1
+    # do the rest manually
+    emacsclient -c $folder/$folder.txt
+}
+
 # simplified file extraction
 function ext () {
   if [ -f $1 ] ; then
