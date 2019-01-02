@@ -27,8 +27,12 @@
 (use-package evil
   :ensure t
   :init
-  (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
-  (setq evil-want-keybinding nil)
+  (setq evil-want-keybinding nil
+        evil-auto-indent t
+        evil-normal-state-cursor 'box
+        evil-operator-state-cursor 'box
+        evil-replace-state-cursor 'box
+        evil-insert-state-cursor 'box)
   :config
   (evil-mode 1))
   (global-undo-tree-mode -1)
@@ -280,8 +284,8 @@
     (insert (concat "ls"))
     (eshell-send-input)))
 
-(global-set-key (kbd "C-c e") 'eshell-here)
-(global-set-key (kbd "C-c x") 'kill-buffer-and-window)
+(global-set-key (kbd "<C-M-return>") 'eshell-here)
+(global-set-key (kbd "<C-M-backspace>") 'kill-buffer-and-window)
 
 (defun eshell/clear ()
   "You can type 'clear' to remove clutter
