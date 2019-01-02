@@ -39,6 +39,14 @@
   :config
   (evil-collection-init))
 
+(use-package evil-escape
+  :ensure t
+  :config
+  (progn
+    (evil-escape-mode)
+    (global-set-key (kbd "<escape>") 'evil-escape))
+  :diminish evil-escape-mode)
+
 ;; use correct PATH
 (use-package exec-path-from-shell
   :ensure t)
@@ -178,8 +186,8 @@
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
 ;; show matching pairs
-(use-package paren)
-(show-paren-mode)
+;; (use-package paren)
+;; (show-paren-mode)
 
 ;; smooth scrolling
 (use-package smooth-scrolling
