@@ -100,12 +100,10 @@ nnoremap <Leader>E :e <C-r>=expand('%:p:h').'/'<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>L :Lines<CR>
 nnoremap <Leader>F :find *
-nnoremap <Leader>s :sfind *
 nnoremap <Leader>t :tabfind *
 nnoremap <Leader>v :vert sfind *
 nnoremap <Leader>w :w<CR>:echo "Written"<CR>
 nnoremap <Leader>W :w !sudo tee % >/dev/null
-nnoremap ZZ        :wqa<CR>
 
 " juggling with buffers
 nnoremap <Leader>b  :buffer *
