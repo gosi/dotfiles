@@ -11,7 +11,7 @@ URxvt.iso14755_52: false
 
 URxvt.foreground: #DDDDDD
 URxvt.background: #000000
-URxvt.font: xft:Terminus:pixelsize=10
+URxvt.font: xft:Monaco:pixelsize=15
 
 URxvt.inheritPixmap: true
 URxvt.tintColor: white

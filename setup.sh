@@ -1,12 +1,13 @@
 #!/bin/bash
 # File: setup.sh
 # Date: Fri Sep 21 21:39:50 CEST 2018
-# Author: Eric Jansson <ericjansson510@gmail.com>
+# Author: Bo Eric Ramsell Jansson <bo.eric.rj@gmail.com>
 
-PACKAGES="
+PACKAGES=(
 git
 zsh
 vim
+emacs
 tmux
 htop
 mutt
@@ -44,7 +45,7 @@ anki
 curl
 wget
 wajig
-"
+)
 
 BACKUP_DIR=$HOME/dotfiles_old
 DOTFILES_DIR=$HOME/workspace/dotfiles
