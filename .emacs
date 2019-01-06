@@ -1,5 +1,6 @@
 ;;; package --- Summary
 ;;; Commentary:
+
 ;;; Code:
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (setq debug-on-error t)
@@ -199,7 +200,7 @@
 ;; (set-foreground-color "black")
 ;; (set-background-color "white")
 
-(set-face-attribute 'default nil :height 110)
+(set-face-attribute 'default nil :family Monaco :height 110)
 (setq visible-bell t)
 (setq major-mode 'indented-text-mode)
 (setq text-mode-hook 'turn-on-auto-fill)
@@ -306,6 +307,13 @@
                   0 0)
   (newline-and-indent)  (newline-and-indent))
 (add-hook 'after-init-hook 'emacs-reloaded)
+
+;; define function to shutdown emacs server instance
+(defun server-shutdown ()
+  "Save buffers, Quit, and Shutdown (kill) server."
+  (interactive)
+  (save-some-buffers)
+  (kill-emacs))
 
 ;; eshell hacks
  (defun eshell-here ()
