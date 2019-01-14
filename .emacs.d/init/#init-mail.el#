@@ -1,0 +1,24 @@
+(autoload 'notmuch "notmuch" "notmuch mail" t)\
+
+(require 'smtpmail)
+(setq message-send-mail-function 'smtpmail-send-it
+   starttls-use-gnutls t
+   smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+   smtpmail-auth-credentials
+     '(("smtp.gmail.com" 587 my-smtp-server nil))
+   smtpmail-default-smtp-server "smtp.gmail.com"
+   smtpmail-smtp-server "smtp.gmail.com"
+   smtpmail-smtp-service 587)
+
+(setq message-kill-buffer-on-exit t)
+
+(setq
+   mu4e-get-mail-command "fetchmail"   ;; or fetchmail, or ...
+   mu4e-update-interval 300)             ;; update every 5 minutes
+
+(defun jump-to-mailbox ()
+  (interactive "")
+  (mu4e)
+  (mu4e~headers-jump-to-maildir "/INBOX"))
+
+(provide 'init-mail)
