@@ -49,10 +49,10 @@ wajig
 
 BACKUP_DIR=$HOME/dotfiles_old
 DOTFILES_DIR=$HOME/workspace/dotfiles
-FILES="bin .config .vimrc .bashrc .zshrc .tmux.conf .emacs .ideavimrc .xsession .xinitrc .Xmodmap .Xresources
+FILES="bin .config .vimrc .bashrc .zshrc .tmux.conf .ideavimrc .xsession .xinitrc .Xmodmap .Xresources
 .nvidia-settings-rc .htoprc .gtkrc-2.0 .gtkrc-2.0-mine .conkyrc .cvimrc .compton.conf .urxvt .tmux .vim .emacs.d
 .xprofile"
-CFG_FILES="i3 dwm gtk-2.0 gtk-3.0 htop python redshift"
+CFG_FILES="i3 gtk-2.0 gtk-3.0 htop python redshift"
 
 function update_and_install() {
 
@@ -72,10 +72,6 @@ sudo apt-get install build-essential cmake
 sudo apt-get install python-dev python3-dev
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer
-
-# Vim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
 
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -121,7 +117,7 @@ done
 }
 
 while true; do
-    read -p "Do you want to update and install packages? [y/N] " yn
+    read -p "Do you want to update and install packages? [Y/N] " yn
     case $yn in
         [Yy]* ) update_and_install; break;;
         [Nn]* ) break;;
@@ -130,7 +126,7 @@ while true; do
 done
 
 while true; do
-    read -p "Do you want to create symlinks? [y/N] " yn
+    read -p "Do you want to create symlinks? [Y/N] " yn
     case $yn in
         [Yy]* ) create_symlinks; break;;
         [Nn]* ) break;;
