@@ -1,0 +1,21 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is up to date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   .Xresources
+#	modified:   .config/gtk-3.0/settings.ini
+#	modified:   .config/i3/config
+#	deleted:    .config/i3blocks/config
+#	deleted:    .config/termite/config
+#	modified:   .vim/.netrwhist
+#	modified:   setup.sh
+#
+# Untracked files:
+#	.emacs.d/auto-save-list/
+#	.emacs.d/elpa/
+#	packages.list
+#
