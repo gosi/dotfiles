@@ -3,9 +3,8 @@
 # Date: Fri Sep 21 21:39:50 CEST 2018
 # Author: Bo Eric Ramsell Jansson <bo.eric.rj@gmail.com>
 
-PACKAGES=(
+PACKAGES="
 git
-zsh
 vim
 emacs
 tmux
@@ -14,7 +13,6 @@ mutt
 i3
 i3lock
 compton
-confy
 feh
 fonts-font-awesome
 mpv
@@ -25,18 +23,14 @@ rxvt-unicode
 libgtk-3-dev
 scrot
 ranger
-nemo
-j4-dmenu-desktop
+thunar
 build-essential
 exuberant-ctags
 g++
 python3
 python-pip
-python3-udiskie
-google-chrome-stable
 okular
 gedit
-gnome-tweak-tool
 virtualbox
 unclutter
 redshift-gtk
@@ -45,13 +39,13 @@ anki
 curl
 wget
 wajig
-)
+"
 
 BACKUP_DIR=$HOME/dotfiles_old
 DOTFILES_DIR=$HOME/workspace/dotfiles
-FILES="bin .config .vimrc .bashrc .zshrc .tmux.conf .ideavimrc .xsession .xinitrc .Xmodmap .Xresources
-.nvidia-settings-rc .htoprc .gtkrc-2.0 .gtkrc-2.0-mine .conkyrc .cvimrc .compton.conf .urxvt .tmux .vim .emacs.d
-.xprofile"
+FILES="bin .config .vimrc .bashrc .zshrc .tmux.conf .ideavimrc .Xresources
+.gtkrc-2.0 .gtkrc-2.0-mine .conkyrc .cvimrc .compton.conf .urxvt .tmux .vim .emacs.d"
+
 CFG_FILES="i3 gtk-2.0 gtk-3.0 htop python redshift"
 
 function update_and_install() {
@@ -59,13 +53,10 @@ function update_and_install() {
 echo "Updating packages..."
 sudo apt-get update
 
-echo "Installing packages ($PACKAGES)"
-sudo apt-get install $PACKAGES
-
-# Arc theme
-git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
-./autogen.sh --prefix=/usr
-sudo make install
+echo "Installing packages..."
+for package in $PACKAGES; do
+  sudo apt-get install -y $PACKAGES
+done
 
 # YouCompleteMe
 sudo apt-get install build-essential cmake
@@ -79,10 +70,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 # set terminal emulator
 sudo update-alternatives --config x-terminal-emulator
-
-# change shell to zsh (requires a restart to take effect)
-which zsh
-chsh -s `which zsh`
 
 }
 
