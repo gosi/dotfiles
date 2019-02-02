@@ -5,8 +5,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tommcdo/vim-lion'
-Plug 'jnurmine/Zenburn'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 call plug#end()
@@ -52,10 +50,6 @@ set wildignorecase
 set wildmenu
 set wildmode=full
 
-" plugin settings
-nnoremap <Leader>gs :Gstatus<CR><c-w>L
-let b:lion_squeeze_spaces = 1
-
 " remove trailing whitespace on write
 autocmd BufWritePre * %s/\s\+$//e
 
@@ -98,7 +92,6 @@ nnoremap <silent> <Leader>d "_d
 vnoremap <silent> <Leader>d "_d
 
 " juggling with files
-nnoremap <Leader>e :e<Space>
 nnoremap <Leader>E :e <C-r>=expand('%:p:h').'/'<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>L :Lines<CR>
