@@ -63,12 +63,13 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#3c3836" "#fb4933" "#b8bb26" "#fabd2f" "#83a598" "#d3869b" "#8ec07c" "#ebdbb2"])
+ '(custom-enabled-themes (quote (sanityinc-tomorrow-bright)))
  '(custom-safe-themes
    (quote
-    ("e2fd81495089dc09d14a88f29dfdff7645f213e2c03650ac2dd275de52a513de" "2a9039b093df61e4517302f40ebaf2d3e95215cb2f9684c8c1a446659ee226b9" "7f89ec3c988c398b88f7304a75ed225eaac64efa8df3638c815acc563dfd3b55" "2c7dba584d018891949689f817ce2faf96126d3be847f4b511c539f629379f23" default)))
+    ("bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "e2fd81495089dc09d14a88f29dfdff7645f213e2c03650ac2dd275de52a513de" "2a9039b093df61e4517302f40ebaf2d3e95215cb2f9684c8c1a446659ee226b9" "7f89ec3c988c398b88f7304a75ed225eaac64efa8df3638c815acc563dfd3b55" "2c7dba584d018891949689f817ce2faf96126d3be847f4b511c539f629379f23" default)))
  '(package-selected-packages
    (quote
-    (evil-surround zenburn-theme gruvbox-theme evil-escape evil-collection yasnippet-snippets wiki-summary which-key use-package tuareg sml-mode smart-mode-line slime-company racket-mode paredit org-present nyan-mode neotree multiple-cursors magit lorem-ipsum lean-mode latex-preview-pane js2-mode js-comint hungry-delete highlight-symbol highlight-parentheses helm git-gutter geiser flymake-rust flycheck-package expand-region evil elm-mode distinguished-theme counsel company-math company-auctex color-theme cargo auctex-latexmk anzu ag ace-window ace-jump-zap 2048-game)))
+    (color-theme-sanityinc-tomorrow evil-surround zenburn-theme gruvbox-theme evil-escape evil-collection yasnippet-snippets wiki-summary which-key use-package tuareg sml-mode smart-mode-line slime-company racket-mode paredit org-present nyan-mode neotree multiple-cursors magit lorem-ipsum lean-mode latex-preview-pane js2-mode js-comint hungry-delete highlight-symbol highlight-parentheses helm git-gutter geiser flymake-rust flycheck-package expand-region evil elm-mode distinguished-theme counsel company-math company-auctex color-theme cargo auctex-latexmk anzu ag ace-window ace-jump-zap 2048-game)))
  '(pdf-view-midnight-colors (quote ("#fdf4c1" . "#282828"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
