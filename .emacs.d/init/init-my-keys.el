@@ -67,15 +67,40 @@
 (global-set-key (kbd "C-c s s") 'replace-string)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 
-;; Functions for text manipulation
-(defun qrc (replace-str)
-   (interactive "sDo query-replace current word with: ")
-   (forward-word)
-   (let ((end (point)))
-      (backward-word)
-      (kill-ring-save (point) end)
-      (query-replace (current-kill 0) replace-str) ))
+(define-key global-map (kbd "C-c r") 'vr/replace)
+(define-key global-map (kbd "C-c q") 'vr/query-replace)
+;; if you use multiple-cursors, this is for you:
+(define-key global-map (kbd "C-c m") 'vr/mc-mark)
 
-(global-set-key (kbd "C-c r") 'qrc)
+;; Functions for text manipulation
+;;(defun qrc (replace-str)
+;;   (interactive "sDo query-replace current word with: ")
+;;   (forward-word)
+;;   (let ((end (point)))
+;;      (backward-word)
+;;      (kill-ring-save (point) end)
+;;      (query-replace (current-kill 0) replace-str) ))
+;;
+;;(global-set-key (kbd "C-c r") 'qrc)
+
+;; query replace all from buffer start
+;;(fset 'my-query-replace-all 'query-replace)
+;;(advice-add 'my-query-replace-all
+;;            :around
+;;            #'(lambda(oldfun &rest args)
+;;               "Query replace the whole buffer."
+;;               ;; set start pos
+;;               (unless (nth 3 args)
+;;                 (setf (nth 3 args)
+;;                       (if (region-active-p)
+;;                           (region-beginning)
+;;                         (point-min))))
+;;               (unless (nth 4 args)
+;;                 (setf (nth 4 args)
+;;                       (if (region-active-p)
+;;                           (region-end)
+;;                         (point-max))))
+;;               (apply oldfun args)))
+;;(global-set-key "\C-cr" 'my-query-replace-all)
 
 (provide 'init-my-keys)
