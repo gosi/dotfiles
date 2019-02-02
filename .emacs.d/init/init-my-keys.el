@@ -29,10 +29,11 @@
 ;; C-c o * - Org utilities
 ;; C-c s * - Substitute text
 ;; C-c v   - Version control for mercurial
+
 (global-set-key (kbd "C-c ;") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (k0bd "C-c C-<") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-c a d") 'ag-dired-regexp)
 (global-set-key (kbd "C-c a p") 'ag-project-regexp)
