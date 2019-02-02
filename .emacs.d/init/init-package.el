@@ -7,6 +7,11 @@
 
 (package-initialize)
 
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+
 (when (not package-archive-contents)
   (package-refresh-contents))
 

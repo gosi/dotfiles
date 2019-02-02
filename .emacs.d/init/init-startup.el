@@ -3,6 +3,7 @@
 (setq user-mail-address my-email)
 
 ;; Configure Emacs's initial configuration
+(blink-cursor-mode -1)
 (setq inhibit-startup-message t)    ; No startup banner
 (setq initial-scratch-message nil)  ; No message in scratch buffer
 (tool-bar-mode -1)                  ; No toolbars
@@ -50,6 +51,9 @@
 
 ;; Never use dialog boxes
 (setq use-dialog-box nil)
+
+;; Use system clipboard
+(setq select-enable-clipboard t)
 
 ;; Show vim-like empty lines using "~"
 (setq-default indicate-empty-lines t)

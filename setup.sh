@@ -3,43 +3,7 @@
 # Date: Fri Sep 21 21:39:50 CEST 2018
 # Author: Bo Eric Ramsell Jansson <bo.eric.rj@gmail.com>
 
-PACKAGES="
-git
-vim
-emacs
-tmux
-htop
-mutt
-i3
-i3lock
-compton
-feh
-fonts-font-awesome
-mpv
-vlc
-automake
-make
-rxvt-unicode
-libgtk-3-dev
-scrot
-ranger
-thunar
-build-essential
-exuberant-ctags
-g++
-python3
-python-pip
-okular
-gedit
-virtualbox
-unclutter
-redshift-gtk
-alsa-utils
-anki
-curl
-wget
-wajig
-"
+PACKAGES="$HOME/workspace/dotfiles/packages"
 
 BACKUP_DIR=$HOME/dotfiles_old
 DOTFILES_DIR=$HOME/workspace/dotfiles

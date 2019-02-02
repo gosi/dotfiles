@@ -71,8 +71,3 @@ alias api="sudo apt-get install"
 alias apu="sudo apt-get update"
 alias apr="sudo apt-get remove"
 alias app="sudo apt-get purge"
-
-alias pac="pacman -S"
-alias pacu="pacman -Syu"
-alias pacr="pacman -Rs"
-alias pacs="pacman -Ss"

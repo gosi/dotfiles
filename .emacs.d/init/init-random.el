@@ -46,9 +46,6 @@
 ;; Multiple cursors ala Sublime
 (require-package 'multiple-cursors)
 
-;; For funsies
-(require-package 'evil)
-
 ;; For CL
 (require-package 'slime)
 (setq inferior-lisp-program "/usr/bin/clisp")
@@ -71,5 +68,8 @@
 
 ;; My stuff
 (require-package 'wiki-summary)
+
+;; dumb-jump
+(require-package 'dumb-jump)
 
 (provide 'init-random)

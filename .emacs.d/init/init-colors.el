@@ -5,6 +5,14 @@
 (setq color-theme-is-global t)
 (color-theme-initialize)
 
+(set-foreground-color "wheat")
+(set-background-color "#161616")
+(set-cursor-color "green")
+
+;; Highlight current line
+(global-hl-line-mode 1)
+(set-face-background 'hl-line "black")
+
 ;; If we are in the terminal we don't want a theme.
 (defun on-after-init ()
   (unless (display-graphic-p (selected-frame))

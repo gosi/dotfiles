@@ -1,9 +1,3 @@
-" filetype support and colours
-filetype plugin indent on
-syntax on
-set background=dark
-colorscheme default
-
 " vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -12,7 +6,16 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tommcdo/vim-lion'
+Plug 'jnurmine/Zenburn'
+Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-surround'
 call plug#end()
+
+" filetype support and colours
+filetype plugin indent on
+syntax on
+set background=dark
+colorscheme gruvbox
 
 " various settings
 let mapleader = "\<Space>"
@@ -150,25 +153,6 @@ inoremap <C-k> <Up>
 " smooth grepping
 command! -nargs=+ -complete=file_in_path -bar Grep silent! grep! <q-args> | redraw!
 
-" smooth listing
-cnoremap <expr> <CR> <SID>CCR()
-function! s:CCR()
-	command! -bar Z silent set more|delcommand Z
-	if getcmdtype() == ":"
-		let cmdline = getcmdline()
-		    if cmdline =~ '\v\C^(dli|il)' | return "\<CR>:" . cmdline[0] . "jump   " . split(cmdline, " ")[1] . "\<S-Left>\<Left>\<Left>"
-		elseif cmdline =~ '\v\C^(cli|lli)' | return "\<CR>:silent " . repeat(cmdline[0], 2) . "\<Space>"
-		elseif cmdline =~ '\C^changes' | set nomore | return "\<CR>:Z|norm! g;\<S-Left>"
-		elseif cmdline =~ '\C^ju' | set nomore | return "\<CR>:Z|norm! \<C-o>\<S-Left>"
-		elseif cmdline =~ '\v\C(#|nu|num|numb|numbe|number)$' | return "\<CR>:"
-		elseif cmdline =~ '\C^ol' | set nomore | return "\<CR>:Z|e #<"
-		elseif cmdline =~ '\v\C^(ls|files|buffers)' | return "\<CR>:b"
-		elseif cmdline =~ '\C^marks' | return "\<CR>:norm! `"
-		elseif cmdline =~ '\C^undol' | return "\<CR>:u "
-		else | return "\<CR>" | endif
-	else | return "\<CR>" | endif
-endfunction
-
 " automagically set paste mode when pasting text
 function! WrapForTmux(s)
   if !exists('$TMUX')
@@ -191,10 +175,6 @@ function! XTermPasteBegin()
 endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
-" open cppman in a vertical tmux split by pressing K on a function
-command! -nargs=+ Cppman silent! call system("tmux split-window -h cppman " . expand(<q-args>))
-autocmd FileType cpp nnoremap <silent><buffer> K <Esc>:Cppman <cword><CR>
 
 " C man pages with K
 runtime! ftplugin/man.vim

@@ -10,6 +10,7 @@ URxvt.visualBell: true
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
+URxvt.cursorColor: green
 URxvt.foreground: #DDDDDD
 URxvt.background: #000000
 URxvt.font:     xft:DejaVu Sans Mono:pixelsize=15:antialias=true
@@ -52,28 +53,3 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 !on OSX:
 !URxvt.clipboard.copycmd:  pbcopy
 !URxvt.clipboard.pastecmd: pbpaste
-
-! black
-*color0:  #2E3436
-*color8:  #555753
-! red
-*color1:  #a40000
-*color9:  #EF2929
-! green
-*color2:  #4E9A06
-*color10: #8AE234
-! yellow
-*color3:  #C4A000
-*color11: #FCE94F
-! blue
-*color4:  #3465A4
-*color12: #729FCF
-! purple
-*color5:  #75507B
-*color13: #AD7FA8
-! orange (replaces cyan)
-*color6:  #ce5c00
-*color14: #fcaf3e
-! white
-*color7:  #babdb9
-*color15: #EEEEEC

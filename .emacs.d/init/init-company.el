@@ -7,6 +7,7 @@
 (require-package 'slime-company)
 (require-package 'company-math)
 (require-package 'company-auctex)
+(require-package 'company-jedi)
 (company-auctex-init)
 
 (provide 'init-company)
