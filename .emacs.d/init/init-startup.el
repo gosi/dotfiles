@@ -3,7 +3,7 @@
 (setq user-mail-address my-email)
 
 ;; Configure Emacs's initial configuration
-(blink-cursor-mode -1)
+(blink-cursor-mode 1)               ; Do blinking cursor
 (setq inhibit-startup-message t)    ; No startup banner
 (setq initial-scratch-message nil)  ; No message in scratch buffer
 (tool-bar-mode -1)                  ; No toolbars
@@ -12,6 +12,12 @@
 (menu-bar-mode -1)                  ; No menu bar
 (setq debug-on-error t)             ; Call the debugger
 (setq vc-follow-symlinks t)         ; Follow the symlink
+(line-number-mode 1)                ; Display line number on mode-line
+(column-number-mode 1)              ; Display column number on mode-line
+(save-place-mode 1)                 ; Return to last position when re-opening a file
+
+;; Show key strokes in minibuffer quickly.
+(setq echo-keystrokes 0.1)
 
 ;; Delete the current file
 (defun delete-this-file ()
@@ -22,7 +28,7 @@
   (when (yes-or-no-p (format "Really delete '%s'?"
                              (file-name-nondirectory buffer-file-name)))
     (delete-file (buffer-file-name))
-    (kill-this-buffer)))
+    (kill-this-buffer)    ))
 
 ;; Rename the current file
 (defun rename-this-file-and-buffer (new-name)
@@ -81,10 +87,16 @@
 ;; Use system clipboard
 (setq select-enable-clipboard t)
 
-;; Show vim-like empty lines using "~"
+;; Show empty lines in the gutter
 (setq-default indicate-empty-lines t)
-(progn
-  (define-fringe-bitmap 'tilde [0 0 0 113 219 142 0 0] nil nil 'center)
-  (setcdr (assq 'empty-line fringe-indicator-alist) 'tilde))
+
+; Don't kill *scratch*
+(defun unkillable-scratch-buffer ()
+  (if (string= (buffer-name (current-buffer)) "*scratch*")
+      (progn
+        (delete-region (point-min) (point-max))
+        nil)
+    t))
+(add-hook 'kill-buffer-query-functions 'unkillable-scratch-buffer)
 
 (provide 'init-startup)

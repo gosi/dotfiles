@@ -6,4 +6,7 @@
     (setq flycheck-cppcheck-language-standard "c++11")
     (setq flycheck-clang-language-standard "c++11")))
 
+(setq c-default-style "linux")
+(setq c-basic-offset 4)
+
 (provide 'init-c-lang)

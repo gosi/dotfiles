@@ -4,9 +4,14 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/color-themes/")
 
 (require-package 'color-theme-sanityinc-tomorrow)
+(require-package 'solarized-theme)
+
+;; make the modeline high contrast
+(setq solarized-high-contrast-mode-line t)
+(setq x-underline-at-descent-line t)
 
 ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(sanityinc-tomorrow-bright))
+(setq-default custom-enabled-themes '(solarized-dark))
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
@@ -18,33 +23,29 @@
 
 (add-hook 'after-init-hook 'reapply-themes)
 
-
 ;;------------------------------------------------------------------------------
 ;; Toggle between light and dark
 ;;------------------------------------------------------------------------------
 (defun light ()
   "Activate a light color theme."
   (interactive)
-  (setq custom-enabled-themes '(sanityinc-tomorrow-day))
+  (setq custom-enabled-themes '(solarized-light))
   (reapply-themes))
 
 (defun dark ()
   "Activate a dark color theme."
   (interactive)
-  (setq custom-enabled-themes '(sanityinc-tomorrow-bright))
+  (setq custom-enabled-themes '(solarized-dark))
   (reapply-themes))
 
 (setq color-theme-is-global t)
 (color-theme-initialize)
 
-;;;(set-foreground-color "wheat")
-;;;(set-background-color "#161616")
-;;(set-cursor-color "green")
-
-(add-to-list 'default-frame-alist '(cursor-color . "green"))
+;(set-foreground-color "wheat")
+;(set-background-color "#161616")
+;(set-cursor-color "green")
 
 ;; Highlight current line
-(global-hl-line-mode 1)
-(set-face-background 'hl-line "black")
+;(global-hl-line-mode 1)
 
-(provide 'init-colors)
+(provide 'init-colours)

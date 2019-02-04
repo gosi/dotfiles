@@ -1,5 +1,6 @@
 ;; Normal keybindings that are overridden
 (global-set-key (kbd "C-;")      'ace-jump-mode)
+(global-set-key (kbd "C-:")      'ace-jump-line-mode)
 (global-set-key (kbd "M-/")      'company-complete)
 (global-set-key (kbd "C-a")      'smart-beginning-of-line)
 (global-set-key (kbd "C-o")      'ace-window)
@@ -8,6 +9,7 @@
 (global-set-key (kbd "C-x C-f")  'helm-find-files)
 (global-set-key (kbd "C-x g")    'magit-status)
 (global-set-key (kbd "C-x O")    'last-window)
+(global-set-key (kbd "C-x C-O")  'last-window)
 (global-set-key (kbd "C-x C-e")  'eval-replace-sexp)
 (global-set-key (kbd "C-y")      'clipboard-yank)
 (global-set-key (kbd "M-w")      'clipboard-kill-ring-save)
@@ -16,7 +18,7 @@
 (global-set-key (kbd "<f1> f")   'counsel-describe-function)
 (global-set-key (kbd "<f1> v")   'counsel-describe-variable)
 (global-set-key [f5]             'eval-buffer)
-(global-set-key [f6]             'rename-file-and-bugger)
+(global-set-key [f6]             'rename-this-file-and-buffer)
 
 ;; Overview of the C-c prefix
 ;; C-c a * - Ag things
@@ -45,7 +47,6 @@
 (global-set-key (kbd "C-c f l") 'counsel-locate)
 (global-set-key (kbd "C-c f n") 'toggle-tree)
 (global-set-key (kbd "C-c f p") 'find-file-at-point)
-(global-set-key (kbd "C-c g l") 'ace-jump-line-mode)
 (global-set-key (kbd "C-c g n") 'goto-line)
 (global-set-key (kbd "C-c g o") 'occur)
 (global-set-key (kbd "C-c k b") 'kill-braces)
@@ -63,45 +64,36 @@
 (global-set-key (kbd "C-c o c") 'org-capture)
 (global-set-key (kbd "C-c o l") 'org-store-link)
 (global-set-key (kbd "C-c p")   'highlight-symbol-prev)
-(global-set-key (kbd "C-c s q") 'query-replace-regexp)
-(global-set-key (kbd "C-c s r") 'replace-regexp)
-(global-set-key (kbd "C-c s s") 'replace-string)
-(global-set-key (kbd "C-c C-r") 'ivy-resume)
-
-(define-key global-map (kbd "C-c r") 'vr/replace)
-(define-key global-map (kbd "C-c q") 'vr/query-replace)
-;; if you use multiple-cursors, this is for you:
-(define-key global-map (kbd "C-c m") 'vr/mc-mark)
 
 ;; Functions for text manipulation
-;;(defun qrc (replace-str)
-;;   (interactive "sDo query-replace current word with: ")
-;;   (forward-word)
-;;   (let ((end (point)))
-;;      (backward-word)
-;;      (kill-ring-save (point) end)
-;;      (query-replace (current-kill 0) replace-str) ))
-;;
-;;(global-set-key (kbd "C-c r") 'qrc)
+(defun qrc (replace-str)
+   (interactive "sDo query-replace current word with: ")
+   (forward-word)
+   (let ((end (point)))
+      (backward-word)
+      (kill-ring-save (point) end)
+      (query-replace (current-kill 0) replace-str) ))
+
+(global-set-key (kbd "C-c r") 'qrc)
 
 ;; query replace all from buffer start
-;;(fset 'my-query-replace-all 'query-replace)
-;;(advice-add 'my-query-replace-all
-;;            :around
-;;            #'(lambda(oldfun &rest args)
-;;               "Query replace the whole buffer."
-;;               ;; set start pos
-;;               (unless (nth 3 args)
-;;                 (setf (nth 3 args)
-;;                       (if (region-active-p)
-;;                           (region-beginning)
-;;                         (point-min))))
-;;               (unless (nth 4 args)
-;;                 (setf (nth 4 args)
-;;                       (if (region-active-p)
-;;                           (region-end)
-;;                         (point-max))))
-;;               (apply oldfun args)))
-;;(global-set-key "\C-cr" 'my-query-replace-all)
+(fset 'my-query-replace-all 'query-replace)
+(advice-add 'my-query-replace-all
+            :around
+            #'(lambda(oldfun &rest args)
+               "Query replace the whole buffer."
+               ;; set start pos
+               (unless (nth 3 args)
+                 (setf (nth 3 args)
+                       (if (region-active-p)
+                           (region-beginning)
+                         (point-min))))
+               (unless (nth 4 args)
+                 (setf (nth 4 args)
+                       (if (region-active-p)
+                           (region-end)
+                         (point-max))))
+               (apply oldfun args)))
+(global-set-key "\C-cR" 'my-query-replace-all)
 
-(provide 'init-my-keys)
+(provide 'init-keys)

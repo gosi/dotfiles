@@ -1,8 +1,8 @@
 ## .emacs.d
 
 This is my emacs configuration. Settings and packages are split into
-separate init-files inside the init/ folder. These are loaded by init.el!
-This config is intended to just be dropped in $HOME and ready to go.
+separate init-files inside the init/ folder. These are loaded by init.el.
+The configuration is intended to just be dropped in $HOME and ready to go.
 
 This however isn't completely dependency free. It expects:
 
@@ -13,7 +13,7 @@ This however isn't completely dependency free. It expects:
  mu4e           |  `init-mail.el`
  offlineimap    |  `init-mail.el`
 
-All of these are available with a good package manager (apt-get / pacman),
+All of these are available with a good package manager,
 or easy to build and install yourself on Linux. No idea about Windows compatibility for now (2019/01/05).
 
 All these files are loaded so that if one fails to load the rest will continue.

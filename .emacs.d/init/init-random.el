@@ -72,5 +72,4 @@
 ;; dumb-jump
 (require-package 'dumb-jump)
 
-(require-package 'visual-regexp)
 (provide 'init-random)

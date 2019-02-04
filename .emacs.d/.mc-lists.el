@@ -4,6 +4,9 @@
 (setq mc/cmds-to-run-for-all
       '(
         hungry-delete-backward
+        hungry-delete-forward
+        indent-for-tab-command
+        smart-beginning-of-line
         ))
 
 (setq mc/cmds-to-run-once
