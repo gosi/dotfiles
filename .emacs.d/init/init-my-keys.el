@@ -96,4 +96,4 @@
                (apply oldfun args)))
 (global-set-key "\C-cR" 'my-query-replace-all)
 
-(provide 'init-keys)
+(provide 'init-my-keys)

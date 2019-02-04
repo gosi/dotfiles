@@ -48,4 +48,4 @@
 ;; Highlight current line
 ;(global-hl-line-mode 1)
 
-(provide 'init-colours)
+(provide 'init-colors)

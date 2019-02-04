@@ -16,7 +16,7 @@
 (try-require 'init-backups)    ; Configure how emacs autosaves/backups work
 (try-require 'init-browser)    ; Configure Emacs to use chrome
 (try-require 'init-helm)       ; Completion and selection framework
-(try-require 'init-colours)    ; Themes and stuff
+(try-require 'init-colors)     ; Themes and color settings
 (try-require 'init-eshell)     ; Setup eshell
 (try-require 'init-font)       ; Source Code Pro
 (try-require 'init-server)     ; Setup server
@@ -53,7 +53,7 @@
 
 ;; Make Emacs more like home
 (try-require 'init-util-fns)   ; Some useful functions I bind to keys
-(try-require 'init-keys)       ; The minor mode for all my key shortcuts
+(try-require 'init-my-keys)       ; The minor mode for all my key shortcuts
 (try-require 'init-random)     ; Random packages with no configuration
 (try-require 'init-smiles)     ; Just stupid fun stuff
 (custom-set-variables
