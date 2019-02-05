@@ -14,7 +14,7 @@
   helm-split-window-in-side-p t
   helm-move-to-line-cycle-in-source t
   helm-echo-input-in-header-line t
-  helm-autoresize-max-height)
+  helm-autoresize-mode 1)
 
   :config
   (helm-mode 1))

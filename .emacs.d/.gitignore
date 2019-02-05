@@ -8,7 +8,6 @@
 auto-save-list
 backup
 tramp
-places
 .\#*
 
 # Org-mode
@@ -50,3 +49,6 @@ flycheck_*.el
 
 # network security
 /network-security.data
+
+# places
+places

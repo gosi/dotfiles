@@ -11,7 +11,6 @@ autoload -U add-zsh-hook
 setopt prompt_subst
 
 PROMPT="%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%}"
-source $DOTFILES/bullet-train.zsh 
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
  DISABLE_AUTO_UPDATE="true"
@@ -30,10 +29,10 @@ source $DOTFILES/bullet-train.zsh
  fi
 
 export EDITOR=vim
-export VISUAL=vim
 export PAGER=less
 export LESS='-R'
 
+bindkey -e
 setopt auto_cd
 setopt auto_pushd
 setopt pushd_ignore_dups

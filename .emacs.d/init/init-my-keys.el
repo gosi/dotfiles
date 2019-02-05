@@ -1,9 +1,6 @@
 ;; Normal keybindings that are overridden
-(global-set-key (kbd "C-;")      'ace-jump-mode)
-(global-set-key (kbd "C-:")      'ace-jump-line-mode)
 (global-set-key (kbd "M-/")      'company-complete)
 (global-set-key (kbd "C-a")      'smart-beginning-of-line)
-(global-set-key (kbd "C-o")      'ace-window)
 (global-set-key (kbd "C-q")      'er/expand-region)
 (global-set-key (kbd "C-x f")    'helm-find-files)
 (global-set-key (kbd "C-x C-f")  'helm-find-files)
@@ -63,6 +60,8 @@
 (global-set-key (kbd "C-c o b") 'org-switchb)
 (global-set-key (kbd "C-c o c") 'org-capture)
 (global-set-key (kbd "C-c o l") 'org-store-link)
+(global-set-key (kbd "C-c z")   'ace-jump-mode)
+(global-set-key (kbd "C-c ?")   'ace-jump-line-mode)
 (global-set-key (kbd "C-c p")   'highlight-symbol-prev)
 
 ;; Functions for text manipulation
