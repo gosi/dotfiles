@@ -16,9 +16,9 @@ URxvt.background: #000000
 URxvt.font:     xft:DejaVu Sans Mono:pixelsize=15:antialias=true
 URxvt.boldFont: xft:DejaVu Sans Mono:bold:pixelsize=15:antialias=true
 
-URxvt.inheritPixmap: true
-URxvt.tintColor: white
-URxvt.shading: 22
+!URxvt.shading: 22
+!URxvt.inheritPixmap: true
+!URxvt.tintColor: white
 Xft.rgba: rgb
 Xft.antialias:  true
 Xft.rgba:       rgb

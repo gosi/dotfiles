@@ -1,4 +1,8 @@
 ;; Set default font
+
+(set-language-environment "UTF-8")
+(set-default-coding-systems 'utf-8-unix)
+
 (add-to-list 'default-frame-alist
              '(font . "Source Code Pro"))
 

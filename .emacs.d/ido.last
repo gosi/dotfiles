@@ -1,0 +1,35 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/gosi/workspace/" . "dotfiles/")
+ ("/home/gosi/" . "workspace/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/gosi/workspace/dotfiles/.emacs.d/"
+ "/home/gosi/workspace/dotfiles/.emacs.d/init/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "init-my-keys.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/gosi/workspace/dotfiles/.emacs.d/" (23643 656 666770 448000) "evil/" "README.md" "places" ".gitignore" "bin/" "backup/" "init/" "init.el" "eshell/" "./" ".mc-lists.el" "elpa/" "auto-save-list/" "color-themes/" "../" "snippets/")
+
+ ("/home/gosi/workspace/dotfiles/.emacs.d/init/" (23643 5527 190721 181000) "init-smiles.el" "init-latex.el" "init-tree.el" "init-js.el" "init-my-keys.el" "init-server.el" "init-parens.el" "init-company.el" "init-ocaml.el" "init-ivy.el" "init-startup.el" "init-mail.el" "init-colors.el" "init-personal.el" "init-whitespace.el" "init-hippie.el" "init-markdown.el" "init-ag.el" "./" "init-c-lang.el" "init-browser.el" "init-flycheck.el" "init-util-fns.el" "init-eshell.el" "init-gpg.el" "init-org.el" "init-journal.el" "init-backups.el" "init-python.el" "init-delete.el" "init-vcs.el" "init-helm.el" "init-random.el" "init-elisp.el" "init-ace.el" "init-rust.el" "init-font.el" "init-racket.el" "init-ido.el" "../" "init-sml.el" "init-package.el")
+
+ ("/home/gosi/workspace/dotfiles/" (23643 1076 646574 790000) ".tmux.conf" ".aliases" "sourcecodepro" ".cvimrc" ".nvidia-settings-rc" ".spacemacs" "packages" ".xsession" ".config/" ".bashrc" "termite-install.sh" "bin/" ".git/" ".gitmodules" "xorg.conf.d/" ".zshrc" ".gtkrc-2.0" ".xinitrc" ".functions" ".compton.conf" ".ideavimrc" ".Xmodmap" "fonts/" ".urxvt/" ".xprofile" "./" ".ipynb_checkpoints/" ".conkyrc" ".ycm_extra_conf.py" ".tmux/" ".htoprc" ".vimrc" ".vim/" "setup" ".emacs" ".gtkrc-2.0.mine" ".Xresources" "../" ".emacs.d/")
+
+ ("/home/gosi/" (23643 1076 650574 752000) ".tmux.conf" ".cache/" "java/" ".local/" "jetbrains-toolbox-1.13.4733/" ".cvimrc" "Public/" ".nvidia-settings-rc" ".python_history" "Music/" ".gitconfig" "workspace/" ".android/" ".gtkrc-2.0-mine" "Dropbox/" "IdeaProjects/" ".config/" ".wget-hsts" ".steampid" ".bashrc" "bin/" ".gem/" ".sudo_as_admin_successful" ".zsh_history" ".profile" ".zshrc" ".gtkrc-2.0" ".fzf/" ".compton.conf" ".ideavimrc" ".urxvt/" "dotfiles_old/" ".jupyter/" ".zcompdump" "Documents/" ".steam/" "./" "Desktop/" ".fonts/" ".java/" ".ipython/" ".ICEauthority" ".thumbnails/" ".ipynb_checkpoints/" "Downloads/" ".pulse-cookie" ".bash_logout" ".conkyrc" ".tmux/" "idea-IC-183.5153.38/" ".lesshst" ".vimrc" "Pictures/" ".gphoto/" ".vscode/" ".vim/" ".fehbg" "Templates/" ".mozilla/" ".gnupg/" ".viminfo" ".IdeaIC2018.3/" ".pki/" ".ssh/" "Videos/" ".gnome/" ".steampath" ".bash_history" ".dbus/" ".Xresources" "../" ".fzf.bash" ".emacs.d/" ".nv/")
+
+ ("/home/gosi/workspace/" (23642 44773 656217 915000) "fizzbuzz.py" "java/" "15150labs/" "blocks" "chessboard.cpp" "ascii0.c" "cse341/" "#fizzbuzz.py#" "#chessboard.cpp#" "./" "cpp/" "ascii0" "jsnake/" "dotfiles/" "cs61a/" "test.rkt" "a.out" "#blocks.c#" "blocks.c" "stuff/" "../" "ircdota/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

@@ -5,6 +5,7 @@
 
 (require-package 'color-theme-sanityinc-tomorrow)
 (require-package 'solarized-theme)
+(require-package 'base16-theme)
 
 ;; make the modeline high contrast
 (setq solarized-high-contrast-mode-line t)

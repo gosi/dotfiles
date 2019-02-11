@@ -6,14 +6,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-surround'
 call plug#end()
 
 " filetype support and colours
 filetype plugin indent on
 syntax on
 set background=dark
-colorscheme gruvbox
+colorscheme default
 
 " various settings
 let mapleader = "\<Space>"

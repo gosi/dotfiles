@@ -29,9 +29,8 @@
 ;; C-c s * - Substitute text
 ;; C-c v   - Version control for mercurial
 
-(global-set-key (kbd "C-c ;") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c q")   'mc/edit-lines)
+(global-set-key (kbd "C-<")     'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-c a d") 'ag-dired-regexp)
@@ -60,6 +59,7 @@
 (global-set-key (kbd "C-c o b") 'org-switchb)
 (global-set-key (kbd "C-c o c") 'org-capture)
 (global-set-key (kbd "C-c o l") 'org-store-link)
+(global-set-key (kbd "C-o")     'ace-window)
 (global-set-key (kbd "C-c z")   'ace-jump-mode)
 (global-set-key (kbd "C-c ?")   'ace-jump-line-mode)
 (global-set-key (kbd "C-c p")   'highlight-symbol-prev)
@@ -94,5 +94,12 @@
                          (point-max))))
                (apply oldfun args)))
 (global-set-key "\C-cR" 'my-query-replace-all)
+
+(defun er-switch-to-previous-buffer ()
+  "Switch to previously open buffer.
+Repeated invocations toggle between the two most recently open buffers."
+ (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+(global-set-key (kbd "C-c b") #'er-switch-to-previous-buffer)
 
 (provide 'init-my-keys)
