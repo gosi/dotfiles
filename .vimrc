@@ -5,14 +5,15 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
-Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 " filetype support and colours
 filetype plugin indent on
 syntax on
 set background=dark
-colorscheme default
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme solarized
 
 " various settings
 let mapleader = "\<Space>"

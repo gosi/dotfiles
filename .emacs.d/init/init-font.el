@@ -4,7 +4,7 @@
 (set-default-coding-systems 'utf-8-unix)
 
 (add-to-list 'default-frame-alist
-             '(font . "Source Code Pro"))
+             '(font . "monospace"))
 
 ;; Helpful function to blow up font for presentations.
 (defun presentation-sized-font ()

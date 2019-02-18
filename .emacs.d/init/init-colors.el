@@ -3,13 +3,12 @@
 ;; Save theme locally if there is no MELPA package.
 (add-to-list 'custom-theme-load-path "~/.emacs.d/color-themes/")
 
-(require-package 'color-theme-sanityinc-tomorrow)
 (require-package 'solarized-theme)
 (require-package 'base16-theme)
 
 ;; make the modeline high contrast
-(setq solarized-high-contrast-mode-line t)
-(setq x-underline-at-descent-line t)
+;(setq solarized-high-contrast-mode-line t)
+;(setq x-underline-at-descent-line t)
 
 ;; If you don't customize it, this is the theme you get.
 (setq-default custom-enabled-themes '(solarized-dark))
@@ -47,6 +46,6 @@
 ;(set-cursor-color "green")
 
 ;; Highlight current line
-;(global-hl-line-mode 1)
+(global-hl-line-mode 1)
 
 (provide 'init-colors)
