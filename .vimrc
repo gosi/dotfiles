@@ -5,6 +5,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
+Plug 'wellle/targets.vim'
 Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
@@ -20,6 +21,7 @@ let mapleader = "\<Space>"
 let @/ = ""
 set autoindent
 set backspace=indent,eol,start
+set clipboard=unnamedplus
 set complete+=d
 set diffopt+=vertical
 set expandtab
@@ -34,10 +36,12 @@ set lazyredraw
 set mouse=a
 set noswapfile
 set number
+set relativenumber
 set path=.,**
 set ruler
 set shiftround
 set shiftwidth=4
+set showcmd
 set smartcase
 set softtabstop=4
 set splitright
@@ -87,12 +91,12 @@ nnoremap k gk
 nnoremap <tab> %
 vnoremap <tab> %
 
-" useful black hole delete
+" delete without saving to register
 nnoremap <silent> <Leader>d "_d
 vnoremap <silent> <Leader>d "_d
 
 " juggling with files
-nnoremap <Leader>E :e <C-r>=expand('%:p:h').'/'<CR>
+nnoremap <Leader>e :e <C-r>=expand('%:p:h').'/'<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>L :Lines<CR>
 nnoremap <Leader>F :find *
@@ -109,9 +113,9 @@ nnoremap <C-n>      :bnext<CR>
 nnoremap <BS>       :buffer#<CR>
 
 " juggling with tabs
-nnoremap <Leader>tn :tabnew<CR>
-nnoremap <Leader>te :tabedit **/*
-nnoremap <Leader>tf :tabfind *
+nnoremap tn :tabnew<CR>
+nnoremap te :tabedit **/*
+nnoremap tf :tabfind *
 
 " juggling with definitions
 nnoremap <Leader>D :dlist /
@@ -142,6 +146,9 @@ inoremap <C-e> <End>
 inoremap <C-f> <Right>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
+
+" incase Esc is not mapped to caps-lock on system
+inoremap jk <Esc>
 
 " smooth grepping
 command! -nargs=+ -complete=file_in_path -bar Grep silent! grep! <q-args> | redraw!
