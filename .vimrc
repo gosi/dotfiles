@@ -15,6 +15,8 @@ syntax on
 set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme solarized
+highlight OverLength ctermbg=red
+match OverLength /\%101v.\+/
 
 " various settings
 let mapleader = "\<Space>"
@@ -36,7 +38,6 @@ set lazyredraw
 set mouse=a
 set noswapfile
 set number
-set relativenumber
 set path=.,**
 set ruler
 set shiftround
@@ -178,3 +179,12 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 " C man pages with K
 runtime! ftplugin/man.vim
+
+" Change register
+function! ChangeReg() abort
+    let r = nr2char(getchar())
+    if r =~# '[a-zA-Z0-9"@\-:.%#=*"~_/]'
+        call feedkeys("q:ilet @" . r . " = \<C-r>\<C-r>=string(@" . r . ")\<CR>\<ESC>", 'n')
+    endif
+endfunction
+nnoremap <silent> cr :call ChangeReg()<CR>
