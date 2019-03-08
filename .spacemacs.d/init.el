@@ -71,6 +71,8 @@ configuration layer settings."
             c-c++-enable-clang-support t
             c-c++-default-mode-for-headers 'c++-mode)
      ;; Web
+     javascript
+     typescript
      html
      sql
      ;; Script
