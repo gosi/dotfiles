@@ -40,7 +40,7 @@ configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   `(
+   '(
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -49,10 +49,6 @@ configuration layer settings."
 
      ;; Emacs
      ivy
-     (auto-completion
-      :variables
-      auto-completion-idle-delay 0.5)
-
      ;; Text editing
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t)
@@ -87,13 +83,14 @@ configuration layer settings."
      yaml
      )
 
+
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
-   ;; Also include the dependenc  (with-robyneval-after-load 'tuareg
+   ;; Also include the dependencies as they will not be resolved automatically.
    '()
 
    ;; A list of packages that cannot be updated.
@@ -182,7 +179,22 @@ It should only modify the values of Spacemacs settings."
    ;; with `:variables' keyword (similar to layers). Check the editing styles
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
-   dotspacemacs-editing-style 'vim
+   dotspacemacs-editing-style
+   '(vim :variables
+         ;; If non-nil, objects are briefly highlighted.
+         vim-style-visual-feedback nil
+
+         ;; If non-nil, `Y' is remapped to `y$' in Evil states.
+         vim-style-remap-Y-to-y$ t
+
+         ;; If non-nil, the shift mappings `<' and `>' retain visual state.
+         vim-style-retain-visual-state-on-shift t
+
+         ;; If non-nil, `J' and `K' move lines up and down when in visual mode.
+         vim-style-visual-line-move-text nil
+
+         ;; If non-nil, inverse the meaning of `g' in `:substitute' Evil ex-command.
+         vim-style-ex-substitute-global nil)
 
    ;; If non-nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
@@ -475,8 +487,10 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (setq custom-file "~/.spacemacs.d/custom.el")
-  (load custom-file))
+  (setq-default
+   ;; Dump generated custom settings elsewhere.
+   ;; https://github.com/syl20bnr/spacemacs/issues/7891
+   custom-file (expand-file-name "custom.el" spacemacs-cache-directory)))
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
@@ -509,7 +523,6 @@ before packages are loaded."
         solarized-use-more-italic t)
 
   (setq comment-style 'multi-line)
-  (setq company-idle-delay 1.0)
   (setq-default fill-column 110)
   (setq powerline-default-separator 'arrow)
   (setq-default sentence-end-double-space t))
@@ -536,3 +549,4 @@ before packages are loaded."
 (setq-default ring-bell-function 'ignore)
 
 ;;; init.el ends here;;;
+

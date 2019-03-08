@@ -80,6 +80,13 @@ nnoremap <Enter> o<Esc>
 " double tap Escape to remove search highlighting
 nnoremap <Esc><Esc> :silent! nohls<CR>
 
+" make Y consistent with C, S, D, etc.
+nnoremap Y y$
+
+" quickly edit vimrc
+nnoremap <Leader>re :vsplit $MYVIMRC<CR>
+nnoremap <Leader>rs :source $MYVIMRC<CR>
+
 " center screen on search result
 nnoremap n nzz
 nnoremap N Nzz
