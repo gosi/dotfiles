@@ -1,5 +1,4 @@
 ;;; init.el --- gosi's Spacemacs configuration  -*- lexical-binding: t -*-
-
 ;; https://github.com/gosi/dotfiles
 
 ;;; Commentary:
@@ -176,6 +175,9 @@ It should only modify the values of Spacemacs settings."
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
    dotspacemacs-editing-style 'vim
+
+   ;; If non nil `Y' is remapped to `y$' in Evil states. (default nil)
+   dotspacemacs-remap-Y-to-y$ t
 
    ;; If non-nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
@@ -509,6 +511,11 @@ before packages are loaded."
   (setq-default fill-column 110)
   (setq powerline-default-separator 'arrow)
   (setq-default sentence-end-double-space t))
+
+  ;; TODO highlighting
+  (defun highlight-todos ()
+    (font-lock-add-keywords nil '(("\\<\\(NOTE\\|TODO\\|HACK\\|BUG\\):" 1 font-lock-warning-face t))))
+  (add-hook 'prog-mode-hook #'highlight-todos)
 
   ;; C++ settings
   (add-hook 'c++-mode-hook (lambda ()
