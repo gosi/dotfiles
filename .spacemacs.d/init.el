@@ -10,8 +10,8 @@
 ;;; Code:
 
 (defun dotspacemacs/layers ()
-  "Layer configuration: This function should only modify
-configuration layer settings."
+  "Layer configuration:
+This function should only modify configuration layer settings."
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
@@ -25,7 +25,7 @@ configuration layer settings."
    ;; lazy install any layer that support lazy installation even the layers
    ;; listed in `dotspacemacs-configuration-layers'. `nil' disable the lazy
    ;; installation feature and you have to explicitly list a layer in the
-   ;; variable `dotspacemacs-configuration-layers' to install it.
+   ;; variable `dotspacevmacs-configuration-layers' to install it.
    ;; (default 'unused)
    dotspacemacs-enable-lazy-installation 'unused
 
@@ -85,22 +85,16 @@ configuration layer settings."
      yaml
      )
 
-
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   ;; To use a local version of a package, use the `:location' property:
-   ;; '(your-package :location "~/path/to/your-package/")
-   ;; Also include the dependencies as they will not be resolved automatically.
-   '()
-
+   dotspacemacs-additional-packages '(vimish-fold dtrt-indent hasky-stack)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
-
+   dotspacemacs-excluded-packages '(yasnippet magithub)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and deletes any unused
@@ -181,22 +175,7 @@ It should only modify the values of Spacemacs settings."
    ;; with `:variables' keyword (similar to layers). Check the editing styles
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
-   dotspacemacs-editing-style
-   '(vim :variables
-         ;; If non-nil, objects are briefly highlighted.
-         vim-style-visual-feedback nil
-
-         ;; If non-nil, `Y' is remapped to `y$' in Evil states.
-         vim-style-remap-Y-to-y$ t
-
-         ;; If non-nil, the shift mappings `<' and `>' retain visual state.
-         vim-style-retain-visual-state-on-shift t
-
-         ;; If non-nil, `J' and `K' move lines up and down when in visual mode.
-         vim-style-visual-line-move-text nil
-
-         ;; If non-nil, inverse the meaning of `g' in `:substitute' Evil ex-command.
-         vim-style-ex-substitute-global nil)
+   dotspacemacs-editing-style 'vim
 
    ;; If non-nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
@@ -508,6 +487,8 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   ;; keybindings
+
+  (global-set-key (kbd "<tab>") 'evil-jump-item)
   (global-set-key (kbd "C-x C-c")
                   (lambda () (interactive) (error "C-x C-c is disabled. :q to quit!")))
 
@@ -551,4 +532,3 @@ before packages are loaded."
 (setq-default ring-bell-function 'ignore)
 
 ;;; init.el ends here;;;
-
