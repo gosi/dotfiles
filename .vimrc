@@ -64,9 +64,6 @@ cabbrev h vert h
 " copy to the system clipboard
 map <C-c> "+y
 
-" Y should yank to EOL
-map Y y$
-
 " keep selection when indenting text
 vnoremap < <gv
 vnoremap > >gv
