@@ -35,7 +35,7 @@ alias notebook="ipython notebook --matplotlib inline"
 alias calc="python3 -ic 'from math import *'"
 alias day="echo 'Current day of the year is $(date +%j)'"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias open="xdg-open"
+alias o="xdg-open"
 alias ttrash="rm ~/Downloads/*.torrent"
 alias empty-trash="rm -rf ~/.local/share/Trash/*"
 

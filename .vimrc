@@ -14,7 +14,7 @@ filetype plugin indent on
 syntax on
 set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme solarized
+colorscheme wombat256i
 highlight OverLength ctermbg=red
 match OverLength /\%101v.\+/
 
