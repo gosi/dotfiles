@@ -88,7 +88,7 @@ This function should only modify configuration layer settings."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(vimish-fold dtrt-indent hasky-stack)
+   dotspacemacs-additional-packages '(base16-theme vimish-fold dtrt-indent hasky-stack)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
@@ -105,9 +105,9 @@ This function should only modify configuration layer settings."
 
 (defun dotspacemacs/init ()
   "Initialization:
-This function is called at the very beginning of Spacemacs startup,
-before layer configuration.
-It should only modify the values of Spacemacs settings."
+  This function is called at the very beginning of Spacemacs startup,
+  before layer configuration.
+  It should only modify the values of Spacemacs settings."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default

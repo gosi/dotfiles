@@ -6,15 +6,16 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'jpo/vim-railscasts-theme'
+Plug 'romainl/Apprentice'
+
 call plug#end()
 
 " filetype support and colours
 filetype plugin indent on
 syntax on
 set background=dark
-let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme wombat256i
+colorscheme apprentice
 highlight OverLength ctermbg=red
 match OverLength /\%101v.\+/
 
@@ -80,9 +81,9 @@ nnoremap <Esc><Esc> :silent! nohls<CR>
 " make Y consistent with C, S, D, etc.
 nnoremap Y y$
 
-" quickly edit vimrc
-nnoremap <Leader>re :vsplit $MYVIMRC<CR>
-nnoremap <Leader>rs :source $MYVIMRC<CR>
+" quickly edit and source vimrc
+nnoremap <Leader>ve :vsplit $MYVIMRC<CR>
+nnoremap <Leader>vs :source $MYVIMRC<CR>
 
 " center screen on search result
 nnoremap n nzz
@@ -106,9 +107,9 @@ nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>L :Lines<CR>
 nnoremap <Leader>F :find *
 nnoremap <Leader>t :tabfind *
-nnoremap <Leader>v :vert sfind *
 nnoremap <Leader>w :w<CR>:echo "Written"<CR>
 nnoremap <Leader>W :w !sudo tee % >/dev/null
+nnoremap <Leader>q :q<CR>
 
 " juggling with buffers
 nnoremap <Leader>b  :buffer *
@@ -144,6 +145,12 @@ nnoremap <Home> :cprevious<CR>
 nnoremap <Space>s :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <Space>% :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
+" one less step to change splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " emacs-like editing in insert mode
 inoremap <C-a> <Home>
 inoremap <C-b> <Left>
@@ -152,7 +159,7 @@ inoremap <C-f> <Right>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 
-" incase Esc is not mapped to caps-lock on system
+" incase Esc is not mapped to caps-lock key on system
 inoremap jk <Esc>
 
 " smooth grepping
