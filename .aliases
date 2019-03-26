@@ -28,7 +28,6 @@ alias vi="vim"
 alias q="exit"
 alias :q="exit"
 
-alias fixsound="rm -r ~/.config/pulse"
 alias pyhttp="python -m SimpleHTTPServer"
 alias ipy="ipython3"
 alias notebook="ipython notebook --matplotlib inline"

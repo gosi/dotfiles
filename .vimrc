@@ -6,16 +6,16 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
-Plug 'jpo/vim-railscasts-theme'
-Plug 'romainl/Apprentice'
-
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 " filetype support and colours
 filetype plugin indent on
 syntax on
 set background=dark
-colorscheme apprentice
+set t_Co=256
+colorscheme default
 highlight OverLength ctermbg=red
 match OverLength /\%101v.\+/
 
@@ -30,11 +30,13 @@ set diffopt+=vertical
 set expandtab
 set foldlevelstart=999
 set foldmethod=indent
+set formatoptions-=cro
 set grepprg=LC_ALL=C\ grep\ -nrsH
 set hidden
 set hlsearch
 set ignorecase
 set incsearch
+set laststatus=2
 set lazyredraw
 set mouse=a
 set noswapfile
@@ -47,6 +49,7 @@ set showcmd
 set smartcase
 set softtabstop=4
 set splitright
+set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ (%l,%c%V)\ %P
 set tabstop=8
 set tags=./tags;,tags;
 set textwidth=0
@@ -199,3 +202,9 @@ function! ChangeReg() abort
     endif
 endfunction
 nnoremap <silent> cr :call ChangeReg()<CR>
+
+"" Setup grepprg for git repositories
+call system("git rev-parse --is-inside-work-tree")
+if (!v:shell_error)
+    set grepprg=git\ grep\ -n
+endif
