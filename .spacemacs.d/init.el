@@ -65,6 +65,7 @@ This function should only modify configuration layer settings."
      ;; Programming languages
      ;; Functional
      emacs-lisp
+     racket
      ;; System
      (c-c++ :variables
             c-c++-enable-clang-support t
@@ -232,8 +233,8 @@ This function should only modify configuration layer settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Iosevka"
-                               :size 15
+   dotspacemacs-default-font '("monospace"
+                               :size 13
                                :weight normal
                                :width normal)
 

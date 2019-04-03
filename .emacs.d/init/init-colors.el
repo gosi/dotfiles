@@ -8,7 +8,7 @@
 ;(setq x-underline-at-descent-line t)
 
 ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(tty-dark))
+(setq-default custom-enabled-themes '())
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()

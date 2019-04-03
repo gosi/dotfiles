@@ -8,6 +8,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'wellle/targets.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'w0rp/ale'
 call plug#end()
 
 " filetype support and colours
