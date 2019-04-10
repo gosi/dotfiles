@@ -115,8 +115,8 @@ bindsym $mod+Shift+r restart # restart i3 inplace (preserves your layout/session
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'" # exit i3 (logs you out of your X session)
 
 # Screenshot
-bindsym Print exec "scrot -u -q 100 $HOME/Pictures/%Y-%m-%d-%H%M%S_\$wx\$h_scrot.png && notify-send 'Screenshot captured!' 'Picture saved in ~/Screenshots'"
-bindsym Shift+Print exec "scrot -s -q 100 $HOME/Pictures/%Y-%m-%d-%H%M%S_\$wx\$h_scrot.png && notify-send 'Screenshot of current client captured!' 'Picture saved in ~/Screenshots'"
+bindsym Print exec "scrot -u -q 100 $HOME/Pictures/%Y-%m-%d-%H%M%S_\$wx\$h_scrot.png && notify-send 'Screenshot captured!' 'Picture saved in ~/Pictures'"
+bindsym Shift+Print exec "scrot -s -q 100 $HOME/Pictures/%Y-%m-%d-%H%M%S_\$wx\$h_scrot.png && notify-send 'Screenshot of current client captured!' 'Picture saved in ~/Pictures'"
 
 # Set wallpaper with feh
 exec --no-startup-id feh --bg-scale ~/.config/i3/wallpapers/nightsky.jpg

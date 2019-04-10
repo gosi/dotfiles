@@ -14,6 +14,20 @@ then
   echo "You need at least bash-4.0 or some options will not work correctly."
 fi
 
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+function shortpath() {
+        local IFS=/ P=${PWD#?} F
+        for F in $P; do echo -n /${F::1}; done
+        [[ $P ]] || echo -n /
+        echo -n ${F:1}
+}
+
+export PS1="[\A] \[\e[01;33m\]\u\[\e[m\]@\[\e[31;40m\]\h\[\e[m\] \[\e[36m\]\w\[\e[m\]\[\e[01;33m\]\\$\[\e[m\] "
+export LANG="en_US.UTF-8"
+
 ## GENERAL OPTIONS ##
 
 # Prevent file overwrite on stdout redirection
@@ -90,16 +104,3 @@ source ~/.fzf.bash
 # Set vim as default editor
 export VISUAL=vim
 export EDITOR="vim"
-
-## PROMPT ##
-
-case $(uname) in
-    Linux)
-	alias ls="ls --color=auto -FC"
-	;;
-    *)
-	alias ls="ls -FGC"
-	;;
-esac
-
-export PS1="[\${debian_chroot:+(\$debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\] \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst]\]\$ "

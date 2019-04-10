@@ -60,6 +60,9 @@ set wildignorecase
 set wildmenu
 set wildmode=full
 
+" Automatically source vimrc on save.
+autocmd! bufwritepost $MYVIMRC source $MYVIMRC
+
 " remove trailing whitespace on write
 autocmd BufWritePre * %s/\s\+$//e
 
@@ -68,6 +71,10 @@ cabbrev h vert h
 
 " copy to the system clipboard
 map <C-c> "+y
+
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 " keep selection when indenting text
 vnoremap < <gv
