@@ -24,8 +24,7 @@ function shortpath() {
         [[ $P ]] || echo -n /
         echo -n ${F:1}
 }
-
-export PS1="[\A] \[\e[01;33m\]\u\[\e[m\]@\[\e[31;40m\]\h\[\e[m\] \[\e[36m\]\w\[\e[m\]\[\e[01;33m\]\\$\[\e[m\] "
+export PS1="[\A] \[\e[01;33m\]\u\[\e[m\]@\[\e[31;40m\]\h\[\e[m\] \[\e[36m\]\w\[\e[m\]\[\e[01;33m\] $\[\e[m\] "
 export LANG="en_US.UTF-8"
 
 ## GENERAL OPTIONS ##

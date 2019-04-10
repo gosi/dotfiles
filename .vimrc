@@ -17,8 +17,6 @@ syntax on
 set background=dark
 set t_Co=256
 colorscheme default
-highlight OverLength ctermbg=red
-match OverLength /\%101v.\+/
 
 " various settings
 let mapleader = "\<Space>"
@@ -68,13 +66,6 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " use :h<Space> to open vertical help splits
 cabbrev h vert h
-
-" copy to the system clipboard
-map <C-c> "+y
-
-" Move visual block
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
 
 " keep selection when indenting text
 vnoremap < <gv
@@ -144,10 +135,6 @@ nnoremap <Leader>i :ilist /
 nnoremap [I [I:ijump<Space><Space><Space><C-r><C-w><S-Left><Left><Left>
 nnoremap ]I ]I:ijump<Space><Space><Space><C-r><C-w><S-Left><Left><Left>
 
-" juggling with changes
-nnoremap <Leader>, *``cgn
-nnoremap <Leader>. #``cgN
-
 " juggling with quickfix entries
 nnoremap <End>  :cnext<CR>
 nnoremap <Home> :cprevious<CR>
@@ -169,9 +156,6 @@ inoremap <C-e> <End>
 inoremap <C-f> <Right>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
-
-" incase Esc is not mapped to caps-lock key on system
-inoremap jk <Esc>
 
 " smooth grepping
 command! -nargs=+ -complete=file_in_path -bar Grep silent! grep! <q-args> | redraw!
@@ -198,18 +182,6 @@ function! XTermPasteBegin()
 endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
-" C man pages with K
-runtime! ftplugin/man.vim
-
-" Change register
-function! ChangeReg() abort
-    let r = nr2char(getchar())
-    if r =~# '[a-zA-Z0-9"@\-:.%#=*"~_/]'
-        call feedkeys("q:ilet @" . r . " = \<C-r>\<C-r>=string(@" . r . ")\<CR>\<ESC>", 'n')
-    endif
-endfunction
-nnoremap <silent> cr :call ChangeReg()<CR>
 
 "" Setup grepprg for git repositories
 call system("git rev-parse --is-inside-work-tree")
