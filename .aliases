@@ -18,7 +18,6 @@ alias dt="cd ~/Documents"
 alias data="cd /media/gosi/DATA"
 
 # Command Shortcuts
-alias a="discord & disown ; google-chrome & disown ; vlc & disown ; Nemo & disown"
 alias e="emacsclient"
 alias c="g++ -Wall -g -D_GLIBCXX_DEBUG -std=c++11 -ftrapv -Wconversion -ftrapv -Wfatal-errors -fsanitize=address,undefined"
 alias t="tmux attach -t main || tmux new -s main"

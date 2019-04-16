@@ -16,6 +16,7 @@
 (global-set-key (kbd "<f1> v")   'counsel-describe-variable)
 (global-set-key [f5]             'eval-buffer)
 (global-set-key [f6]             'rename-this-file-and-buffer)
+(define-key key-translation-map (kbd "ESC") (kbd "C-g"))
 
 ;; Overview of the C-c prefix
 ;; C-c a * - Ag things
@@ -100,6 +101,6 @@
 Repeated invocations toggle between the two most recently open buffers."
  (interactive)
   (switch-to-buffer (other-buffer (current-buffer) 1)))
-(global-set-key (kbd "C-c b") #'er-switch-to-previous-buffer)
+(global-set-key [C-backspace] #'er-switch-to-previous-buffer)
 
 (provide 'init-my-keys)

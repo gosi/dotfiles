@@ -87,6 +87,12 @@
 ;; Use system clipboard
 (setq select-enable-clipboard t)
 
+;; After copy Ctrl+c in Linux X11, you can paste by `yank' in emacs
+(setq x-select-enable-clipboard t)
+
+;; After mouse selection in X11, you can paste by `yank' in emacs
+(setq x-select-enable-primary t)
+
 ;; Show empty lines in the gutter
 (setq-default indicate-empty-lines t)
 

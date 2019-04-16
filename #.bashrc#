@@ -18,7 +18,14 @@ fi
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PS1=" \[\e[00;34m\]λ \W \[\e[0m\]"
+function shortpath() {
+        local IFS=/ P=${PWD#?} F
+        for F in $P; do echo -n /${F::1}; done
+        [[ $P ]] || echo -n /
+        echo -n ${F:1}
+}
+
+export PS1="[\A] \[\e[01;33m\]\u\[\e[m\]@\[\e[31;40m\]\h\[\e[m\] \[\e[36m\]\w\[\e[m\]\[\e[01;33m\] $\[\e[m\] "
 export LANG="en_US.UTF-8"
 
 ## GENERAL OPTIONS ##

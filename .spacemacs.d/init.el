@@ -233,7 +233,7 @@ This function should only modify configuration layer settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("monospace"
+   dotspacemacs-default-font '("DejaVu Sans Mono"
                                :size 13
                                :weight normal
                                :width normal)
@@ -487,8 +487,8 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  ;; keybindings
 
+  ;; keybindings
   (global-set-key (kbd "<tab>") 'evil-jump-item)
   (global-set-key (kbd "C-x C-c")
                   (lambda () (interactive) (error "C-x C-c is disabled. :q to quit!")))
@@ -498,6 +498,9 @@ before packages are loaded."
       (interactive)
       (call-interactively 'spacemacs/evil-insert-line-below)
       (evil-next-line)))
+
+  ;; Kill the buffer alongside the current window
+  (spacemacs/set-leader-keys "w x" 'kill-buffer-and-window)
 
   ;; toggles
   (spacemacs/toggle-highlight-long-lines-globally-on)
@@ -529,6 +532,9 @@ before packages are loaded."
 (defadvice keyboard-escape-quit
     (around keyboard-escape-quit-dont-close-windows activate)
   (let ((buffer-quit-function (lambda () ()))) ad-do-it))
+
+;; Disable unnecessary buffer queries
+(setq kill-buffer-query-functions nil)
 
 ;; Disable Emacs lock files.
 (setq-default create-lockfiles nil)
