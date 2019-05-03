@@ -92,8 +92,11 @@ shopt -s cdspell 2> /dev/null
 CDPATH="."
 
 # fzf
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 source ~/.fzf.bash
 
 # Set vim as default editor
-export VISUAL=vim
-export EDITOR="vim"
+export VISUAL=nvim
+export EDITOR="nvim"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

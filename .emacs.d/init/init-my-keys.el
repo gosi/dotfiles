@@ -9,6 +9,10 @@
 (global-set-key (kbd "C-x C-O")  'last-window)
 (global-set-key (kbd "C-x C-e")  'eval-replace-sexp)
 (global-set-key (kbd "C-y")      'clipboard-yank)
+(global-set-key (kbd "M-j")
+                (lambda ()
+                  (interactive)
+                  (join-line -1)))
 (global-set-key (kbd "M-w")      'clipboard-kill-ring-save)
 (global-set-key (kbd "M-z")      'ace-jump-zap-up-to-char)
 (global-set-key [(meta g)]       'goto-line)
@@ -17,6 +21,43 @@
 (global-set-key [f5]             'eval-buffer)
 (global-set-key [f6]             'rename-this-file-and-buffer)
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
+
+(defun open-line-below ()
+  (interactive)
+  (end-of-line)
+  (newline)
+  (indent-for-tab-command))
+
+(defun open-line-above ()
+  (interactive)
+  (beginning-of-line)
+  (newline)
+  (forward-line -1)
+  (indent-for-tab-command))
+
+(global-set-key (kbd "<C-return>") 'open-line-below)
+(global-set-key (kbd "<C-S-return>") 'open-line-above)
+
+;; Move by lines of five
+(global-set-key (kbd "C-S-n")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (next-line 5))))
+
+(global-set-key (kbd "C-S-p")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (previous-line 5))))
+
+(global-set-key (kbd "C-S-f")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (forward-char 5))))
+
+(global-set-key (kbd "C-S-b")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (backward-char 5))))
 
 ;; Overview of the C-c prefix
 ;; C-c a * - Ag things
@@ -102,5 +143,17 @@ Repeated invocations toggle between the two most recently open buffers."
  (interactive)
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 (global-set-key [C-backspace] #'er-switch-to-previous-buffer)
+
+;; Terminate shell process when line is empty
+(defun comint-delchar-or-eof-or-kill-buffer (arg)
+  (interactive "p")
+  (if (null (get-buffer-process (current-buffer)))
+      (kill-buffer)
+    (comint-delchar-or-maybe-eof arg)))
+
+(add-hook 'shell-mode-hook
+          (lambda ()
+            (define-key shell-mode-map
+              (kbd "C-d") 'comint-delchar-or-eof-or-kill-buffer)))
 
 (provide 'init-my-keys)

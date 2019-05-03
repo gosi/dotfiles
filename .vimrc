@@ -5,9 +5,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
-Plug 'wellle/targets.vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'w0rp/ale'
 call plug#end()
 
@@ -58,7 +55,7 @@ set wildignorecase
 set wildmenu
 set wildmode=full
 
-" Automatically source vimrc on save.
+" source vimrc on save.
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC
 
 " remove trailing whitespace on write
@@ -99,66 +96,27 @@ nnoremap k gk
 nnoremap <tab> %
 vnoremap <tab> %
 
-" delete without saving to register
-nnoremap <silent> <Leader>d "_d
-vnoremap <silent> <Leader>d "_d
-
-" juggling with files
+" files
 nnoremap <Leader>e :e <C-r>=expand('%:p:h').'/'<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>L :Lines<CR>
 nnoremap <Leader>F :find *
-nnoremap <Leader>t :tabfind *
-nnoremap <Leader>w :w<CR>:echo "Written"<CR>
-nnoremap <Leader>W :w !sudo tee % >/dev/null
-nnoremap <Leader>q :q<CR>
 
-" juggling with buffers
-nnoremap <Leader>b  :buffer *
+" buffers
 nnoremap <Leader>ls :ls<CR>:b<Space>
 nnoremap <C-p>      :bprevious<CR>
 nnoremap <C-n>      :bnext<CR>
 nnoremap <BS>       :buffer#<CR>
 
-" juggling with tabs
-nnoremap tn :tabnew<CR>
-nnoremap te :tabedit **/*
-nnoremap tf :tabfind *
-
-" juggling with definitions
-nnoremap <Leader>D :dlist /
-nnoremap [D [D     :djump<Space><Space><Space><C-r><C-w><S-Left><Left>
-nnoremap ]D ]D     :djump<Space><Space><Space><C-r><C-w><S-Left><Left>
-
-" juggling with matches
-nnoremap <Leader>i :ilist /
-nnoremap [I [I:ijump<Space><Space><Space><C-r><C-w><S-Left><Left><Left>
-nnoremap ]I ]I:ijump<Space><Space><Space><C-r><C-w><S-Left><Left><Left>
-
-" juggling with quickfix entries
-nnoremap <End>  :cnext<CR>
-nnoremap <Home> :cprevious<CR>
-
-" super quick search and replace
+" quick search and replace
 nnoremap <Space>s :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <Space>% :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
-" one less step to change splits
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" emacs-like editing in insert mode
+" readline keys in insert-mode
 inoremap <C-a> <Home>
 inoremap <C-b> <Left>
 inoremap <C-e> <End>
 inoremap <C-f> <Right>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-
-" smooth grepping
-command! -nargs=+ -complete=file_in_path -bar Grep silent! grep! <q-args> | redraw!
 
 " automagically set paste mode when pasting text
 function! WrapForTmux(s)
@@ -182,9 +140,3 @@ function! XTermPasteBegin()
 endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
-"" Setup grepprg for git repositories
-call system("git rev-parse --is-inside-work-tree")
-if (!v:shell_error)
-    set grepprg=git\ grep\ -n
-endif

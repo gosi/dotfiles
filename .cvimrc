@@ -1,19 +1,14 @@
-set scalehints
-set noautofocus
-set noshowtabindices
-"set defaultnewtabpage
 let mapleader = ","
-let highlight = '#d28ce3'
-let activehighlight = '#0ff3db'
-let qmark g = ["http://google.com"]
-let blacklists = ["*://mail.google.com/*"]
-map gm :tabnew mail.google.com&<CR>
-let barposition = "top"
-let nextmatchpattern = "((?!first)(next|more|>|›|»|forward|+)"
+let searchalias g = "google"
+set noautofocus
+let barposition = "bottom"
 
 map K previousTab
 map J nextTab
-unmap w
+
+map ; openCommandBar
+map <C-b> :bookmarks<CR>
+map <C-w> :quit<CR>
 
 " insert maps
 iunmapAll
@@ -25,37 +20,11 @@ imap <C-o> editWithVim
 imap <C-j> forwardLine
 imap <C-k> backwardLine
 
-site '*://groups.google.com/*' {
-	unmapAll
-	map : openCommandBar
-	map / openSearchBar
-	map N nextSearchResult
-	map <C-v> toggleVisualMode
-}
-site '*://www.google.com/calendar/*' {
-	unmapAll
-	map : openCommandBar
-	map / openSearchBar
-	map N nextSearchResult
-	map <C-v> toggleVisualMode
-}
-site '*://www.youtube.com/*' {
-	unmapAll
-	map : openCommandBar
-	map / openSearchBar
-	map N nextSearchResult
-	map <C-v> toggleVisualMode
-}
+map <Leader>b :buffer<Space>
+map <Leader>h :history<Space>
+map <Leader>th :tabhistory<Space>
 
-let configpath = '~/.cvimrc'
-set localconfig
-
-gy copy URL from link to clipboard
-" I	search through browser history
-" z<Enter>	toggle image zoom (same as clicking the image on image-only pages)
-" gu	go up one path in the URL
-" gU	go to to the base URL
-" gx0/$	 close all tabs to the left/right of the current tab
-" gxt/T
+map <Leader>gh :open https://github.com<CR>
+map <Leader>tw :open https://twitch.tv/following<CR>
+map <Leader>yt :open https://www.youtube.com/feed/subscriptions<CR>
 <	move current tab left
-" ]]	click the "next" link on the page (see nextmatchpattern above)

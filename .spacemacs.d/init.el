@@ -47,10 +47,12 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
 
      ;; Emacs
-     ivy
+     helm
      ;; Text editing
      (auto-completion :variables
-                      auto-completion-enable-snippets-in-popup t)
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-tab-key-behavior nil
+                      )
      spell-checking
      (syntax-checking :variables
                       syntax-checking-enable-by-default nil
@@ -89,12 +91,12 @@ This function should only modify configuration layer settings."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(base16-theme vimish-fold dtrt-indent hasky-stack)
+   dotspacemacs-additional-packages '(yasnippet-snippets base16-theme vimish-fold )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(yasnippet magithub)
+   dotspacemacs-excluded-packages '()
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and deletes any unused
@@ -225,7 +227,7 @@ This function should only modify configuration layer settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme 'spacemacs
+   dotspacemacs-mode-line-theme 'vanilla
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -233,8 +235,8 @@ This function should only modify configuration layer settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("DejaVu Sans Mono"
-                               :size 13
+   dotspacemacs-default-font '("monospace"
+                               :size 14
                                :weight normal
                                :width normal)
 
@@ -489,6 +491,7 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;; keybindings
+  (global-set-key (kbd "TAB") 'hippie-expand)
   (global-set-key (kbd "<tab>") 'evil-jump-item)
   (global-set-key (kbd "C-x C-c")
                   (lambda () (interactive) (error "C-x C-c is disabled. :q to quit!")))

@@ -44,6 +44,13 @@
       (set-visited-file-name new-name)
       (rename-buffer new-name))))
 
+;; Auto refresh buffers
+(global-auto-revert-mode 1)
+
+;; Also auto refresh dired, but be quiet about it
+(setq global-auto-revert-non-file-buffers t)
+(setq auto-revert-verbose nil)
+
 ;; Make title bar show host and file directory in a clean fashion
 (setq-default frame-title-format
               '(:eval

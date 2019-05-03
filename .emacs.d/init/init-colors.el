@@ -11,10 +11,6 @@
 
 (add-hook 'after-init-hook 'reapply-themes)
 
-;;------------------------------------------------------------------------------
-;; Toggle between light and dark
-;;------------------------------------------------------------------------------
-
 (setq color-theme-is-global t)
 (color-theme-initialize)
 
