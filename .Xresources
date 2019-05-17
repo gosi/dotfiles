@@ -4,9 +4,7 @@ URxvt.mousewheel: true
 URxvt.saveLines: 2000
 URxvt.scrollBar: false
 URxvt.scrollstyle: rxvt
-URxvt.urgentOnBell: true
-URxvt.cursorBlink: false
-URxvt.visualBell: true
+URxvt.cursorBlink: true
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.intensityStyles: false
@@ -14,8 +12,8 @@ URxvt.intensityStyles: false
 !URxvt.cursorColor: green
 URxvt.foreground: #DDDDDD
 URxvt.background: #000000
-URxvt.font:     xft:monospace:pixelsize=12:antialias=true
-URxvt.boldFont: xft:monospace:bold:pixelsize=12:antialias=true
+URxvt.font:     xft:terminus:pixelsize=14:antialias=true
+URxvt.boldFont: xft:terminus:bold:pixelsize=14:antialias=true
 
 !URxvt.shading: 22
 !URxvt.inheritPixmap: true

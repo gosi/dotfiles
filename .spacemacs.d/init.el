@@ -1,4 +1,4 @@
-;;; init.el --- gosi's Spacemacs configuration  -*- lexical-binding: t -*-
+;;; init.el --- gosi's Spacemacs configuration  -*- lexical-binding: t -*
 ;; https://github.com/gosi/dotfiles
 
 ;;; Commentary:
@@ -46,9 +46,9 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
 
-     ;; Emacs
+     ;; -- Emacs
      helm
-     ;; Text editing
+     ;; -- Text editing
      (auto-completion :variables
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-tab-key-behavior nil
@@ -59,27 +59,23 @@ This function should only modify configuration layer settings."
                       syntax-checking-use-original-bitmaps t
                       flycheck-idle-change-delay 1.0)
 
-     ;; Programmer tools
+     ;; -- Programmer tools
      git
      (shell :variables
             shell-default-shell 'multi-term
             multi-term-program "/bin/bash")
-     ;; Programming languages
-     ;; Functional
+     ;; -- Programming languages
      emacs-lisp
      racket
-     ;; System
+     java
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-default-mode-for-headers 'c++-mode)
-     ;; Web
      javascript
      typescript
      html
      sql
-     ;; Script
      python
-     ruby
      shell-scripts
      ;; Documents/markup
      markdown
@@ -378,7 +374,7 @@ This function should only modify configuration layer settings."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers nil
 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)

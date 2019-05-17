@@ -18,13 +18,11 @@ alias dt="cd ~/Documents"
 alias data="cd /media/gosi/DATA"
 
 # Command Shortcuts
-alias e="emacsclient"
 alias c="g++ -Wall -g -D_GLIBCXX_DEBUG -std=c++11 -ftrapv -Wconversion -ftrapv -Wfatal-errors -fsanitize=address,undefined"
 alias p="pydoc3"
 alias t="tmux attach -t main || tmux new -s main"
 alias c99="c99 -g3 -Wall -Wextra -pedantic-errors"
 alias val="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt"
-alias vi="vim"
 alias q="exit"
 alias :q="exit"
 

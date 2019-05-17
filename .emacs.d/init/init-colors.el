@@ -14,8 +14,14 @@
 (setq color-theme-is-global t)
 (color-theme-initialize)
 
-(set-foreground-color "wheat")
-(set-background-color "#161616")
-(set-cursor-color "green")
+(if (display-graphic-p)
+   (progn (setq default-frame-alist
+             (cons (cons 'reverse t) default-frame-alist))
+     (make-frame)
+     (delete-other-frames) )
+ )
+;;(set-foreground-color "wheat")
+;;(set-background-color "#161616")
+;;(set-cursor-color "green")
 
 (provide 'init-colors)

@@ -1,0 +1,25 @@
+[user]
+	email = ericjansson510@gmail.com
+	name = Eric Ramsell Jansson
+[alias]
+	co = checkout
+	ci = commit
+	st = status -s
+	br = branch
+        pl  = pull --rebase
+	type = cat-file -t
+	dump = cat-file -p
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	lol = log --graph --oneline --decorate --color --all
+[push]
+	default = simple
+[core]
+	autocrlf = input
+	excludesfile =
+        editor = vim
+[diff]
+	algorithm = histogram
+	guitool = gvimdiff
+	tool = vimdiff
+[merge]
+	conflictStyle = diff3

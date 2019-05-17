@@ -26,7 +26,7 @@
 ;; Minor modes
 (try-require 'init-ace)        ; Some helpful packages for moving around
 (try-require 'init-company)    ; Autocompletion with less suck
-(try-require 'init-evil)       ; Modal editing like vim
+;(try-require 'init-evil)       ; Modal editing like vim
 (try-require 'init-flycheck)   ; Syntax checking
 (try-require 'init-parens)     ; Pretty parens
 (try-require 'init-hippie)     ; Configure hippie

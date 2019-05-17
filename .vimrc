@@ -1,12 +1,12 @@
 " vim-plug
-call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'jiangmiao/auto-pairs'
-Plug 'w0rp/ale'
-call plug#end()
+"call plug#begin('~/.vim/plugged')
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf.vim'
+"Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-surround'
+"Plug 'jiangmiao/auto-pairs'
+"Plug 'w0rp/ale'
+"call plug#end()
 
 " filetype support and colours
 filetype plugin indent on
@@ -80,21 +80,9 @@ nnoremap <Esc><Esc> :silent! nohls<CR>
 " make Y consistent with C, S, D, etc.
 nnoremap Y y$
 
-" quickly edit and source vimrc
-nnoremap <Leader>ve :vsplit $MYVIMRC<CR>
-nnoremap <Leader>vs :source $MYVIMRC<CR>
-
 " center screen on search result
 nnoremap n nzz
 nnoremap N Nzz
-
-" move by screen line instead of file line
-nnoremap j gj
-nnoremap k gk
-
-" tab for next matching item
-nnoremap <tab> %
-vnoremap <tab> %
 
 " files
 nnoremap <Leader>e :e <C-r>=expand('%:p:h').'/'<CR>
@@ -111,12 +99,6 @@ nnoremap <BS>       :buffer#<CR>
 " quick search and replace
 nnoremap <Space>s :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <Space>% :%s/\<<C-r>=expand("<cword>")<CR>\>/
-
-" readline keys in insert-mode
-inoremap <C-a> <Home>
-inoremap <C-b> <Left>
-inoremap <C-e> <End>
-inoremap <C-f> <Right>
 
 " automagically set paste mode when pasting text
 function! WrapForTmux(s)
