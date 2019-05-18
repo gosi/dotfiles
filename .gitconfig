@@ -6,7 +6,7 @@
 	ci = commit
 	st = status -s
 	br = branch
-        pl  = pull --rebase
+	pl  = pull --rebase
 	type = cat-file -t
 	dump = cat-file -p
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
@@ -16,7 +16,7 @@
 [core]
 	autocrlf = input
 	excludesfile =
-        editor = vim
+				editor = vim
 [diff]
 	algorithm = histogram
 	guitool = gvimdiff

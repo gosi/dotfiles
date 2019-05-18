@@ -13,7 +13,7 @@ URxvt.intensityStyles: false
 URxvt.foreground: #DDDDDD
 URxvt.background: #000000
 URxvt.font:     xft:terminus:pixelsize=14:antialias=true
-URxvt.boldFont: xft:terminus:bold:pixelsize=14:antialias=true
+URxvt.boldFont: xft:terminus:pixelsize=14:antialias=true
 
 !URxvt.shading: 22
 !URxvt.inheritPixmap: true

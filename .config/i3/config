@@ -24,14 +24,16 @@ exec --no-startup-id gnome-settings-daemon
 # Programs:
 mode "programs" {
         bindsym c exec "google-chrome"     ; mode "default"
+        bindsym d exec "discord"           ; mode "default"
         bindsym e exec "emacsclient -ca ''"; mode "default"
         bindsym f exec "firefox"           ; mode "default"
         bindsym i exec "idea"              ; mode "default"
+        bindsym v exec "vlc"               ; mode "default"
 
         bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+p mode "programs"
+bindsym $mod+p mode "programs"
 bindsym $mod+Shift+f exec --no-startup-id nemo
 
 # Volume controls (alsa):
@@ -260,8 +262,8 @@ bindsym $mod+r mode "resize"
 
 bar {
         status_command i3status ~/.config/i3status/config
-	position bottom
-	workspace_buttons yes
+  position bottom
+  workspace_buttons yes
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         font pango:DejaVu Sans Mono 10
 

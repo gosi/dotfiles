@@ -96,7 +96,7 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 source ~/.fzf.bash
 
 # Set vim as default editor
-export VISUAL=nvim
-export EDITOR="nvim"
+export VISUAL=vim
+export EDITOR="vim"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
