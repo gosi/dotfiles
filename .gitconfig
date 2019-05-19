@@ -6,11 +6,11 @@
 	ci = commit
 	st = status -s
 	br = branch
-	pl  = pull --rebase
+	pl = pull --rebase
 	hi = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	lol = log --graph --oneline --decorate --color --all
 	type = cat-file -t
 	dump = cat-file -p
-	lol = log --graph --oneline --decorate --color --all
 [push]
 	default = simple
 [core]
