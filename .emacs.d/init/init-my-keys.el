@@ -39,12 +39,12 @@
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
 
 ;; Move by lines of five
-(global-set-key (kbd "C-S-n")
+(global-set-key (kbd "M-n")
                 (lambda ()
                   (interactive)
                   (ignore-errors (next-line 5))))
 
-(global-set-key (kbd "C-S-p")
+(global-set-key (kbd "M-p")
                 (lambda ()
                   (interactive)
                   (ignore-errors (previous-line 5))))
@@ -105,6 +105,33 @@
 (global-set-key (kbd "C-c z")   'ace-jump-mode)
 (global-set-key (kbd "C-c ?")   'ace-jump-line-mode)
 (global-set-key (kbd "C-c p")   'highlight-symbol-prev)
+
+(defun smarter-move-beginning-of-line (arg)
+  "Move point back to indentation of beginning of line.
+
+Move point to the first non-whitespace character on this line.
+If point is already there, move to the beginning of the line.
+Effectively toggle between the first non-whitespace character and
+the beginning of the line.
+
+If ARG is not nil or 1, move forward ARG - 1 lines first.  If
+point reaches the beginning or end of the buffer, stop there."
+  (interactive "^p")
+  (setq arg (or arg 1))
+
+  ;; Move lines first
+  (when (/= arg 1)
+    (let ((line-move-visual nil))
+      (forward-line (1- arg))))
+
+  (let ((orig-point (point)))
+    (back-to-indentation)
+    (when (= orig-point (point))
+      (move-beginning-of-line 1))))
+
+;; remap C-a to `smarter-move-beginning-of-line'
+(global-set-key [remap move-beginning-of-line]
+                'smarter-move-beginning-of-line)
 
 ;; Functions for text manipulation
 (defun qrc (replace-str)

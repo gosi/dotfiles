@@ -23,14 +23,15 @@ exec --no-startup-id gnome-settings-daemon
 
 # Programs:
 mode "programs" {
-        bindsym c exec "google-chrome"     ; mode "default"
-        bindsym d exec "discord"           ; mode "default"
-        bindsym e exec "emacsclient -ca ''"; mode "default"
-        bindsym f exec "firefox"           ; mode "default"
-        bindsym i exec "idea"              ; mode "default"
-        bindsym v exec "vlc"               ; mode "default"
+bindsym c exec "google-chrome"     ; mode "default"
+bindsym d exec "discord"           ; mode "default"
+bindsym e exec "emacsclient -ca ''"; mode "default"
+bindsym f exec "firefox"           ; mode "default"
+bindsym i exec "idea"              ; mode "default"
+bindsym s exec "steam"             ; mode "default"
+bindsym v exec "vlc"               ; mode "default"
 
-        bindsym Escape mode "default"
+bindsym Escape mode "default"
 }
 
 bindsym $mod+p mode "programs"
@@ -94,15 +95,15 @@ bindsym $mod+Shift+0 move container to workspace 10
 # Power utils
 set $mode_system SYSTEM: [l]LOCK | [e]LOGOUT | [h]HIBERNATE | [r]REBOOT | [p]POWEROFF
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $HOME/bin/i3_lock, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym p exec --no-startup-id systemctl poweroff -i, mode "default"
+bindsym l exec --no-startup-id $HOME/bin/i3_lock, mode "default"
+bindsym e exec --no-startup-id i3-msg exit, mode "default"
+bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+bindsym r exec --no-startup-id systemctl reboot, mode "default"
+bindsym p exec --no-startup-id systemctl poweroff -i, mode "default"
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+# back to normal: Enter or Escape
+bindsym Return mode "default"
+bindsym Escape mode "default"
 }
 
 bindsym $mod+Shift+q mode "$mode_system"
@@ -241,41 +242,26 @@ for_window [class="Osdlyrics"] floating enable
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        bindsym h resize grow width 10 px or 10 ppt
-        bindsym j resize shrink height 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink width 10 px or 10 ppt
+# These bindings trigger as soon as you enter the resize mode
+bindsym h resize grow width 10 px or 10 ppt
+bindsym j resize shrink height 10 px or 10 ppt
+bindsym k resize grow height 10 px or 10 ppt
+bindsym l resize shrink width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize grow width 10 px or 10 ppt
-        bindsym Down resize shrink height 10 px or 10 ppt
-        bindsym Up resize grow height 10 px or 10 ppt
-        bindsym Right resize shrink width 10 px or 10 ppt
+# same bindings, but for the arrow keys
+bindsym Left resize grow width 10 px or 10 ppt
+bindsym Down resize shrink height 10 px or 10 ppt
+bindsym Up resize grow height 10 px or 10 ppt
+bindsym Right resize shrink width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+# back to normal: Enter or Escape
+bindsym Return mode "default"
+bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
 bar {
-        status_command i3status ~/.config/i3status/config
-  position bottom
-  workspace_buttons yes
-        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-        font pango:DejaVu Sans Mono 10
-
- colors {
-        background #000000
-        statusline #ffffff
-        separator #666666
-
-        focused_workspace  #4c7899 #285577 #ffffff
-        active_workspace   #333333 #5f676a #ffffff
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #2f343a #900000 #ffffff
-        binding_mode       #2f343a #900000 #ffffff
-    }
+status_command i3status ~/.config/i3status/config
+position bottom
 }

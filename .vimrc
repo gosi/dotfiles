@@ -100,6 +100,15 @@ nnoremap <BS>       :buffer#<CR>
 nnoremap <Space>s :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <Space>% :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
+" closing parens/brackets etc
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
 " automagically set paste mode when pasting text
 function! WrapForTmux(s)
   if !exists('$TMUX')

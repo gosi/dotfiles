@@ -67,6 +67,7 @@ This function should only modify configuration layer settings."
      ;; -- Programming languages
      emacs-lisp
      racket
+     sml
      java
      (c-c++ :variables
             c-c++-enable-clang-support t
@@ -79,7 +80,83 @@ This function should only modify configuration layer settings."
      shell-scripts
      ;; Documents/markup
      markdown
-     org
+     (org :variables
+          ;;; Agenda
+
+          ;; org-agenda-files are computed based on the contents of ~/org.
+          ;;
+          ;; ~/org should contain symlinks to org files or directories
+          ;; containing org files.
+          ;;
+          ;; ~/org/default should be a symlink pointing to one of the entries in
+          ;; ~/org that represents the default directory for notes.
+          org-agenda-files
+          (mapcar (lambda (file)
+                    (file-truename
+                     (concat (file-name-as-directory "~/org") file)))
+                  (seq-difference (directory-files "~/org" nil nil :nosort)
+                                  '("." ".." "default")))
+
+          ;; Don't show scheduled items in the global todo list, because
+          ;; presumably you don't want to think about them until the scheduled
+          ;; time.
+          org-agenda-tags-todo-honor-ignore-options t
+          org-agenda-todo-ignore-scheduled 'future
+          org-agenda-todo-ignore-time-comparison-use-seconds t
+
+          ;;; Capture and refile
+
+          org-capture-templates
+          '(("t" "Todo" entry (file "")
+             "* TODO %?\n%U\n%a"))
+          org-default-notes-file "~/org/default/refile.org"
+          org-directory "~/org/default"
+          ;; Add file name to org refile target prompt.  This also allows an
+          ;; entry to be refiled under a file's toplevel.
+          ;; https://emacs.stackexchange.com/questions/13353/how-to-use-org-refile-to-move-a-headline-to-a-file-as-a-toplevel-headline
+          org-refile-use-outline-path 'file
+          org-outline-path-complete-in-steps nil
+          org-projectile-file "TODO.org"
+          org-refile-targets '((nil :maxlevel . 10)
+                               (org-agenda-files :maxlevel . 10))
+
+          ;;; Org export
+
+          org-export-backends '(ascii html icalendar latex org texinfo)
+          org-html-htmlize-output-type 'css
+          org-html-htmlize-font-prefix "org-"
+
+          ;;; Editing
+
+          org-insert-heading-respect-content t
+          org-startup-indented t
+
+          ;;; Org TODO configuration
+
+          ;; Log state change notes and time stamps into LOGBOOK drawer.
+          org-log-into-drawer t
+          org-stuck-projects '("+LEVEL<=2/!" ("TODO" "MAYBE" "INPROGRESS") nil "")
+          org-todo-keywords '((sequence "TODO(t)"
+                                        "MAYBE(m/!)"
+                                        "INPROGRESS(p!)"
+                                        "STALLED(a)"
+                                        "BLOCKED(k@/!)"
+                                        "INREVIEW(r!)"
+                                        "|"
+                                        "DONE(d)"
+                                        "DELEGATED(g@)"
+                                        "DEFERRED(e)"
+                                        "NOTDONE(n)")
+                              (type "BUG(b/!)"
+                                    "CLEANUP(l/!)"
+                                    "|"
+                                    "FIXED(x)"
+                                    "WONTFIX(w@)")
+                              (type "ENHANCEMENT(h/!)"
+                                    "FEATURE(f/!)"
+                                    "|"
+                                    "RELEASED(s)"
+                                    "CANCELED(c)")))
      yaml
      )
 
@@ -87,7 +164,10 @@ This function should only modify configuration layer settings."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(yasnippet-snippets base16-theme vimish-fold )
+   dotspacemacs-additional-packages '(
+                                      yasnippet-snippets
+                                      base16-theme
+                                      vimish-fold )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
@@ -223,7 +303,7 @@ This function should only modify configuration layer settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme 'vanilla
+   dotspacemacs-mode-line-theme 'spacemacs
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -231,7 +311,7 @@ This function should only modify configuration layer settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("monospace"
+   dotspacemacs-default-font '("DejaVu Sans Mono"
                                :size 14
                                :weight normal
                                :width normal)
@@ -487,8 +567,7 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;; keybindings
-  (global-set-key (kbd "TAB") 'hippie-expand)
-  (global-set-key (kbd "<tab>") 'evil-jump-item)
+  ;;(global-set-key (kbd "<tab>") 'evil-jump-item)
   (global-set-key (kbd "C-x C-c")
                   (lambda () (interactive) (error "C-x C-c is disabled. :q to quit!")))
 
@@ -513,13 +592,13 @@ before packages are loaded."
   (setq powerline-default-separator 'arrow)
   (setq-default sentence-end-double-space t))
 
-  ;; TODO highlighting
-  (defun highlight-todos ()
-    (font-lock-add-keywords nil '(("\\<\\(NOTE\\|TODO\\|HACK\\|BUG\\):" 1 font-lock-warning-face t))))
-  (add-hook 'prog-mode-hook #'highlight-todos)
+;; TODO highlighting
+(defun highlight-todos ()
+  (font-lock-add-keywords nil '(("\\<\\(NOTE\\|TODO\\|HACK\\|BUG\\):" 1 font-lock-warning-face t))))
+(add-hook 'prog-mode-hook #'highlight-todos)
 
-  ;; C++ settings
-  (add-hook 'c++-mode-hook (lambda ()
+;; C++ settings
+(add-hook 'c++-mode-hook (lambda ()
                            (define-key c++-mode-map [tab] 'clang-format-buffer)
                            (setq company-clang-arguments '("-std=c++11"))
                            (setq flycheck-gcc-language-standard "c++11")

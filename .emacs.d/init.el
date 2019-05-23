@@ -26,7 +26,7 @@
 ;; Minor modes
 (try-require 'init-ace)        ; Some helpful packages for moving around
 (try-require 'init-company)    ; Autocompletion with less suck
-;(try-require 'init-evil)       ; Modal editing like vim
+(try-require 'init-evil)       ; Modal editing like vim
 (try-require 'init-flycheck)   ; Syntax checking
 (try-require 'init-parens)     ; Pretty parens
 (try-require 'init-hippie)     ; Configure hippie
@@ -63,6 +63,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(custom-enabled-themes (quote nil))
+ '(custom-safe-themes
+   (quote
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(evil-collection-setup-minibuffer t)
  '(package-selected-packages
    (quote
     (evil-indent-plus evil-exchange evil-mc evil-collection evil-org exato evil-args helm-projectile evil-vimish-fold evil-tutor evil-space evil-goggles evil-nerd-commenter evil-leader evil-surround evil-numbers evil-escape evil-matchit evil-anzu evil yasnippet-snippets wiki-summary which-key use-package tuareg solarized-theme sml-mode slime-company racket-mode paredit org-present neotree multiple-cursors magit lorem-ipsum lean-mode latex-preview-pane js2-mode js-comint hungry-delete highlight-symbol highlight-parentheses helm git-gutter geiser flymake-rust flycheck-package expand-region elpy elm-mode dumb-jump company-math company-jedi company-auctex color-theme cargo auctex-latexmk anzu ag ace-window ace-jump-zap))))
