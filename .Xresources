@@ -9,16 +9,17 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.intensityStyles: false
 
-!URxvt.cursorColor: green
-URxvt.foreground: #DDDDDD
-URxvt.background: #000000
 URxvt.font:     xft:terminus:pixelsize=14:antialias=true
 URxvt.boldFont: xft:terminus:pixelsize=14:antialias=true
 
+URxvt*depth: 32
+URxvt*background: rgba:0000/0000/0000/dddd
+URxvt*foreground: #ffffff
+
+!URxvt.cursorColor: green
 !URxvt.shading: 22
 !URxvt.inheritPixmap: true
 !URxvt.tintColor: white
-Xft.rgba: rgb
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
@@ -52,3 +53,28 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 !on OSX:
 !URxvt.clipboard.copycmd:  pbcopy
 !URxvt.clipboard.pastecmd: pbpaste
+
+!! black
+URxvt*color0:  #000000
+URxvt*color8:  #666666
+! red
+URxvt*color1:  #ff2222
+URxvt*color9:  #ff0000
+! green
+URxvt*color2:  #22ff22
+URxvt*color10: #00ff00
+! yellow
+URxvt*color3:  #ffff55
+URxvt*color11: #ffff22
+! blue
+URxvt*color4:  #4747cc
+URxvt*color12: #3b3baf
+! magenta
+URxvt*color5:  #ff22ff
+URxvt*color13: #ff00ff
+! cyan
+URxvt*color6:  #22ffff
+URxvt*color14: #bbffff
+! white
+URxvt*color7:  #dddddd
+URxvt*color15: #ffffff
