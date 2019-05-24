@@ -131,6 +131,9 @@ This function should only modify configuration layer settings."
           org-insert-heading-respect-content t
           org-startup-indented t
 
+          ;;; Custom ellipsis
+          org-ellipsis "⤵"
+
           ;;; Org TODO configuration
 
           ;; Log state change notes and time stamps into LOGBOOK drawer.
