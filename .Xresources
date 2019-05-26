@@ -4,7 +4,7 @@ URxvt.mousewheel: true
 URxvt.saveLines: 2000
 URxvt.scrollBar: false
 URxvt.scrollstyle: rxvt
-URxvt.cursorBlink: true
+URxvt.cursorBlink: false
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.intensityStyles: false
@@ -12,20 +12,23 @@ URxvt.intensityStyles: false
 URxvt.font:     xft:terminus:pixelsize=14:antialias=true
 URxvt.boldFont: xft:terminus:pixelsize=14:antialias=true
 
-URxvt*depth: 32
-URxvt*background: rgba:0000/0000/0000/dddd
-URxvt*foreground: #ffffff
-
-!URxvt.cursorColor: green
-!URxvt.shading: 22
-!URxvt.inheritPixmap: true
-!URxvt.tintColor: white
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintslight
-Xft.autohint:   true
+#Xft.dpi: 96
+Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+*.foreground:    #ABB2BF
+*.background:    #1E2127
+*.cursorColor:   #5C6370
+*.highlightColor:#3A3F4B
+
+!! Transparency (0-255):
+URxvt.transparent:   true
+URxvt.alpha: 240
+URxvt.shading: 10
 
 ! Utils:
 #ifndef URXVT_PERL_LIB
@@ -54,27 +57,48 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 !URxvt.clipboard.copycmd:  pbcopy
 !URxvt.clipboard.pastecmd: pbpaste
 
-!! black
-URxvt*color0:  #000000
-URxvt*color8:  #666666
-! red
-URxvt*color1:  #ff2222
-URxvt*color9:  #ff0000
-! green
-URxvt*color2:  #22ff22
-URxvt*color10: #00ff00
-! yellow
-URxvt*color3:  #ffff55
-URxvt*color11: #ffff22
-! blue
-URxvt*color4:  #4747cc
-URxvt*color12: #3b3baf
-! magenta
-URxvt*color5:  #ff22ff
-URxvt*color13: #ff00ff
-! cyan
-URxvt*color6:  #22ffff
-URxvt*color14: #bbffff
-! white
-URxvt*color7:  #dddddd
-URxvt*color15: #ffffff
+! Black
+*.color0:        #1E2127
+*.color8:        #5C6370
+! Red
+*.color1:        #E06C75
+*.color9:        #E06C75
+! Green
+*.color2:        #98C379
+*.color10:       #98C379
+! Yellow
+*.color3:        #D19A66
+*.color11:       #D19A66
+! Blye
+*.color4:        #61AFEF
+*.color12:       #61AFEF
+! Magenta
+*.color5:        #C678DD
+*.color13:       #C678DD
+! Cyan
+*.color6:        #56B6C2
+*.color14:       #56B6C2
+! White
+*.color7:        #ABB2BF
+*.color15:       #FFFFFF
+
+! Dracula Xresources palette
+!URxvt.foreground: #F8F8F2
+!URxvt.background: #282A36
+!URxvt.color0:     #000000
+!URxvt.color8:     #4D4D4D
+!URxvt.color1:     #FF5555
+!URxvt.color9:     #FF6E67
+!URxvt.color2:     #50FA7B
+!URxvt.color10:    #5AF78E
+!URxvt.color3:     #F1FA8C
+!URxvt.color11:    #F4F99D
+!URxvt.color4:     #BD93F9
+!URxvt.color12:    #CAA9FA
+!URxvt.color5:     #FF79C6
+!URxvt.color13:    #FF92D0
+!URxvt.color6:     #8BE9FD
+!URxvt.color14:    #9AEDFE
+!URxvt.color7:     #BFBFBF
+!URxvt.color15: 	  #E6E6E6
+
