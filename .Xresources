@@ -26,9 +26,9 @@ Xft.rgba: rgb
 *.highlightColor:#3A3F4B
 
 !! Transparency (0-255):
-URxvt.transparent:   true
-URxvt.alpha: 240
-URxvt.shading: 10
+!URxvt.transparent:   true
+!URxvt.alpha: 240
+!URxvt.shading: 10
 
 ! Utils:
 #ifndef URXVT_PERL_LIB
@@ -79,7 +79,7 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 *.color6:        #56B6C2
 *.color14:       #56B6C2
 ! White
-*.color7:        #ABB2BF
+*.color7:        #FFFFFF
 *.color15:       #FFFFFF
 
 ! Dracula Xresources palette
