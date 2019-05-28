@@ -92,9 +92,8 @@ nnoremap <Leader>F :find *
 
 " buffers
 nnoremap <Leader>ls :ls<CR>:b<Space>
-nnoremap <C-p>      :bprevious<CR>
-nnoremap <C-n>      :bnext<CR>
-nnoremap <BS>       :buffer#<CR>
+nnoremap H          :bprevious<CR>
+nnoremap L          :bnext<CR>
 
 " quick search and replace
 nnoremap <Space>s :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
