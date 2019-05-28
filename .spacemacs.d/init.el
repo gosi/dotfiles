@@ -562,15 +562,21 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   ;; keybindings
-  ;;(global-set-key (kbd "<tab>") 'evil-jump-item)
+
+  ;; C-x C-c is annoying
   (global-set-key (kbd "C-x C-c")
                   (lambda () (interactive) (error "C-x C-c is disabled. :q to quit!")))
 
+  ;; new line from normal mode
   (define-key evil-normal-state-map (kbd "RET")
     (lambda ()
       (interactive)
       (call-interactively 'spacemacs/evil-insert-line-below)
       (evil-next-line)))
+
+  ;; cycle buffers with H and L
+  (define-key evil-normal-state-map (kbd "H") 'previous-buffer)
+  (define-key evil-normal-state-map (kbd "L") 'next-buffer)
 
   ;; Kill the buffer alongside the current window
   (spacemacs/set-leader-keys "w x" 'kill-buffer-and-window)
