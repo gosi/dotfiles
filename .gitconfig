@@ -2,8 +2,8 @@
 	email = ericjansson510@gmail.com
 	name = Eric Ramsell Jansson
 [alias]
-	co = checkout
-	ci = commit
+	ch = checkout
+	co = commit
 	st = status -s
 	br = branch
 	pl = pull --rebase
