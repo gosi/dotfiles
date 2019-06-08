@@ -306,7 +306,7 @@ This function should only modify configuration layer settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("DejaVu Sans Mono"
+   dotspacemacs-default-font '("terminus"
                                :size 14
                                :weight normal
                                :width normal)
