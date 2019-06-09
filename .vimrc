@@ -6,6 +6,7 @@
 "Plug 'tpope/vim-surround'
 "Plug 'jiangmiao/auto-pairs'
 "Plug 'w0rp/ale'
+"Plug 'justinmk/vim-dirvish'
 "call plug#end()
 
 " filetype support and colours
