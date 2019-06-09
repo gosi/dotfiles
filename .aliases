@@ -37,14 +37,14 @@ alias ttrash="rm ~/Downloads/*.torrent"
 alias empty-trash="rm -rf ~/.local/share/Trash/*"
 
 # Quick Edits
-alias vv="vim ~/.vimrc"
-alias vb="vim ~/.bashrc"
-alias ve="vim ~/.emacs"
-alias vz="vim ~/.zshrc"
-alias va="vim ~/workspace/dotfiles/.aliases"
-alias vf="vim ~/workspace/dotfiles/.functions"
-alias vi3="vim ~/.config/i3/config"
-alias vx="vim ~/.Xresources"
+alias ev="e ~/.vimrc"
+alias eb="e ~/.bashrc"
+alias ee="e ~/.emacs"
+alias ez="e ~/.zshrc"
+alias ea="e ~/workspace/dotfiles/.aliases"
+alias ef="e ~/workspace/dotfiles/.functions"
+alias ei3="e ~/.config/i3/config"
+alias ex="e ~/.Xresources"
 alias e="emacsclient"
 
 # System Info
