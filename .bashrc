@@ -14,11 +14,20 @@ then
   echo "You need at least bash-4.0 or some options will not work correctly."
 fi
 
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PS1=" \[\e[00;34m\]λ \W \[\e[0m\]"
+# If Vim is installed use Vim over Vi
+if type vim >/dev/null 2>/dev/null; then
+  alias vi=vim
+fi
+
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+PS1='\033[1;33m(\t)\033[m \033[1;36m[ \u |\033[m \033[1;32m\W\033[m \033[1;36m]\033[m $(parse_git_branch)\n> '
+
 export LANG="en_US.UTF-8"
 
 ## GENERAL OPTIONS ##
