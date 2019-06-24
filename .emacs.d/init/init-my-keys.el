@@ -38,6 +38,10 @@
 (global-set-key (kbd "<C-return>") 'open-line-below)
 (global-set-key (kbd "<C-S-return>") 'open-line-above)
 
+;; Scroll other window from the current focused one
+(define-key global-map [(meta up)] '(lambda() (interactive) (scroll-other-window -1)))
+(define-key global-map [(meta down)] '(lambda() (interactive) (scroll-other-window 1)))
+
 ;; Move by lines of five
 (global-set-key (kbd "M-n")
                 (lambda ()

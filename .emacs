@@ -24,34 +24,34 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-;; evil mode yes pls!!!
-(use-package evil
-  :ensure t
-  :init
-  (setq evil-want-C-u-scroll t
-        evil-want-keybinding nil
-        evil-auto-indent t
-        evil-normal-state-cursor 'box
-        evil-operator-state-cursor 'box
-        evil-replace-state-cursor 'box
-        evil-insert-state-cursor 'box)
-  :config
-  (evil-mode 1))
-  (global-undo-tree-mode -1)
-  ;; (turn-on-undo-tree-mode)
-(use-package evil-collection
-  :after evil
-  :ensure t
-  :config
-  (evil-collection-init))
-
-(use-package evil-escape
-  :ensure t
-  :config
-  (progn
-    (evil-escape-mode)
-    (global-set-key (kbd "<escape>") 'evil-escape))
-  :diminish evil-escape-mode)
+; ;; evil mode yes pls!!!
+; (use-package evil
+;   :ensure t
+;   :init
+;   (setq evil-want-C-u-scroll t
+;         evil-want-keybinding nil
+;         evil-auto-indent t
+;         evil-normal-state-cursor 'box
+;         evil-operator-state-cursor 'box
+;         evil-replace-state-cursor 'box
+;         evil-insert-state-cursor 'box)
+;   :config
+;   (evil-mode 1))
+;   (global-undo-tree-mode -1)
+;   ;; (turn-on-undo-tree-mode)
+; (use-package evil-collection
+;   :after evil
+;   :ensure t
+;   :config
+;   (evil-collection-init))
+;
+; (use-package evil-escape
+;   :ensure t
+;   :config
+;   (progn
+;     (evil-escape-mode)
+;     (global-set-key (kbd "<escape>") 'evil-escape))
+;   :diminish evil-escape-mode)
 
 ; use correct PATH
 (use-package exec-path-from-shell
@@ -130,14 +130,6 @@
 (use-package misc)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 
-;; auto-highlight-symbol
-(use-package auto-highlight-symbol
-  :ensure t)
-(global-auto-highlight-symbol-mode)
-(define-key auto-highlight-symbol-mode-map (kbd "M-p") 'ahs-backward)
-(define-key auto-highlight-symbol-mode-map (kbd "M-n") 'ahs-forward)
-(setq ahs-idle-interval 1.0) ;; if you want instant highlighting, set it to 0, but I find it annoying
-(setq ahs-default-range 'ahs-range-whole-buffer) ;; highlight every occurence in buffer
 
 ;; inhibits highlighting in specific places, like in comments
 (setq ahs-inhibit-face-list '(font-lock-comment-delimiter-face
@@ -178,17 +170,12 @@
 ;; visuals
 (blink-cursor-mode 1)
 (tool-bar-mode 0)
-(scroll-bar-mode 1)
-(menu-bar-mode t)
+(scroll-bar-mode 0)
+(menu-bar-mode 0)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
 (setq frame-title-format '(buffer-file-name "%f" ("%b")))
-
-;; monokai theme
-(use-package monokai-theme
-  :ensure t)
-(load-theme 'monokai t)
 
 ;; rainbow parens
 (use-package rainbow-delimiters
@@ -196,12 +183,17 @@
 (add-hook 'foo-mode-hook #'rainbow-delimiters-mode)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
-(set-cursor-color "lime")
-;; (set-foreground-color "black")
-;; (set-background-color "white")
+(set-cursor-color "red")
+(set-foreground-color "black")
+(set-background-color "white")
 
-(set-face-attribute 'default nil :family Monaco :height 110)
-(setq visible-bell t)
+;; Set default font
+(set-face-attribute 'default nil
+                    :family "Monaco"
+                    :height 120
+                    :weight 'normal
+                    :width 'normal)
+(setq visible-bell nil)
 (setq major-mode 'indented-text-mode)
 (setq text-mode-hook 'turn-on-auto-fill)
 (setq fill-column 100)
@@ -218,11 +210,6 @@
 ;; show matching pairs
 ;; (use-package paren)
 ;; (show-paren-mode)
-
-;; google-this
-(use-package google-this
-  :ensure t)
-(google-this-mode 1)
 
 ;; smooth scrolling
 (use-package smooth-scrolling
@@ -251,10 +238,12 @@
 (global-set-key [f9] 'recompile)
 (global-set-key [f10] 'compile)
 (global-set-key [(meta g)] 'goto-line)
-(global-set-key (kbd "S-J") 'google-this)
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region-or-line)
+(global-set-key (kbd "C-q")   'er/expand-region)
 (global-set-key (kbd "C-x f") 'find-file)
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-c c")   'compile)
+(global-set-key (kbd "C-c e")   'eshell)
 (global-set-key (kbd "C-c r") 'replace-in-buffer)
 (global-set-key (kbd "C-c j") 'dumb-jump-go)
 (global-set-key (kbd "C-c t") 'dumb-jump-back)
@@ -276,12 +265,52 @@
 (global-set-key (kbd "C-x l") 'counsel-locate)
 (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
-(global-set-key (kbd "<C-return>") 'ivy-immediate-done)
-;; Evil-based keys
-(define-key evil-normal-state-map (kbd "C-SPC") 'er/expand-region)
-(define-key evil-normal-state-map (kbd "<backspace>") 'next-buffer)
-(define-key evil-normal-state-map (kbd "<C-backspace>") 'previous-buffer)
+(global-set-key (kbd "M-j")
+                (lambda ()
+                  (interactive)
+                  (join-line -1)))
 
+
+(defun open-line-below ()
+  (interactive)
+  (end-of-line)
+  (newline)
+  (indent-for-tab-command))
+
+(defun open-line-above ()
+  (interactive)
+  (beginning-of-line)
+  (newline)
+  (forward-line -1)
+  (indent-for-tab-command))
+
+(global-set-key (kbd "<C-return>") 'open-line-below)
+(global-set-key (kbd "<C-S-return>") 'open-line-above)
+
+;; Scroll other window from the current focused one
+(define-key global-map [(meta up)] '(lambda() (interactive) (scroll-other-window -1)))
+(define-key global-map [(meta down)] '(lambda() (interactive) (scroll-other-window 1)))
+
+;; Move by lines of five
+(global-set-key (kbd "M-n")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (next-line 5))))
+
+(global-set-key (kbd "M-p")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (previous-line 5))))
+
+(global-set-key (kbd "C-S-f")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (forward-char 5))))
+
+(global-set-key (kbd "C-S-b")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (backward-char 5))))
 ;; quickly open this file
 (defun find-config ()
     "Edit the .emacs file."
@@ -308,6 +337,41 @@
   (newline-and-indent)  (newline-and-indent))
 (add-hook 'after-init-hook 'emacs-reloaded)
 
+
+(defun smarter-move-beginning-of-line (arg)
+  "Move point back to indentation of beginning of line.
+
+Move point to the first non-whitespace character on this line.
+If point is already there, move to the beginning of the line.
+Effectively toggle between the first non-whitespace character and
+the beginning of the line.
+
+If ARG is not nil or 1, move forward ARG - 1 lines first.  If
+point reaches the beginning or end of the buffer, stop there."
+  (interactive "^p")
+  (setq arg (or arg 1))
+
+  ;; Move lines first
+  (when (/= arg 1)
+    (let ((line-move-visual nil))
+      (forward-line (1- arg))))
+
+  (let ((orig-point (point)))
+    (back-to-indentation)
+    (when (= orig-point (point))
+      (move-beginning-of-line 1))))
+
+;; remap C-a to `smarter-move-beginning-of-line'
+(global-set-key [remap move-beginning-of-line]
+                'smarter-move-beginning-of-line)
+
+
+(defun er-switch-to-previous-buffer ()
+  "Switch to previously open buffer.
+Repeated invocations toggle between the two most recently open buffers."
+ (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+(global-set-key [C-backspace] #'er-switch-to-previous-buffer)
 ;; define function to shutdown emacs server instance
 (defun server-shutdown ()
   "Save buffers, Quit, and Shutdown (kill) server."
