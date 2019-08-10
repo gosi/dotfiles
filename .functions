@@ -1,8 +1,9 @@
-function startup() {
-	google-chrome
-	discord
+# open program with the default application, without giving up the terminal
+function open () {
+  xdg-open "$@">/dev/null 2>&1 &
 }
-# quick change directory with fzf
+
+# quickly change directory with fzf
 function qcd() {
     pushd $(echo -e "${HOME}\n/usr/local/bin\n/usr/bin" | fzf);
 }
