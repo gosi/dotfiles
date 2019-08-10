@@ -8,14 +8,16 @@ Plug 'jiangmiao/auto-pairs'
 "Plug 'w0rp/ale'
 Plug 'justinmk/vim-dirvish'
 Plug 'jpalardy/vim-slime'
-Plug 'romainl/Apprentice'
+Plug 'altercation/vim-colors-solarized'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 " filetype support and colours
 filetype plugin indent on
 syntax on
 set background=dark
-colorscheme apprentice
+colorscheme zellner
 
 " hit `%` on `if` to jump to `else`
 runtime macros/matchit.vim
@@ -39,6 +41,7 @@ set history=1000
 set hlsearch
 set ignorecase
 set incsearch
+set laststatus=2
 set lazyredraw
 set mouse=a
 set noswapfile
@@ -53,7 +56,7 @@ set softtabstop=4
 set splitright
 set tabstop=8
 set tags=./tags;,tags;
-set textwidth=0
+set textwidth=90
 set title
 set titleold=Terminal
 set ttimeout ttimeoutlen=100
@@ -61,8 +64,8 @@ set ttyfast
 set wildcharm=<TAB>
 set wildignorecase
 set wildmenu
-set wildmode=list:longest,full
 
+set wildmode=list:longest,full
 " source vimrc on save.
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC
 
@@ -85,6 +88,10 @@ nnoremap <Esc><Esc> :silent! nohls<CR>
 " make Y consistent with C, S, D, etc.
 nnoremap Y y$
 
+" move by display lines
+nnoremap j gj
+nnoremap k gk
+
 " center screen on search result
 nnoremap n nzz
 nnoremap N Nzz
@@ -104,18 +111,16 @@ nnoremap <Leader><TAB> <C-^>
 nnoremap <TAB> <C-w>w
 nnoremap <S-TAB> <C-w>p
 
-" super quick search and replace
+" cd to file directory in current buffer
+nnoremap <Leader>cd :lcd %:h<CR>
+nnoremap <Leader>md :!mkdir -p %:p:h<CR>
+
+" search and replace
 nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <Space>% :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
-" closing parens/brackets etc
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+" reselect previously yanked text
+nnoremap gb `[v`]
 
 " toggle paste mode when pasting from clipboard
 function! WrapForTmux(s)
@@ -151,3 +156,16 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap        ,,      <C-n><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 inoremap        ,:      <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 inoremap        ,=      <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
+
+" remove a file
+command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(<f-args>) == 0 ? 'SUCCEEDED' : 'FAILED')
+
+" rename current file
+command! -bar -nargs=1 -bang -complete=file Rename :
+  \ let s:file = expand('%:p') |
+  \ setlocal modified |
+  \ keepalt saveas<bang> <args> |
+  \ if s:file !=# expand('%:p') |
+  \   call delete(s:file) |
+  \ endif |
+  \ unlet s:file
