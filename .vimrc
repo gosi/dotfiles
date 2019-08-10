@@ -1,20 +1,24 @@
 " vim-plug
-"call plug#begin('~/.vim/plugged')
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
-"Plug 'tpope/vim-fugitive'
-"Plug 'tpope/vim-surround'
-"Plug 'jiangmiao/auto-pairs'
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
 "Plug 'w0rp/ale'
-"Plug 'justinmk/vim-dirvish'
-"call plug#end()
+Plug 'justinmk/vim-dirvish'
+Plug 'jpalardy/vim-slime'
+Plug 'romainl/Apprentice'
+call plug#end()
 
 " filetype support and colours
 filetype plugin indent on
 syntax on
 set background=dark
-set t_Co=256
-colorscheme default
+colorscheme apprentice
+
+" hit `%` on `if` to jump to `else`
+runtime macros/matchit.vim
 
 " various settings
 let mapleader = "\<Space>"
@@ -23,6 +27,7 @@ set autoindent
 set backspace=indent,eol,start
 set clipboard=unnamedplus
 set complete+=d
+set completeopt=menuone,preview
 set diffopt+=vertical
 set expandtab
 set foldlevelstart=999
@@ -30,10 +35,10 @@ set foldmethod=indent
 set formatoptions-=cro
 set grepprg=LC_ALL=C\ grep\ -nrsH
 set hidden
+set history=1000
 set hlsearch
 set ignorecase
 set incsearch
-set laststatus=2
 set lazyredraw
 set mouse=a
 set noswapfile
@@ -46,15 +51,17 @@ set showcmd
 set smartcase
 set softtabstop=4
 set splitright
-set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ (%l,%c%V)\ %P
 set tabstop=8
 set tags=./tags;,tags;
 set textwidth=0
+set title
+set titleold=Terminal
 set ttimeout ttimeoutlen=100
 set ttyfast
+set wildcharm=<TAB>
 set wildignorecase
 set wildmenu
-set wildmode=full
+set wildmode=list:longest,full
 
 " source vimrc on save.
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC
@@ -72,9 +79,6 @@ vnoremap > >gv
 " play a macro recorded to register q
 nnoremap Q @q
 
-" quick blank line from normal mode
-nnoremap <Enter> o<Esc>
-
 " double tap Escape to remove search highlighting
 nnoremap <Esc><Esc> :silent! nohls<CR>
 
@@ -90,14 +94,18 @@ nnoremap <Leader>e :e <C-r>=expand('%:p:h').'/'<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>L :Lines<CR>
 nnoremap <Leader>F :find *
+cmap w!! w !sudo tee % >/dev/null
 
-" buffers
+" buffers and splits
 nnoremap <Leader>ls :ls<CR>:b<Space>
-nnoremap H          :bprevious<CR>
-nnoremap L          :bnext<CR>
+nnoremap <C-p>          :bprevious<CR>
+nnoremap <C-n>          :bnext<CR>
+nnoremap <Leader><TAB> <C-^>
+nnoremap <TAB> <C-w>w
+nnoremap <S-TAB> <C-w>p
 
-" quick search and replace
-nnoremap <Space>s :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
+" super quick search and replace
+nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <Space>% :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
 " closing parens/brackets etc
@@ -109,7 +117,7 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
-" automagically set paste mode when pasting text
+" toggle paste mode when pasting from clipboard
 function! WrapForTmux(s)
   if !exists('$TMUX')
     return a:s
@@ -131,3 +139,15 @@ function! XTermPasteBegin()
 endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+" slime settings for tmux
+let g:slime_default_config={'socket_name': 'default', 'target_pane': '{right-of}'}
+let g:slime_paste_file=tempname()
+let g:slime_target='tmux'
+
+" better completion menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap        ,,      <C-n><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
+inoremap        ,:      <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
+inoremap        ,=      <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>

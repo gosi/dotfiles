@@ -4,35 +4,53 @@ URxvt.mousewheel: true
 URxvt.saveLines: 2000
 URxvt.scrollBar: false
 URxvt.scrollstyle: rxvt
-URxvt.cursorBlink: false
+URxvt.cursorBlink: true
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.intensityStyles: false
 
-URxvt.font:     xft:terminus:pixelsize=14:antialias=true
-URxvt.boldFont: xft:terminus:pixelsize=14:antialias=true
 
-!Xft.dpi: 96
-Xft.autohint: 0
+*font: -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+URxvt.font: xft:Bitstream Vera Sans Mono:size=11
+URxvt.letterSpace: -1
+!URxvt.font:     xft:terminus:pixelsize=14
+!URxvt.boldFont: xft:terminus:pixelsize=14
+
+Xft.dpi:        92
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+Xft.autohint:   false
 Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
 
-*.foreground:    white
-*.background:    black
-*.cursorColor:   #500000
-*.highlightColor:#3A3F4B
+! Colours
+*foreground:    lightgrey
+*.background:   black
 
-! Make blue easier to read
-*color12: #3333bf
-*color4:  #3465A4
-
-!! Transparency (0-255):
-!URxvt.transparent:   true
-!URxvt.alpha: 240
-!URxvt.shading: 10
+URxvt*color0  : #2E3436
+URxvt*color8  : #555753
+! red
+URxvt*color1  : #CC0000
+URxvt*color9  : #EF2929
+! green
+URxvt*color2  : #4E9A06
+URxvt*color10 : #8AE234
+! yellow
+URxvt*color3  : #C4A000
+URxvt*color11 : #FCE94F
+! blue
+URxvt*color4  : #3465A4
+URxvt*color12 : #729FCF
+! magenta
+URxvt*color5  : #EF33C0
+URxvt*color13 : #EE38DA
+! cyan
+URxvt*color6  : #04B5B8
+URxvt*color14 : #34E2E2
+! white
+URxvt*color7  : #D3D7CF
+URxvt*color15 : #EEEEEC
 
 ! Utils:
 #ifndef URXVT_PERL_LIB
@@ -43,12 +61,23 @@ URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,readline,mat
 URxvt.perl-ext:selection-popup,selection-autotransform,searchable-scrollback
 URxvt.perl-lib: URXVT_PERL_LIB
 
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+
+URxvt.matcher.button: 1
 URxvt.matcher.button: 1
 URxvt.url-select.launcher:  firefox
 URxvt.url-select.underline: true
 !URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
+
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show
 
 ! USE selection & mouse-2!  will fill 'primary' clipboard buffer
 !URxvt.keysym.C-S-C:   perl:clipboard:copy
