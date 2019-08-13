@@ -131,9 +131,6 @@ This function should only modify configuration layer settings."
           org-insert-heading-respect-content t
           org-startup-indented t
 
-          ;;; Custom ellipsis
-          org-ellipsis "⤵"
-
           ;;; Org TODO configuration
 
           ;; Log state change notes and time stamps into LOGBOOK drawer.
@@ -161,7 +158,7 @@ This function should only modify configuration layer settings."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
                                       yasnippet-snippets
-                                      base16-theme
+                                      badwolf-theme
                                       vimish-fold )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -287,6 +284,7 @@ This function should only modify configuration layer settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         badwolf
                          spacemacs-dark
                          spacemacs-light
                          )
@@ -306,7 +304,7 @@ This function should only modify configuration layer settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("terminus"
+   dotspacemacs-default-font '("DejaVu Sans Mono"
                                :size 14
                                :weight normal
                                :width normal)
@@ -449,7 +447,7 @@ This function should only modify configuration layer settings."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers 'nil
 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
@@ -574,9 +572,16 @@ before packages are loaded."
       (call-interactively 'spacemacs/evil-insert-line-below)
       (evil-next-line)))
 
-  ;; cycle buffers with H and L
-  (define-key evil-normal-state-map (kbd "H") 'previous-buffer)
-  (define-key evil-normal-state-map (kbd "L") 'next-buffer)
+  ;; mimic "nzz" behaviou in vim
+  (defadvice evil-search-next (after advice-for-evil-search-next activate)
+    (evil-scroll-line-to-center (line-number-at-pos)))
+
+  (defadvice evil-search-previous (after advice-for-evil-search-previous activate)
+    (evil-scroll-line-to-center (line-number-at-pos)))
+
+  ;; cycle buffers with C-p/C-n
+  (define-key evil-normal-state-map (kbd "C-p") 'previous-buffer)
+  (define-key evil-normal-state-map (kbd "C-n") 'next-buffer)
 
   ;; Kill the buffer alongside the current window
   (spacemacs/set-leader-keys "w x" 'kill-buffer-and-window)
@@ -585,8 +590,6 @@ before packages are loaded."
   (spacemacs/toggle-highlight-long-lines-globally-on)
 
   ;; theme customization
-  (setq solarized-distinct-doc-face t
-        solarized-use-more-italic t)
 
   (setq comment-style 'multi-line)
   (setq-default fill-column 110)
@@ -621,19 +624,3 @@ before packages are loaded."
 ;; Disable beeping.
 (setq-default visible-bell nil)
 (setq-default ring-bell-function 'ignore)
-
-;;; init.el ends here;;;
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
