@@ -17,7 +17,7 @@ fi
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# If Vim is installed use Vim over Vi
+# If Vim is installed use Vim over vi
 if type vim >/dev/null 2>/dev/null; then
   alias vi=vim
 fi
@@ -26,8 +26,7 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-PS1='\033[1;33m(\t)\033[m \033[1;36m[ \u |\033[m \033[1;32m\W\033[m \033[1;36m]\033[m $(parse_git_branch)\n> '
-
+PS1='[\u@\h \W]$(parse_git_branch)# '
 export LANG="en_US.UTF-8"
 
 ## GENERAL OPTIONS ##
@@ -104,7 +103,7 @@ CDPATH="."
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 source ~/.fzf.bash
 
-# Set vim as default editor
+# Set Vim as default editor
 export VISUAL=vim
 export EDITOR="vim"
 
