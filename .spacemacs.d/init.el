@@ -158,7 +158,6 @@ This function should only modify configuration layer settings."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
                                       yasnippet-snippets
-                                      badwolf-theme
                                       vimish-fold )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -284,7 +283,6 @@ This function should only modify configuration layer settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         badwolf
                          spacemacs-dark
                          spacemacs-light
                          )
@@ -447,7 +445,7 @@ This function should only modify configuration layer settings."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers 'nil
+   dotspacemacs-line-numbers 't
 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
@@ -559,11 +557,9 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-  ;; keybindings
-
   ;; C-x C-c is annoying
   (global-set-key (kbd "C-x C-c")
-                  (lambda () (interactive) (error "C-x C-c is disabled. :q to quit!")))
+                  (lambda () (interactive) (error "Use kill-emacs to close emacs!")))
 
   ;; new line from normal mode
   (define-key evil-normal-state-map (kbd "RET")
@@ -590,7 +586,6 @@ before packages are loaded."
   (spacemacs/toggle-highlight-long-lines-globally-on)
 
   ;; theme customization
-
   (setq comment-style 'multi-line)
   (setq-default fill-column 110)
   (setq powerline-default-separator 'arrow)

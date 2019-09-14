@@ -6,17 +6,17 @@
 
 (setq org-log-done 'time)
 
-(setq org-directory "~/Dropbox/org")
+(setq org-directory "~/org")
 ;; Capture for taking notes
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (setq org-agenda-files (concat org-directory "/agenda-files.org"))
 
 (setq org-capture-templates
-      '(("a" "Appointment" entry (file+datetree "~/Dropbox/org/appointments.org")
+      '(("a" "Appointment" entry (file+datetree "~/org/appointments.org")
          "* %?\n %i\n %a")
-        ("t" "Todo" entry (file+headline "~/Dropbox/org/notes.org" "Tasks")
+        ("t" "Todo" entry (file+headline "~/org/notes.org" "Tasks")
          "* TODO %?\n %i\n %a")
-        ("j" "Journal" entry (file+datetree "~/Dropbox/org/journal.org")
+        ("j" "Journal" entry (file+datetree "~/org/journal.org")
          "* %?\nEntered on %U\n %i\n %a")))
 
 ;;set priority range from A to C with default A
@@ -31,5 +31,8 @@
 
 ;;open agenda in current window
 (setq org-agenda-window-setup (quote current-window))
+
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+
 
 (provide 'init-org)

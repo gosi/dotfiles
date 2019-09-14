@@ -26,7 +26,7 @@
 ;; Minor modes
 (try-require 'init-ace)        ; Some helpful packages for moving around
 (try-require 'init-company)    ; Autocompletion with less suck
-(try-require 'init-evil)       ; Modal editing like vim
+;(try-require 'init-evil)       ; Modal editing like vim
 (try-require 'init-flycheck)   ; Syntax checking
 (try-require 'init-parens)     ; Pretty parens
 (try-require 'init-hippie)     ; Configure hippie
@@ -68,11 +68,12 @@
  '(custom-enabled-themes (quote nil))
  '(custom-safe-themes
    (quote
-    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+    ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default)))
  '(evil-collection-setup-minibuffer t)
+ '(org-agenda-files (quote ("~/org/notes.org" "~/org/todo.org")) t)
  '(package-selected-packages
    (quote
-    (evil-indent-plus evil-exchange evil-mc evil-collection evil-org exato evil-args helm-projectile evil-vimish-fold evil-tutor evil-space evil-goggles evil-nerd-commenter evil-leader evil-surround evil-numbers evil-escape evil-matchit evil-anzu evil yasnippet-snippets wiki-summary which-key use-package tuareg solarized-theme sml-mode slime-company racket-mode paredit org-present neotree multiple-cursors magit lorem-ipsum lean-mode latex-preview-pane js2-mode js-comint hungry-delete highlight-symbol highlight-parentheses helm git-gutter geiser flymake-rust flycheck-package expand-region elpy elm-mode dumb-jump company-math company-jedi company-auctex color-theme cargo auctex-latexmk anzu ag ace-window ace-jump-zap))))
+    (moe-theme org-mode org-ac yasnippet-snippets wiki-summary which-key use-package tuareg solarized-theme sml-mode slime-company racket-mode paredit org-present neotree multiple-cursors magit lorem-ipsum lean-mode latex-preview-pane js2-mode js-comint hungry-delete highlight-symbol highlight-parentheses helm-projectile git-gutter geiser flymake-rust flycheck-package expand-region exato evil-vimish-fold evil-tutor evil-surround evil-space evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-leader evil-indent-plus evil-goggles evil-exchange evil-escape evil-collection evil-args evil-anzu elpy elm-mode dumb-jump company-math company-jedi company-auctex cargo auctex-latexmk ag ace-window ace-jump-zap))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

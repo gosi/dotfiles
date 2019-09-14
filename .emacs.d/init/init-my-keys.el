@@ -16,10 +16,9 @@
 (global-set-key (kbd "M-w")      'clipboard-kill-ring-save)
 (global-set-key (kbd "M-z")      'ace-jump-zap-up-to-char)
 (global-set-key [(meta g)]       'goto-line)
-(global-set-key (kbd "<f1> f")   'counsel-describe-function)
-(global-set-key (kbd "<f1> v")   'counsel-describe-variable)
 (global-set-key [f5]             'eval-buffer)
 (global-set-key [f6]             'rename-this-file-and-buffer)
+(global-set-key (kbd "C-=")      'kill-this-buffer)
 (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
 
 (defun open-line-below ()
@@ -42,27 +41,6 @@
 (define-key global-map [(meta up)] '(lambda() (interactive) (scroll-other-window -1)))
 (define-key global-map [(meta down)] '(lambda() (interactive) (scroll-other-window 1)))
 
-;; Move by lines of five
-(global-set-key (kbd "M-n")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (next-line 5))))
-
-(global-set-key (kbd "M-p")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (previous-line 5))))
-
-(global-set-key (kbd "C-S-f")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (forward-char 5))))
-
-(global-set-key (kbd "C-S-b")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (backward-char 5))))
-
 ;; Overview of the C-c prefix
 ;; C-c a * - Ag things
 ;; C-c e   - Eshell
@@ -72,9 +50,14 @@
 ;; C-c k * - Kill things structurally
 ;; C-c m * - Mu4e things
 ;; C-c o * - Org utilities
+
 ;; C-c s * - Substitute text
 ;; C-c v   - Version control for mercurial
 
+(global-set-key (kbd "C-{") 'beginning-of-defun)
+(global-set-key (kbd "C-}") 'end-of-defun)
+(global-set-key (kbd "M-p") 'backward-paragraph)
+(global-set-key (kbd "M-n") 'forward-paragraph)
 (global-set-key (kbd "C-c q")   'mc/edit-lines)
 (global-set-key (kbd "C-<")     'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
@@ -101,14 +84,14 @@
 (global-set-key (kbd "C-c n")   'highlight-symbol-next)
 (global-set-key (kbd "C-c m i") 'jump-to-mailbox)
 (global-set-key (kbd "C-c m u") 'mu4e-update-mail-and-index)
-(global-set-key (kbd "C-c o a") 'org-agenda)
-(global-set-key (kbd "C-c o b") 'org-switchb)
-(global-set-key (kbd "C-c o c") 'org-capture)
 (global-set-key (kbd "C-c o l") 'org-store-link)
+(global-set-key (kbd "C-c o a") 'org-agenda)
 (global-set-key (kbd "C-o")     'ace-window)
 (global-set-key (kbd "C-c z")   'ace-jump-mode)
 (global-set-key (kbd "C-c ?")   'ace-jump-line-mode)
 (global-set-key (kbd "C-c p")   'highlight-symbol-prev)
+(global-set-key (kbd "C-]")     'dumb-jump-go)
+(global-set-key (kbd "C-t")     'dumb-jump-back)
 
 (defun smarter-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.
@@ -139,7 +122,7 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; Functions for text manipulation
 (defun qrc (replace-str)
-   (interactive "sDo query-replace current word with: ")
+   (interactive "Do query-replace current word with: ")
    (forward-word)
    (let ((end (point)))
       (backward-word)

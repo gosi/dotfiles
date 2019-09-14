@@ -1,7 +1,12 @@
 DOTFILES=$HOME/workspace/dotfiles
 export PATH=/usr/local/bin:/usr/bin:/bin
 source $DOTFILES/.aliases
-source $DOTFILES/.functions
+
+# fzf
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+source ~/.fzf.bash
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
@@ -22,11 +27,10 @@ if type vim >/dev/null 2>/dev/null; then
   alias vi=vim
 fi
 
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
+# Set Vim as default editor
+export VISUAL=vim
+export EDITOR="vim"
 
-PS1='[\u@\h \W]$(parse_git_branch)# '
 export LANG="en_US.UTF-8"
 
 ## GENERAL OPTIONS ##
@@ -34,9 +38,6 @@ export LANG="en_US.UTF-8"
 # Prevent file overwrite on stdout redirection
 # Use `>|` to force redirection to an existing file
 set -o noclobber
-
-# Update window size after every command
-shopt -s checkwinsize
 
 # Automatically trim long paths in the prompt (requires Bash 4.x)
 PROMPT_DIRTRIM=2
@@ -57,12 +58,6 @@ set completion-map-case on
 
 # Display matches for ambiguous patterns at first tab press
 set show-all-if-ambiguous on
-
-# Immediately add a trailing slash when autocompleting symlinks to directories
-set mark-symlinked-directories on
-
-# Append to the history file, don't overwrite it
-shopt -s histappend
 
 # Save multi-line commands as one command
 shopt -s cmdhist
@@ -99,12 +94,29 @@ shopt -s cdspell 2> /dev/null
 # Ex: CDPATH=".:~:~/projects" will look for targets in the current working directory, in home and in the ~/projects folder
 CDPATH="."
 
-# fzf
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
-source ~/.fzf.bash
+# Test for an interactive shell.
+if [[ $- != *i* ]] ; then
+	# Shell is non-interactive.  Be done now!
+	return
+fi
 
-# Set Vim as default editor
-export VISUAL=vim
-export EDITOR="vim"
+# Enable checkwinsize so that bash will check the terminal size when it regains control.
+shopt -s checkwinsize
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# Disable completion when the input buffer is empty.  i.e. Hitting tab
+# and waiting a long time for bash to expand all of $PATH.
+shopt -s no_empty_cmd_completion
+
+# Enable history appending instead of overwriting when exiting.
+shopt -s histappend
+
+# prompt
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+}
+
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUPSTREAM=1
+#export PS1="\[\e[32m\]\u\[\e[m\]\[\e[32m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[34m\]\W\[\e[m\]\$(__git_ps1)\$ "
+PROMPT_COMMAND='CurDir=`pwd|sed -e "s!$HOME!~!"|sed -re "s!([^/])[^/]+/!\1/!g"`'
+PS1='[\t]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:$CurDir\$ '

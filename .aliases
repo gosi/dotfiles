@@ -1,15 +1,8 @@
 # Directory Shortcuts
-#
 alias ~="cd ~"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-
-alias 1d="cd .."
-alias 2d="cd ..;cd .."
-alias 3d="cd ..;cd ..;cd .."
-alias 4d="cd ..;cd ..;cd ..;cd .."
-alias 5d="cd ..;cd ..;cd ..;cd ..;cd .."
 
 alias ws="cd ~/workspace"
 alias dot="cd ~/workspace/dotfiles"
@@ -26,25 +19,25 @@ alias val="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes 
 alias q="exit"
 alias :q="exit"
 
-alias pyhttp="python -m SimpleHTTPServer"
+alias shell="ps -p $$ -o comm="
+alias pyhttp="python3 -m http.server"
 alias ipy="ipython3"
 alias notebook="ipython notebook --matplotlib inline"
 alias calc="python3 -ic 'from math import *'"
 alias day="echo 'Current day of the year is $(date +%j)'"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias o="xdg-open"
 alias ttrash="rm ~/Downloads/*.torrent"
 alias empty-trash="rm -rf ~/.local/share/Trash/*"
 
 # Quick Edits
-alias ev="e ~/.vimrc"
-alias eb="e ~/.bashrc"
-alias ee="e ~/.emacs"
-alias ez="e ~/.zshrc"
-alias ea="e ~/workspace/dotfiles/.aliases"
-alias ef="e ~/workspace/dotfiles/.functions"
-alias ei3="e ~/.config/i3/config"
-alias ex="e ~/.Xresources"
+alias vv="vim ~/.vimrc"
+alias vb="vim ~/.bashrc"
+alias ve="vim ~/.emacs"
+alias vz="vim ~/.zshrc"
+alias va="vim ~/workspace/dotfiles/.aliases"
+alias vf="vim ~/workspace/dotfiles/.functions"
+alias vi3="vim ~/.config/i3/config"
+alias vx="vim ~/.Xresources"
 alias e="emacsclient"
 
 # System Info
@@ -58,9 +51,8 @@ alias rmall="rm -vr * .*"
 alias cp="cp -vi"
 alias mv="mv -vi"
 alias ls="ls --color=auto"
-alias la="ls -la"
-alias ll="ls -lh"
-alias l.="ls -A | egrep '^\.'"
+alias ll="ls -laF"
+alias lh="ls -A | egrep '^\.'"
 alias du="du -h"
 alias df="df -h"
 alias lsb="lsblk -fpo +size"
@@ -71,3 +63,99 @@ alias api="sudo apt-get install"
 alias apu="sudo apt-get update"
 alias apr="sudo apt-get remove"
 alias app="sudo apt-get purge"
+
+# open program with the default application, without giving up the terminal
+function open () {
+  xdg-open "$@">/dev/null 2>&1 &
+}
+
+# quickly change directory with fzf
+function qcd() {
+    pushd $(echo -e "${HOME}\n/usr/local/bin\n/usr/bin" | fzf);
+}
+
+# make a directory and cd
+function mkd() {
+    mkdir -p "$@" && cd "$_";
+}
+
+# lazy commit for irrelevant repos
+function cz {
+    git add .
+    git --no-pager diff --patience HEAD
+    read "REPLY?commit message(default "z"): "
+    if [ "$REPLY" = ""  ]; then
+         REPLY="z"
+    fi
+    git commit -m $REPLY
+    git push
+}
+
+# random password generator of length N
+pwgen () {
+	cat /dev/urandom| tr -dc 'a-zA-Z0-9' | fold -w $1 | head -n 1
+}
+
+# turn epub files into txt to read in emacs
+epub2txt () {
+    folder=$(echo ${1/.epub/})
+    pandoc -t plain --toc --extract-media=$folder --normalize --wrap=none -o $folder/$folder.txt $1
+    # do the rest manually
+    emacsclient -c $folder/$folder.txt
+}
+
+# simplified file extraction
+function ext () {
+  if [ -f $1 ] ; then
+      case $1 in
+          *.tar.bz2)   tar xvjf $1    ;;
+          *.tar.gz)    tar xvzf $1    ;;
+          *.bz2)       bunzip2 $1     ;;
+          *.rar)       rar x $1       ;;
+          *.gz)        gunzip $1      ;;
+          *.tar)       tar xvf $1     ;;
+          *.tbz2)      tar xvjf $1    ;;
+          *.tgz)       tar xvzf $1    ;;
+          *.zip)       unzip $1       ;;
+          *.Z)         uncompress $1  ;;
+          *.7z)        7z x $1        ;;
+          *)           echo "Sorry, don't know how to extract '$1'..." ;;
+      esac
+  else
+      echo "'$1' is not a valid file!"
+  fi
+}
+
+# display bash colours in a grid. it might come handy at some point
+function colorgrid( )
+{
+    iter=16
+    while [ $iter -lt 52 ]
+    do
+        second=$[$iter+36]
+        third=$[$second+36]
+        four=$[$third+36]
+        five=$[$four+36]
+        six=$[$five+36]
+        seven=$[$six+36]
+        if [ $seven -gt 250 ];then seven=$[$seven-251]; fi
+
+        echo -en "\033[38;5;$(echo $iter)m█ "
+        printf "%03d" $iter
+        echo -en "   \033[38;5;$(echo $second)m█ "
+        printf "%03d" $second
+        echo -en "   \033[38;5;$(echo $third)m█ "
+        printf "%03d" $third
+        echo -en "   \033[38;5;$(echo $four)m█ "
+        printf "%03d" $four
+        echo -en "   \033[38;5;$(echo $five)m█ "
+        printf "%03d" $five
+        echo -en "   \033[38;5;$(echo $six)m█ "
+        printf "%03d" $six
+        echo -en "   \033[38;5;$(echo $seven)m█ "
+        printf "%03d" $seven
+
+        iter=$[$iter+1]
+        printf '\r\n'
+    done
+}

@@ -1,4 +1,3 @@
-" vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -8,22 +7,26 @@ Plug 'jiangmiao/auto-pairs'
 "Plug 'w0rp/ale'
 Plug 'justinmk/vim-dirvish'
 Plug 'jpalardy/vim-slime'
-Plug 'altercation/vim-colors-solarized'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 call plug#end()
 
-" filetype support and colours
+" slime settings for tmux
+let g:slime_default_config={'socket_name': 'default', 'target_pane': '{right-of}'}
+let g:slime_paste_file=tempname()
+let g:slime_target='tmux'
+
 filetype plugin indent on
 syntax on
 set background=dark
-colorscheme zellner
+colorscheme elflord
 
 " hit `%` on `if` to jump to `else`
 runtime macros/matchit.vim
 
-" various settings
+" Basic settings
 let mapleader = "\<Space>"
+let maplocalleader = "\\"
 let @/ = ""
 set autoindent
 set backspace=indent,eol,start
@@ -32,8 +35,8 @@ set complete+=d
 set completeopt=menuone,preview
 set diffopt+=vertical
 set expandtab
-set foldlevelstart=999
 set foldmethod=indent
+set foldlevelstart=0
 set formatoptions-=cro
 set grepprg=LC_ALL=C\ grep\ -nrsH
 set hidden
@@ -41,9 +44,9 @@ set history=1000
 set hlsearch
 set ignorecase
 set incsearch
-set laststatus=2
 set lazyredraw
 set mouse=a
+set nofoldenable
 set noswapfile
 set number
 set path=.,**
@@ -52,20 +55,19 @@ set shiftround
 set shiftwidth=4
 set showcmd
 set smartcase
+set smartindent
 set softtabstop=4
 set splitright
 set tabstop=8
 set tags=./tags;,tags;
 set textwidth=90
-set title
-set titleold=Terminal
 set ttimeout ttimeoutlen=100
 set ttyfast
 set wildcharm=<TAB>
 set wildignorecase
 set wildmenu
-
 set wildmode=list:longest,full
+
 " source vimrc on save.
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC
 
@@ -79,7 +81,13 @@ cabbrev h vert h
 vnoremap < <gv
 vnoremap > >gv
 
-" play a macro recorded to register q
+" in insert mode, convert current word to uppercase
+inoremap <C-u> <Esc>mzgUiw`za
+
+" incase caps lock is not bound to Escape
+inoremap jk <Esc>
+
+" play a macro recorded to register 'q'
 nnoremap Q @q
 
 " double tap Escape to remove search highlighting
@@ -96,6 +104,16 @@ nnoremap k gk
 nnoremap n nzz
 nnoremap N Nzz
 
+" toggle folds by mashing spacebar
+nnoremap <Space><Space> za
+vnoremap <Space><Space> za
+
+" list navigation
+nnoremap <left>  :cprev<cr>zvzz
+nnoremap <right> :cnext<cr>zvzz
+nnoremap <up>    :lprev<cr>zvzz
+nnoremap <down>  :lnext<cr>zvzz
+
 " files
 nnoremap <Leader>e :e <C-r>=expand('%:p:h').'/'<CR>
 nnoremap <Leader>f :Files<CR>
@@ -104,19 +122,30 @@ nnoremap <Leader>F :find *
 cmap w!! w !sudo tee % >/dev/null
 
 " buffers and splits
-nnoremap <Leader>ls :ls<CR>:b<Space>
+nnoremap <Leader>k :ls<CR>:b<Space>
 nnoremap <C-p>          :bprevious<CR>
 nnoremap <C-n>          :bnext<CR>
 nnoremap <Leader><TAB> <C-^>
-nnoremap <TAB> <C-w>w
-nnoremap <S-TAB> <C-w>p
+nnoremap s <C-w>
+nnoremap S <C-w><C-w>
+
+" tabs
+nnoremap <Leader>( :tabnext<CR>
+nnoremap <Leader>) :tabprevious<CR>
+
+" delete without yanking
+nnoremap <Leader>d "_d
+vnoremap <Leader>d "_d
+
+" replace currently selected text with default register without yanking it
+vnoremap <Leader>p "_dP
 
 " cd to file directory in current buffer
 nnoremap <Leader>cd :lcd %:h<CR>
 nnoremap <Leader>md :!mkdir -p %:p:h<CR>
 
 " search and replace
-nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap <Space>s :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <Space>% :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
 " reselect previously yanked text
@@ -145,17 +174,11 @@ endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
-" slime settings for tmux
-let g:slime_default_config={'socket_name': 'default', 'target_pane': '{right-of}'}
-let g:slime_paste_file=tempname()
-let g:slime_target='tmux'
-
 " better completion menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap        ,,      <C-n><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
-inoremap        ,:      <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
-inoremap        ,=      <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
+inoremap <C-f>          <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
+inoremap <C-l>          <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
 
 " remove a file
 command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(<f-args>) == 0 ? 'SUCCEEDED' : 'FAILED')
@@ -169,3 +192,13 @@ command! -bar -nargs=1 -bang -complete=file Rename :
   \   call delete(s:file) |
   \ endif |
   \ unlet s:file
+
+" Make sure Vim returns to the same line when you reopen a file.
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
+

@@ -4,7 +4,7 @@
 (set-default-coding-systems 'utf-8-unix)
 
 (add-to-list 'default-frame-alist
-             '(font . "DejaVu Sans Mono 14"))
+             '(font . "monospace 11"))
 
 ;; Helpful function to blow up font for presentations.
 (defun presentation-sized-font ()
