@@ -1,5 +1,5 @@
 DOTFILES=$HOME/workspace/dotfiles
-export PATH=/usr/local/bin:/usr/bin:/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:$PATH
 source $DOTFILES/.aliases
 
 # fzf
@@ -65,6 +65,9 @@ shopt -s cmdhist
 # Record each line as it gets issued
 PROMPT_COMMAND='history -a'
 
+# Use Vim mappings in CLI
+set -o vi
+
 # Huge history. Doesn't appear to slow things down, so why not?
 HISTSIZE=500000
 HISTFILESIZE=100000
@@ -117,6 +120,5 @@ function parse_git_branch {
 
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUPSTREAM=1
-#export PS1="\[\e[32m\]\u\[\e[m\]\[\e[32m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[34m\]\W\[\e[m\]\$(__git_ps1)\$ "
 PROMPT_COMMAND='CurDir=`pwd|sed -e "s!$HOME!~!"|sed -re "s!([^/])[^/]+/!\1/!g"`'
-PS1='[\t]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:$CurDir\$ '
+PS1='[\t]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:$CurDir$(__git_ps1)\$ '
