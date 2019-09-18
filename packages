@@ -1,6 +1,7 @@
 git
 zsh
 vim
+neovim
 emacs
 tmux
 htop
