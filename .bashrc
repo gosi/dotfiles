@@ -7,6 +7,7 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 source ~/.fzf.bash
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PS1='\A \033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
@@ -29,8 +30,7 @@ fi
 
 # Set Vim as default editor
 export VISUAL=vim
-export EDITOR="vim"
-
+export EDITOR="$VISUAL"
 export LANG="en_US.UTF-8"
 
 ## GENERAL OPTIONS ##
@@ -66,7 +66,8 @@ shopt -s cmdhist
 PROMPT_COMMAND='history -a'
 
 # Use Vim mappings in CLI
-set -o vi
+# set -o vi
+# bind -m vi-insert "\C-l":clear-screen
 
 # Huge history. Doesn't appear to slow things down, so why not?
 HISTSIZE=500000
@@ -112,13 +113,3 @@ shopt -s no_empty_cmd_completion
 
 # Enable history appending instead of overwriting when exiting.
 shopt -s histappend
-
-# prompt
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
-}
-
-GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWUPSTREAM=1
-PROMPT_COMMAND='CurDir=`pwd|sed -e "s!$HOME!~!"|sed -re "s!([^/])[^/]+/!\1/!g"`'
-PS1='[\t]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:$CurDir$(__git_ps1)\$ '

@@ -19,6 +19,8 @@ alias val="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes 
 alias q="exit"
 alias :q="exit"
 
+alias vim="vim -O"
+
 alias shell="ps -p $$ -o comm="
 alias pyhttp="python3 -m http.server"
 alias ipy="ipython3"
@@ -38,10 +40,11 @@ alias va="vim ~/workspace/dotfiles/.aliases"
 alias vf="vim ~/workspace/dotfiles/.functions"
 alias vi3="vim ~/.config/i3/config"
 alias vx="vim ~/.Xresources"
-alias e="emacsclient"
+alias vs="vim -S ~/.vim/session.vim"
 
 # System Info
 alias ff="find . -type f -iname"
+alias fd="find . -type d | grep "
 alias listen="lsof -i -n -P | grep LISTEN"
 alias psg="ps aux | grep"
 alias hs="history | grep -i $1"

@@ -23,3 +23,5 @@
 	tool = vimdiff
 [merge]
 	conflictStyle = diff3
+[credential]
+	helper = cache
