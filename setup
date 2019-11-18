@@ -1,8 +1,8 @@
 #!/bin/bash
 
-PACKAGES="$HOME/workspace/dotfiles/packages"
+PACKAGES="$HOME/programming/dotfiles/packages"
 BACKUP_DIR=$HOME/dotfiles_old
-DOTFILES_DIR=$HOME/workspace/dotfiles
+DOTFILES_DIR=$HOME/programming/dotfiles
 FILES="bin .gitconfig .config .vimrc .bashrc .zshrc .tmux.conf .ideavimrc .Xresources
 .gtkrc-2.0 .gtkrc-2.0-mine .conkyrc .cvimrc .compton.conf .urxvt .tmux .emacs.d .spacemacs.d"
 

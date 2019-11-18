@@ -4,22 +4,21 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-alias ws="cd ~/workspace"
-alias dot="cd ~/workspace/dotfiles"
+alias p="cd ~/programming"
+alias d="cd ~/programming/dotfiles"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Documents"
 alias data="cd /media/gosi/DATA"
+alias tmp='mkdir /tmp/$$ ; cd /tmp/$$'
 
 # Command Shortcuts
-alias c="g++ -Wall -g -D_GLIBCXX_DEBUG -std=c++11 -ftrapv -Wconversion -ftrapv -Wfatal-errors -fsanitize=address,undefined"
-alias p="pydoc3"
+alias c++="g++ -Wall -g -D_GLIBCXX_DEBUG -std=c++11 -ftrapv -Wconversion -ftrapv -Wfatal-errors -fsanitize=address,undefined"
+alias py="pydoc3"
 alias t="tmux attach -t main || tmux new -s main"
-alias c99="c99 -g3 -Wall -Wextra -pedantic-errors"
+alias c="c99 -g3 -Wall -Wextra -pedantic-errors"
 alias val="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt"
 alias q="exit"
 alias :q="exit"
-
-alias vim="vim -O"
 
 alias shell="ps -p $$ -o comm="
 alias pyhttp="python3 -m http.server"
@@ -36,8 +35,8 @@ alias vv="vim ~/.vimrc"
 alias vb="vim ~/.bashrc"
 alias ve="vim ~/.emacs"
 alias vz="vim ~/.zshrc"
-alias va="vim ~/workspace/dotfiles/.aliases"
-alias vf="vim ~/workspace/dotfiles/.functions"
+alias va="vim ~/programming/dotfiles/.aliases"
+alias vf="vim ~/programming/dotfiles/.functions"
 alias vi3="vim ~/.config/i3/config"
 alias vx="vim ~/.Xresources"
 alias vs="vim -S ~/.vim/session.vim"
@@ -67,7 +66,7 @@ alias apu="sudo apt-get update"
 alias apr="sudo apt-get remove"
 alias app="sudo apt-get purge"
 
-# open program with the default application, without giving up the terminal
+# open program with the default application - without giving up the terminal
 function open () {
   xdg-open "$@">/dev/null 2>&1 &
 }

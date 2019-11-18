@@ -1,4 +1,4 @@
-DOTFILES=$HOME/workspace/dotfiles
+DOTFILES=$HOME/programming/dotfiles
 export PATH=/usr/local/bin:/usr/bin:/bin:$PATH
 source $DOTFILES/.aliases
 
@@ -100,8 +100,8 @@ CDPATH="."
 
 # Test for an interactive shell.
 if [[ $- != *i* ]] ; then
-	# Shell is non-interactive.  Be done now!
-	return
+  # Shell is non-interactive.  Be done now!
+  return
 fi
 
 # Enable checkwinsize so that bash will check the terminal size when it regains control.

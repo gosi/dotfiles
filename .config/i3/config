@@ -117,13 +117,13 @@ bindsym Print exec "scrot -u -q 100 $HOME/Pictures/%Y-%m-%d-%H%M%S_\$wx\$h_scrot
 bindsym Shift+Print exec "scrot -s -q 100 $HOME/Pictures/%Y-%m-%d-%H%M%S_\$wx\$h_scrot.png && notify-send 'Screenshot of current client captured!' 'Picture saved in ~/Pictures'"
 
 # Set wallpaper with feh
-exec --no-startup-id feh --bg-scale ~/.config/i3/wallpapers/nightsky.jpg
-#exec --no-startup-id feh --randomize --bg-scale ~/.config/i3/wallpapers/*
+#exec --no-startup-id feh --bg-scale ~/.config/i3/wallpapers/nightsky.jpg
+exec --no-startup-id feh --randomize --bg-scale ~/.config/i3/wallpapers/*
 
 # Remap Caps Lock as Escape
 exec_always --no-startup-id xmodmap -e "clear lock"
-exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape" # caps lock -> ESC
-#exec_always --no-startup-id setxkbmap -option ctrl:nocaps &                 # caps lock -> ctrl
+#exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape" # caps lock -> ESC
+exec_always --no-startup-id setxkbmap -option ctrl:nocaps &                 # caps lock -> ctrl
 
 # Change keyboard layout
 exec --no-startup-id setxkbmap -layout 'us,se' -option 'grp:alt_shift_toggle'
