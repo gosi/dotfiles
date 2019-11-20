@@ -1,3 +1,7 @@
+#
+# You can mass-install all this by running: xargs -a <(awk '! /^ *(#|$)/' "$packages") -r -- sudo apt-get install
+#
+
 git
 zsh
 vim
@@ -27,9 +31,7 @@ clang
 g++
 python3
 python-pip
-jupyter
 default-jdk
-okular
 gedit
 virtualbox
 unclutter
@@ -42,4 +44,4 @@ wajig
 xclip
 tree
 xfonts-terminus
-fonts-inconsolata
+zathura

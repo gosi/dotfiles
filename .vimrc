@@ -6,14 +6,14 @@ Plug 'mattn/emmet-vim'
 "Plug 'ludovicchabant/vim-gutentags'
 Plug 'Lokaltog/vim-distinguished'
 Plug 'nanotech/jellybeans.vim'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 filetype plugin indent on
 syntax on
-"colorscheme jellybeans
 set background=dark
-highlight Pmenu ctermbg=gray guibg=gray
-highlight StatusLine ctermbg=23 ctermfg=white guibg=lime guifg=white
+colorscheme solarized
+
 autocmd VimEnter,BufWinEnter * syn match parens /[(){}]/ | hi parens ctermfg=red
 
 set nocompatible
@@ -34,7 +34,7 @@ set nojoinspaces
 set wildmenu
 set wildmode=longest,list
 set tabstop=8
-set tags=./tags;,tags;
+"set tags=./tags;,tags;
 set expandtab
 set shiftwidth=4
 set softtabstop=4

@@ -1,0 +1,17 @@
+set first-page-column 2
+set window-title-basename true
+set statusbar-home-tilde true
+set selection-clipboard clipboard
+set recolor true
+set recolor-keephue
+# colors
+set recolor-darkcolor \#839496
+set recolor-lightcolor "#333333"
+set statusbar-fg "#000000"
+set statusbar-bg "#C2BFA5"
+set inputbar-fg "#FFFFFF"
+set inputbar-bg "#333333"
+set completion-highlight-fg "#F0E68C"
+set completion-highlight-bg "#6B8E23"
+set notification-fg "#FFFFFF"
+set notification-bg "#333333"

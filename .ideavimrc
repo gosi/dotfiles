@@ -101,6 +101,10 @@ vnoremap <leader>bY    <Esc>:%y<CR>
 nnoremap <leader>b<C-d>    :action CloseAllEditorsButActive<CR>
 vnoremap <leader>b<C-d>    <Esc>:action CloseAllEditorsButActive<CR>
 
+" Run project
+nnoremap <leader>cr>    :action Run
+vnoremap <leader>cr>    :action Run
+
 " Compile selected file, package or module
 nnoremap <leader>cC    :action Compile<CR>
 vnoremap <leader>cC    <Esc>:action Compile<CR>

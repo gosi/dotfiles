@@ -620,3 +620,9 @@ before packages are loaded."
 ;; Disable beeping.
 (setq-default visible-bell nil)
 (setq-default ring-bell-function 'ignore)
+
+;; TAB to select a completion, not ENTER
+  (add-hook 'company-mode-hook (lambda ()
+    (define-key company-active-map (kbd "TAB") 'company-complete-selection)
+    (define-key company-active-map [escape] 'company-abort)
+    (define-key company-active-map (kbd "RET") nil)))
