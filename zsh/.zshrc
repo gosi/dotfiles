@@ -1,302 +1,266 @@
-DOTFILES=$HOME/workspace/dotfiles
-PATH=$PATH:/usr/local/bin
-export PATH
-source $DOTFILES/.aliases
-source $DOTFILES/.functions
+DOTFILES=$HOME/dotfiles
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:$PATH
+source $DOTFILES/shell/.aliases
 
-autoload -U colors && colors
-autoload -U promptinit && promptinit
-autoload -U add-zsh-hook
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+umask 022
+
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
+# Print core files?
+#unlimit
+#limit core 0
+#limit -s
+#limit coredumpsize  0
+
+# improved less option
+export LESS='--tabs=4 --no-init --LONG-PROMPT --ignore-case --quit-if-one-screen --RAW-CONTROL-CHARS'
+
+
+#####################################################################
+# completions
+#####################################################################
+
+# Enable completions
+if [ -d ~/.zsh/comp ]; then
+    fpath=(~/.zsh/comp $fpath)
+    autoload -U ~/.zsh/comp/*(:t)
+fi
+
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:descriptions' format '%d'
+zstyle ':completion:*:options' verbose yes
+zstyle ':completion:*:values' verbose yes
+zstyle ':completion:*:options' prefix-needed yes
+# Use cache completion
+# apt-get, dpkg (Debian), rpm (Redhat), urpmi (Mandrake), perl -M,
+# bogofilter (zsh 4.2.1 >=), fink, mac_apps...
+zstyle ':completion:*' use-cache true
+zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*' matcher-list \
+    '' \
+    'm:{a-z}={A-Z}' \
+    'l:|=* r:|[.,_-]=* r:|=* m:{a-z}={A-Z}'
+# sudo completions
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
+    /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+zstyle ':completion:*' menu select
+zstyle ':completion:*' keep-prefix
+zstyle ':completion:*' completer _oldlist _complete _match _ignored \
+    _approximate _list _history
+
+autoload -U compinit
+if [ ! -f ~/.zcompdump -o ~/.zshrc -nt ~/.zcompdump ]; then
+    compinit -d ~/.zcompdump
+fi
+
+# cd search path
+cdpath=($HOME)
+
+zstyle ':completion:*:processes' command "ps -u $USER -o pid,stat,%cpu,%mem,cputime,command"
+
+
+#####################################################################
+# colors
+#####################################################################
+
+# Color settings for zsh complete candidates
+alias ls='ls -F --show-control-chars --color=always'
+alias la='ls -aF --show-control-chars --color=always'
+alias ll='ls -lF --show-control-chars --color=always'
+export LSCOLORS=ExFxCxdxBxegedabagacad
+export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
+
+# Use prompt colors feature
+autoload -U colors
+colors
+
+# Use vcs_info
+autoload -Uz vcs_info
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+
+PROMPT="%m %{${fg_bold[red]}%}:: %{${fg[green]}%}%3~%(0?. . %{${fg_bold[red]}%}%? )%{${fg_bold[blue]}%}»%{${reset_color}%} "
+
+if [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] ; then
+    PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
+fi
+
+if [ $UID = "0" ]; then
+    PROMPT="%B%{[31m%}%/#%{^[[m%}%b "
+    PROMPT2="%B%{[31m%}%_#%{^[[m%}%b "
+fi
+
+# Multi line prompt
+PROMPT2="%_%% "
+# Spell miss prompt
+SPROMPT="correct> %R -> %r [n,y,a,e]? "
+
+# Syntax highlight
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+#####################################################################
+# options
+######################################################################
+
+setopt auto_resume
+# Ignore <C-d> logout
+setopt ignore_eof
+# Disable beeps
+setopt no_beep
+# {a-c} -> a b c
+setopt brace_ccl
+# Enable spellcheck
+setopt correct
+# Enable "=command" feature
+setopt equals
+# Disable flow control
+setopt no_flow_control
+# Ignore dups
+setopt hist_ignore_dups
+# Reduce spaces
+setopt hist_reduce_blanks
+# Ignore add history if space
+setopt hist_ignore_space
+# Save time stamp
+setopt extended_history
+# Expand history
+setopt hist_expand
+# Better jobs
+setopt long_list_jobs
+# Enable completion in "--option=arg"
+setopt magic_equal_subst
+# Add "/" if completes directory
+setopt mark_dirs
+# Disable menu complete for vimshell
+setopt no_menu_complete
+setopt list_rows_first
+# Expand globs when completion
+setopt glob_complete
+# Enable multi io redirection
+setopt multios
+# Can search subdirectory in $PATH
+setopt path_dirs
+# For multi byte
+setopt print_eightbit
+# Print exit value if return code is non-zero
+setopt print_exit_value
+setopt pushd_ignore_dups
+setopt pushd_silent
+# Short statements in for, repeat, select, if, function
+setopt short_loops
+# Ignore history (fc -l) command in history
+setopt hist_no_store
+setopt transient_rprompt
+unsetopt promptcr
+setopt hash_cmds
+setopt numeric_glob_sort
+# Enable comment string
+setopt interactive_comments
+# Improve rm *
+setopt rm_star_wait
+# Enable extended glob
+setopt extended_glob
+# Note: It is a lot of errors in script
+# setopt no_unset
+# Prompt substitution
 setopt prompt_subst
-
-PROMPT="%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%}"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
- DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to enable command auto-correction.
- ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
- COMPLETION_WAITING_DOTS="true"
-
-# Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='vi'
- fi
-
-export EDITOR=vim
-export PAGER=less
-export LESS='-R'
-
-bindkey -e
+setopt always_last_prompt
+# List completion
+setopt auto_list
+setopt auto_param_slash
+setopt auto_param_keys
+# List like "ls -F"
+setopt list_types
+# Compact completion
+setopt list_packed
 setopt auto_cd
 setopt auto_pushd
+setopt pushd_minus
 setopt pushd_ignore_dups
-setopt pushdminus
-unsetopt hup
-
-autoload -Uz compinit
-compinit
-
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-colors 'di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-zstyle ':completion:*' menu select=long
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
-zstyle ':completion:*' verbose true
-
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-
-# Search history stuff
-HISTFILE="$HOME/.zsh_history"
-HISTSIZE=10000000
-SAVEHIST=10000000
-setopt BANG_HIST                 # Treat the '!' character specially during expansion.
-setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
-setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
-setopt SHARE_HISTORY             # Share history between all sessions.
-setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
-setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
-setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
-setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
-setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
-setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
-setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
-setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
-setopt HIST_BEEP                 # Beep when accessing nonexistent history.
+# Check original command in alias completion
+setopt complete_aliases
+unsetopt hist_verify
 
 
-# git settings
-git_branch() {
-      (command git symbolic-ref -q HEAD || command git name-rev --name-only --no-undefined --always HEAD) 2>/dev/null
-}
+#####################################################################
+# alias
+######################################################################
 
-# Outputs current branch info in prompt format
-function git_prompt_info() {
-  local ref
-  if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]; then
-    ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
-    ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
-    echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
-  fi
-}
+# Better mv, cp, mkdir
+alias mv='nocorrect mv'
+alias cp='nocorrect cp'
+alias mkdir='nocorrect mkdir'
 
-# Checks if working tree is dirty
-function parse_git_dirty() {
-  local STATUS=''
-  local FLAGS
-  FLAGS=('--porcelain')
-  if [[ "$(command git config --get oh-my-zsh.hide-dirty)" != "1" ]]; then
-    if [[ $POST_1_7_2_GIT -gt 0 ]]; then
-      FLAGS+='--ignore-submodules=dirty'
-    fi
-    if [[ "$DISABLE_UNTRACKED_FILES_DIRTY" == "true" ]]; then
-      FLAGS+='--untracked-files=no'
-    fi
-    STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
-  fi
-  if [[ -n $STATUS ]]; then
-    echo "$ZSH_THEME_GIT_PROMPT_DIRTY"
-  else
-    echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
-  fi
-}
+# Improve du, df
+alias du="du -h"
+alias df="df -h"
 
-# Gets the difference between the local and remote branches
-function git_remote_status() {
-    local remote ahead behind git_remote_status git_remote_status_detailed
-    remote=${$(command git rev-parse --verify ${hook_com[branch]}@{upstream} --symbolic-full-name 2>/dev/null)/refs\/remotes\/}
-    if [[ -n ${remote} ]]; then
-        ahead=$(command git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
-        behind=$(command git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l)
+# Improve od for hexdump
+alias od='od -Ax -tx1z'
+alias hexdump='hexdump -C'
 
-        if [[ $ahead -eq 0 ]] && [[ $behind -eq 0 ]]; then
-            git_remote_status="$ZSH_THEME_GIT_PROMPT_EQUAL_REMOTE"
-        elif [[ $ahead -gt 0 ]] && [[ $behind -eq 0 ]]; then
-            git_remote_status="$ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE"
-            git_remote_status_detailed="$ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE_COLOR$ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE$((ahead))%{$reset_color%}"
-        elif [[ $behind -gt 0 ]] && [[ $ahead -eq 0 ]]; then
-            git_remote_status="$ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE"
-            git_remote_status_detailed="$ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE_COLOR$ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE$((behind))%{$reset_color%}"
-        elif [[ $ahead -gt 0 ]] && [[ $behind -gt 0 ]]; then
-            git_remote_status="$ZSH_THEME_GIT_PROMPT_DIVERGED_REMOTE"
-            git_remote_status_detailed="$ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE_COLOR$ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE$((ahead))%{$reset_color%}$ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE_COLOR$ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE$((behind))%{$reset_color%}"
-        fi
-
-        if [[ -n $ZSH_THEME_GIT_PROMPT_REMOTE_STATUS_DETAILED ]]; then
-            git_remote_status="$ZSH_THEME_GIT_PROMPT_REMOTE_STATUS_PREFIX$remote$git_remote_status_detailed$ZSH_THEME_GIT_PROMPT_REMOTE_STATUS_SUFFIX"
-        fi
-
-        echo $git_remote_status
-    fi
-}
-
-# Outputs the name of the current branch
-# Usage example: git pull origin $(git_current_branch)
-# Using '--quiet' with 'symbolic-ref' will not cause a fatal error (128) if
-# it's not a symbolic ref, but in a Git repo.
-function git_current_branch() {
-  local ref
-  ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
-  local ret=$?
-  if [[ $ret != 0 ]]; then
-    [[ $ret == 128 ]] && return  # no git repo.
-    ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
-  fi
-  echo ${ref#refs/heads/}
-}
+alias vim='TERM=xterm-256color nvim'
+#alias nvim-qt='nvim-qt --geometry 1800x1200'
+alias gonvim='~/Downloads/goneovim/goneovim &>/dev/null &'
+alias lock='i3exit lock'
 
 
-# Gets the number of commits ahead from remote
-function git_commits_ahead() {
-  if command git rev-parse --git-dir &>/dev/null; then
-    local commits="$(git rev-list --count @{upstream}..HEAD)"
-    if [[ "$commits" != 0 ]]; then
-      echo "$ZSH_THEME_GIT_COMMITS_AHEAD_PREFIX$commits$ZSH_THEME_GIT_COMMITS_AHEAD_SUFFIX"
-    fi
-  fi
-}
+#####################################################################
+# keybinds
+######################################################################
 
-# Gets the number of commits behind remote
-function git_commits_behind() {
-  if command git rev-parse --git-dir &>/dev/null; then
-    local commits="$(git rev-list --count HEAD..@{upstream})"
-    if [[ "$commits" != 0 ]]; then
-      echo "$ZSH_THEME_GIT_COMMITS_BEHIND_PREFIX$commits$ZSH_THEME_GIT_COMMITS_BEHIND_SUFFIX"
-    fi
-  fi
-}
+# emacs keybinds
+bindkey -e
 
-# Outputs if current branch is ahead of remote
-function git_prompt_ahead() {
-  if [[ -n "$(command git rev-list origin/$(git_current_branch)..HEAD 2> /dev/null)" ]]; then
-    echo "$ZSH_THEME_GIT_PROMPT_AHEAD"
-  fi
-}
+# History completion
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^p" history-beginning-search-backward-end
+bindkey "^n" history-beginning-search-forward-end
 
-# Outputs if current branch is behind remote
-function git_prompt_behind() {
-  if [[ -n "$(command git rev-list HEAD..origin/$(git_current_branch) 2> /dev/null)" ]]; then
-    echo "$ZSH_THEME_GIT_PROMPT_BEHIND"
-  fi
-}
-
-# Outputs if current branch exists on remote or not
-function git_prompt_remote() {
-  if [[ -n "$(command git show-ref origin/$(git_current_branch) 2> /dev/null)" ]]; then
-    echo "$ZSH_THEME_GIT_PROMPT_REMOTE_EXISTS"
-  else
-    echo "$ZSH_THEME_GIT_PROMPT_REMOTE_MISSING"
-  fi
-}
-
-# Formats prompt string for current git commit short SHA
-function git_prompt_short_sha() {
-  local SHA
-  SHA=$(command git rev-parse --short HEAD 2> /dev/null) && echo "$ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$ZSH_THEME_GIT_PROMPT_SHA_AFTER"
-}
-
-# Formats prompt string for current git commit long SHA
-function git_prompt_long_sha() {
-  local SHA
-  SHA=$(command git rev-parse HEAD 2> /dev/null) && echo "$ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$ZSH_THEME_GIT_PROMPT_SHA_AFTER"
-}
-
-# Get the status of the working tree
-function git_prompt_status() {
-  local INDEX STATUS
-  INDEX=$(command git status --porcelain -b 2> /dev/null)
-  STATUS=""
-  if $(echo "$INDEX" | command grep -E '^\?\? ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_UNTRACKED$STATUS"
-  fi
-  if $(echo "$INDEX" | grep '^A  ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_ADDED$STATUS"
-  elif $(echo "$INDEX" | grep '^M  ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_ADDED$STATUS"
-  fi
-  if $(echo "$INDEX" | grep '^ M ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_MODIFIED$STATUS"
-  elif $(echo "$INDEX" | grep '^AM ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_MODIFIED$STATUS"
-  elif $(echo "$INDEX" | grep '^ T ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_MODIFIED$STATUS"
-  fi
-  if $(echo "$INDEX" | grep '^R  ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_RENAMED$STATUS"
-  fi
-  if $(echo "$INDEX" | grep '^ D ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_DELETED$STATUS"
-  elif $(echo "$INDEX" | grep '^D  ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_DELETED$STATUS"
-  elif $(echo "$INDEX" | grep '^AD ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_DELETED$STATUS"
-  fi
-  if $(command git rev-parse --verify refs/stash >/dev/null 2>&1); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_STASHED$STATUS"
-  fi
-  if $(echo "$INDEX" | grep '^UU ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_UNMERGED$STATUS"
-  fi
-  if $(echo "$INDEX" | grep '^## [^ ]\+ .*ahead' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_AHEAD$STATUS"
-  fi
-  if $(echo "$INDEX" | grep '^## [^ ]\+ .*behind' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_BEHIND$STATUS"
-  fi
-  if $(echo "$INDEX" | grep '^## [^ ]\+ .*diverged' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_DIVERGED$STATUS"
-  fi
-  echo $STATUS
-}
-
-# Compares the provided version of git to the version installed and on path
-# Outputs -1, 0, or 1 if the installed version is less than, equal to, or
-# greater than the input version, respectively.
-function git_compare_version() {
-  local INPUT_GIT_VERSION INSTALLED_GIT_VERSION
-  INPUT_GIT_VERSION=(${(s/./)1})
-  INSTALLED_GIT_VERSION=($(command git --version 2>/dev/null))
-  INSTALLED_GIT_VERSION=(${(s/./)INSTALLED_GIT_VERSION[3]})
-
-  for i in {1..3}; do
-    if [[ $INSTALLED_GIT_VERSION[$i] -gt $INPUT_GIT_VERSION[$i] ]]; then
-      echo 1
-      return 0
-    fi
-    if [[ $INSTALLED_GIT_VERSION[$i] -lt $INPUT_GIT_VERSION[$i] ]]; then
-      echo -1
-      return 0
-    fi
-  done
-  echo 0
-}
-
-# Outputs the name of the current user
-# Usage example: $(git_current_user_name)
-function git_current_user_name() {
-  command git config user.name 2>/dev/null
-}
-
-# Outputs the email of the current user
-# Usage example: $(git_current_user_email)
-function git_current_user_email() {
-  command git config user.email 2>/dev/null
-}
+# Like bash
+bindkey "^u" backward-kill-line
 
 
+#####################################################################
+# others
+######################################################################
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Improve terminal title
+case "${TERM}" in
+    kterm*|xterm*|vt100|st*|rxvt*)
+        precmd() {
+            echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
+            vcs_info
+        }
+        ;;
+esac
+
+# Share zsh histories
+HISTFILE=$HOME/.zsh-history
+HISTSIZE=10000
+SAVEHIST=50000
+setopt inc_append_history
+setopt share_history
+
+# Enable math functions
+zmodload zsh/mathfunc
+
+# Use dtach or abduco instead screen/tmux
+# C-\ is detach
+# dtach command, dtach -A command, dtach -a session
+# adbuco -c session,abduco -c session command, abduco -a command
+
+if ( which zprof > /dev/null ); then
+    zprof | less
+fi
