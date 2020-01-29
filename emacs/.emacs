@@ -24,21 +24,11 @@
 
 ;; Styling
 (set-face-attribute 'default nil :height 120)
-;(set-face-attribute 'font-lock-builtin-face nil :foreground "#5c7a9c")
-;(set-face-attribute 'font-lock-comment-face nil :foreground "#a9a9a9")
-;(set-face-attribute 'font-lock-constant-face nil :foreground "#8fe1c8")
-;(set-face-attribute 'font-lock-function-name-face nil :foreground "FF9F00")
-;(set-face-attribute 'font-lock-keyword-face nil :foreground "#5c7a9c")
-;(set-face-attribute 'font-lock-string-face nil :foreground "#ffc0cb")
-;(set-face-attribute 'font-lock-variable-name-face nil :foreground "#d7af5f")
 ;(set-face-attribute 'fringe nil :background nil)
 ;(set-face-foreground 'mode-line "white")
 ;(set-face-background 'mode-line "limegreen")
-;(set-foreground-color "#FFFFFF")
-;(set-background-color "#000000")
-;(set-cursor-color "#97FF97")
+;(set-cursor-color "#839496")
 
-;(load-theme 'distinguished t)
 ;; Startup windowing
 (setq inhibit-startup-screen t)
 (setq next-line-add-newlines nil)
@@ -94,6 +84,22 @@
 (setq kill-buffer-query-functions
   (remq 'process-kill-buffer-query-function
         kill-buffer-query-functions))
+
+(setq visible-bell t
+      column-number-mode t
+      echo-keystrokes 0.1
+      font-lock-maximum-decoration t
+      inhibit-startup-message t
+      transient-mark-mode t
+      color-theme-is-global t
+      shift-select-mode nil
+      mouse-yank-at-point t
+      ;;require-final-newline t
+      truncate-partial-width-windows nil
+      delete-by-moving-to-trash nil
+      uniquify-buffer-name-style 'forward
+      ediff-window-setup-function 'ediff-setup-windows-plain
+      xterm-mouse-mode t)
 
 ;; Key bindings
 (global-set-key (kbd "C-c c") 'compile)
@@ -196,20 +202,12 @@ that was stored with ska-point-to-register."
       (save-selected-window
         (other-window 1)
         (switch-to-buffer (other-buffer))))))
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (ujelly_type)))
- '(custom-safe-themes
-   (quote
-    ("cdb4ffdecc682978da78700a461cdc77456c3a6df1c1803ae2dd55c59fa703e3" "0d456bc74e0ffa4bf5b69b0b54dac5104512c324199e96fc9f3a1db10dfa31f3" "e9903dfe9ff8173e607d62fd2af073631797fd6398f2d7939120d0277d82e9ae" "1b23925543303ed91979cf8751562501a2221dfe812df379b9c69d9dac574623" "ab8e1f25da50a3700bcb37fa468d1f31bff91fcf80b796d3e42a64b03c0cf579" "5a0e9ce828559960cc5dcd35c48aa45a72c3231f1d2f59d8a450f9ae99eeed48" "7f9dc0c7bc8e5b4a1b9904359ee449cac91fd89dde6aca7a45e4ed2e4985664c" "4138944fbed88c047c9973f68908b36b4153646a045648a22083bd622d1e636d" default)))
- '(linum-format " %3i ")
- '(package-selected-packages
-   (quote
-    (zenburn-theme flycheck jbeans-theme ujelly-theme distinguished-theme evil-commentary evil use-package))))
+ '(package-selected-packages (quote (use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

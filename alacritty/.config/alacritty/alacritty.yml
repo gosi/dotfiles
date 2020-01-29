@@ -108,35 +108,35 @@ font:
     #   - (macOS) Menlo
     #   - (Linux) monospace
     #   - (Windows) Consolas
-    family: Source Code Pro
+    family: monospace
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
   # Bold font face
-  bold:
+  #bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Source Code Pro
+    #family: monospace
 
     # The `style` can be specified to pick a specific face.
     style: Bold
 
   # Italic font face
-  italic:
+  #italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Source Code Pro
+    #  family: monospace
 
     # The `style` can be specified to pick a specific face.
     style: Italic
 
   # Point size
-  size: 12.5
+  size: 11
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -170,25 +170,34 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Wombat)
+# Colors
 colors:
   # Default colors
   primary:
-    background: '0x1f1f1f'
-    foreground: '0xF8F7F5'
+    background: '0x000000'
+    foreground: '0xdddddd'
 
   # Normal colors
   normal:
     black:   '0x000000'
-    red:     '0xf7786d'
-    green:   '0xbde97c'
-    yellow:  '0xefdfac'
-    blue:    '0x6ebaf8'
-    magenta: '0xef88ff'
-    cyan:    '0x90fdf8'
-    white:   '0xF8F7F5'
+    red:     '0xcc0403'
+    green:   '0x19cb00'
+    yellow:  '0xcecb00'
+    blue:    '0x0d73cc'
+    magenta: '0xcb1ed1'
+    cyan:    '0x0dcdcd'
+    white:   '0xdddddd'
 
-
+  # Bright colors
+  bright:
+    black:   '0x767676'
+    red:     '0xf2201f'
+    green:   '0x23fd00'
+    yellow:  '0xfffd00'
+    blue:    '0x1a8fff'
+    magenta: '0xfd28ff'
+    cyan:    '0x14ffff'
+    white:   '0xffffff'
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once

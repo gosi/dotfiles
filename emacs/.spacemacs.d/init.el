@@ -72,7 +72,9 @@ This function should only modify configuration layer settings."
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-default-mode-for-headers 'c++-mode)
-     javascript
+     (javascript :variables
+                   javascript-backend 'lsp
+                   javascript-lsp-linter nil)
      typescript
      html
      sql
@@ -304,7 +306,7 @@ This function should only modify configuration layer settings."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 14
+                               :size 15
                                :weight normal
                                :width normal)
 

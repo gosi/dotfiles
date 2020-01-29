@@ -208,12 +208,6 @@ alias df="df -h"
 alias od='od -Ax -tx1z'
 alias hexdump='hexdump -C'
 
-alias vim='TERM=xterm-256color nvim'
-#alias nvim-qt='nvim-qt --geometry 1800x1200'
-alias gonvim='~/Downloads/goneovim/goneovim &>/dev/null &'
-alias lock='i3exit lock'
-
-
 #####################################################################
 # keybinds
 ######################################################################
@@ -264,3 +258,6 @@ zmodload zsh/mathfunc
 if ( which zprof > /dev/null ); then
     zprof | less
 fi
+
+# OPAM configuration
+. /home/gosi/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

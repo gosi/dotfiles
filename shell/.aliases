@@ -15,7 +15,7 @@ alias tmp='mkdir /tmp/$$ ; cd /tmp/$$'
 alias c++="g++ -Wall -g -D_GLIBCXX_DEBUG -std=c++11 -ftrapv -Wconversion -ftrapv -Wfatal-errors -fsanitize=address,undefined"
 alias py="pydoc3"
 alias t="tmux attach -t main || tmux new -s main"
-alias c="c99 -g3 -Wall -Wextra -pedantic-errors"
+alias c99="c99 -g3 -Wall -Wextra -pedantic-errors"
 alias val="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt"
 alias q="exit"
 alias :q="exit"
@@ -33,10 +33,8 @@ alias empty-trash="rm -rf ~/.local/share/Trash/*"
 # Quick Edits
 alias vv="vim ~/.vimrc"
 alias vb="vim ~/.bashrc"
-alias ve="vim ~/.emacs"
 alias vz="vim ~/.zshrc"
-alias va="vim ~/dotfiles/.aliases"
-alias vf="vim ~/dotfiles/.functions"
+alias va="vim ~/.aliases"
 alias vi3="vim ~/.config/i3/config"
 alias vx="vim ~/.Xresources"
 alias vs="vim -S ~/.vim/session.vim"
@@ -71,11 +69,6 @@ function open () {
   xdg-open "$@">/dev/null 2>&1 &
 }
 
-# quickly change directory with fzf
-function qcd() {
-    pushd $(echo -e "${HOME}\n/usr/local/bin\n/usr/bin" | fzf);
-}
-
 # make a directory and cd
 function mkd() {
     mkdir -p "$@" && cd "$_";
@@ -98,14 +91,6 @@ pwgen () {
 	cat /dev/urandom| tr -dc 'a-zA-Z0-9' | fold -w $1 | head -n 1
 }
 
-# turn epub files into txt to read in emacs
-epub2txt () {
-    folder=$(echo ${1/.epub/})
-    pandoc -t plain --toc --extract-media=$folder --normalize --wrap=none -o $folder/$folder.txt $1
-    # do the rest manually
-    emacsclient -c $folder/$folder.txt
-}
-
 # simplified file extraction
 function ext () {
   if [ -f $1 ] ; then
@@ -126,38 +111,4 @@ function ext () {
   else
       echo "'$1' is not a valid file!"
   fi
-}
-
-# display bash colours in a grid. it might come handy at some point
-function colorgrid( )
-{
-    iter=16
-    while [ $iter -lt 52 ]
-    do
-        second=$[$iter+36]
-        third=$[$second+36]
-        four=$[$third+36]
-        five=$[$four+36]
-        six=$[$five+36]
-        seven=$[$six+36]
-        if [ $seven -gt 250 ];then seven=$[$seven-251]; fi
-
-        echo -en "\033[38;5;$(echo $iter)m█ "
-        printf "%03d" $iter
-        echo -en "   \033[38;5;$(echo $second)m█ "
-        printf "%03d" $second
-        echo -en "   \033[38;5;$(echo $third)m█ "
-        printf "%03d" $third
-        echo -en "   \033[38;5;$(echo $four)m█ "
-        printf "%03d" $four
-        echo -en "   \033[38;5;$(echo $five)m█ "
-        printf "%03d" $five
-        echo -en "   \033[38;5;$(echo $six)m█ "
-        printf "%03d" $six
-        echo -en "   \033[38;5;$(echo $seven)m█ "
-        printf "%03d" $seven
-
-        iter=$[$iter+1]
-        printf '\r\n'
-    done
 }

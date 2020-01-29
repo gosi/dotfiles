@@ -7,17 +7,18 @@ Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
-Plug 'dracula/vim'
 Plug 'mattn/emmet-vim'
-" Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 Plug 'jpalardy/vim-slime'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
+Plug 'morhetz/gruvbox'
+Plug 'chriskempson/base16-vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'bigfish/vim-js-context-coloring'
+"Plug 'bigfish/vim-js-context-coloring'
 Plug 'neoclide/vim-jsx-improve'
 call plug#end()
 
@@ -29,7 +30,7 @@ let g:slime_target='tmux'
 filetype plugin indent on
 syntax on
 set background=dark
-colorscheme dracula
+colorscheme base16-default-dark
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -46,7 +47,6 @@ set backspace=indent,eol,start
 set clipboard=unnamedplus
 set complete+=d
 set completeopt=menuone,preview
-set cursorline
 set diffopt+=vertical
 set expandtab
 set foldmethod=indent
@@ -83,15 +83,15 @@ set wildignorecase
 set wildmenu
 set wildmode=list:longest,full
 
+" statusline
+set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+
 " indicate where lines are wrapping
 set linebreak
 set showbreak=››\
 
 " source vimrc on save.
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC
-
-" remove trailing whitespace on write
-autocmd BufWritePre * %s/\s\+$//e
 
 " autoquit if only nerdtree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -111,6 +111,9 @@ inoremap jk <Esc>
 
 " play a macro recorded to register 'q'
 nnoremap Q @q
+
+" find variable usage
+nnoremap <C-P> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
@@ -145,8 +148,8 @@ cmap s!! mksession! $HOME/.vim/session.vim<CR>
 
 " buffers and splits
 nnoremap <Leader>b :ls<CR>:b<Space>
-nnoremap H          :bprevious<CR>
-nnoremap L          :bnext<CR>
+nnoremap H :bprevious<CR>
+nnoremap L :bnext<CR>
 nnoremap <Leader><TAB> <C-^>
 nnoremap s <C-w>
 nnoremap S <C-w><C-w>
@@ -184,6 +187,9 @@ nnoremap <Space>% :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
 " reselect previously yanked text
 nnoremap gV `[v`]
+
+" search highlighted text
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " toggle paste mode when pasting from clipboard
 function! WrapForTmux(s)
@@ -227,12 +233,14 @@ command! -bar -nargs=1 -bang -complete=file Rename :
   \ endif |
   \ unlet s:file
 
-" Make sure Vim returns to the same line when you reopen a file.
-augroup line_return
-    au!
-    au BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \     execute 'normal! g`"zvzz' |
-        \ endif
+" remove whitespace on write
+function! <SID>StripWhitespace() abort
+    let pos = getcurpos()
+    %s/\s\+$//e
+    %s#\($\n\s*\)\+\%$##e
+    call setpos('.', pos)
+endfunction
+augroup strip_trailing_whitespace
+    autocmd!
+    autocmd BufWritePre * call <SID>StripWhitespace()
 augroup END
-
