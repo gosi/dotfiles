@@ -263,6 +263,7 @@ augroup END
 " vim-fugitive {{{
 nnoremap <Leader>gs :<C-u>Gstatus<CR>
 nnoremap <Leader>gc :<C-u>Gcommit -v<CR>
+nnoremap <Leader>gp :<C-u>Gpush<CR>
 nnoremap <Leader>gl :<C-u>QuickRun sh -src 'git log --graph --oneline'<CR>
 nnoremap <Leader>ga :<C-u>Gwrite <Bar> GitGutter<CR>
 nnoremap <Leader>gd :<C-u>Gdiff<CR>
