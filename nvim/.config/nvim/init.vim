@@ -85,10 +85,6 @@ set wildmode=list:longest,full
 " statusline
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 
-" indicate where lines are wrapping
-set linebreak
-set showbreak=››\
-
 " source vimrc on save.
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC
 
