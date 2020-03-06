@@ -1,5 +1,5 @@
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './insgall --all' }
+Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -16,10 +16,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
-Plug 'chriskempson/base16-vim'
 Plug 'leafgarland/typescript-vim'
-"Plug 'bigfish/vim-js-context-coloring'
 Plug 'neoclide/vim-jsx-improve'
+Plug 'othree/html5.vim'
 call plug#end()
 
 " slime settings for tmux
@@ -30,7 +29,7 @@ let g:slime_target='tmux'
 filetype plugin indent on
 syntax on
 set background=dark
-colorscheme base16-default-dark
+colorscheme gruvbox
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -76,7 +75,7 @@ set splitright
 set tabstop=8
 set tags=./tags;,tags;
 set textwidth=90
-set ttimeout ttimeoutlen=100
+set timeout timeoutlen=3000 ttimeoutlen=100
 set ttyfast
 set wildcharm=<TAB>
 set wildignorecase
@@ -214,11 +213,31 @@ endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
-" better completion menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <C-f>          <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
-inoremap <C-l>          <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>\<lt>C-p>" : ""<CR>
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+if has('patch8.1.1068')
+  " Use `complete_info` if your (Neo)Vim version supports it.
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+endif
 
 " remove a file
 command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(<f-args>) == 0 ? 'SUCCEEDED' : 'FAILED')
@@ -244,3 +263,11 @@ augroup strip_trailing_whitespace
     autocmd!
     autocmd BufWritePre * call <SID>StripWhitespace()
 augroup END
+
+" vim-fugitive {{{
+nnoremap <Leader>gs :<C-u>Gstatus<CR>
+nnoremap <Leader>gc :<C-u>Gcommit -v<CR>
+nnoremap <Leader>gl :<C-u>QuickRun sh -src 'git log --graph --oneline'<CR>
+nnoremap <Leader>ga :<C-u>Gwrite <Bar> GitGutter<CR>
+nnoremap <Leader>gd :<C-u>Gdiff<CR>
+nnoremap <Leader>gb :<C-u>Gblame<CR>
