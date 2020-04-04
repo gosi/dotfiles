@@ -1,11 +1,10 @@
 ;; -*- mode: Emacs-Lisp; -*-
 
+;; pathing
 (require 'package)
-
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
-
 (setq package-enable-at-startup nil)
 (package-initialize)
 
@@ -44,10 +43,25 @@
 (setq tramp-default-method "ssh")
 
 ;; Make use of ido and flex matching
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
+; (setq ido-enable-flex-matching t)
+; (setq ido-everywhere t)
+; (ido-mode 1)
 
+;; Fuzzy searching
+(require 'projectile)
+ (setq projectile-indexing-method 'alien)
+ (setq projectile-enable-caching t)
+ (projectile-global-mode)
+
+ (require 'helm)
+ (require 'helm-config)
+ (global-set-key (kbd "C-c h") 'helm-command-prefix)
+ (global-unset-key (kbd "C-x c"))
+ (helm-autoresize-mode 1)
+ (global-set-key (kbd "M-x") 'helm-M-x)
+ (setq helm-M-x-fuzzy-match t)
+ (global-set-key (kbd "C-x C-f") 'helm-find-files)
+ (helm-mode 1)
 ;; Not interested in annoying files
 (setq auto-save-default nil)
 (setq make-backup-files nil)
@@ -61,6 +75,17 @@
 ;; Delete the selection with a keypress
 (delete-selection-mode t)
 
+;; Duplicatet line
+ (defun duplicate-line ()
+   (interactive)
+   (save-mark-and-excursion
+     (beginning-of-line)
+     (insert (thing-at-point 'line t))))
+
+ (global-set-key (kbd "C-S-d") 'duplicate-line)
+
+;; Dumb jump
+(dumb-jump-mode)
 ;; Pairs
 ;(highlight-parentheses)
 ;(define-globalized-minor-mode global-highlight-parens highlight-parentheses-mode
@@ -107,6 +132,7 @@
 (global-set-key (kbd "C-c b") 'browse-url-at-point)
 (global-set-key (kbd "C-o")   'other-window)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "<f8>") 'speedbar)
 
 (defun indent-buffer ()
       (interactive)
@@ -114,6 +140,27 @@
         (indent-region (point-min) (point-max) nil)))
 (global-set-key [f12] 'indent-buffer)
 
+;; Move lines up and down
+(defun move-line-down ()
+   (interactive)
+   (let ((col (current-column)))
+     (save-excursion
+       (forward-line)
+       (transpose-lines 1))
+     (forward-line)
+     (move-to-column col)))
+
+ (defun move-line-up ()
+   (interactive)
+   (let ((col (current-column)))
+     (save-excursion
+       (forward-line)
+       (transpose-lines -1))
+     (forward-line -1)
+     (move-to-column col)))
+
+ (global-set-key (kbd "C-S-j") 'move-line-down)
+ (global-set-key (kbd "C-S-k") 'move-line-up)
 ;; Make C-w behave like in the shell
 (defun kill-region-or-backward-word ()
   "If the region is active and non-empty, call `kill-region'.

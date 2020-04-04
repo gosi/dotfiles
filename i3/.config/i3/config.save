@@ -44,11 +44,11 @@ assign [class="Emacs"] $ws1
 assign [class="discord"] $ws2
 assign [class="Google-chrome"] $ws3
 assign [class="Firefox"] $ws3
+assign [class="Nemo"] $ws4
 assign [class="Transmission"] $ws5
-assign [class="vlc"] $ws6
-assign [class="mpv"] $ws6
-assign [class="Nemo"] $ws6
-assign [class="okular"] $ws7
+assign [class="vlc"] $ws5
+assign [class="mpv"] $ws5
+assign [class="okular"] $ws6
 assign [class="Steam"] $ws10
 
 for_window [class="Spotify"] move to workspace $ws5 # Spotify wont work with assign for some reason?
@@ -161,10 +161,10 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+space exec dmenu_run
+bindsym $mod+d exec dmenu_run
 
 # jump to urgent window
-bindsym $mod+q [urgent=latest] focus
+bindsym $mod+e [urgent=latest] focus
 
 # change focus
 bindsym $mod+h focus left
@@ -208,13 +208,13 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+x focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
 
 # focus the child container
-bindsym $mod+d focus child
+bindsym $mod+x focus child
 
 # Cycle through active workspaces
 bindsym $mod+Tab workspace next
@@ -264,5 +264,5 @@ status_command i3status -c ~/.config/i3/i3status.conf
 position bottom
     colors {
 background #000000
-statusline #d3d3d3
+bstatusline #d3d3d3
 }}

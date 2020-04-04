@@ -1,17 +1,28 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'mattn/emmet-vim'
 call plug#end()
 
 filetype plugin indent on
 syntax on
-highlight Comment ctermfg=green
+set background=dark
+colorscheme pablo
+highlight Comment term=bold
 
-runtime! macros/matchit.vim
+" Allow tabs in Makefiles.
+autocmd FileType make,automake set noexpandtab shiftwidth=8 softtabstop=8
+" Trailing whitespace and tabs are forbidden, so highlight them.
+highlight ForbiddenWhitespace ctermbg=red guibg=red
+match ForbiddenWhitespace /\s\+$\|\t/
+" Do not highlight spaces at the end of line while typing on that line.
+autocmd InsertEnter * match ForbiddenWhitespace /\t\|\s\+\%#\@<!$/
+" For trimming whitespace.
+command! TrimWhitespace call TrimWhitespace()
 
 set autoindent
 set backspace=indent,eol,start
+set cindent
+set cinoptions=(0
 set clipboard=unnamedplus
 set expandtab
 set grepprg=LC_ALL=C\ grep\ -nrsH
@@ -32,29 +43,23 @@ set wildmenu
 set wildmode=list:longest,full
 
 cmap w!! w !sudo tee % >/dev/null
+" Grep recursively for word under cursor.
+nmap <Leader>g :tabnew\|read !grep -Hnr '<C-R><C-W>'<CR>
 
 nnoremap <Space>s :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <Space>% :%s/\<<C-r>=expand("<cword>")<CR>\>/
-
-vnoremap . :norm.<CR>
 nnoremap riw ciw<C-r>0<Esc>:<C-u>let@/=@1<CR>:noh<CR>
-
-inoremap <C-u> <C-g>u<C-u>
 nnoremap <C-p> :ls<CR>:b<Space>
 nnoremap <C-n> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
-nnoremap <silent> <C-l> :silent noh<CR>
+nnoremap <silent> <ESC><ESC> :silent noh<CR>
+vnoremap . :norm.<CR>
 
-map <Leader>a ggVG"+y
+vnoremap <F8> "+y
+nnoremap <F8> "+y
+nnoremap <silent> <F9> :set paste<CR>"+p :set nopaste<CR>
 
-autocmd BufNewFile,BufRead *.ts set syntax=javascript
-
-function! <SID>StripWhitespace() abort
-    let pos = getcurpos()
-    %s/\s\+$//e
-    %s#\($\n\s*\)\+\%$##e
-    call setpos('.', pos)
+function! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
 endfunction
-augroup strip_trailing_whitespace
-    autocmd!
-    autocmd BufWritePre * call <SID>StripWhitespace()
-augroup END

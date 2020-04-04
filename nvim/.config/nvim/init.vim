@@ -8,15 +8,18 @@ Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'mattn/emmet-vim'
-Plug 'w0rp/ale'
 Plug 'jpalardy/vim-slime'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
+Plug 'nanotech/jellybeans.vim'
 Plug 'morhetz/gruvbox'
 Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/vim-jsx-improve'
 Plug 'othree/html5.vim'
 call plug#end()
@@ -29,7 +32,7 @@ let g:slime_target='tmux'
 filetype plugin indent on
 syntax on
 set background=dark
-colorscheme gruvbox
+colorscheme jellybeans
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -112,7 +115,7 @@ nnoremap <C-P> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+    nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
 
 " make Y consistent with C, S, D, etc.
@@ -134,7 +137,11 @@ nnoremap <down>  :lnext<cr>zvzz
 
 " files
 nnoremap <Leader>e :e <C-r>=expand('%:p:h').'/'<CR>
-nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>f :FZF<CR>
+let g:fzf_action = {
+  \ 'ctrl-t': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \}
 nnoremap <Leader>L :Lines<CR>
 nnoremap <Leader>F :find *
 nnoremap <Leader>w :w<CR>
@@ -184,27 +191,27 @@ nnoremap <Space>% :%s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap gV `[v`]
 
 " search highlighted text
-vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><!-- <CR> -->
 
 " toggle paste mode when pasting from clipboard
 function! WrapForTmux(s)
-  if !exists('$TMUX')
-    return a:s
-  endif
+    if !exists('$TMUX')
+        return a:s
+    endif
 
-  let tmux_start = "\<Esc>Ptmux;"
-  let tmux_end = "\<Esc>\\"
+    let tmux_start = "\<Esc>Ptmux;"
+    let tmux_end = "\<Esc>\\"
 
-  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+    return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
 endfunction
 
 let &t_SI .= WrapForTmux("\<Esc>[?2004h")
 let &t_EI .= WrapForTmux("\<Esc>[?2004l")
 
 function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
+    set pastetoggle=<Esc>[201~
+    set paste
+    return ""
 endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
@@ -213,14 +220,14 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Use <c-space> to trigger completion.
@@ -229,9 +236,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 if has('patch8.1.1068')
-  " Use `complete_info` if your (Neo)Vim version supports it.
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    " Use `complete_info` if your (Neo)Vim version supports it.
+    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+    imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 else
 endif
 
@@ -240,13 +247,13 @@ command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(
 
 " rename current file
 command! -bar -nargs=1 -bang -complete=file Rename :
-  \ let s:file = expand('%:p') |
-  \ setlocal modified |
-  \ keepalt saveas<bang> <args> |
-  \ if s:file !=# expand('%:p') |
-  \   call delete(s:file) |
-  \ endif |
-  \ unlet s:file
+            \ let s:file = expand('%:p') |
+            \ setlocal modified |
+            \ keepalt saveas<bang> <args> |
+            \ if s:file !=# expand('%:p') |
+            \   call delete(s:file) |
+            \ endif |
+            \ unlet s:file
 
 " remove whitespace on write
 function! <SID>StripWhitespace() abort
