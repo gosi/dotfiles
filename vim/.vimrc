@@ -6,8 +6,8 @@ call plug#end()
 filetype plugin indent on
 syntax on
 set background=dark
-colorscheme pablo
-highlight Comment term=bold
+colorscheme peachpuff
+highlight Comment fg=green
 
 " Allow tabs in Makefiles.
 autocmd FileType make,automake set noexpandtab shiftwidth=8 softtabstop=8
